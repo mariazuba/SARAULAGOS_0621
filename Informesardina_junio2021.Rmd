@@ -1,0 +1,138 @@
+---
+title: 
+lang: es
+output: pdf_document
+toc: TRUE
+header-includes:
+- \usepackage{draftwatermark}
+- \SetWatermarkText{DRAFT}
+- \usepackage{fancyhdr}
+- \usepackage{graphicx}
+- \usepackage{parskip}
+- \pagestyle{fancy}
+- \usepackage{geometry}
+- \geometry{top=1.5cm, bottom=1cm, left=2.5cm, right=2.5cm}
+- \usepackage{helvet}
+- \renewcommand{\familydefault}{\sfdefault}
+
+- \newcommand{\sietepuntos}{\fontsize{7pt}{\baselineskip}\selectfont}
+- \newcommand{\cincopuntos}{\fontsize{6pt}{\baselineskip}\selectfont}
+
+- \addtolength{\headheight}{4.5\baselineskip}
+- \setlength{\headheight}{70pt}
+- \setlength{\footskip}{5pt}
+- \setlength{\textheight}{658pt}
+- \fancyhead[CO,CE]{\includegraphics[height=1.5cm]{logoifop.png}\\ \sietepuntos INSTITUTO DE FOMENTO PESQUERO / DIVISION INVESTIGACION PESQUERA}
+- \fancyhead[LO,LE]{ }
+- \fancyhead[RO,RE]{ }
+- \renewcommand{\headrulewidth}{0.5pt}
+- \fancyfoot[C]{\cincopuntos \thepage \\ \vspace{-0.2cm} ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ \\ \vspace{-0.2cm} \cincopuntos CONVENIO DE DESEMPEÑO 2020 IFOP/SUBSECRETARÍA DE ECONOMíA Y EMT \\ \vspace{-0.1cm} INFORME FINAL. SARDINA AUSTRAL DE LA  REGIÓN DE LOS LAGOS, 2021}
+---
+
+**7. ANEXOS**
+
+**ANEXO I.** Datos y modelo de sardina austral correspondiente a la asesoría de septiembre 2020 y junio 2021 (MAE0920 y MAE0621).
+
+\pagebreak
+
+# RESUMEN EJECUTIVO
+
+\pagebreak
+
+# 1. OBJETIVOS
+
+## 1.1.	Objetivo general
+
+Proveer la asesoría científica necesaria para la determinación del estado de explotación y la Captura Biológicamente Aceptable (CBA) que deberá mantener o llevar la pesquería de sardina austral en aguas interiores de la región de Aysen al Rendimiento Máximo Sostenible (RMS), bajo condiciones de riesgo e incertidumbre, cuantificando las distintas fuentes e integrando la mejor información científica-técnica disponible.
+
+## 1.2.	Objetivos específicos
+
+1.	Implementar procedimientos de evaluación de stock basados en protocolos científicos para la determinación del estatus de los recursos seleccionados con arreglo al nivel de conocimiento, información e incertidumbre correspondiente, conforme a los estándares actuales en ciencia pesquera.
+
+2.	Establecer el estatus actualizado de estos recursos, sobre la base de sus principales indicadores estandarizados de estado y flujo, incorporando, cuantificando y propagando la incertidumbre subyacente a la pesquería.
+
+3.	Determinar niveles de Captura Biológicamente Aceptable (CBA) que lleven y/o mantenga la pesquería en torno al Rendimiento Máximo Sostenible (RMS), a partir de un análisis de riesgo en condiciones de incertidumbre de no alcanzar los objetivos de conservación y sostenibilidad conforme lo establece la LGPA y contenidos en el Plan de Manejo y/o en el Programa de Recuperación respectivo, según corresponda.
+
+4.	Informar el avance del Programa de Mejoramiento Continuo de la Calidad en la Asesoría Científica (PMCCAC) realizado durante el presente estudio, respecto al cumplimiento de recomendaciones formuladas en procesos de RPEI y priorizadas por el CCT, cuando corresponda.
+
+
+
+\pagebreak 
+
+# 2. ANTECEDENTES
+
+## 2.1. Distribución del recurso y localización del área de estudio
+
+## 2.2. Unidades de stock y ecología
+
+## 2.3. Pesquería
+
+## 2.4. Reclutamiento
+
+## 2.5. Reproducción
+
+## 2.6. Crecimiento y mortalidad natural
+
+## 2.7. Captura Biológicamente Aceptable (CBA) 
+
+\pagebreak 
+
+# 3. METODOLOGÍA DE TRABAJO
+
+## 3.1. Objetivo específico 1:
+\vspace{-0.2cm}
+*“Implementar procedimientos de evaluación de stock basados en protocolos científicos para la determinación del estatus de los recursos seleccionados con arreglo al nivel de conocimiento, información e incertidumbre correspondiente, conforme a los estándares actuales en ciencia pesquera.”*
+
+
+## 3.2. Objetivo específico 2:
+\vspace{-0.2cm}
+*“Establecer el estatus actualizado de estos recursos, sobre la base de sus principales indicadores estandarizados de estado y flujo, incorporando, cuantificando y propagando la incertidumbre subyacente a la pesquería.”*
+
+
+## 3.3. Objetivo específico 3:
+\vspace{-0.2cm}
+*“Determinar niveles de Captura Biológicamente Aceptable (CBA) que lleven y/o mantenga la pesquería en torno al Rendimiento Máximo Sostenible (RMS), a partir de un análisis de riesgo en condiciones de incertidumbre de no alcanzar los objetivos de conservación y sostenibilidad conforme lo establece la LGPA y contenidos en el Plan de Manejo y/o en el Programa de Recuperación respectivo, según corresponda.”*
+
+
+## 3.4. Objetivo específico 4:
+\vspace{-0.2cm}
+*“Informar el avance del Programa de Mejoramiento Continuo de la Calidad en la Asesoría Científica (PMCCAC) realizado durante el presente estudio, respecto al cumplimiento de recomendaciones formuladas en procesos de RPEI y priorizadas por el CCT, cuando corresponda.”*
+
+
+\pagebreak
+
+# 4. RESULTADOS
+
+## 4.1. Objetivo específico 1:
+\vspace{-0.2cm}
+*“Implementar procedimientos de evaluación de stock basados en protocolos científicos para la determinación del estatus de los recursos seleccionados con arreglo al nivel de conocimiento, información e incertidumbre correspondiente, conforme a los estándares actuales en ciencia pesquera.”*
+
+
+## 4.2. Objetivo específico 2:
+\vspace{-0.2cm}
+*“Establecer el estatus actualizado de estos recursos, sobre la base de sus principales indicadores estandarizados de estado y flujo, incorporando, cuantificando y propagando la incertidumbre subyacente a la pesquería.”*
+
+
+## 4.3.	Objetivo específico 3:
+\vspace{-0.2cm}
+*"Determinar niveles de Captura Biológicamente Aceptable (CBA) que lleven y/o mantenga la pesquería en torno al Rendimiento Máximo Sostenible (RMS), a partir de un análisis de riesgo en condiciones de incertidumbre de no alcanzar los objetivos de conservación y sostenibilidad conforme lo establece la LGPA y contenidos en el Plan de Manejo y/o en el Programa de Recuperación respectivo, según corresponda."*
+
+
+## 4.4. Objetivo específico 4:
+\vspace{-0.2cm}
+*“Informar el avance del Programa de Mejoramiento Continuo de la Calidad en la Asesoría Científica (PMCCAC) realizado durante el presente estudio, respecto al cumplimiento de recomendaciones formuladas en procesos de RPEI y priorizadas por el CCT, cuando corresponda.”*
+
+\pagebreak
+
+# 5.	ANÁLISIS Y DISCUSIÓN DE RESULTADOS
+
+\pagebreak
+
+# 6.	REFERENCIAS BIBLIOGRÁFICAS
+
+
+
+
+
+
+
