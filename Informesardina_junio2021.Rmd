@@ -118,12 +118,11 @@ En la costa Pacífico, la sardina austral posee una distribución que se extiend
 
 La principal hipótesis de trabajo, que sustenta el modelo de evaluación de stock, plantea que en aguas interiores de la Región de Los Lagos, existe una población auto-sustentada que recluta, crece y se reproduce en el área. Esto a pesar que existen antecedentes de flujo de individuos entre la X y XI (Galleguillos *et al*., 2012; Neira *et al*.,2014).
 
-
+```{=tex}
 \begin{center}
 \includegraphics[width=0.6\textwidth]{FigurasInforme_Junio/Fig1.png}
 \end{center}
-
-
+```
 **Figura 1**. Distribución de *S. fuegensis* en el extremo sur de Sudamérica y focalización del área de estudio (recuadro) en el mar interior de la isla de Chiloé, Chile (41º9' a 43º5' S).
 
 ## 2.2. Unidades de stock y ecología
@@ -135,7 +134,6 @@ De acuerdo a Galleguillos *et al*., (2012), a nivel poblacional en Chile, la sar
 La pesquería se encuentra bajo Régimen Artesanal de Extracción (RAE), sujeta al establecimiento de cuotas anuales de captura. La captura de sardina austral es realizada por naves cerqueras, consideradas por la legislación pesquera de Chile, como artesanales, con máximo de 17,99 m. de eslora o 100 m3 de capacidad de bodega. Entre los años 2006 y 2018 la flota ha variado entre las 27 y 39 naves operando anualmente. La pesquería se desarrolla mayoritariamente en la Región de Los Lagos y se caracteriza por presentar una fuerte estacionalidad en el desembarque, el cual ocurre principalmente durante el primer semestre.
 
 Luego de ser identificada como una especie distinta de sardina común (Aranis *et al*., 2007), los registros oficiales comienzan el año 2006 con 39,2 mil t. A partir del año 2010, cuando comienza la evaluación de stock a través del actual enfoque de modelación, los desembarques anuales han oscilado en torno a la cuota asignada de 20 mil t promedio (**Figura 2**). El año 2017, los desembarques disminuyeron hasta 14 mil t y durante el año 2018, mostró el menor nivel de la serie con 8,4 mil t. oficiales. El año 2019 en tanto, muestra una recuperación relativa, aunque permanece en valores bajos, cercano a las 11 mil t. Par el año en curso, se espera que los desembarques alcancen el nivel de CBA actualizado hasta 15,5 mil toneldas.
-
 
 ```{r antecedentes_desembarques,warning=F, include=T, message=F, echo=FALSE,fig.height=3.5,fig.width=5,fig.align="center",fig.path="Figuras/",dev=fig}
 year<-seq(2006,2020,1)
@@ -149,8 +147,6 @@ lines(year,cuota,type="l",lwd=2,col=1)
 legend(2011,60000,c("Datos oficiales","CBA"),lwd=c(10,2),col=c("cadetblue4",1),bty="n",cex=0.8)
 ```
 
- 
-
 **Figura 2**. Desembarques oficiales anuales de sardina austral en aguas interiores del Mar de Chiloé entre los años 2006 y 2019 (fuente: Sernapesca).
 
 ## 2.4. Reclutamiento
@@ -158,6 +154,7 @@ legend(2011,60000,c("Datos oficiales","CBA"),lwd=c(10,2),col=c("cadetblue4",1),b
 El análisis de la estructura de longitudes mensual obtenida desde la actividad pesquera sugiere que el reclutamiento de individuos a la pesquería ocurre principalmente entre abril y junio. Desde el año 2014, esto ha sido confirmado por los cruceros de evaluación directa que reportan la presencia de reclutas en los meses de abril y mayo. No obstante, la información de la flota también ha observado una moda de ejemplares pequeños en los meses de agosto y septiembre de algunos años (**Figura 3**).
 
 \vspace{-0.2cm}
+
 ```{r estructura_mensual,eval=T,warning=F, include=T, message=F, echo=FALSE,fig.height=7.5,fig.width=6,fig.align="center",fig.path="Figuras/",dev=fig}
 
 datafrec<-read.table(paste(dir.0,"/Tallasmensuales.txt",sep=""),header = FALSE, sep = "")
@@ -213,7 +210,9 @@ fig3 <-   ggplot(filter(obs,year==2020)) +
 fig0+fig2+fig1+fig3
 
 ```
+
 \vspace{-0.1cm}
+
 **Figura 3**. Estructura de tallas mensual de las capturas de sardina austral (enero 2017 -- junio 2020), en aguas interiores de la Región de Los Lagos.
 
 ## 2.5. Reproducción
@@ -224,6 +223,7 @@ Los antecedentes biológicos de la especie provienen principalmente de estudios 
 
 Cerna *et al*., (2007), reportan los parámetros de crecimiento (**Tabla 1**) y mortalidad natural (M) de sardina austral, indicando que la especie presenta un patrón de crecimiento característicos de los peces pelágicos de pequeño tamaño como la sardina común y anchoveta. Es catalogada como una especie de crecimiento rápido y ciclo de vida corto.
 
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 1.}
@@ -231,7 +231,7 @@ Cerna *et al*., (2007), reportan los parámetros de crecimiento (**Tabla 1**) y 
 \begin{center} 
 \vspace{-0.2cm} Parámetros de crecimiento y mortalidad natural reportados para sardina austral en diferentes estudios.
 \end{center}
-
+```
 | Parámetro | Cerna *et al*., (2007) |
 |-----------|------------------------|
 | k         | 0.78                   |
@@ -249,64 +249,68 @@ El año 2013 se realiza el establecimiento del nuevo Reglamento (D:S: N° 77, Ma
 # 3. METODOLOGÍA DE TRABAJO
 
 ## 3.1. Objetivo específico 1:
+
 \vspace{-0.2cm}
-*"Implementar procedimientos de evaluación de stock basados en protocolos científicos para la determinación del estatus de los recursos seleccionados con arreglo al nivel de conocimiento, información e incertidumbre correspondiente, conforme a los estándares actuales en ciencia pesquera."*
-\vspace{0.5cm}
+
+*"Implementar procedimientos de evaluación de stock basados en protocolos científicos para la determinación del estatus de los recursos seleccionados con arreglo al nivel de conocimiento, información e incertidumbre correspondiente, conforme a los estándares actuales en ciencia pesquera."* \vspace{0.5cm}
 
 ### 3.1.1. Modelo Conceptual
 
 La conceptualización del modelo biológico considera los siguientes componentes de la dinámica poblacional:
 
-  -	Estructura geográfica: Se asume que la población de sardina austral en la Región de Los Lagos constituye una unidad de stock. Se asume un stock homogéneo al interior de la unidad de pesquería, donde el conjunto de individuos está sujeto a la misma probabilidad de crecimiento y mortalidad, y donde la migración no es importante.
-  -	Reproducción: Se asume que los individuos del stock tienen un evento reproductivo discreto, que se representa a comienzos de la estación reproductiva y que con propósitos prácticos se asume en agosto.
-  -	Reclutamiento: El reclutamiento ocurre a la forma de un pulso de abundancia en enero de cada año, 5 meses después del evento reproductivo.
-  - Tasa de mortalidad natural: La tasa de mortalidad natural se asume invariante y se considera M=0.83 por año.
-  -	Dinámica del crecimiento: El crecimiento es recogido a través de la ecuación de Von Bertalanffy y se modela a través de una matriz de transición entre tallas sucesivas.
-  -	Interacción inter-específica: La interacción se asume ocurre en los eventos de pesca, de tal manera que el modelo es de tipo mono-específico.
+-   Estructura geográfica: Se asume que la población de sardina austral en la Región de Los Lagos constituye una unidad de stock. Se asume un stock homogéneo al interior de la unidad de pesquería, donde el conjunto de individuos está sujeto a la misma probabilidad de crecimiento y mortalidad, y donde la migración no es importante.
+-   Reproducción: Se asume que los individuos del stock tienen un evento reproductivo discreto, que se representa a comienzos de la estación reproductiva y que con propósitos prácticos se asume en agosto.
+-   Reclutamiento: El reclutamiento ocurre a la forma de un pulso de abundancia en enero de cada año, 5 meses después del evento reproductivo.
+-   Tasa de mortalidad natural: La tasa de mortalidad natural se asume invariante y se considera M=0.83 por año.
+-   Dinámica del crecimiento: El crecimiento es recogido a través de la ecuación de Von Bertalanffy y se modela a través de una matriz de transición entre tallas sucesivas.
+-   Interacción inter-específica: La interacción se asume ocurre en los eventos de pesca, de tal manera que el modelo es de tipo mono-específico.
 
-El modelo de evaluación de stock de sardina austral se basa en un análisis estadístico de la dinámica de estructuras de tallas a nivel anual, donde se incorpora información biológica y pesquera agregada en año calendario. La información que ingresa al modelo consiste en los desembarques totales obtenidos de los registros oficiales de SERNAPESCA, datos de composición de talla anual y pesos medios a la edad de la flota son proporcionados por el programa de monitoreo de las pesquerías de peces pelágicos, mientras que las evaluaciones hidroacústicas, proporcionan información de biomasa vulnerable en otoño junto con sus respectivas composiciones de longitudes. En base a esta información el modelo estima las variables de estado representadas por la biomasa desovante (BD) y los niveles de mortalidad por pesca (F) que junto a los puntos biológicos de referencia (PBRs) permiten determinar el estatus y calcular la “Captura Biológicamente Aceptable (CBA) (**Figura 4**).
+El modelo de evaluación de stock de sardina austral se basa en un análisis estadístico de la dinámica de estructuras de tallas a nivel anual, donde se incorpora información biológica y pesquera agregada en año calendario. La información que ingresa al modelo consiste en los desembarques totales obtenidos de los registros oficiales de SERNAPESCA, datos de composición de talla anual y pesos medios a la edad de la flota son proporcionados por el programa de monitoreo de las pesquerías de peces pelágicos, mientras que las evaluaciones hidroacústicas, proporcionan información de biomasa vulnerable en otoño junto con sus respectivas composiciones de longitudes. En base a esta información el modelo estima las variables de estado representadas por la biomasa desovante (BD) y los niveles de mortalidad por pesca (F) que junto a los puntos biológicos de referencia (PBRs) permiten determinar el estatus y calcular la "Captura Biológicamente Aceptable (CBA) (**Figura 4**).
 
- \begin{center}
+```{=tex}
+\begin{center}
 \includegraphics[width=0.7\textwidth]{FigurasInforme_Junio/Fig4.png}
 \end{center}
+```
+\small \\textbf{Figura 4}. Procedimiento de evaluación de stock de sardina austral Región de Los Lagos. \normalsize
 
-\small \textbf{Figura 4}.	Procedimiento de evaluación de stock de sardina austral Región de Los Lagos.
-\normalsize
+En la implementación del procedimiento de evaluación de stock se utilizan protocolos científicos basados en la determinación de un sistema de niveles o "tiers" que permiten clasificar la información disponible de las especies y su pesquería, los cuales se han convertido en una herramienta de uso común en la asesoría orientada al manejo pesquero en la actualidad. Para estimar el RMS se utiliza la estrategia de niveles y de acuerdo con la clasificación del estándar de información se definen los PBR o "proxy" que serán usados para determinar el estatus del recurso. La definición de los procedimientos de cálculo de los PBR y del marco de referencia especie específicos se basan en el estudio "Revisión de los puntos Biológicos de referencia (Rendimiento Máximo Sostenible) en las pesquerías nacionales" (Paya *et al*., 2014), en cuyo primer taller, se desarrolló en conjunto con expertos internacionales, un sistema de tres niveles para derivar al RMS específico para las pesquerías en Chile (**Figura 5**). Además, para determinar el estatus de los recursos selectos, se considera lo establecido por el Comité Científico Técnico de Pelágicos Pequeños (CCT-PP) sobre los requerimientos técnicos que define los estándares de análisis y evaluación para las pesquerías analizadas, conforme a los niveles de conocimiento, información y calidad de los datos disponibles para esos fines.
 
-En la implementación del procedimiento de evaluación de stock se utilizan protocolos científicos basados en la determinación de un sistema de niveles o “tiers” que permiten clasificar la información disponible de las especies y su pesquería, los cuales se han convertido en una herramienta de uso común en la asesoría orientada al manejo pesquero en la actualidad. Para estimar el RMS se utiliza la estrategia de niveles y de acuerdo con la clasificación del estándar de información se definen los PBR o “proxy” que serán usados para determinar el estatus del recurso. La definición de los procedimientos de cálculo de los PBR y del marco de referencia especie específicos se basan en el estudio “Revisión de los puntos Biológicos de referencia (Rendimiento Máximo Sostenible) en las pesquerías nacionales” (Paya *et al*., 2014), en cuyo primer taller, se desarrolló en conjunto con expertos internacionales, un sistema de tres niveles para derivar al RMS específico para las pesquerías en Chile (**Figura 5**). Además, para determinar el estatus de los recursos selectos, se considera lo establecido por el Comité Científico Técnico de Pelágicos Pequeños (CCT-PP) sobre los requerimientos técnicos que define los estándares de análisis y evaluación para las pesquerías analizadas, conforme a los niveles de conocimiento, información y calidad de los datos disponibles para esos fines.
-
+```{=tex}
 \begin{center}
 \includegraphics[width=0.7\textwidth]{FigurasInforme_Junio/Fig5.png}
 \end{center}
+```
+\small \\textbf{Figura 5}. Sistema de niveles para la determinación de los PBRs de acuerdo a la cantidad, tipo y la calidad de la información disponible y, métodos de evaluación de stock empleados en cada pesquería. \normalsize
 
-\small \textbf{Figura 5}.	Sistema de niveles para la determinación de los PBRs de acuerdo a la cantidad, tipo y la calidad de la información disponible y, métodos de evaluación de stock empleados en cada pesquería.
-\normalsize
+Los peces pelágicos de pequeño tamaño como sardinas y anchovetas, son especies con una mortalidad natural (M) alta (viven durante un período máximo de 4-5 años), crecen rápido y maduran tempranamente. El reclutamiento está altamente influenciado por el ambiente. El modelo de evaluación de stock tiene una frecuencia temporal anual. Tanto el modelo y los datos son estructurados a la talla. Se considera una flota comercial en el modelo de evaluación y el patrón de selectividad es asumido constante a través de los años. El modelo de evaluación de stock no incluye una relación S-R. Estos antecedentes permiten clasificar a sardina austral Región de Los Lagos en el **Tier 1b**.
 
- \pagebreak
- 
+\pagebreak
+
 ### 3.1.2. Datos de entrada al modelo de evaluación de stock
 
-A diferencia del modelo usado hasta el estudio previo, que abarcó el periodo 2006-2017, la actual estructura de modelación rescata información previa y se inicia el año 2002. Esto como parte del Programa de Mejoramiento Continuo de la Calidad de la Asesoría Científica (PMCCAC) y considerando las recomendaciones realizadas en la revisión por pares del estudio (Ernst *et al* 2015).  
+A diferencia del modelo usado hasta el estudio previo, que abarcó el periodo 2006-2017, la actual estructura de modelación rescata información previa y se inicia el año 2002. Esto como parte del Programa de Mejoramiento Continuo de la Calidad de la Asesoría Científica (PMCCAC) y considerando las recomendaciones realizadas en la revisión por pares del estudio (Ernst *et al* 2015).
 
 A continuación, se detalla y fundamenta el conjunto de datos a emplear para la estimación de los índices de abundancia, así como su forma de utilización (ejemplo, indicadores absolutos o relativos). Además, se informa la incertidumbre asociada a los indicadores de abundancia propuestos para utilizar en la evaluación de sardina austral en aguas interiores de la Región de Los Lagos.
 
-La evaluación de stock utiliza información del desembarque total anual de la especie en la Región de Los Lagos, proporcionada por el Servicio nacional de pesca (Sernapesca). Utiliza también información de la pesca de investigación realizada por IFOP entre los años 2005 y 2012 y del monitoreo de la pesquería (2013- 2019). Las evaluaciones directas (2006, 2008, 2011, 2013-2020) del recurso en la zona del mar interior de Chiloé. Se utilizaron muestreos biológicos y de frecuencias de tallas, realizados por el Instituto de Fomento Pesquero (IFOP) en el marco del Programa de Seguimiento de la Pesquería Pelágica centro-sur (Aranis *et al*., 2018). 
+La evaluación de stock utiliza información del desembarque total anual de la especie en la Región de Los Lagos, proporcionada por el Servicio nacional de pesca (Sernapesca). Utiliza también información de la pesca de investigación realizada por IFOP entre los años 2005 y 2012 y del monitoreo de la pesquería (2013- 2019). Las evaluaciones directas (2006, 2008, 2011, 2013-2020) del recurso en la zona del mar interior de Chiloé. Se utilizaron muestreos biológicos y de frecuencias de tallas, realizados por el Instituto de Fomento Pesquero (IFOP) en el marco del Programa de Seguimiento de la Pesquería Pelágica centro-sur (Aranis *et al*., 2018).
 
 El modelo de evaluación, incorpora también las estimaciones de biomasa total y estructura de longitudes estimados por los cruceros hidroacústicos realizados por diferentes instituciones los años 2006, 2008, 2011 y 2013 al 2020.
 
 Los detalles sobre todas las fuentes de información, índices y parámetros, están contenidos en el **Anexo I**.
 
-
 #### a) Desembarques
 
-Corresponde a la extracción registrada en puerto, independiente de la zona de procedencia. Tiene valor en definir la importancia relativa de los distintos puertos de descarga, por lo tanto, es de mayor interés administrativo y/o comercial de la actividad. Su propósito es cuantificar los volúmenes totales y por especie, que efectivamente se reciben en la descarga o desembarque. Las estadísticas oficiales de los desembarques son sistematizadas por Sernapesca, sobre una base mensual, por tipo de flota, puerto de desembarque y especie objetivo. Cabe señalar que en la pesquería pelágica el concepto de captura es igual al del desembarque. Para la evaluación de stock de sardina austral en aguas interiores de la Región de los Lagos, la serie se inicia el año 2002. Los registros oficiales de desembarque de la especie comienzan el año 2006, se utilizaron entonces dichos registros entre los años 2006 y 2017. Previo al año 2006 y siguiendo la recomendación realizada en la revisión por pares (Ernst *et al*., 2015) y priorizada en el CCTPP, se utilizaron los desembarques oficiales de sardina común, asumiendo que un 70% correspondía a sardina austral. Este porcentaje es un supuesto que proviene de los registros obtenidos en la pesca de investigación realizada por IFOP entre el 2006 y 2012, donde en promedio se obtiene esta proporción de especies en las capturas (Aranís *et al*., 2012). 
+Corresponde a la extracción registrada en puerto, independiente de la zona de procedencia. Tiene valor en definir la importancia relativa de los distintos puertos de descarga, por lo tanto, es de mayor interés administrativo y/o comercial de la actividad. Su propósito es cuantificar los volúmenes totales y por especie, que efectivamente se reciben en la descarga o desembarque. Las estadísticas oficiales de los desembarques son sistematizadas por Sernapesca, sobre una base mensual, por tipo de flota, puerto de desembarque y especie objetivo. Cabe señalar que en la pesquería pelágica el concepto de captura es igual al del desembarque. Para la evaluación de stock de sardina austral en aguas interiores de la Región de los Lagos, la serie se inicia el año 2002. Los registros oficiales de desembarque de la especie comienzan el año 2006, se utilizaron entonces dichos registros entre los años 2006 y 2017. Previo al año 2006 y siguiendo la recomendación realizada en la revisión por pares (Ernst *et al*., 2015) y priorizada en el CCTPP, se utilizaron los desembarques oficiales de sardina común, asumiendo que un 70% correspondía a sardina austral. Este porcentaje es un supuesto que proviene de los registros obtenidos en la pesca de investigación realizada por IFOP entre el 2006 y 2012, donde en promedio se obtiene esta proporción de especies en las capturas (Aranís *et al*., 2012).
 
 #### b) Sub- reporte
-La pesquería, aunque dominada por sardina austral, es de carácter mixta, apareciendo en ocasiones junto a sardina común y anchoveta. La restricción por cuotas para sardina austral, puede motivar a los usuarios a reportar una especie por otra. Es así como se han advertido cambios importantes en la proporción de especies en los desembarques ante reducciones en la Captura Biológicamente Aceptable (CBA) de sardina austral. Por ejemplo, el año 2010, se registró un incremento significativo en la proporción de sardina común en los registros. 
+
+La pesquería, aunque dominada por sardina austral, es de carácter mixta, apareciendo en ocasiones junto a sardina común y anchoveta. La restricción por cuotas para sardina austral, puede motivar a los usuarios a reportar una especie por otra. Es así como se han advertido cambios importantes en la proporción de especies en los desembarques ante reducciones en la Captura Biológicamente Aceptable (CBA) de sardina austral. Por ejemplo, el año 2010, se registró un incremento significativo en la proporción de sardina común en los registros.
 
 Otro antecedente, es la escaza presencia de certificadores en la en aguas interiores de la Región de Los Lagos durante el año 2017. Esto, podría explicar, de alguna manera, la reducción en los desembarques oficiales registrados el último año en relación a niveles esperados.
 
 #### c) Descarte
+
 La pesquería de sardina austral en aguas interiores de la Región de Los Lagos es efectuada por una flota artesanal de cerco, que destina la captura principalmente a la reducción, por lo tanto, tendrían bajas tasas de descarte.
 
 En la actualidad, los estudios sobre descarte son incipientes en esta pesquería. Solo el año 2017 fue incorporada al programa de observadores científicos (Vega *et al*., 2017). Los resultados son aún preliminares y con un nivel importante de incertidumbre debido a la baja proporción de viajes cubiertos, siendo aún insuficiente la información para ser incorporada al modelo de evaluación.
@@ -343,7 +347,7 @@ La metodología empleada en el desarrollo del proyecto está basada en el enfoqu
 
 ##### i) Análisis y procesos preliminares:
 
-En esta etapa se recopilan los antecedentes y datos de la pesquería y del recurso, en conjunto con la estimación de indicadores de abundancia relativa y otras piezas de información, como las estructuras de tallas y pesos medios. Se realiza un análisis crítico de los datos e información disponibles y finalmente se determina el Estándar Metodológico para la Evaluación (EME). 
+En esta etapa se recopilan los antecedentes y datos de la pesquería y del recurso, en conjunto con la estimación de indicadores de abundancia relativa y otras piezas de información, como las estructuras de tallas y pesos medios. Se realiza un análisis crítico de los datos e información disponibles y finalmente se determina el Estándar Metodológico para la Evaluación (EME).
 
 ##### ii) Especificación del modelo de evaluación de stock:
 
@@ -355,11 +359,11 @@ Una vez definido el modelo de dinámica y los datos de entrada, se procede a la 
 
 ##### iv) Análisis, estatus y diagnóstico:
 
- Luego de ajustado el modelo de evaluación de stock y obtenidas las distribuciones posteriores de los parámetros, se estiman los puntos biológicos de referencia, se analizan las variables de estado y flujo, se construye el diagrama de fases de explotación y finalmente se determina el estatus del recurso. 
+Luego de ajustado el modelo de evaluación de stock y obtenidas las distribuciones posteriores de los parámetros, se estiman los puntos biológicos de referencia, se analizan las variables de estado y flujo, se construye el diagrama de fases de explotación y finalmente se determina el estatus del recurso.
 
 ##### v) Análisis prospectivos:
 
-Con el propósito de determinar los niveles de explotación que aseguran la sustentabilidad del recurso, se proyecta el stock en el mediano plazo, bajo un conjunto de tácticas y estrategias de explotación, evaluándose las probabilidades (riesgo) de no cumplir con los objetivos de administración. 
+Con el propósito de determinar los niveles de explotación que aseguran la sustentabilidad del recurso, se proyecta el stock en el mediano plazo, bajo un conjunto de tácticas y estrategias de explotación, evaluándose las probabilidades (riesgo) de no cumplir con los objetivos de administración.
 
 ##### vi) Conclusiones y recomendaciones:
 
@@ -369,7 +373,7 @@ Una vez concluidas las etapas anteriores, se procede a sintetizar las principale
 
 La evaluación cubrirá el período 2002-2020 y considera información en escala anual que se resume en la **Tabla 2**. El enfoque de modelación utilizado en este estudio, correspondió a un análisis estadístico de las estructuras de tallas de las capturas de la flota y del crucero, de los índices de abundancia directa y relativa (CPUE), y de los desembarques a una escala anual. La aproximación corresponde a Sullivan *et al*., (1990). Se modela la abundancia poblacional en función de la probabilidad de los individuos de crecer de una talla a la siguiente, de la mortalidad natural y por pesca, del patrón y la magnitud de los reclutamientos. El modelo de evaluación de stock, se compone de: 1) un modelo de la dinámica poblacional, donde la mortalidad natural y por pesca actúan de manera conjunta sobre la abundancia, 2) un modelo de las observaciones, correspondiente a los modelos de los datos de entrada y 3) un proceso de estimación de parámetros a partir de una función objetivo, donde se contrastan estadísticamente las observaciones y estimaciones del modelo mediante máxima verosimilitud. Se utiliza como plataforma de estimación la herramienta estadística ADMB (Furnier *et al*., 2011).
 
-
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 2.}
@@ -379,18 +383,80 @@ La evaluación cubrirá el período 2002-2020 y considera información en escala
 * Se supone para el año 2020 un nivel de desembarque de 7,9 mil t. Este valor corresponde a la recomendación de captura para el año en curso ($CBA_{RMS}$).
 
 \end{center}
+```
 
-
-
++------------------------+-----------------------------+----------------------------------------------------------+
+| Datos de entrada       | Período                     | Fuente de información                                    |
++========================+=============================+==========================================================+
+| **Desembarques**       | 2002 al 2019                | 2006-2019: Estadísticas oficiales de                     |
+|                        |                             |                                                          |
+| **totales anuales**    |                             | desembarques (Servicio Nacional de Pesca y Acuicultura). |
+|                        |                             |                                                          |
+|                        |                             | 2002-2005: hipótesis de proporción de especies           |
+|                        |                             |                                                          |
+|                        |                             | sardina común/sardina austral.                           |
++------------------------+-----------------------------+----------------------------------------------------------+
+| **CPUE estandarizada** | enero 2007 diciembre 2019   | Pesca de investigación (2006-2012) y Monitoreo           |
+|                        |                             |                                                          |
+|                        |                             | de la pesquería pequeños pelágicos aguas                 |
+|                        |                             |                                                          |
+|                        |                             | interiores Región de Los Lagos (2013-2019)               |
++------------------------+-----------------------------+----------------------------------------------------------+
+|  |
++------------------------+-----------------------------+----------------------------------------------------------+
+| **Biomasa y**          | 2006, 2008, 2011, 2013-2020 | Evaluaciones hidroacústicas de pequeños pelágicos        |
+|                        |                             |                                                          |
+| **estructura de**      |                             | en aguas interiores de la Región de Los Lagos:           |
+|                        |                             |                                                          |
+| **longitudes**         |                             | Proyectos de Evaluación Directa realizados por IFOP      |
+|                        |                             |                                                          |
+| **de evaluación**      |                             | (2006, 2014-2019) antes licitados por el Fondo de        |
+|                        |                             |                                                          |
+| **directa**            |                             | investigación Pesquera y Acuicultura (FIPA) y            |
+|                        |                             |                                                          |
+|                        |                             | realizados por la Universidad Austral (2008) y UdeC      |
+|                        |                             |                                                          |
+|                        |                             | (2011, 2013)                                             |
++------------------------+-----------------------------+----------------------------------------------------------+
+|  |
++------------------------+-----------------------------+----------------------------------------------------------+
+|  |
++------------------------+-----------------------------+----------------------------------------------------------+
+|  |
++------------------------+-----------------------------+----------------------------------------------------------+
+|  |
++------------------------+-----------------------------+----------------------------------------------------------+
+| **Estructura de**      | junio 2005-mayo 2020        | Pesca de investigación (2005-2012) y Monitoreo de        |
+|                        |                             |                                                          |
+| **longitudes de la**   |                             | la pesquería pequeños pelágicos aguas interiores         |
+|                        |                             |                                                          |
+| **flota**              |                             | Región de Los Lagos. Se incorporó en este estudio la     |
+|                        |                             |                                                          |
+|                        |                             | estructura de longitudes del año 2005 (incompleta)       |
++------------------------+-----------------------------+----------------------------------------------------------+
+|  |
++------------------------+-----------------------------+----------------------------------------------------------+
+| **Madurez a la Talla** | Constante                   | Leal *et al.,* (2011)                                    |
++------------------------+-----------------------------+----------------------------------------------------------+
+| **Parámetros**         | Constante                   | Cerna *et al.,* (2007)                                   |
+|                        |                             |                                                          |
+| **Crecimiento**        |                             |                                                          |
++------------------------+-----------------------------+----------------------------------------------------------+
 
 \normalsize
+
 El modelamiento de la dinámica de sardina austral es en año calendario, vale decir que el cumpleaños ocurre a inicios del año calendario (inicios de enero), por lo cual el desove al ser establecido a mediados de junio corresponde a 0,58 del año. En la actualidad el método ha sido empleado bajo un enfoque de dinámica en longitudes agrupado en año calendario, que incorpora algunos supuestos de modelación (**Tabla 3**) y si compone de los siguientes elementos:
 
-  - Modelo de dinámica poblacional estructurada por longitudes
-  - Modelos de las observaciones y penalizaciones a priori que permiten relacionar el modelo de dinámica con las observaciones (**Tabla 4**)
-  - Identificación de la estructura del error a través de funciones de log-verosimilitud negativas (**Tabla 5**); y
-  - Proceso de estimación de los parámetros desconocidos del modelo de dinámica a través de un algoritmo que minimiza la función objetivo total, contrastando las observaciones con las estimaciones deducidas del modelo de dinámica (**Tabla 6**).
+-   Modelo de dinámica poblacional estructurada por longitudes
 
+```{=html}
+<!-- -->
+```
+-   Modelos de las observaciones y penalizaciones a priori que permiten relacionar el modelo de dinámica con las observaciones (**Tabla 4**).
+-   Identificación de la estructura del error a través de funciones de log-verosimilitud negativas (**Tabla 5**); y
+-   Proceso de estimación de los parámetros desconocidos del modelo de dinámica a través de un algoritmo que minimiza la función objetivo total, contrastando las observaciones con las estimaciones deducidas del modelo de dinámica (**Tabla 6**).
+
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 3.}
@@ -398,52 +464,85 @@ El modelamiento de la dinámica de sardina austral es en año calendario, vale d
 \begin{center} 
 \vspace{-0.2cm} Resumen de los principales supuestos del modelo de evaluación anual  con información en tallas asociados a los datos observados.
 \end{center}
-
-
-
+```
 \normalsize
 
++-------------------------+-------------+-----------------------------------------------------------------------------------------------------------------------+
+| **Datos observados**    | **Símbolo** | **Supuestos**                                                                                                         |
++=========================+=============+=======================================================================================================================+
+| Desembarque total anual | $Y_t$       | Representa a la captura total del período                                                                             |
+|                         |             | anual.                                                                                                                |
+|                         |             |                                                                                                                       |
+|                         |             | Se considera continua al interior del año. Coeficiente de variación supuesto como                                     |
+|                         |             |                                                                                                                       |
+|                         |             | parte del error de observación $CV_f=0.2-0.1$                                                                         |
++-------------------------+-------------+-----------------------------------------------------------------------------------------------------------------------+
+| Biomasa                 | $B_t$       | Biomasa que ocurre en el mes del año en que se realiza el crucero, ($dt^{cv}=variable$)                               |
+| total del crucero       |             |                                                                                                                       |
+|                         |             | Coeficiente de variación supuesto como parte del error de observación $CV_B=0.26 - 0.22$.                             |
++-------------------------+-------------+-----------------------------------------------------------------------------------------------------------------------+
+| Captura                 | $CPUE_t$    | Índice relativo de la                                                                                                 |
+|                         |             | biomasa vulnerable a mitad de año.                                                                                    |
+| por unidad de           |             |                                                                                                                       |
+|                         |             | Coeficiente de variación supuesto como parte del error de observación $CV_{cpue}=0.22-0.26$.                          |
+| esfuerzo                |             |                                                                                                                       |
++-------------------------+-------------+-----------------------------------------------------------------------------------------------------------------------+
+| Proporción              | $p_{l,t}^f$ | Representa la distribución de los ejemplares que están presentes en la captura total por intervalo de longitud.       |
+|                         |             |                                                                                                                       |
+| de la abundancia        |             | Tamaño de muestra efectivo supuesto como parte del error de observación $n^f=25$                                      |
+|                         |             |                                                                                                                       |
+| a la talla de la flota  |             |                                                                                                                       |
++-------------------------+-------------+-----------------------------------------------------------------------------------------------------------------------+
+| Proporción de la        | $p_{l,t}^c$ | Representa la distribución de los ejemplares que están presentes en la captura del crucero por intervalo de longitud. |
+|                         |             |                                                                                                                       |
+| abundancia a la         |             | Tamaño de muestra efectivo supuesto como parte del error de observación $n^c=15$                                      |
+|                         |             |                                                                                                                       |
+| talla del Crucero       |             |                                                                                                                       |
++-------------------------+-------------+-----------------------------------------------------------------------------------------------------------------------+
+| Peso medio a la talla   | $W_l=aLT^b$ | Vector de pesos medio a la talla empleado para generar estimaciones de biomasa acústica, biomasa total y desovante.   |
++-------------------------+-------------+-----------------------------------------------------------------------------------------------------------------------+
 
-#### Dinámica base del modelo anual con información en tallas
+#### Dinámica base del modelo anual con información en tallas:
+
 El crecimiento medio es descrito por el modelo von Bertalanffy (VB) puede ser expresado según:
 
- $ecuación de crecimiento$
+$\bar{\Delta_l}=(L\infty-l^*)(1-e^{-k})$
 
-Donde, $Loo$ y $k$ son parámetros de la función VB, $l*$ corresponde al punto medio del intervalo de talla $l$.
+Donde, $L\infty$ y $k$ son parámetros de la función VB, $l^*$ corresponde al punto medio del intervalo de talla $l$.
 
-La distribución gamma es utilizada para representar la variación en el crecimiento, ya que permite describir de mejor forma los patrones de crecimiento para peces de tallas muy pequeñas y muy grandes. La distribución gamma puede ser expresada en términos de dos parámetros $\alpha_l$ y $\beta_p$,$ND_{l,t}$,   los cuales se relacionan entre si según:
+La distribución gamma es utilizada para representar la variación en el crecimiento, ya que permite describir de mejor forma los patrones de crecimiento para peces de tallas muy pequeñas y muy grandes. La distribución gamma puede ser expresada en términos de dos parámetros $\alpha_l$ y $\beta_p$, $ND_{l,t}$, los cuales se relacionan entre si según:
 
-$ecuacion 2$,
+$\alpha_l=\frac{\bar\Delta_l}{\beta_p}$,
 
-Donde, $\alpha_l$  corresponde a la varianza (es función de $L_oo$ y $k$) proporcional a la media, $\beta_p$ corresponde al coeficiente de variación el que permite incorporar la variabilidad de los individuos en la población. Con ello la proporción de ejemplares que crecen o se mueven de un intervalo a otro queda descrito por: 
+Donde, $\alpha_l$ corresponde a la varianza (es función de $L\infty$ y $k$) proporcional a la media, $\beta_p$ corresponde al coeficiente de variación el que permite incorporar la variabilidad de los individuos en la población. Con ello la proporción de ejemplares que crecen o se mueven de un intervalo a otro queda descrito por:
 
-$ecuacion 3$,
- 
+$T_{ll'}=\int^{l'}_l\frac{(l'-l)^a exp(-(l'-l)/\beta_p)}{\beta_p}dl$
+
 Donde, $T_{ll'}$ corresponde a la matriz de transición que modela el crecimiento entre $l$ y $l´$ (Sullivan *et al*.,1990).
 
 El reclutamiento se plantea separable en un componente anual y uno talla-específico que se expresa según:
 
-$ecuacion 4$,
- 
+$Pr_l=R\int_l^{l+1}\frac{1}{2\pi\sigma^2}exp[-\frac{(l-\mu)^2}{\sigma^2}dl$,
+
 Donde, $\mu$ y $\sigma$ corresponden a la media y desviación de una distribución normal constante entre años.
 
 La abundancia $N_{l,t}$ de los ejemplares de talla $l$, a comienzos del año $t$, queda entonces representada por:
 
-$ecuacion 5$,
+$N_{l,t}=T_{ll'}N_{l,t-1}exp(-Z_{l,t-1})+Pr_lR_t$,
 
-Donde,$N_{l,t-1}$  corresponde al número de peces de talla $l$, en el año $t-1$,   es mortalidad total para peces de talla $l$ en el año $t-1$; $T_{ll}$  es la matriz de transición de crecimiento entre la talla $l$ y $l´$,  $Pr_l$ es el vector de distribución de reclutamiento y $R_t$  corresponde al reclutamiento anual.
+Donde,$N_{l,t-1}$ corresponde al número de peces de talla $l$, en el año $t-1$, es mortalidad total para peces de talla $l$ en el año $t-1$; $T_{ll}$ es la matriz de transición de crecimiento entre la talla $l$ y $l´$, $Pr_l$ es el vector de distribución de reclutamiento y $R_t$ corresponde al reclutamiento anual.
 
-Siguiendo la hipótesis Doubleday’s (1976), la mortalidad por pesca se descompone en el producto de un coeficiente talla específico $s_l$ y una tasa de mortalidad por pesca anual $F_t$ según: 
+Siguiendo la hipótesis Doubleday's (1976), la mortalidad por pesca se descompone en el producto de un coeficiente talla específico $s_l$ y una tasa de mortalidad por pesca anual $F_t$ según:
 
-$ecuacion 6$,
+$F_{l,t}=s_lF_t$,
 
 Donde, el coeficiente sl se construye dependiendo del modelo considerado, para el caso de la sardina austral se utiliza una función logística modelada a través de la reparametrización de Punt y Kennedy (1997) como sigue:
 
-$ecuacion 7$,
+$s_l=\left(1+exp\left[-ln19\frac{(l-l_{50\%})}{\Delta}\right]\right)^{-1}$,
 
 $l_{50\%}$ corresponde al parámetro de posición, donde el 50% de los peces son retenidos por el arte de pesca y $\Delta$ es la dispersión que determina la pendiente de la curva. Se considera constante entre años para la flota y cruceros.
 
-
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 4.}
@@ -451,24 +550,84 @@ $l_{50\%}$ corresponde al parámetro de posición, donde el 50% de los peces son
 \begin{center} 
 \vspace{-0.2cm} Modelo de las observaciones del Modelo Anual con información en tallas.
 \end{center}
-
-
+```
++--------------------------------------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| Variable                             | Ecuación                                                                                          | Descripción                                                  |
++======================================+===================================================================================================+==============================================================+
+| Captura estimada en número a         |                                                                                                   | $\hat{C}_{l,t}$ Captura en número estimada a la longitud *l* |
+| la edad                              | $\hat{C}_{l,t}=\frac{F_{l,t}}{Z_{l,t}}N_{l,t}\left(1-S_{l,t}\right)$                              |                                                              |
+|                                      |                                                                                                   | y *t* en el año.                                             |
++--------------------------------------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| Desembarques en peso                 | $\hat{Y}_t=\sum_l \hat{C}_{l,t}w_{l}$                                                             | $w_{l}$                                                      |
+|                                      |                                                                                                   | es el peso                                                   |
+|                                      |                                                                                                   | medio a la longitud *l*                                      |
++--------------------------------------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| Proporción de la captura a           | $\hat{p}^f_{l,t}=\frac{\hat{C}_{l,t}}{\sum_l\hat{C}_{l,t}}$                                       | $\hat{C}_{l,t}$                                              |
+| la longitud de la flota              |                                                                                                   | Captura en                                                   |
+|                                      |                                                                                                   | número estimada a la longitud *l*.                           |
++--------------------------------------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| Abundancia a la longitud del crucero | $\hat{N}_{l,t}^c=N_{l,t} e^{-dt^cZ_{l,t}}S^c_l$                                                   | $dt^c$                                                       |
+|                                      |                                                                                                   | es la fracción del año en                                    |
+|                                      |                                                                                                   | la cual se realiza el crucero                                |
++--------------------------------------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| Selectividad del crucero             | $S_l^c=\left(1+exp\left[-ln19\frac{(l-l_{50\%}^c}{\Delta^c}\right]\right)^{-1}$                   | $l_{50\%}^c$                                                 |
+|                                      |                                                                                                   | longitud al 50%                                              |
+|                                      |                                                                                                   |                                                              |
+|                                      |                                                                                                   | $\Delta^c$                                                   |
+|                                      |                                                                                                   | rango entre                                                  |
+|                                      |                                                                                                   | la longitud al 95% y 50%                                     |
++--------------------------------------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| Biomasa total del crucero            | $\hat{B}_t^c=q^c\sum_l\hat{N}_{l,t}^{c}w_l$                                                       | $w_{l}$                                                      |
+|                                      |                                                                                                   | es el peso                                                   |
+|                                      |                                                                                                   | medio a la longitud                                          |
+|                                      |                                                                                                   | $q^c$ es la                                                  |
+|                                      |                                                                                                   | capturabilidad/ disponibilidad del crucero                   |
++--------------------------------------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| Captura por Unidad de                | $\hat{CPUE}_t=q\left[\sum^{lmax}_{lmin}S_{l,t}N_{l,t}w_l\frac{(1-exp(-Z_{l,t}))}{Z_{l,t}}\right]$ |                                                              |
+| esfuerzo                             |                                                                                                   | *q*: coeficiente de                                          |
+|                                      |                                                                                                   | capturabilidad                                               |
++--------------------------------------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 \normalsize
 
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 5.}
 \end{center}
 \begin{center} 
 \vspace{-0.2cm} Modelo de los errores del Modelo Anual con información en tallas.
-\end{center}
-
-
-
+\end{center} 
+```
++---------------------------------------------------+---------------+------------------------------------------------------------------------------------+------------------------------------------------------------+
+| **Variable**                                      | **Error**     | **Ecuación**                                                                       | **Descripción**                                            |
++===================================================+===============+====================================================================================+============================================================+
+| Desembarques                                      | *Lognormal*   | $L=-\frac{0.5}{\sigma_y^2}\sum_t\left(ln\frac{Y_t}{\hat{Y}_t}\right)^2$            | $Y_t$ : Captura estimada en el año *t.*                    |
+|                                                   |               |                                                                                    |                                                            |
+|                                                   |               |                                                                                    | $\hat{Y}_t$ : captura predicha para el año *t.*            |
+|                                                   |               |                                                                                    |                                                            |
+|                                                   |               |                                                                                    | $\sigma_y$ es la desviación estándar                       |
++---------------------------------------------------+---------------+------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Biomasa Crucero                                   | *Lognormal*   | $L=-\frac{0.5}{\sigma_{Bc}^2}\sum_t\left(ln\frac{Bc_t}{\hat{Bc}_t}\right)^2$       | $Bc_t$ : Biomasa crucero                                   |
+|                                                   |               |                                                                                    |                                                            |
+|                                                   |               |                                                                                    | $\hat{Bc}_t$ : Biomasa crucero predicha                    |
+|                                                   |               |                                                                                    |                                                            |
+|                                                   |               |                                                                                    | $\sigma_{Bc}$ es la desviación estándar.                   |
++---------------------------------------------------+---------------+------------------------------------------------------------------------------------+------------------------------------------------------------+
+| CPUE                                              | *Lognormal*   | $L=-\frac{0.5}{\sigma_{cpue}^2}\sum_t\left(ln\frac{CPUE_t}{\hat{CPUE}_t}\right)^2$ | $CPUE_t$ : Captura por unidad de esfuerzo estandarizada.   |
+|                                                   |               |                                                                                    |                                                            |
+|                                                   |               |                                                                                    | $\hat{CPUE}_t$ : Captura por unidad de esfuerzo predicha . |
+|                                                   |               |                                                                                    |                                                            |
+|                                                   |               |                                                                                    | $\sigma_{cpue}$ es la desviación estándar                  |
++---------------------------------------------------+---------------+------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Proporción de la captura a la talla de la flota y | *Multinomial* | $L=-n\sum_l\sum_tp_{l,t}*ln(\hat{p}_{l,t})$                                        | $p_{l,t}$ corresponde a la captura a la talla de la flota. |
+| crucero                                           |               |                                                                                    |                                                            |
+|                                                   |               |                                                                                    | $n$ es el tamaño de muestra efectivo.                      |
++---------------------------------------------------+---------------+------------------------------------------------------------------------------------+------------------------------------------------------------+
 
 \normalsize
 
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 6.}
@@ -476,19 +635,64 @@ $l_{50\%}$ corresponde al parámetro de posición, donde el 50% de los peces son
 \begin{center} 
 \vspace{-0.2cm} Parámetros y prioris empleadas en el Modelo Anual con información en Tallas
 \end{center}
-
-
+```
++------------------------------------+--------------+---------------------------------------+------------------------------------------------------+
+| **Parámetro**                      | **N° de      | **Prior**                             | **Descripción**                                      |
+|                                    | parámetros** |                                       |                                                      |
++====================================+==============+=======================================+======================================================+
+| Mortalidad natural                 | 1            |                                       | La mortalidad                                        |
+|                                    |              | $M=0.83$ (fijo)                       | natural se asume constante entre años y edades.      |
++------------------------------------+--------------+---------------------------------------+------------------------------------------------------+
+| Mortalidad por pesca               | 12           | $lnF\sim U[-10;+10]$                  |                                                      |
+|                                    |              |                                       |                                                      |
+|                                    |              |                                       |  representa el efecto anual de la mortalidad         |
+|                                    |              |                                       | por pesca.                                           |
++------------------------------------+--------------+---------------------------------------+------------------------------------------------------+
+| Selectividad de la flota y crucero | 2            |                                       | Se                                                   |
+|                                    |              | $lnL_{50\%}^f \sim U[-\infty;\infty]$ | asume el patrón de selectividad                      |
+|                                    |              |                                       |                                                      |
+|                                    |              | $ln\Delta^f \sim U[-\infty;\infty]$   |  talla-específica                                    |
+|                                    |              |                                       | variable entre años                                  |
++------------------------------------+--------------+---------------------------------------+------------------------------------------------------+
+| Reclutamiento promedio             | 1            | $lnR_0 \sim N[log(8.8),0.6]$          |                                                      |
+|                                    |              |                                       |                                                      |
+|                                    |              |                                       |  corresponde al reclutamiento                        |
+|                                    |              |                                       | medio, es multiplicado por una perturbación anual (  |
+|                                    |              |                                       |                                                      |
+|                                    |              |                                       | ). Se asume con un valor de partida de log (8.8)     |
+|                                    |              |                                       |                                                      |
+|                                    |              |                                       |                                                      |
++------------------------------------+--------------+---------------------------------------+------------------------------------------------------+
+| Desvíos de reclutamientos          | 12           |                                       |
+|                                    | + 4          |                                       |
+| ( )                                |              |                                       |
+|                                    |              |                                       |
+| y estructura etaria inicial        |              |                                       |
+|                                    |              |                                       |
+| ( )                                |              |                                       |
++------------------------------------+--------------+---------------------------------------+------------------------------------------------------+
+| capturabilidad del crucero         | 1            |                                       | La capturabilidad del crucero de otoño se            |
+|                                    |              |                                       | asume con valor de partida de 0.65 y                 |
++------------------------------------+--------------+---------------------------------------+------------------------------------------------------+
+| Longitud modal del                 | 1            |                                       | Se asume un valor de partida de 7 cm para la         |
+| reclutamiento (Lr)                 |              |                                       | longitud media del reclutamiento                     |
++------------------------------------+--------------+---------------------------------------+------------------------------------------------------+
+| Desviación de la Longitud          | 1            |                                       | Se asume un valor de partida de 1.5 cm para          |
+| modal del reclutamiento (Sr)       |              |                                       | la desviación de la longitud media del reclutamiento |
++------------------------------------+--------------+---------------------------------------+------------------------------------------------------+
+| Coeficiente de variación           | 1            |                                       | Se asume un valor de partida de 0.15 para la         |
+| del crecimiento individual (*βp*)  |              |                                       | variabilidad en el crecimiento.                      |
++------------------------------------+--------------+---------------------------------------+------------------------------------------------------+
 
 \normalsize
-
 
 #### b) Ponderadores de la información:
 
 ##### i) Número de muestra efectivo (nm) para la estructura de longitudes de la flota y crucero:
 
-Un factor relevante a emplear en la evaluación de stock es el ponderador asociado con las composiciones de tallas de las capturas y los cruceros. Estos ponderadores son asociados con el tamaño de muestra efectivo dado que la función de probabilidad empleada es multinomial. 
+Un factor relevante a emplear en la evaluación de stock es el ponderador asociado con las composiciones de tallas de las capturas y los cruceros. Estos ponderadores son asociados con el tamaño de muestra efectivo dado que la función de probabilidad empleada es multinomial.
 
-El procedimiento empleado para estimar un tamaño de muestra, se llevó a cabo considerando las recomendaciones emanadas el workshop sobre el tratamiento de las fuentes de información en evaluación de stock, realizados por Center for the Advancement of Population Assessment Methodology (CAPAM, 2015: https://www.nwfsc.noaa.gov/news/features/data_source_workshop).
+El procedimiento empleado para estimar un tamaño de muestra, se llevó a cabo considerando las recomendaciones emanadas el workshop sobre el tratamiento de las fuentes de información en evaluación de stock, realizados por Center for the Advancement of Population Assessment Methodology (CAPAM, 2015: <https://www.nwfsc.noaa.gov/news/features/data_source_workshop>).
 
 Se utilizó en el modelo base, la metodología T.A 1.8, indicada por Francis (2011) y el cual comenzó con el valor empleado por defecto en el anterior reporte, n=25 para la flota y n=15 para el crucero.
 
@@ -496,19 +700,19 @@ No obstante para los escenarios alternativos presentados, se utilizó también p
 
 $Ecuación 8$
 
-Donde $p_{l,t}$ es la proporción de talla ($l$) de la captura en el año $t$. El proceso se inicia con un valor arbitrario de tamaños de muestra para luego de repetidos ajustes del modelo, llegar a valores estables que son los empleados en esta evaluación de stock. A menudo es deseable verificar estas estimaciones cuando en el modelo se van integrando nuevas composiciones de tallas o como estos valores pueden variar dependiendo de cambios en los supuestos del modelo. 
+Donde $p_{l,t}$ es la proporción de talla ($l$) de la captura en el año $t$. El proceso se inicia con un valor arbitrario de tamaños de muestra para luego de repetidos ajustes del modelo, llegar a valores estables que son los empleados en esta evaluación de stock. A menudo es deseable verificar estas estimaciones cuando en el modelo se van integrando nuevas composiciones de tallas o como estos valores pueden variar dependiendo de cambios en los supuestos del modelo.
 
 ##### ii) Coeficientes de variación (CV):
 
-Los coeficientes de variación empleados en los distintos índices de abundancia reflejan el nivel de desviación que el investigador supone tienen los datos respecto del valor central observado como parte del error de observación. El coeficiente de variación tiene relevancia en las estimaciones pues es inversamente proporcional al peso que tiene una determinada fuente de datos en la verosimilitud total. 
+Los coeficientes de variación empleados en los distintos índices de abundancia reflejan el nivel de desviación que el investigador supone tienen los datos respecto del valor central observado como parte del error de observación. El coeficiente de variación tiene relevancia en las estimaciones pues es inversamente proporcional al peso que tiene una determinada fuente de datos en la verosimilitud total.
 
 Por ejemplo, como medida de referencia, para dos series de índices con igual número de observaciones, un cv=0,1 (ie. un IC al 95% de $\pm$ 20% la media) tiene un peso en la verosimilitud total de 4 veces más respecto del índice que asume un cv=0,2. En este razonamiento a menudo se supone que el modelo representa la naturaleza de manera perfecta, lo cual ya es cuestionable y por ende el establecimiento de ponderadores es un punto de debate. Este tema fue discutido por Francis (2011) sin que se disponga aún de reglas claras para su determinación, sino más bien criterios a tomar en cuenta.
 
-Comúnmente se asignan menores niveles de incertidumbre a la información de los desembarques y mayores a la CPUE y cruceros, esto por el hecho que los desembarques son mediciones “observables” directas y no así la CPUE y biomasa del crucero. Los últimos índices están sujetos a variados criterios y consideraciones en sus estimaciones, llevando a suponer entonces que ellos tienen mayor incertidumbre.
+Comúnmente se asignan menores niveles de incertidumbre a la información de los desembarques y mayores a la CPUE y cruceros, esto por el hecho que los desembarques son mediciones "observables" directas y no así la CPUE y biomasa del crucero. Los últimos índices están sujetos a variados criterios y consideraciones en sus estimaciones, llevando a suponer entonces que ellos tienen mayor incertidumbre.
 
-Francis (2011) propone la idea de aproximarse de manera gradual a una medida del error, comenzando con un suavizador de los datos, es decir, un análisis exploratorio que considere aquel coeficiente de variación teórico que resulta de aplicar el “mejor” modelo de tendencia central a los datos aislados. Este primer procedimiento no depende del modelo de evaluación de stock sino de la variabilidad de los datos
+Francis (2011) propone la idea de aproximarse de manera gradual a una medida del error, comenzando con un suavizador de los datos, es decir, un análisis exploratorio que considere aquel coeficiente de variación teórico que resulta de aplicar el "mejor" modelo de tendencia central a los datos aislados. Este primer procedimiento no depende del modelo de evaluación de stock sino de la variabilidad de los datos
 
-De esta manera, el enfoque de modelación contempló, para la ponderación de la información, un escenario base que entrega mayor valor estadístico a la información de desembarques (cv= 10%). El nivel de credibilidad (robustez estadística) de los índices usado para para ajustar el modelo, puede variar interanualmente. El análisis de los índices, sugiere que al principio (2006-2012), la CPUE es más confiable que la información aportada por el crucero de evaluación directa (**Anexo I**). Luego, a partir del año 2013, debido a cambios metodológicos y calidad de la información, la confiabilidad cada índice se invierte. Se consideró entonces CV en bloques para la CPUE y crucero (2006-2012, 2013-2017). 
+De esta manera, el enfoque de modelación contempló, para la ponderación de la información, un escenario base que entrega mayor valor estadístico a la información de desembarques (cv= 10%). El nivel de credibilidad (robustez estadística) de los índices usado para para ajustar el modelo, puede variar interanualmente. El análisis de los índices, sugiere que al principio (2006-2012), la CPUE es más confiable que la información aportada por el crucero de evaluación directa (**Anexo I**). Luego, a partir del año 2013, debido a cambios metodológicos y calidad de la información, la confiabilidad cada índice se invierte. Se consideró entonces CV en bloques para la CPUE y crucero (2006-2012, 2013-2017).
 
 #### c) Capturabilidad de los cruceros (q):
 
@@ -522,38 +726,34 @@ La biomasa estimada por el crucero es proporcional a la Biomasa total en el peri
 
 Se considera un patrón de explotación de la flota y crucero de tipo asintótico y variable entre años, es decir se utilizan bloques. En el caso de la flota se utilizan tres bloques (2002-2009, 2010-2012 y 2013-2017) y para los cruceros, dos (2006-2012, 2013-2017). Esta configuración se realizó con el objetivo de mejorar los ajustes a las estructuras de longitudes sin resultados satisfactorios. Además no se justifican por cambios en la dinámica del recurso o de la flota y serán revisados en la siguiente evaluación de stock
 
-La configuración del actual escenario, se presenta en la **Tabla 7**. Se muestran los valores de los índices (captura, CPUE y crucero) junto a sus respectivos coeficientes de variación (cv). En el caso de los desembarques, se utilizó un cv más alto (0.2) al principio de la serie (2002-2005), debido a que los valores provienen de supuesto sobre la proporción de especie.  Se presentan también los tamaños de muestra para la multinomial de la flota (nm_flota) y cruceros (nm_cru) y los respectivos bloques de selectividad (Sel) para modelar la estructura de longitudes. Finalmente se muestra el valor del periodo del año en que se realizó el crucero de evaluación directa ($\Delta tC$).
+La configuración del actual escenario, se presenta en la **Tabla 7**. Se muestran los valores de los índices (captura, CPUE y crucero) junto a sus respectivos coeficientes de variación (cv). En el caso de los desembarques, se utilizó un cv más alto (0.2) al principio de la serie (2002-2005), debido a que los valores provienen de supuesto sobre la proporción de especie. Se presentan también los tamaños de muestra para la multinomial de la flota (nm\_flota) y cruceros (nm\_cru) y los respectivos bloques de selectividad (Sel) para modelar la estructura de longitudes. Finalmente se muestra el valor del periodo del año en que se realizó el crucero de evaluación directa ($\Delta tC$).
 
-El modelo de evaluación de stock actualmente en uso consiste en estimar principalmente: 
-  - 	Coeficiente de capturabilidad para la biomasa acústica (q crucero) y coeficiente de capturabilidad de la CPUE (q CPUE).
-  -   Parámetro de posición (L50%) y dispersión (delta = $\Delta$) que describen la selectividad de la flota y crucero. 
-  - 	Longitud modal del reclutamiento (Lr) y su desviación (Sr), el reclutamiento medio (Rmed) y los desvíos anuales (desv_Rt). 
-  - 	Los desvíos de No y la mortalidad por pesca (F) para cada año. 
+El modelo de evaluación de stock actualmente en uso consiste en estimar principalmente: - Coeficiente de capturabilidad para la biomasa acústica (q crucero) y coeficiente de capturabilidad de la CPUE (q CPUE). - Parámetro de posición (L50%) y dispersión (delta = $\Delta$) que describen la selectividad de la flota y crucero. - Longitud modal del reclutamiento (Lr) y su desviación (Sr), el reclutamiento medio (Rmed) y los desvíos anuales (desv\_Rt). - Los desvíos de No y la mortalidad por pesca (F) para cada año.
 
-
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 7.}
 \end{center}
-\begin{center} 
-\vspace{-0.2cm} Captura, CPUE y biomasa del crucero junto a sus respectivos coeficientes de variación (cv). Tamaños de muestra para la multinomial de la flota (nm_flota) y cruceros (nm_cru) y los respectivos bloques de selectividad (Sel). $\Delta tC$ representa el valor del periodo del año en que se realizó el crucero de evaluación directa.
+```
+\\begin{center} \vspace{-0.2cm} Captura, CPUE y biomasa del crucero junto a sus respectivos coeficientes de variación (cv). Tamaños de muestra para la multinomial de la flota (nm\_flota) y cruceros (nm\_cru) y los respectivos bloques de selectividad (Sel). $\Delta tC$ representa el valor del periodo del año en que se realizó el crucero de evaluación directa.
 
-\end{center}
-
+\\end{center}
 
 ```{r echo=FALSE}
 kable(data.1$Ind)
 
 ```
 
+```{=tex}
 \normalsize
-\pagebreak 
-
+\pagebreak
+```
 ### 3.1.4. Ajuste consistencia y error del modelo base
 
 #### a) Ajuste del modelo a los datos
 
-Corresponde a la presentación gráfica del ajuste del modelo a los datos observados y bondad de ajuste mediante diagrama QQ que permitirá evaluar si los valores estimados se apartan significativamente del supuesto inicial, esto es, que las observaciones con una muestra aleatoria de una distribución log-normal con media y varianza conocida. Si los datos se aproximan significativamente a la relación lineal implica entonces que el supuesto es adecuado para los datos analizados. 
+Corresponde a la presentación gráfica del ajuste del modelo a los datos observados y bondad de ajuste mediante diagrama QQ que permitirá evaluar si los valores estimados se apartan significativamente del supuesto inicial, esto es, que las observaciones con una muestra aleatoria de una distribución log-normal con media y varianza conocida. Si los datos se aproximan significativamente a la relación lineal implica entonces que el supuesto es adecuado para los datos analizados.
 
 #### b) Análisis de residuos
 
@@ -561,81 +761,74 @@ Los residuales frente a los valores predichos son presentados para revisar si la
 
 #### c) Análisis retrospectivo empírico
 
-Se incluirá la comparación de resultados con versiones anteriores u otros modelos para evaluar la consistencia de la evaluación presente (análisis retrospectivo empírico). Sobre la base de estos análisis, se identificarán las oportunidades de mejoras en la implementación del procedimiento de evaluación, los vacíos de conocimiento y de información, entre otros. 
-
+Se incluirá la comparación de resultados con versiones anteriores u otros modelos para evaluar la consistencia de la evaluación presente (análisis retrospectivo empírico). Sobre la base de estos análisis, se identificarán las oportunidades de mejoras en la implementación del procedimiento de evaluación, los vacíos de conocimiento y de información, entre otros.
 
 #### d) Análisis retrospectivo tradicional
 
-Este análisis es un diagnóstico que implica correr el modelo eliminando, de manera sucesiva, años de información. Esto, para estimar el sesgo del modelo (Cadrin y Vaughn 1997; Cadigan y Farrell 2005). Este análisis permitirá evaluar la robustez de cada escenario frente a nuevas piezas de información lo que también permitirá validar el escenario “caso base”. Este análisis consiste en una validación cruzada de naturaleza sistemática en la que es removido secuencialmente el último año de información y se evalúa su impacto en las tendencias poblacionales. De esta forma podemos determinar si hubo un patrón consistente de sobreestimación o subestimación en años sucesivos de las principales variables de estado utilizados en la determinación del estatus de sardina austral.
+Este análisis es un diagnóstico que implica correr el modelo eliminando, de manera sucesiva, años de información. Esto, para estimar el sesgo del modelo (Cadrin y Vaughn 1997; Cadigan y Farrell 2005). Este análisis permitirá evaluar la robustez de cada escenario frente a nuevas piezas de información lo que también permitirá validar el escenario "caso base". Este análisis consiste en una validación cruzada de naturaleza sistemática en la que es removido secuencialmente el último año de información y se evalúa su impacto en las tendencias poblacionales. De esta forma podemos determinar si hubo un patrón consistente de sobreestimación o subestimación en años sucesivos de las principales variables de estado utilizados en la determinación del estatus de sardina austral.
 
 *Estadístico Rho*: El estadístico rho de Mohn (1999), se ha utilizado comúnmente para medir el patrón retrospectivo. Corresponde a la suma de la diferencia relativa entre los valores de la serie de tiempo reducida, estimada por el modelo y los mismos valores estimados de la serie de tiempo completa.
 
-
 $Ecuación 9$
 
-Donde $X$ corresponde a alguna variable de la evaluación de stock, tales como BD o F, $y$ corresponde a los años, $npeels$ es el número de años que son disminuidos de manera sucesiva, $Y$ es el último año de la serie de tiempo completa, $tip$ es la estimación terminal de la serie de tiempo reducida, y $ref$ es la serie de tiempo completa. 
+Donde $X$ corresponde a alguna variable de la evaluación de stock, tales como BD o F, $y$ corresponde a los años, $npeels$ es el número de años que son disminuidos de manera sucesiva, $Y$ es el último año de la serie de tiempo completa, $tip$ es la estimación terminal de la serie de tiempo reducida, y $ref$ es la serie de tiempo completa.
 
 Este cálculo será cero cuando la serie de tiempo reducida se encuentre exactamente con la serie de tiempo completa, o cuando las diferencias entre la serie disminuida y la serie completa están en equilibrio tanto positivo como negativo. El rho de Mohn será grande, ya sea positivo o negativo, cuando hay un patrón consistente de cambio en la serie de tiempo reducida respecto a la serie completa.
-
 
 #### e) Proceso de ajuste del modelo actualizado
 
 Cada proceso de revisión de CBA involucra la actualización y/o supuestos de datos para evaluar el impacto en las variables de estado asociado a la incorporación incremental de piezas de información.
 
- \pagebreak
+\pagebreak
 
 ## 3.2. Objetivo específico 2:
+
 \vspace{-0.2cm}
-*"Establecer el estatus actualizado de estos recursos, sobre la base de sus principales indicadores estandarizados de estado y flujo, incorporando, cuantificando y propagando la incertidumbre subyacente a la pesquería."*
-\vspace{0.5cm}
+
+*"Establecer el estatus actualizado de estos recursos, sobre la base de sus principales indicadores estandarizados de estado y flujo, incorporando, cuantificando y propagando la incertidumbre subyacente a la pesquería."* \vspace{0.5cm}
 
 ### 3.2.1. Estatus
 
 #### a) Variables Poblacionales
 
-Se analiza la variabilidad en las tendencias poblacionales de la Biomasa total (BT), Biomasa Desovante (BD), Reclutamientos (R) y Mortalidad por pesca (F) del stock durante el periodo de tiempo considerado en la evaluación. 
+Se analiza la variabilidad en las tendencias poblacionales de la Biomasa total (BT), Biomasa Desovante (BD), Reclutamientos (R) y Mortalidad por pesca (F) del stock durante el periodo de tiempo considerado en la evaluación.
 
 #### b) Indicadores del estado del stock
 
 El estado del recurso se establece en base a la posición relativa de la biomasa desovante y mortalidad por pesca relacionada a la explotación pesquera v/s Puntos Biológicos de Referencia (PBR) basados en el Rendimiento Máximo Sostenido (RMS). En el contexto de la Ley General de Pesca y Acuicultura (LGPA) se establece que las pesquerías deberán alcanzar o mantenerse en torno del RMS considerando las características biológicas de los recursos explotados. El RMS se produce cuando el stock desovante se reduce notablemente antes que el reclutamiento se vea impactado, en promedio, para lo cual exige, se estimen los siguientes PBRs:
 
-  - Biomasa desovante en el Rendimiento Máximo Sostenible (BD~RMS~), bajo la cual el recurso califica en sobre-explotación.
-  - Mortalidad por Pesca en el Rendimiento Máximo Sostenible (F~RMS~), sobre la cual el recurso califica en sobre-explotación.
-  - Biomasa desovante límite (BD~LIM~) bajo la cual una pesquería califica de agotada o colapsada.
-  - Mortalidad por Pesca límite (F~LIM~) a partir de la cual el recurso califica en sobrepesca.
+-   Biomasa desovante en el Rendimiento Máximo Sostenible (BD~RMS~), bajo la cual el recurso califica en sobre-explotación.
+-   Mortalidad por Pesca en el Rendimiento Máximo Sostenible (F~RMS~), sobre la cual el recurso califica en sobre-explotación.
+-   Biomasa desovante límite (BD~LIM~) bajo la cual una pesquería califica de agotada o colapsada.
+-   Mortalidad por Pesca límite (F~LIM~) a partir de la cual el recurso califica en sobrepesca.
 
-Este estudio se basa en el Marco Biológico de Referencia establecido por el Comité Científico Técnico- Pesquerías de Pequeños Pelágicos (CCT-PP) en base a los avances realizados durante el 2013 y 2014 en la determinación de Puntos Biológicos de Referencia (PBR) y del Rendimiento Máximo Sostenido (RMS) del proyecto “Revisión y estimación de los PBR (Rendimiento Máximo Sostenido) para las principales pesquerías nacionales” (Payá *et al*., 2014). Al respecto, el reporte propone usar como objetivo, el nivel de mortalidad por pesca que reduce hasta un 55% (F55) la biomasa desovante virginal (55%BD0). Tal nivel de reducción corresponde a un 60% en la Biomasa desovante por recluta (60%BDPR0). Este PBR coincide con el valor propuesto como objetivo en este recurso hasta el reporte previo.
+Este estudio se basa en el Marco Biológico de Referencia establecido por el Comité Científico Técnico- Pesquerías de Pequeños Pelágicos (CCT-PP) en base a los avances realizados durante el 2013 y 2014 en la determinación de Puntos Biológicos de Referencia (PBR) y del Rendimiento Máximo Sostenido (RMS) del proyecto "Revisión y estimación de los PBR (Rendimiento Máximo Sostenido) para las principales pesquerías nacionales" (Payá *et al*., 2014). Al respecto, el reporte propone usar como objetivo, el nivel de mortalidad por pesca que reduce hasta un 55% (F55) la biomasa desovante virginal (55%BD0). Tal nivel de reducción corresponde a un 60% en la Biomasa desovante por recluta (60%BDPR0). Este PBR coincide con el valor propuesto como objetivo en este recurso hasta el reporte previo.
 
 Se enfatiza en el hecho que la BRMS es el punto de referencia de biomasa desovante, que en general, será una aproximación más que provenir de un cálculo formal. Las elecciones específicas para los stocks pueden depender del nivel de incertidumbre, del valor asignado en los servicios de los ecosistemas y del nivel de riesgo que los administradores y la sociedad deseen asumir (Payá *et al*.,2014).
 
 #### c) Puntos Biológicos de Referencia
 
-##### i) Estimación de F_{RMS}
+##### i) Estimación de F\_{RMS}
 
 Considerando los parámetros de crecimiento y mortalidad natural reportados para la especie, los Puntos Biológicos de Referencia (PBR) son estimados a partir de un modelo de Biomasa Desovante por Recluta (BDPR). El modelo proyecta en el tiempo la distribución de tallas del reclutamiento sujeto a valores constantes de mortalidad total (Z) y considerando el crecimiento contenido en la matriz de transición (Sullivan *et al*.,1990). Este análisis se realiza usando los modelos basados en Thompson y Bell (1984) y supone que el desove es a mitad de año:
 
- $Ecuación 10$
- 
+$Ecuación 10$
+
 Donde:
 
-$P_j$ 	= 	Proporción de individuos maduros a la longitud $l$, (6/12 asume que el desove ocurre a mitad de año).
-$F_l$ 	= 	Mortalidad por pesca sobre los individuos de longitud $l$.
-$W_l$ 	= 	Peso medio de los individuos de longitud $l$, estimada desde la relación longitud-peso: $W = aL^b$.
-$M$ 	= 	Mortalidad Natural.
-$N_l$ 	= 	Proporción de sobrevivencia de individuos, a la longitud $l$ en cualquier instante de tiempo $t$ viene estimada por la ecuación:
+$P_j$ = Proporción de individuos maduros a la longitud $l$, (6/12 asume que el desove ocurre a mitad de año). $F_l$ = Mortalidad por pesca sobre los individuos de longitud $l$. $W_l$ = Peso medio de los individuos de longitud $l$, estimada desde la relación longitud-peso: $W = aL^b$. $M$ = Mortalidad Natural. $N_l$ = Proporción de sobrevivencia de individuos, a la longitud $l$ en cualquier instante de tiempo $t$ viene estimada por la ecuación:
 
-  $Ecuación 11$
-  $Ecuación 12$
+$Ecuación 11$ $Ecuación 12$
 
-Donde, $N_{l,t-1}$ corresponde al número de peces de talla $l$ en el instante de tiempo $t$, $Z_l$ es mortalidad total para peces de talla $l$   es la matriz de transición de crecimiento entre la talla $l$ y $l´$ descrita previamente en el modelo de los procesos y  es la distribución de los reclutas a la talla supuesta normal con parámetros estimados en la evaluación de stock.
+Donde, $N_{l,t-1}$ corresponde al número de peces de talla $l$ en el instante de tiempo $t$, $Z_l$ es mortalidad total para peces de talla $l$ es la matriz de transición de crecimiento entre la talla $l$ y $l´$ descrita previamente en el modelo de los procesos y es la distribución de los reclutas a la talla supuesta normal con parámetros estimados en la evaluación de stock.
 
 Los PBR F80, F60, F50 corresponden a la tasa de mortalidad por pesca a la cual la biomasa del stock desovante por recluta, se reducen hasta un 80%, 60% y 50% respectivamente (Caddy y Mahon, 1995). Se estiman resolviendo las ecuaciones:
 
-##### ii) Estimación de BD_0, BD_{RMS} y BD_{LIM}
+##### ii) Estimación de BD\_0, BD\_{RMS} y BD\_{LIM}
 
-En el informe sobre: “Revisión de los puntos biológicos de referencia (Rendimiento Máximo Sostenido) en las pesquerías Nacionales” (Paya *et al*., 2014), se propone usar como objetivo, el nivel de mortalidad por pesca que reduce hasta un 55% la biomasa desovante virginal (55%BD0). Tal nivel de reducción corresponde a un 60% en la Biomasa desovante por recluta (60%BDPR). Por tanto, se utiliza el equilibrio F60% del análisis de biomasa desovante por recluta (BDPR) como objetivo que no necesita estimación de h para actuar como un proxy de BD~RMS~. Además, se demostró que, al menos para algunas condiciones, la pesca en F60% produce que un stock alcance B55% (actuando como una aproximación genérica o proxy para BD~RMS~) bajo un amplio rango de valores de steepness (h) de una relación stock-recluta de Beverton-Holt. El CCT-PP recoge dichas recomendaciones y establece los PBRs presentados en la **Tabla 8** (Acta Sesión N°5/2014).
+En el informe sobre: "Revisión de los puntos biológicos de referencia (Rendimiento Máximo Sostenido) en las pesquerías Nacionales" (Paya *et al*., 2014), se propone usar como objetivo, el nivel de mortalidad por pesca que reduce hasta un 55% la biomasa desovante virginal (55%BD0). Tal nivel de reducción corresponde a un 60% en la Biomasa desovante por recluta (60%BDPR). Por tanto, se utiliza el equilibrio F60% del análisis de biomasa desovante por recluta (BDPR) como objetivo que no necesita estimación de h para actuar como un proxy de BD~RMS~. Además, se demostró que, al menos para algunas condiciones, la pesca en F60% produce que un stock alcance B55% (actuando como una aproximación genérica o proxy para BD~RMS~) bajo un amplio rango de valores de steepness (h) de una relación stock-recluta de Beverton-Holt. El CCT-PP recoge dichas recomendaciones y establece los PBRs presentados en la **Tabla 8** (Acta Sesión N°5/2014).
 
-
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 8.}
@@ -643,14 +836,12 @@ En el informe sobre: “Revisión de los puntos biológicos de referencia (Rendi
 \begin{center} 
 \vspace{-0.2cm} Puntos de Referencia objetivo y límites para sardina austral que definen su estado y criterio de explotación
 \end{center}
-
-
-
+```
 \normalsize
 
 #### d) Diagrama de fases de explotación
 
-El estado del recurso se estableció en base a la posición relativa de la mortalidad por pesca y biomasa desovante versus los puntos biológicos de referencia basado en el rendimiento máximo sostenible (RMS), tales como, F~RMS~ y BD~RMS~. De este modo se obtienen los indicadores del estatus (F/F~RMS~ y BD/BD~RMS~) que permiten construir un diagrama de fase, donde los puntos de referencia biológicos se muestran en las líneas verticales y horizontales en 1. Las líneas verticales indican la biomasa desovante en el rendimiento máximo sostenible (BD~RMS~), bajo el cual el recurso califica en sobre-explotación y biomasa desovante límite (BD~LIM~) bajo el cual una pesquería califica de agotada y/o colapsada y la línea horizontal el punto de referencia correspondiente a la mortalidad por pesca en el rendimiento máximo sostenible (F~RMS~), sobre la cual el recurso califica en sobre-explotación. La **Figura 6** muestra el diagrama de fase definido por el CCT-PP para las pesquerías de pelágicos pequeños. El estado de la pesquería en Plena Explotación se define en la Ley de Pesca como "un nivel en el que el punto biológico ha alcanzado o está a su máximo rendimiento sostenido". Debido a la variabilidad natural en las condiciones ecológicas y ambientales, F~RMS~ no es estática, pero fluctuará alrededor de BD~RMS~. Adicionalmente, el CCT_PP incorporó el concepto de sobrepesca, precisando algunas definiciones y se pronunció respecto a la zona de plena explotación, según consta en acta número 5 (11 al 14 de noviembre de 2014). Los aspectos más relevantes son los que a continuación se describen:
+El estado del recurso se estableció en base a la posición relativa de la mortalidad por pesca y biomasa desovante versus los puntos biológicos de referencia basado en el rendimiento máximo sostenible (RMS), tales como, F~RMS~ y BD~RMS~. De este modo se obtienen los indicadores del estatus (F/F~RMS~ y BD/BD~RMS~) que permiten construir un diagrama de fase, donde los puntos de referencia biológicos se muestran en las líneas verticales y horizontales en 1. Las líneas verticales indican la biomasa desovante en el rendimiento máximo sostenible (BD~RMS~), bajo el cual el recurso califica en sobre-explotación y biomasa desovante límite (BD~LIM~) bajo el cual una pesquería califica de agotada y/o colapsada y la línea horizontal el punto de referencia correspondiente a la mortalidad por pesca en el rendimiento máximo sostenible (F~RMS~), sobre la cual el recurso califica en sobre-explotación. La **Figura 6** muestra el diagrama de fase definido por el CCT-PP para las pesquerías de pelágicos pequeños. El estado de la pesquería en Plena Explotación se define en la Ley de Pesca como "un nivel en el que el punto biológico ha alcanzado o está a su máximo rendimiento sostenido". Debido a la variabilidad natural en las condiciones ecológicas y ambientales, F~RMS~ no es estática, pero fluctuará alrededor de BD~RMS~. Adicionalmente, el CCT\_PP incorporó el concepto de sobrepesca, precisando algunas definiciones y se pronunció respecto a la zona de plena explotación, según consta en acta número 5 (11 al 14 de noviembre de 2014). Los aspectos más relevantes son los que a continuación se describen:
 
 *Sobrepesca*: Este Comité consideró necesario diferenciar al interior de la zona de sobreexplotación definida por la LGPA, el área de sobrepesca, con el objeto de aplicar las medidas de Administración más acordes con dicha condición. En tal sentido, la sobrepesca ocurriría cuando la mortalidad por pesca F (variable de flujo y de control) exceda un valor considerado umbral o límite que en este caso, corresponde al valor superior, en mortalidad por pesca (valor relativo al objetivo), de la zona de plena explotación.
 
@@ -658,44 +849,38 @@ El estado del recurso se estableció en base a la posición relativa de la morta
 
 *Rango de Plena Explotación*: El CCT-PP recomendó por consenso los siguientes rangos que definen la condición de Plena Explotación de los recursos pelágicos, considerando los siguientes límites en biomasa y el correspondiente par ordenado en mortalidad por pesca:
 
-- _Límite bajo el objetivo de manejo_ = 10% Bajo BD~RMS~: Este criterio tiene como propósito el establecimiento de una banda estrecha en torno al RMS, que genere un área no deseada pequeña que en lo posible sea menor o igual al área de incertidumbre total del sistema, donde la biomasa está bajo la biomasa objetivo y a su vez, la mortalidad por pesca es mayor a la mortalidad por pesca objetivo. En consecuencia, el CCT-PP considera las numerosas recomendaciones en ciencia pesquera, respecto al riesgo de llevar a los stocks a una condición de sobreexplotación cuando se utiliza el RMS como objetivo de manejo, utiliza el concepto conforme al marco legal vigente y simultáneamente lo deja operando en la práctica, como un punto biológico de referencia límite.
+-   *Límite bajo el objetivo de manejo* = 10% Bajo BD~RMS~: Este criterio tiene como propósito el establecimiento de una banda estrecha en torno al RMS, que genere un área no deseada pequeña que en lo posible sea menor o igual al área de incertidumbre total del sistema, donde la biomasa está bajo la biomasa objetivo y a su vez, la mortalidad por pesca es mayor a la mortalidad por pesca objetivo. En consecuencia, el CCT-PP considera las numerosas recomendaciones en ciencia pesquera, respecto al riesgo de llevar a los stocks a una condición de sobreexplotación cuando se utiliza el RMS como objetivo de manejo, utiliza el concepto conforme al marco legal vigente y simultáneamente lo deja operando en la práctica, como un punto biológico de referencia límite.
 
--	_Límite sobre el objetivo de manejo_ =75% BD~0~ (o 25% sobre BD~RMS~): Para estos efectos el Comité rescató elementos del enfoque ecosistémico en especies de forraje, planteado recientemente por Pickitch *et al*., (2012).
+-   *Límite sobre el objetivo de manejo* =75% BD~0~ (o 25% sobre BD~RMS~): Para estos efectos el Comité rescató elementos del enfoque ecosistémico en especies de forraje, planteado recientemente por Pickitch *et al*., (2012).
 
-
- \begin{center}
+```{=tex}
+\begin{center}
 \includegraphics[width=0.6\textwidth]{FigurasInforme_Junio/Fig6.png}
 \end{center}
-
-\small \textbf{Figura 6}.	Diagrama de fase definido por el CCT-PP para las pesquerías de pelágicos pequeños.
-\normalsize
- \pagebreak   
- 
+```
+\small \\textbf{Figura 6}. Diagrama de fase definido por el CCT-PP para las pesquerías de pelágicos pequeños. \normalsize \pagebreak
 
 ## 3.3. Objetivo específico 3:
-\vspace{-0.2cm}
-*"Determinar niveles de Captura Biológicamente Aceptable (CBA) que lleven y/o mantenga la pesquería en torno al Rendimiento Máximo Sostenible (RMS), a partir de un análisis de riesgo en condiciones de incertidumbre de no alcanzar los objetivos de conservación y sostenibilidad conforme lo establece la LGPA y contenidos en el Plan de Manejo y/o en el Programa de Recuperación respectivo, según corresponda."*
-\vspace{0.5cm}
 
+\vspace{-0.2cm}
+
+*"Determinar niveles de Captura Biológicamente Aceptable (CBA) que lleven y/o mantenga la pesquería en torno al Rendimiento Máximo Sostenible (RMS), a partir de un análisis de riesgo en condiciones de incertidumbre de no alcanzar los objetivos de conservación y sostenibilidad conforme lo establece la LGPA y contenidos en el Plan de Manejo y/o en el Programa de Recuperación respectivo, según corresponda."* \vspace{0.5cm}
 
 ### 3.3.1. Captura Biológicamente Aceptable (CBA) y proyección del stock
 
-
 La estimación de la CBA, se realiza a través de un análisis de estrategias de explotación, que considera un régimen de mortalidad por pesca constante, es decir, la remoción por pesca es proporcional a los cambios de abundancia del stock. El criterio de explotación se basa en el punto biológico de referencia (PBR) F60, propuesto, hasta el presente análisis como un proxy del nivel de mortalidad por pesca que genera el RMS. Otros valores de F también son analizados para realizar estimaciones de captura y proyecciones del stock. La proyección del stock se realiza para 5 años futuros y considera la incertidumbre de la evaluación de stock y como año de inicio, el 2019. Diferentes escenarios de reclutamientos (estados de la naturaleza) son analizados para las proyecciones y estimaciones de capturas.
 
-En el caso de la pesquería de sardina austral, la recomendación de CBA comienza con un reporte entregado en el mes de agosto en que se estima una CBA inicial. Este reporte permite al CCT_PP (reunión de septiembre) establecer el estatus y recomendar el rango de CBA para el año siguiente en base a percentiles de riesgo (10% - 50%) de no alcanzar el objetivo de manejo. 
+En el caso de la pesquería de sardina austral, la recomendación de CBA comienza con un reporte entregado en el mes de agosto en que se estima una CBA inicial. Este reporte permite al CCT\_PP (reunión de septiembre) establecer el estatus y recomendar el rango de CBA para el año siguiente en base a percentiles de riesgo (10% - 50%) de no alcanzar el objetivo de manejo.
 
 Para esta estimación inicial, se considera las consecuencias de los probables estados de la naturaleza (*i.e.* pesimista, neutro y/o optimista). Los probables estados de la naturaleza se generan a partir proyecciones del reclutamiento considerando un valor bajo, promedio y alto. A partir de estos escenarios, se proyecta la población para la estimación de la Captura en número y peso del año siguiente, con una estrategia de explotación que consiste en aplicar una tasa de explotación constante, equivalente a la mortalidad por pesca F~RMS~.
 
 En una segunda etapa, se actualiza la evaluación de stock y se revisa la CBA. En abril/mayo de cada año, el crucero de evaluación hidroacústico permite estimar la abundancia y biomasa de reclutas. Esta información junto a datos provenientes de la pesquería (en los primeros meses del año) es utilizada en la revisión de la CBA durante el mes de junio, para el año en curso. De esta manera, el proceso de cálculo de la CBA 2020 para las dos etapas del ciclo de manejo de sardina austral (**Tabla 9**) consiste en los siguientes pasos:
 
+Paso 1: Estimación de la captura al RMS proyectada ($Yp_{RMS}$) en 1 año calendario Escenarios de reclutamiento proyectado (alto, medio, bajo)
 
-Paso 1: Estimación de la captura al RMS proyectada ($Yp_{RMS}$) en 1 año calendario
-	Escenarios de reclutamiento proyectado (alto, medio, bajo)
-	
-Paso 2: Estimación de la captura al RMS ($Y_{RMS}$) del año calendario actual
-	Niveles de riesgo de exceder el objetivo de manejo F~RMS~=F60%BDPR
+Paso 2: Estimación de la captura al RMS ($Y_{RMS}$) del año calendario actual Niveles de riesgo de exceder el objetivo de manejo F~RMS~=F60%BDPR
 
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 9.}
@@ -703,11 +888,12 @@ Paso 2: Estimación de la captura al RMS ($Y_{RMS}$) del año calendario actual
 \begin{center} 
 \vspace{-0.2cm} Métodos de estimación de la CBA 2020 para las dos etapas del ciclo de manejo de sardina austral
 \end{center}
-
-
+```
 \normalsize
+
 La información disponible en cada etapa de estimación de cuota se resume en la **Tabla 10** se indica que la estimación de CBA cuenta con información parcial del año 2019, mientras que en la estimación de CBA final, la información es completa para el año anterior y además se incorpora la información del crucero del año 2020.
 
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 10.}
@@ -715,45 +901,45 @@ La información disponible en cada etapa de estimación de cuota se resume en la
 \begin{center} 
 \vspace{-0.2cm} Información relevante para el cálculo de CBA 2020 en cada una de las etapas de estimación.
 \end{center}
-
-
+```
 \normalsize
 
 Finalmente, se realiza un conjunto de análisis estocásticos de las probables trayectorias de la biomasa como consecuencia de la aplicación de las diferentes estrategias, tácticas y reglas de decisión consideradas en los respectivos Planes de Manejo y/o Programas de Recuperación de las pesquerías, según corresponda, considerando la incertidumbre del estatus (e.g. matriz de correlación de variables de estado) y los posibles estados de la naturaleza a futuro (e.g. niveles probables de reclutamiento futuro). Lo anterior debe permitir analizar los niveles de riesgo de no alcanzar los objetivos de conservación en el mediano o largo plazo, considerando la incertidumbre del estatus y los probables estados de la naturaleza a futuro.
 
-\pagebreak   
-
+\pagebreak
 
 ## 3.4. Objetivo específico 4:
+
 \vspace{-0.2cm}
-*"Informar el avance del Programa de Mejoramiento Continuo de la Calidad en la Asesoría Científica (PMCCAC) realizado durante el presente estudio, respecto al cumplimiento de recomendaciones formuladas en procesos de RPEI y priorizadas por el CCT, cuando corresponda."*
-\vspace{0.5cm}
 
-Para el cumplimiento de este objetivo, se informan los avances alcanzados durante el desarrollo del estudio, conforme al Programa de Mejoramiento Continuo de la Calidad de la Asesoría Científica (PMCCAC), elaborado para esta pesquería. Este PMCCAC se enfoca a las brechas de datos, información y conocimiento, en relación con la situación general de la pesquería acorde con los requerimientos de asesoría solicitados por la administración pesquera. 
+*"Informar el avance del Programa de Mejoramiento Continuo de la Calidad en la Asesoría Científica (PMCCAC) realizado durante el presente estudio, respecto al cumplimiento de recomendaciones formuladas en procesos de RPEI y priorizadas por el CCT, cuando corresponda."* \vspace{0.5cm}
 
-En el contexto del desarrollo metodológico del trabajo, se realiza un listado de comprobación en el que se da cuenta de todas las recomendaciones emanadas de los revisores expertos, con el propósito de verificar el cumplimiento de cada uno de las observaciones, correcciones y recomendaciones señaladas por los revisores. 
+Para el cumplimiento de este objetivo, se informan los avances alcanzados durante el desarrollo del estudio, conforme al Programa de Mejoramiento Continuo de la Calidad de la Asesoría Científica (PMCCAC), elaborado para esta pesquería. Este PMCCAC se enfoca a las brechas de datos, información y conocimiento, en relación con la situación general de la pesquería acorde con los requerimientos de asesoría solicitados por la administración pesquera.
+
+En el contexto del desarrollo metodológico del trabajo, se realiza un listado de comprobación en el que se da cuenta de todas las recomendaciones emanadas de los revisores expertos, con el propósito de verificar el cumplimiento de cada uno de las observaciones, correcciones y recomendaciones señaladas por los revisores.
 
 A continuación, se detalla el contenido presentado la **Sección 4.4** de este informe:
 
-  i.	Esquema de trabajo y plan de actividades 2019-2020 acordado con SUBPESCA.
-  ii.	Mejoras realizadas al modelo de evaluación de stock actual, donde se describen los cambios realizados en el tiempo y que llevaron al modelo base actual.
+i.  Esquema de trabajo y plan de actividades 2019-2020 acordado con SUBPESCA.
+ii. Mejoras realizadas al modelo de evaluación de stock actual, donde se describen los cambios realizados en el tiempo y que llevaron al modelo base actual.
 
-\pagebreak   
+\pagebreak
 
 # 4. RESULTADOS
 
 ## 4.1. Objetivo específico 1:
+
 \vspace{-0.2cm}
-*"Implementar procedimientos de evaluación de stock basados en protocolos científicos para la determinación del estatus de los recursos seleccionados con arreglo al nivel de conocimiento, información e incertidumbre correspondiente, conforme a los estándares actuales en ciencia pesquera."*
-\vspace{0.5cm}
+
+*"Implementar procedimientos de evaluación de stock basados en protocolos científicos para la determinación del estatus de los recursos seleccionados con arreglo al nivel de conocimiento, información e incertidumbre correspondiente, conforme a los estándares actuales en ciencia pesquera."* \vspace{0.5cm}
 
 ### 4.1.1. Datos de entrada al modelo de evaluación de stock
-
 
 El período de análisis de la evaluación de stock actual, abarca los años 2002 a 2019, con información completa de las piezas de información hasta el año 2018. Los índices que ajustan dicho modelo, corresponden a la información de desembarques, captura por unidad de esfuerzo estandarizada (CPUE) y biomasa del crucero (Bcru) de evaluación directa (**Tabla 11**) desarrollado por IFOP en aguas interiores de la isla de Chiloé. En la presente actualización, se usa la composición de tallas de la flota a mayo 2020 y un supuesto de captura 2020 igual a la CBA recomendad por el CCT-PP, el crucero de abril/mayo, mostró un incremento significativo en la biomasa del recurso en la zona evaluada 2020.
 
 \vspace{0.5cm}
 
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 11.}
@@ -761,7 +947,7 @@ El período de análisis de la evaluación de stock actual, abarca los años 200
 \begin{center} 
 \vspace{-0.2cm} Índices usados en la evaluación de stock de sardina austral.
 \end{center}
-
+```
 ```{r datos_septiembre, eval=FALSE, echo=FALSE, warning=FALSE}
 
 datos1<-data.frame("Años"=data.0$Ind[,1],"Desembarques t"=data.0$Ind[,2],"CPUE"=data.0$Ind[,4],"Bcru"=data.0$Ind[,6])
@@ -776,29 +962,23 @@ kable(datos2)
 
 ```
 
+\small
 
-\small 
-*Se supone como caso base un nivel desembarque esperado para el año 2020 en torno a la recomendación de CBA inicial 2020, esto es 7,88 mil t. 
-**Los rendimientos de pesca (CPUE) son actualizados hasta diciembre de 2019. 
-
+\*Se supone como caso base un nivel desembarque esperado para el año 2020 en torno a la recomendación de CBA inicial 2020, esto es 7,88 mil t. \*\*Los rendimientos de pesca (CPUE) son actualizados hasta diciembre de 2019.
 
 \normalsize
 
-
 #### a) Datos utilizados
 
-
-  -	Desembarques: La serie de desembarques utilizados para la evaluación considera información completa hasta el año 2019 (**Figura 7**).
-  -	CPUE: Se actualiza la serie histórica de captura por unidad de esfuerzo estandarizada al año 2019. El proceso de estandarización se presenta en Anexo I.
-  -	Composición de tallas flota: Se utiliza la composición de talla de la flota hasta diciembre 2019 y a mayo 2020. 
-  -	*** Se incorpora la información del crucero hidroacústico realizado en abril/mayo del año 2020. 
-
+-   Desembarques: La serie de desembarques utilizados para la evaluación considera información completa hasta el año 2019 (**Figura 7**).
+-   CPUE: Se actualiza la serie histórica de captura por unidad de esfuerzo estandarizada al año 2019. El proceso de estandarización se presenta en Anexo I.
+-   Composición de tallas flota: Se utiliza la composición de talla de la flota hasta diciembre 2019 y a mayo 2020.
+-   \*\*\* Se incorpora la información del crucero hidroacústico realizado en abril/mayo del año 2020.
 
 #### b) Datos supuestos
 
+-   Desembarques: Se supone al principio de la serie (2002-2005) que un 70% de los registros indicados como sardina común correspondían a sardina austral. Para el año 2020 se supone un desembarque en torno al valor definido por el CCT-PP, es decir la CBA de 7,88 mil t.
 
-  -	Desembarques: Se supone al principio de la serie (2002-2005) que un 70% de los registros indicados como sardina común correspondían a sardina austral. Para el año 2020 se supone un desembarque en torno al valor definido por el CCT-PP, es decir la CBA de 7,88 mil t.
-  
 #### c) Descripción de datos de entrada
 
 ##### i) Desembarques
@@ -807,8 +987,7 @@ Durante el año 2018 la actividad de la flota disminuyó significativamente en r
 
 Previo al año 2006, como una forma de extender la serie temporal para entregar mayor robustez al modelo de evaluación, se siguió la recomendación realizada en la revisión por pares (Ernst *et al*., 2015) y priorizada en el CCT-PP. Se utilizaron los desembarques oficiales asignados a sardina común, asumiendo que un 70% correspondía a sardina austral. Esto, basado en la proporción de especies reportada en los estudios de IFOP entre los años 2006 y 2012 (Aranís *et al*. 2012)
 
-\pagebreak   
-
+\pagebreak
 
 ```{r datos_desembarques,warning=F, include=T, message=F, echo=FALSE,fig.height=4,fig.width=6,fig.align="center",fig.path="Figuras/",dev=fig}
 year<-seq(2002,2020,1)
@@ -825,9 +1004,7 @@ lines(year,cuota,type="l",lwd=2,col=1)
 legend(2011,60000,c("datos oficiales","supuesto s.comun/s.austral","supuesto de captura 2020","CBA"),lwd=c(10,10,10, 2),col=c("cadetblue4","dimgray","goldenrod3",1),bty="n",cex=0.8)
 ```
 
- 
-\small \textbf{Figura 7}.	Serie de desembarques utilizada en la actualización de la evaluación de stock. Las barras grises al inicio de la serie corresponden a un supuesto de proporción de especies (sardina común/sardina austral). Las barras azules a los desembarques oficiales en el período 2006-2019 y la barra amarilla, el supuesto de captura 2020. La línea corresponde a la CBA establecida anualmente.
-\normalsize
+\small \\textbf{Figura 7}. Serie de desembarques utilizada en la actualización de la evaluación de stock. Las barras grises al inicio de la serie corresponden a un supuesto de proporción de especies (sardina común/sardina austral). Las barras azules a los desembarques oficiales en el período 2006-2019 y la barra amarilla, el supuesto de captura 2020. La línea corresponde a la CBA establecida anualmente. \normalsize
 
 \vspace{0.5cm}
 
@@ -847,19 +1024,15 @@ lines(year,tweedie_inter,type="o",lwd=1,col=1,pch=19)
 legend(2011,55,c("Tweedie interacciones","Tweedie"),lwd=c(1,1),pch=19,col=c(1,4),bty="n")
 ```
 
-\small \textbf{Figura 8}.	CPUE estandarizada por Modelos Lineales Generalizados (tweedie original y con interacciones), en la pesquería de sardina austral en aguas interiores de la isla de Chiloé.
-\normalsize
+\small \\textbf{Figura 8}. CPUE estandarizada por Modelos Lineales Generalizados (tweedie original y con interacciones), en la pesquería de sardina austral en aguas interiores de la isla de Chiloé. \normalsize
 
 \vspace{0.5cm}
 
-
 ##### iii) Cruceros de evaluación acústica
 
-Entre los años 2006 y 2020 se han realizado en la zona del mar interior de Chiloé, 11 cruceros de evaluación directa, destinada a evaluar el reclutamiento de ejemplares a la población. Se estima en este estudio la biomasa y estructura de longitudes de peces pelágicos y en particular de sardina austral. La variabilidad del índice acústico, se muestra en la  **Figura 9**. Sin considerar el año 2006, donde se estiman 196 mil toneladas, la biomasa de sardina austral varía en torno a un nivel promedio de 95 mil toneladas entre los años 2008 y 2017. Sin embargo, los estudios realizados los años 2018 y 2019 mostraron los valores más bajos de toda la serie, estimado 20361 y 44738 toneladas de biomasa total respectivamente, en la zona del mar interior de Chiloé. No obstante, el ultimo crucero de evaluación directa (abril/mayo 2020), evidenció un incremento significativo en la biomasa acústica, alcanzando el segundo valor más alto con 160 mil toneladas. Se espera que este aumento en la biomasa acústica, tenga un efecto significativo en los estimados poblacionales respecto del último reporte basado en el modelo de evaluación indirecta del stock.
-De esta manera, el principal input que actualiza el presente hito de evaluación es incorporado en el este informe para establecer el estatus y la CBA para el año en curso.
+Entre los años 2006 y 2020 se han realizado en la zona del mar interior de Chiloé, 11 cruceros de evaluación directa, destinada a evaluar el reclutamiento de ejemplares a la población. Se estima en este estudio la biomasa y estructura de longitudes de peces pelágicos y en particular de sardina austral. La variabilidad del índice acústico, se muestra en la **Figura 9**. Sin considerar el año 2006, donde se estiman 196 mil toneladas, la biomasa de sardina austral varía en torno a un nivel promedio de 95 mil toneladas entre los años 2008 y 2017. Sin embargo, los estudios realizados los años 2018 y 2019 mostraron los valores más bajos de toda la serie, estimado 20361 y 44738 toneladas de biomasa total respectivamente, en la zona del mar interior de Chiloé. No obstante, el ultimo crucero de evaluación directa (abril/mayo 2020), evidenció un incremento significativo en la biomasa acústica, alcanzando el segundo valor más alto con 160 mil toneladas. Se espera que este aumento en la biomasa acústica, tenga un efecto significativo en los estimados poblacionales respecto del último reporte basado en el modelo de evaluación indirecta del stock. De esta manera, el principal input que actualiza el presente hito de evaluación es incorporado en el este informe para establecer el estatus y la CBA para el año en curso.
 
-\pagebreak   
-
+\pagebreak
 
 ```{r datos_crucero,warning=F, include=T, message=F, echo=FALSE,fig.height=4,fig.width=6,fig.align="center",fig.path="Figuras/",dev=fig}
 year<-seq(2006,2020,1)
@@ -869,18 +1042,15 @@ par(mfcol=c(1,1),mar=c(4,4,1,1)+0.5)
 plot(year,cruceroX,type="p",ylab="Biomasa (miles t.)",xlab="Año",ylim=c(0,250),xaxp=c(2000,2021,21),col="black",bg="gray",pch=21,cex=1.5,main="Biomasa Crucero")
 points(2020,cruceroX[length(year)],bg="red",pch=21,cex=2)
 ```
- 
-\small \textbf{Figura 9}.	Biomasa total de sardina austral en aguas interiores de la Región de Los Lagos estimada en los cruceros de evaluación directa (2006-2020). Se destaca en círculo rojo de mayor tamaño el último valor obtenido en abril del año 2020.
-\normalsize
-\vspace{0.5cm}
 
+\small \\textbf{Figura 9}. Biomasa total de sardina austral en aguas interiores de la Región de Los Lagos estimada en los cruceros de evaluación directa (2006-2020). Se destaca en círculo rojo de mayor tamaño el último valor obtenido en abril del año 2020. \normalsize \vspace{0.5cm}
 
 ##### iv) Estructura de longitudes
 
 Esta fuente de información, en el presente reporte, varió en dos aspectos respecto del estudio previo (septiembre 2019):
 
-1.	Se incorporó la estructura de longitudes total del año 2019 (enero-diciembre). El reporte previo utilizó información parcial 2019 (enero-agosto) (**Figura 10 a**).
-2.	Se incorporó información del año en curso (enero-mayo 2020) 
+1.  Se incorporó la estructura de longitudes total del año 2019 (enero-diciembre). El reporte previo utilizó información parcial 2019 (enero-agosto) (**Figura 10 a**).
+2.  Se incorporó información del año en curso (enero-mayo 2020)
 
 La **Figura 10b** muestra la estructura de longitudes obtenida por el crucero de evaluación directa entre los años 2006 y 2020.
 
@@ -905,7 +1075,8 @@ nyearf  <-length(yearf)
  fig1 + theme(panel.background = element_rect(fill ="gray99")) + theme(panel.grid=element_line(color=NA))
   
 ```
-\small \textbf{Figura 10a}.	Estructura de longitudes (LT, cm) anual de sardina austral obtenida desde la flota que opera en aguas interiores de la Región de Los Lagos.
+
+\small \\textbf{Figura 10a}. Estructura de longitudes (LT, cm) anual de sardina austral obtenida desde la flota que opera en aguas interiores de la Región de Los Lagos.
 
 ```{r datos_Comp_Crucero,warning=F, include=T, message=F, echo=FALSE,fig.height=7,fig.width=7,fig.asp=1,fig.align="center",fig.path="Figuras/",dev=fig}
 age     <-seq(5.5,20,0.5)                                            
@@ -930,7 +1101,7 @@ nyearc  <-length(yearc)
  
 ```
 
-\small \textbf{Figura 10b}.	Estructura de longitudes (LT, cm) de sardina austral obtenida por el crucero de evaluación directa en aguas interiores de la Región de Los Lagos.
+\small \\textbf{Figura 10b}. Estructura de longitudes (LT, cm) de sardina austral obtenida por el crucero de evaluación directa en aguas interiores de la Región de Los Lagos.
 
 \vspace{0.5cm}
 
@@ -940,33 +1111,29 @@ nyearc  <-length(yearc)
 
 ###### Ojiva de madurez
 
+```{=tex}
 \begin{center}
 \includegraphics[width=1\textwidth]{FigurasInforme_Junio/Fig11.png}
 \end{center}
-
-\small \textbf{Figura 11}.	Ojiva de madurez de sardina austral en aguas interiores de la Región de Los Lagos obtenida a través de estados microscópicos (Leal *et al.* 2011).
-\normalsize
-\vspace{0.5cm}
+```
+\small \\textbf{Figura 11}. Ojiva de madurez de sardina austral en aguas interiores de la Región de Los Lagos obtenida a través de estados microscópicos (Leal *et al.* 2011). \normalsize \vspace{0.5cm}
 
 ###### Crecimiento y mortalidad natural
 
+```{=tex}
 \begin{center}
 \includegraphics[width=1\textwidth]{FigurasInforme_Junio/Fig12.png}
 \end{center}
+```
+\small \\textbf{Figura 12}. Función de crecimiento descrita por los parámetros de Von Bertalanffy estimados para sardina austral. \normalsize
 
-\small \textbf{Figura 12}. 	Función de crecimiento descrita por los parámetros de Von Bertalanffy estimados para sardina austral.
-\normalsize
-
-\pagebreak  
-
+\pagebreak
 
 ### 4.1.2. Diagnóstico del modelo de evaluación de stock
 
-#### a) Ajuste del modelo a los datos y análisis de residuos 
+#### a) Ajuste del modelo a los datos y análisis de residuos
 
 Los resultados muestran que el modelo base actual recoge la variabilidad general de las señales poblacionales. Debido a que los valores de los coeficientes de variación empleados son más pequeños, el modelo ajusta de mejor manera la serie de desembarques por sobre el índice de biomasa directo y CPUE. Al respecto, los datos observados de desembarques se asumen menos sesgados y más precisos con un CV de residuos de 0,1. En el ajuste de la CPUE se aprecian sobre y subestimaciones, aunque el modelo recoge la variabilidad media del índice. En el caso de la biomasa acústica, el modelo tiende a subestimar los valores observados, excepto los años con los niveles más bajos (2015, 2018 y 2019) (**Figura 13**).
-
-
 
 ```{r Ajustes_indices,warning=F, include=T, message=F, echo=FALSE,fig.height=6.5,fig.width=5.5,fig.align="center",fig.path="Figuras/",dev=fig}
 
@@ -1033,14 +1200,11 @@ f1/f2/f3 + plot_layout(guides="collect")
 
 ```
 
-\small \textbf{Figura 13}. 	Ajuste de los desembarques, CPUE e índice de biomasa directa de sardina austral en el mar interior de la Región de Los Lagos. Los círculos representan los datos observados. La línea vertical sobre los puntos corresponde al error de las observaciones. 
-\normalsize
+\small \\textbf{Figura 13}. Ajuste de los desembarques, CPUE e índice de biomasa directa de sardina austral en el mar interior de la Región de Los Lagos. Los círculos representan los datos observados. La línea vertical sobre los puntos corresponde al error de las observaciones. \normalsize
 
 \vspace{0.5cm}
 
-
-El análisis de los residuos y gráficos qq-plot (**Figura 14**), muestra que los residuales del modelo no sugieren tendencia, se aprecia además una linealidad general en la escala log en todos los índices. Sin embargo, en el caso de los desembarques, la convergencia entre las observaciones y el ajuste del modelo es mayor. En este caso, cuando el ajuste no es total, los datos observados tienden a situarse por debajo de los valores predichos. La CPUE y biomasa acústica (crucero) muestran mayor dispersión de los datos en relación a las predicciones. 
-
+El análisis de los residuos y gráficos qq-plot (**Figura 14**), muestra que los residuales del modelo no sugieren tendencia, se aprecia además una linealidad general en la escala log en todos los índices. Sin embargo, en el caso de los desembarques, la convergencia entre las observaciones y el ajuste del modelo es mayor. En este caso, cuando el ajuste no es total, los datos observados tienden a situarse por debajo de los valores predichos. La CPUE y biomasa acústica (crucero) muestran mayor dispersión de los datos en relación a las predicciones.
 
 ```{r residuales_indices, warning=F, include=T, message=F, echo=FALSE,fig.height=7,fig.width=9,fig.align="center",fig.path="Figuras/",dev=fig}
 
@@ -1080,17 +1244,15 @@ par(mfcol=c(3,3),mar=c(2,4,1,1)+0.5)
 	abline(h=0,col="darkgray")
 	qqnorm(Res_Cru,ylim=c(-2,2),cex.lab=1.1); qqline(Res_Cru, col = 2)	
 	
-```    
+```
 
-
-\small \textbf{Figura 14}. 	Análisis de residuales y diagrama Q-Q para los ajustes a la información de desembarques, CPUE y cruceros de evaluación directa
-\normalsize
+\small \\textbf{Figura 14}. Análisis de residuales y diagrama Q-Q para los ajustes a la información de desembarques, CPUE y cruceros de evaluación directa \normalsize
 
 #### b) Ajuste de la composición de longitudes
 
 Las estructuras de longitudes de la flota (**Figura 15**) y cruceros acústicos (**Figura 16**), son medianamente reproducidas por el modelo de evaluación, capturando su variabilidad general. En el caso de las capturas comerciales, el modelo reproduce de mejor manera las estructuras unimodales. En los años en que se aprecia bimodalidad (2010,2011,2012), el modelo no es capaz de ajustar adecuadamente la información. En el caso de los cruceros, el modelo es todavía menos eficiente en el ajuste a la información observada. El uso de patrones de explotación variables en el tiempo, aunque mejora las tallas medias predichas, no generó variaciones en los ajustes de las composiciones de longitudes respecto del modelo base previo.
 
-\pagebreak  
+\pagebreak
 
 ```{r Comp_Flota,warning=F, include=T, message=F, echo=FALSE,fig.height=6,fig.width=6,fig.asp=1,fig.align="center",fig.path="Figuras/",dev=fig}
 age     <-seq(5.5,20,0.5)                                            
@@ -1114,9 +1276,8 @@ nyearf  <-length(yearf)
   
 ```
 
-\small \textbf{Figura 15}. 	Ajuste de la estructura de longitud de la flota en la pesquería de sardina austral en el mar interior de Chiloé, entre los años 2006 y 2020. Barras (datos observados), líneas (modelo ajustado).
-\normalsize
- \pagebreak  
+\small \\textbf{Figura 15}. Ajuste de la estructura de longitud de la flota en la pesquería de sardina austral en el mar interior de Chiloé, entre los años 2006 y 2020. Barras (datos observados), líneas (modelo ajustado). \normalsize \pagebreak
+
 ```{r Comp_Crucero,warning=F, include=T, message=F, echo=FALSE,fig.height=7,fig.width=7,fig.asp=1,fig.align="center",fig.path="Figuras/",dev=fig}
 age     <-seq(5.5,20,0.5)                                            
 nage    <-length(age)    
@@ -1140,14 +1301,11 @@ nyearc  <-length(yearc)
  
 ```
 
-\small \textbf{Figura 16}. 	Ajuste de la estructura de longitud de sardina austral en los cruceros de evaluación directa en el mar interior de la Región de Los Lagos. Barras (datos observados), líneas (modelo ajustado).
-\normalsize
+\small \\textbf{Figura 16}. Ajuste de la estructura de longitud de sardina austral en los cruceros de evaluación directa en el mar interior de la Región de Los Lagos. Barras (datos observados), líneas (modelo ajustado). \normalsize
 
 \vspace{0.5cm}
 
 En términos de la bondad de ajuste se entrega el cuadro de residuales por longitud y vs los ajustes de las capturas y los cruceros El comportamiento de los residuales sugiere, en la información de la flota y crucero, ciertos patrones que reflejan tendencia. Por ejemplo, en la flota se aprecia subestimación en el rango de longitudes de 14 y 15 cm y sobre-estimación de las longitudes superiores (**Figura 17**). El análisis además confirma los inconvenientes en el ajuste de las estructuras de longitudes.
-
-
 
 ```{r Residuos_comp, warning=F, include=T, message=F, echo=FALSE,fig.height=8,fig.width=10,fig.align="center",fig.path="Figuras/",dev=fig}
 par(mfcol=c(1,2))
@@ -1215,11 +1373,9 @@ box()
 
 ```
 
-\small \textbf{Figura 17}.	Residuales de las estructuras de tallas de la flota y cruceros. Subestimaciones (círculos negros) y sobreestimaciones (circulo blanco). El tamaño del globo indica la magnitud relativa del error por tallas.
-\normalsize
+\small \\textbf{Figura 17}. Residuales de las estructuras de tallas de la flota y cruceros. Subestimaciones (círculos negros) y sobreestimaciones (circulo blanco). El tamaño del globo indica la magnitud relativa del error por tallas. \normalsize
 
-\pagebreak 
-
+\pagebreak
 
 #### c) Comparación con evaluaciones anteriores
 
@@ -1267,77 +1423,66 @@ lines(yrs,rep0$F,col=1)
 
 ```
 
+\small \\textbf{Figura 18}. Análisis retrospectivo empírico de la Biomasa total, desovante, reclutamientos y mortalidad por pesca (F año^-1^) de sardina austral.
 
-\small \textbf{Figura 18}.	Análisis retrospectivo empírico de la Biomasa total, desovante, reclutamientos y mortalidad por pesca (F año^-1^) de sardina austral.
+\pagebreak
 
-\pagebreak 
 #### d) Análisis retrospectivo
 
-En la **Figura 19** se muestra el patrón retrospectivo estándar y relativo de la biomasa desovante y mortalidad por pesca para el modelo base actual (junio 2020). El análisis retrospectivo del modelo de evaluación muestra que en términos de rho (promedio de anomalías retrospectivas) la reducción de información genera un patrón de sobreestimación del reclutamiento (rho = +0,31) y de la biomasa desovante (rho = +0,29), con una subestimación de la mortalidad por pesca (rho = -0,21).  En general, las estimaciones para el último año pueden variar sustancialmente entre las sucesivas actualizaciones, mientras que para los años previos tienden a converger a valores más estables. En el caso particular de la evaluación de stock de sardina austral, la fuerte reducción (por debajo de los niveles promedio) en los índices que conducen el modelo, generó cambios hacia menores valores de R0 (Rmed) a partir del año 2018. Según el actual enfoque de evaluación, el stock debería ser de un tamaño menor, en términos de biomasa y abundancia, que los niveles estimados previo al año 2018.
-
+En la **Figura 19** se muestra el patrón retrospectivo estándar y relativo de la biomasa desovante y mortalidad por pesca para el modelo base actual (junio 2020). El análisis retrospectivo del modelo de evaluación muestra que en términos de rho (promedio de anomalías retrospectivas) la reducción de información genera un patrón de sobreestimación del reclutamiento (rho = +0,31) y de la biomasa desovante (rho = +0,29), con una subestimación de la mortalidad por pesca (rho = -0,21). En general, las estimaciones para el último año pueden variar sustancialmente entre las sucesivas actualizaciones, mientras que para los años previos tienden a converger a valores más estables. En el caso particular de la evaluación de stock de sardina austral, la fuerte reducción (por debajo de los niveles promedio) en los índices que conducen el modelo, generó cambios hacia menores valores de R0 (Rmed) a partir del año 2018. Según el actual enfoque de evaluación, el stock debería ser de un tamaño menor, en términos de biomasa y abundancia, que los niveles estimados previo al año 2018.
 
 ```{r Retrospectivo, warning=F, include=T, message=F,eval=F, echo=FALSE,fig.height=8,fig.width=7,fig.align="center",fig.path="Figuras/",dev=fig}
 admb<-"MTT0920"
 Figura1_Retrospectivo(dir.2,admb,"Diferencia porcentual del último año")
 ```
 
-\small \textbf{Figura 19}.	Análisis retrospectivo de la biomasa desovante y mortalidad por pesca de sardina austral.
-\normalsize
+\small \\textbf{Figura 19}. Análisis retrospectivo de la biomasa desovante y mortalidad por pesca de sardina austral. \normalsize
 
-\pagebreak 
-
+\pagebreak
 
 #### e) Perfil de verosimilitud
 
-La **Figura 20** muestra el perfil de verosimilitud de cada fuente de dato cuyo mínimo representa la estimación máxima a posteriori del reclutamiento medio (R_0) para cada fuente de error del caso base. Los datos cuyos perfiles estuvieron más próximos entre si y la diferencia del log verosimilitud respecto del mínimo se elevó por sobre el criterio estadístico $\chi^2$=1,92 fue la biomasa del crucero (cru) y la proporción de tallas del crucero (procru).
-\vspace{0.5cm}
+La **Figura 20** muestra el perfil de verosimilitud de cada fuente de dato cuyo mínimo representa la estimación máxima a posteriori del reclutamiento medio (R\_0) para cada fuente de error del caso base. Los datos cuyos perfiles estuvieron más próximos entre si y la diferencia del log verosimilitud respecto del mínimo se elevó por sobre el criterio estadístico $\chi^2$=1,92 fue la biomasa del crucero (cru) y la proporción de tallas del crucero (procru). \vspace{0.5cm}
 
 ```{r Verosimilitud_base, warning=F, include=T, message=F,eval=F, echo=FALSE,fig.height=4,fig.width=5,fig.align="center",fig.path="Figuras/",dev=fig}
 admb<-"MTT0520"
 titulo<-"Asesoría de Junio 2020"
 Figura_verosimilitudjunio(dir.5,admb,titulo)
 ```
- 
- \small \textbf{Figura 20}.	Perfil de verosimilitud donde la línea horizontal representa el nivel crítico para el test $\chi^2$ para el modelo base actual.
- 
+
+\small \\textbf{Figura 20}. Perfil de verosimilitud donde la línea horizontal representa el nivel crítico para el test $\chi^2$ para el modelo base actual.
+
 \normalsize
 
-\pagebreak  
+\pagebreak
 
 #### f) Proceso de ajuste del modelo actualizado
 
-Cada proceso de revisión de CBA involucra la actualización y/o supuestos de datos para evaluar el impacto en las variables de estado asociado a la incorporación incremental de piezas de información.
-Al respecto, la actualización de datos de la asesoría actual corresponde principalmente a la información de la flota del año calendario 2019 (desembarques, composición de tallas y CPUE). Para el año 2020 se asume una captura igual a la CBA inicial (caso 4) recomendada por el CCT-PP, estructura de tallas a mayo 2020 (caso 5) y crucero de evaluación directa 2020 (caso 6) (**Tabla 12**).
- 
+Cada proceso de revisión de CBA involucra la actualización y/o supuestos de datos para evaluar el impacto en las variables de estado asociado a la incorporación incremental de piezas de información. Al respecto, la actualización de datos de la asesoría actual corresponde principalmente a la información de la flota del año calendario 2019 (desembarques, composición de tallas y CPUE). Para el año 2020 se asume una captura igual a la CBA inicial (caso 4) recomendada por el CCT-PP, estructura de tallas a mayo 2020 (caso 5) y crucero de evaluación directa 2020 (caso 6) (**Tabla 12**).
 
++---------------+------------------------------------------------------+
+| Casos         | Descripción                                          |
++:==============+:=====================================================+
+| Actualización | 2020                                                 |
++---------------+------------------------------------------------------+
+| Caso 0        | Igual al caso base de junio 2020                     |
++---------------+------------------------------------------------------+
+| Caso 1        | Caso 0 + supesto Desembarque actualizado             |
++---------------+------------------------------------------------------+
+| Caso 2        | Caso 1 + Estructura de tallas a junio                |
++---------------+------------------------------------------------------+
 
-
-
-----------------------------------------------------------------------
-Casos           Descripción
---------------- ------------------------------------------------------
-Actualización   2020
-
-Caso 0          Igual al caso base de junio 2020 
-
-Caso 1          Caso 0 + supesto Desembarque actualizado 
-
-Caso 2          Caso 1 + Estructura de tallas a junio
-
------------------------------------------------------------------------
-\pagebreak 
+\pagebreak
 
 Los casos más relevantes de comparar son el base septiembre 2019 (caso 0), el completo a diciembre 2019 (caso 3) y el más actualizado de junio 2020 (caso 5). Respecto a la estimación de los índices de abundancia (**Tabla 13**), se aprecia que le mayor efecto es sobre el valor del índice acústico estimado. Al actualizar la información a diciembre, el nivel de biomasa del crucero estimada para el 2019 disminuye desde 48,3 mil t. hasta 44,9 mil t. Otro aspecto para analizar es la reducción en la estimación del índice acústico del año 2020 (caso 4 vs caso 5). Al incorporar información de la estructura de longitudes la flota de los primeros meses del 2020, el índice estimado se reduce manera importante desde 63 mil t hasta 49,4 mil t. No obstante, el efecto más relevante es el fuerte incremento en la biomasa estimada (Bcru2020) debido a la incorporación del ultimo crucero de abril/mayo 2020 (caso 6).
 
-En relación a las variables poblacionales, la **Tabla 14** muestra que el reclutamiento del 2020, estimado por el modelo de evaluación, se reduce drásticamente cuando se incorpora la estructura de longitudes de los primeros meses del año en curso (caso 5). Sin embargo, el efecto más importante se aprecia con la incorporación del ultimo crucero (caso 6), que reduce la F a menos de la mitad y aumenta la BD a más del doble respecto del reporte de septiembre (caso 0). Finalmente, el efecto que genera la actualización de datos en la determinación del estatus (**Tabla 15**), se advierte, que la incorporación de información a diciembre de 2019, empeora condición del recurso. El índice de reducción del stock (BD/BD~RMS~) disminuye desde 0.65 (caso 0) hasta 0.60 (caso 3) y la mortalidad por pesca respecto de la referencia (F/F~RMS~) incrementa desde 1,32 hasta 1,49. Lo contrario ocurre cuando se actualiza la información hasta junio de 2020, incorporando la información del último crucero (caso 6). Bajo este escenario de modelación, el stock se acerca hacia la zona de sub explotación alcanzando un nivel de 1,35*BD~RMS~ y un valor de F por debajo de la referencia (F/F~RMS~ = 0,42).
-
-
-
+En relación a las variables poblacionales, la **Tabla 14** muestra que el reclutamiento del 2020, estimado por el modelo de evaluación, se reduce drásticamente cuando se incorpora la estructura de longitudes de los primeros meses del año en curso (caso 5). Sin embargo, el efecto más importante se aprecia con la incorporación del ultimo crucero (caso 6), que reduce la F a menos de la mitad y aumenta la BD a más del doble respecto del reporte de septiembre (caso 0). Finalmente, el efecto que genera la actualización de datos en la determinación del estatus (**Tabla 15**), se advierte, que la incorporación de información a diciembre de 2019, empeora condición del recurso. El índice de reducción del stock (BD/BD~RMS~) disminuye desde 0.65 (caso 0) hasta 0.60 (caso 3) y la mortalidad por pesca respecto de la referencia (F/F~RMS~) incrementa desde 1,32 hasta 1,49. Lo contrario ocurre cuando se actualiza la información hasta junio de 2020, incorporando la información del último crucero (caso 6). Bajo este escenario de modelación, el stock se acerca hacia la zona de sub explotación alcanzando un nivel de 1,35\*BD~RMS~ y un valor de F por debajo de la referencia (F/F~RMS~ = 0,42).
 
 ## 4.2. Objetivo específico 2:
+
 \vspace{-0.2cm}
-*"Establecer el estatus actualizado de estos recursos, sobre la base de sus principales indicadores estandarizados de estado y flujo, incorporando, cuantificando y propagando la incertidumbre subyacente a la pesquería."*
-\vspace{0.5cm}
+
+*"Establecer el estatus actualizado de estos recursos, sobre la base de sus principales indicadores estandarizados de estado y flujo, incorporando, cuantificando y propagando la incertidumbre subyacente a la pesquería."* \vspace{0.5cm}
 
 ### 4.2.1. Indicadores del stock
 
@@ -1347,17 +1492,15 @@ El reclutamiento de sardina austral, presentó entre los años 2006 y 2010 una v
 
 #### b) Biomasas
 
-De acuerdo a los resultados del modelo de evaluación, la biomasa total (BT) evidenció una importante reducción a partir del año 2005, cuando alcanzó 264 mil t. En el último periodo y consecuente con los bajos niveles de reclutamientos, la biomasa total registró el año 2018, el valor más bajo de toda la serie con 67,7 mil t. Los años 2019 y 2020 muestra una recuperación hasta niveles en torno a las 100 mil t. La biomasa desovante (BD) en tanto, sigue la misma tendencia de la BT y disminuyó desde 77 mil t, en 2006 hasta 19 mil t los años 2017 y 2018. Para el año 2020 se observa un incremento del 67% respecto al 2019. Al principio de la serie, el intervalo de confianza es más amplio debido a que el modelo solo utiliza los desembarques para estimar las variables poblacionales  (**Figura 22** y **Tabla 16**). 
+De acuerdo a los resultados del modelo de evaluación, la biomasa total (BT) evidenció una importante reducción a partir del año 2005, cuando alcanzó 264 mil t. En el último periodo y consecuente con los bajos niveles de reclutamientos, la biomasa total registró el año 2018, el valor más bajo de toda la serie con 67,7 mil t. Los años 2019 y 2020 muestra una recuperación hasta niveles en torno a las 100 mil t. La biomasa desovante (BD) en tanto, sigue la misma tendencia de la BT y disminuyó desde 77 mil t, en 2006 hasta 19 mil t los años 2017 y 2018. Para el año 2020 se observa un incremento del 67% respecto al 2019. Al principio de la serie, el intervalo de confianza es más amplio debido a que el modelo solo utiliza los desembarques para estimar las variables poblacionales (**Figura 22** y **Tabla 16**).
 
 #### c) Mortalidad por pesca
 
-La mortalidad por pesca (F) ha mostrado variaciones significativas a lo largo de la serie analizada. Entre los años 2002 y 2006 varió en valores promedio de 0.43 año-1. Luego, incrementa de manera significativa hasta 0.91 año-1 el año 2009. Entre los años 2010 y 2015, debido a las cuotas de capturas en valores relativamente estables, la F se mantuvo en valores cercanos al nivel de F que genera el RMS (F~RMS~ = 0,31 año-1). Al final de la serie, se observó una fuerte reducción en los desembarques, disminuyendo entonces el valor de F hasta 0,27 año-1 el año 2019. El último año, la reducción de F es más significativa aún (0,13 año^-1^), sin embargo, dado que la F2020 está basada en supuestos, el estatus en términos de F2020/FRMS es incierto  (**Figura 22**, **Tabla 16**).
+La mortalidad por pesca (F) ha mostrado variaciones significativas a lo largo de la serie analizada. Entre los años 2002 y 2006 varió en valores promedio de 0.43 año-1. Luego, incrementa de manera significativa hasta 0.91 año-1 el año 2009. Entre los años 2010 y 2015, debido a las cuotas de capturas en valores relativamente estables, la F se mantuvo en valores cercanos al nivel de F que genera el RMS (F~RMS~ = 0,31 año-1). Al final de la serie, se observó una fuerte reducción en los desembarques, disminuyendo entonces el valor de F hasta 0,27 año-1 el año 2019. El último año, la reducción de F es más significativa aún (0,13 año^-1^), sin embargo, dado que la F2020 está basada en supuestos, el estatus en términos de F2020/FRMS es incierto (**Figura 22**, **Tabla 16**).
 
 #### d) Selectividad
 
 La selectividad de la flota indica que el recurso está próximo a su completo reclutamiento a la pesquería a la talla de 14 cm de LT, mientras que los individuos de 10 cm de LT son vulnerados en un 50%. En el crucero acústico los ejemplares son completamente vulnerados a tallas sobre los 7 cm de LT. El patrón de selectividad de la flota indica que los individuos son capturados antes de reproducirse (**Figura 23**), lo que supone un riesgo para sustentabilidad de la pesquería.
-
-
 
 ```{r Reclutamientos,warning=F, include=T, message=F, echo=FALSE,fig.height=6,fig.width=5,fig.align="center",fig.path="Figuras/",dev=fig}
 
@@ -1416,9 +1559,7 @@ plot(x0, logdrt0, type="n", xaxp=x0_1,cex.axis=0.8,xaxs= "i",yaxs= "i",
 
 ```
 
-
-\small \textbf{Figura 20}.	Reclutamientos y anomalías logarítmicas de los reclutamientos. La línea negra corresponde al valor esperado del estimador central y la zona sombreada al intervalo de confianza asintóticos. 
-\normalsize
+\small \\textbf{Figura 20}. Reclutamientos y anomalías logarítmicas de los reclutamientos. La línea negra corresponde al valor esperado del estimador central y la zona sombreada al intervalo de confianza asintóticos. \normalsize
 
 ```{r calculo_PBRs,warning=F, include=T, message=F, echo=FALSE,}
 
@@ -1504,10 +1645,7 @@ box()
 
 ```
 
-\small \textbf{Figura 21}.	Biomasa total y desovante. La línea negra corresponde al valor esperado del estimador central y la zona sombreada al intervalo de confianza asintóticos. 
-\normalsize
-
-
+\small \\textbf{Figura 21}. Biomasa total y desovante. La línea negra corresponde al valor esperado del estimador central y la zona sombreada al intervalo de confianza asintóticos. \normalsize
 
 ```{r Mortalidad_por_Pesca,warning=F, include=T, message=F, echo=FALSE,fig.height=3.5,fig.width=5,fig.align="center",fig.path="Figuras/",dev=fig}
 Ft0           <- subset(std0,name=="log_F")$value
@@ -1532,9 +1670,7 @@ plot(x0, ft0, xaxp=x0_1,cex.axis=0.8,xaxs= "i",yaxs= "i",ylim=c(0,2),
 box()
 ```
 
-\small \textbf{Figura 22}.	Mortalidad por pesca en sardina austral. La línea negra corresponde al valor esperado del estimador central y la zona sombreada al intervalo de confianza asintóticos. 
-\normalsize
-
+\small \\textbf{Figura 22}. Mortalidad por pesca en sardina austral. La línea negra corresponde al valor esperado del estimador central y la zona sombreada al intervalo de confianza asintóticos. \normalsize
 
 ```{r Selectividad_Madurez,warning=F, include=T, message=F, echo=FALSE,fig.height=4,fig.width=4,fig.align="center",fig.path="Figuras/",dev=fig}
 par(mfrow=c(1,1),mar=c(4,4,1,1)+0.5)
@@ -1545,12 +1681,11 @@ legend(13,0.6,c("Sel_Crucero","Sel_Flota","Madurez"),pch=c("o","",""),lwd=c(1,2,
 
 ```
 
+\small \\textbf{Figura 24}. Patrón de selectividad de la flota y crucero en relación a la ojiva de madurez usada en el modelo. \normalsize
 
-\small \textbf{Figura 24}.  Patrón de selectividad de la flota y crucero en relación a la ojiva de madurez usada en el modelo.
-\normalsize
+\pagebreak
 
-\pagebreak   
-
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 13.}
@@ -1558,7 +1693,7 @@ legend(13,0.6,c("Sel_Crucero","Sel_Flota","Madurez"),pch=c("o","",""),lwd=c(1,2,
 \begin{center} 
 \vspace{-0.2cm} Indicadores poblacionales de sardina austral en aguas interiores de Chiloé. Tabla comparativa entre los resultados de la evaluación previa (septiembre 2019) y la actual (junio 2020).
 \end{center}
-
+```
 ```{r VariablesPoblacionales,warning=F, include=T, message=F, echo=FALSE}
 
 VarPobl1<- cbind(anos=years1,"BD_jun"=c(SSBt1),"BD_sep"=SSBt0,"BT_jun"=c(BT1),"BT_sep"=BT0,"R_jun"=c(Reclutas1),"R_sep"=Reclutas0,"F_jun"=c(round(exp(Ft1),2)),"F_sep"=round(exp(Ft0),2))
@@ -1574,11 +1709,9 @@ write.csv(VarPobl1, file="Tabla_12.csv")
 
 Los Puntos Biológicos de Referencia (PBR) para la pesquería de sardina austral, se estimaron a través de un modelo de Biomasa Desovante Por Recluta (BDPR) que utiliza el vector de pesos promedios históricos, la selectividad de la flota estimada en la evaluación de stock (considerando los bloques de selectividad) y la ojiva de madurez sexual para el reclutamiento virginal R0=1. La distribución de tallas del reclutamiento (estimada en el modelo) es proyectada en el tiempo a valores constantes de mortalidad total y considerando el crecimiento contenido en la matriz de transición.
 
-Se estimaron los valores de F que generan niveles de reducción de la Biomasa Desovante Virginal del 55% (60%BDPR). El F60 corresponde al proxy del RMS (F60 = FRMS) y es utilizado para el análisis de recomendación de la CBA y las proyecciones del stock. La **Tabla 17**, resume los resultados, comparando los PBRs y la probabilidad del estatus entre los 2 hitos de evaluación. El año 2020, el valor de F depende del nivel de desembarque supuesto, por lo tanto, debería variar en relación al valor oficial que será reportado a final de año. 
+Se estimaron los valores de F que generan niveles de reducción de la Biomasa Desovante Virginal del 55% (60%BDPR). El F60 corresponde al proxy del RMS (F60 = FRMS) y es utilizado para el análisis de recomendación de la CBA y las proyecciones del stock. La **Tabla 17**, resume los resultados, comparando los PBRs y la probabilidad del estatus entre los 2 hitos de evaluación. El año 2020, el valor de F depende del nivel de desembarque supuesto, por lo tanto, debería variar en relación al valor oficial que será reportado a final de año.
 
 La **Figura 25** muestra la curva de Biomasa Desovante Por Recluta (BDPR) calculada junto al valor de FRMS y su correspondiente %BDPR.
-
-
 
 ```{r curvaPBRs,warning=F, include=T, message=F, echo=FALSE,}
 
@@ -1616,7 +1749,6 @@ FrmsPorBloque<-rbind(Frms_bloque1=FRMSb1,Frms_bloque2=FRMSb2,Frms_bloque3=FRMSb3
 
 ```
 
-
 ```{r curvasFrms,warning=F, include=T, message=F, echo=FALSE,fig.height=4,fig.width=8,fig.align="center",fig.path="Figuras/",dev=fig}
 
 par(mfcol=c(1,2),mar=c(4,4,1,1)+0.5)
@@ -1635,10 +1767,9 @@ abline(v=c(FRMSb1,FRMSb2,FRMSb3),col=c(4,3,2),lty=2)
 
 ```
 
- 
-\small \textbf{Figura 25}. 	Curva de Biomasa Desovante por Recluta (% BDPR) de sardina austral en aguas interiores de la Región de Los Lagos, para distintos niveles de mortalidad por pesca (F), utilizados para estimar Frms.
-\normalsize
+\small \\textbf{Figura 25}. Curva de Biomasa Desovante por Recluta (% BDPR) de sardina austral en aguas interiores de la Región de Los Lagos, para distintos niveles de mortalidad por pesca (F), utilizados para estimar Frms. \normalsize
 
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 14.}
@@ -1646,8 +1777,7 @@ abline(v=c(FRMSb1,FRMSb2,FRMSb3),col=c(4,3,2),lty=2)
 \begin{center} 
 \vspace{-0.2cm} Puntos biológicos de referencia sardina austral.
 \end{center}
-
-
+```
 ```{r echo=FALSE,eval=TRUE}
 
 years1    <-rep1$Years
@@ -1717,6 +1847,7 @@ pe2<-1-pnorm(1.1,Frpr1[length(years1)],Frpr1std[length(years1)],lower.tail = TRU
 
 ```
 
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 6.}
@@ -1724,7 +1855,7 @@ pe2<-1-pnorm(1.1,Frpr1[length(years1)],Frpr1std[length(years1)],lower.tail = TRU
 \begin{center} 
 \vspace{-0.2cm} Puntos Biológicos de referencia  y probabilidad de estar bajo $BD_{RMS}$ y sobre $F_{RMS}$ y la probabilidad de sobreexplotación, colapso o sobrepesca calculados para el modelo base y alternativo.
 \end{center}
-
+```
 **Corregir PBRS**
 
 ```{r echo=FALSE,eval=TRUE}
@@ -1736,21 +1867,17 @@ kable(PBRs)
 
 ```
 
-
 \normalsize
-
 
 #### b) Indicadores del estado del stock
 
-El índice de reducción del stock desovante (BD/BD~0~) (**Figura 26**), muestra una alta probabilidad (1) de encontrarse, durante el año en curso, por sobre del objetivo de manejo p(BD<BD~RMS~)La biomasa desovante del año 2020 alcanzó un valor de 39,2 mil t, representando un 1.35*BDMRS (29 mil t). Esto indica una condición positiva del stock, ya que se encuentra fuera de la zona de riesgo para la sustentabilidad de la pesquería. Sin embargo, muestra una significativa reducción respecto de los niveles observados entre los años 2004 y 2009.
+El índice de reducción del stock desovante (BD/BD~0~) (**Figura 26**), muestra una alta probabilidad (1) de encontrarse, durante el año en curso, por sobre del objetivo de manejo p(BD\<BD~RMS~)La biomasa desovante del año 2020 alcanzó un valor de 39,2 mil t, representando un 1.35\*BDMRS (29 mil t). Esto indica una condición positiva del stock, ya que se encuentra fuera de la zona de riesgo para la sustentabilidad de la pesquería. Sin embargo, muestra una significativa reducción respecto de los niveles observados entre los años 2004 y 2009.
 
-Los niveles de captura del recurso, habrían excedido el PBR F~RMS~ desde el inicio de la serie, alcanzando un valor máximo de 2,9 veces el F~RMS~ (0,31 año^-1^) el año 2009 (0,91 año-1). Entre los años 2010 y 2015, considerando la disminución en los niveles de desembarque, la mortalidad por pesca disminuyó hasta alcanzar valores más cercanos al objetivo. De acuerdo al valor de F del año 2020, el stock presentaría una probabilidad de 1 de encontrarse por debajo el F~RMS~ p(F>F~RMS~).
+Los niveles de captura del recurso, habrían excedido el PBR F~RMS~ desde el inicio de la serie, alcanzando un valor máximo de 2,9 veces el F~RMS~ (0,31 año^-1^) el año 2009 (0,91 año-1). Entre los años 2010 y 2015, considerando la disminución en los niveles de desembarque, la mortalidad por pesca disminuyó hasta alcanzar valores más cercanos al objetivo. De acuerdo al valor de F del año 2020, el stock presentaría una probabilidad de 1 de encontrarse por debajo el F~RMS~ p(F\>F~RMS~).
 
-La **Tabla 18**, resume la variación interanual de los indicadores de la condición del stock en términos de biomasa (BD/BD~RMS~). Esto mismo se muestra en relación a la mortalidad por pesca (F/F~RMS~). Además, se indican los niveles de tasa explotación anual referidos a la biomasa (Y/BT). Los resultados de la actual evaluación, son más favorables respecto del reporte previo. Considerando el actual escenario de modelación y la base de datos hasta el presente informe, la biomasa desovante virginal (BD~0~) es estimada en un valor de 52,7 mil t. Así, la biomasa desovante objetivo (BD~RMS~), se estima en 29 mil t. Esto, considerando como objetivo de manejo 0.55*BD~0~.
+La **Tabla 18**, resume la variación interanual de los indicadores de la condición del stock en términos de biomasa (BD/BD~RMS~). Esto mismo se muestra en relación a la mortalidad por pesca (F/F~RMS~). Además, se indican los niveles de tasa explotación anual referidos a la biomasa (Y/BT). Los resultados de la actual evaluación, son más favorables respecto del reporte previo. Considerando el actual escenario de modelación y la base de datos hasta el presente informe, la biomasa desovante virginal (BD~0~) es estimada en un valor de 52,7 mil t. Así, la biomasa desovante objetivo (BD~RMS~), se estima en 29 mil t. Esto, considerando como objetivo de manejo 0.55\*BD~0~.
 
-Los resultados indican que, el stock de sardina austral, en aguas interiores de la Región de Los Lagos, se desplazó desde la zona de sobreexplotación el año 2019 a la plena explotación durante el año 2020. Por otro lado, la asesoría actual estima un incremento en los niveles de biomasa desovante 2020, situándose por sobre el objetivo de manejo. La probabilidad que la mortalidad por pesca del año 2020 sea mayor a F~RMS~ (p(F~2020/F~RMS~)) es del 0%. Sin embargo, se debe recordar que la información para el año 2020 es parcial y basada en supuestos de captura, por lo tanto, es más precautorio considerar el “estatus completo” hasta el año 2019, cuya estimación se basa en información observada.
-
-
+Los resultados indican que, el stock de sardina austral, en aguas interiores de la Región de Los Lagos, se desplazó desde la zona de sobreexplotación el año 2019 a la plena explotación durante el año 2020. Por otro lado, la asesoría actual estima un incremento en los niveles de biomasa desovante 2020, situándose por sobre el objetivo de manejo. La probabilidad que la mortalidad por pesca del año 2020 sea mayor a F~RMS~ (p(F~2020/F~RMS\~)) es del 0%. Sin embargo, se debe recordar que la información para el año 2020 es parcial y basada en supuestos de captura, por lo tanto, es más precautorio considerar el "estatus completo" hasta el año 2019, cuya estimación se basa en información observada.
 
 ```{r Estatus,warning=F, include=T, message=F, echo=FALSE,fig.height=8,fig.width=10,fig.align="center",fig.path="Figuras/",dev=fig}
 par(mfcol=c(2,2),mar=c(4,4,1,1)+0.5)
@@ -1797,11 +1924,10 @@ legend(0.6,3.5,c(paste("sept_IC95% = [",round(icfs[1],3),"-",round(icfs[2],3),"]
 box()
 
 ```
- 
 
-\small \textbf{Figura 25}.	Series históricas de biomasa desovante, Razón BD/BD~RMS~ Mortalidad por pesca y razón F/F~RMS~. Se muestran los puntos biológicos de referencia respectivos en líneas segmentadas horizontales.
-\normalsize
+\small \\textbf{Figura 25}. Series históricas de biomasa desovante, Razón BD/BD~RMS~ Mortalidad por pesca y razón F/F~RMS~. Se muestran los puntos biológicos de referencia respectivos en líneas segmentadas horizontales. \normalsize
 
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 15.}
@@ -1809,7 +1935,7 @@ box()
 \begin{center} 
 \vspace{-0.2cm} Variación interanual de F respecto de FRMS (F/F~RMS~), BD respecto de BDRMS (BD/BD~RMS~), y de las tasas de explotación referidos a la biomasa total (Y/BT) en la pesquería de sardina austral. Comparación entre las Estimaciones de la evaluación de stock actual (sept 2018) y anterior (jun 2018).
 \end{center}
-
+```
 ```{r IndicadoresStock,warning=F, include=T, message=F, echo=FALSE}
 
 VarPobl2<- cbind(anos=years1,"F/F~RMS~**S**"=c(round(exp(Ft1)/FRMS,3)),"F/F~RMS~**M**"=round(exp(Ft0)/FRMS,3),"BD/BD~RMS~**S**"=c(round(SSBt1/BRMS,3)),"BD/BD~RMS~**M**"=round(SSBt0/BRMS0,3),"Y/BT_**S**"=c(round(rep1$Desemb_pred/BT1,3)),"Y/BT_**M**"=round(rep0$Desemb_pred/BT0,3),"C/N_**S**"=c(round(rowSums(rep1$pred_Ctot)/rowSums(rep1$Abundancia_talla),3)),"C/N_**M**"=round(rowSums(rep0$pred_Ctot)/rowSums(rep0$Abundancia_talla),3))
@@ -1821,14 +1947,11 @@ write.csv(VarPobl2, file="Tabla_15.csv")
 
 \normalsize
 
-
 #### c) Diagrama de fases de explotación
 
-En la presente versión del modelo, los resultados muestran que el stock se encontraría, durante el año 2020 en una condición próxima a la subexplotación. Mostrando un cambio importante respecto del año 2019 (**Figura 27**), con niveles de biomasa por sobre del objetivo (1.35* BD~RMS~) y con F (0.13 año^-1^) por debajo del valor de referencia (F~RMS= 0.31 año^-1^). Esta última condición es incierta debido al supuesto de captura del último año e información parcial de la estructura de longitudes de la población. Si se considera el año 2019 (información completa), el stock se encuentra en sobreexplotación. El valor de F (0.39 año^-1^), evidenció valores por sobre F~RMS~ y la biomasa en una condición reducida respecto del objetivo (0.60* BD~RMS~).
+En la presente versión del modelo, los resultados muestran que el stock se encontraría, durante el año 2020 en una condición próxima a la subexplotación. Mostrando un cambio importante respecto del año 2019 (**Figura 27**), con niveles de biomasa por sobre del objetivo (1.35\* BD~RMS~) y con F (0.13 año^-1^) por debajo del valor de referencia (F\~RMS= 0.31 año^-1^). Esta última condición es incierta debido al supuesto de captura del último año e información parcial de la estructura de longitudes de la población. Si se considera el año 2019 (información completa), el stock se encuentra en sobreexplotación. El valor de F (0.39 año^-1^), evidenció valores por sobre F~RMS~ y la biomasa en una condición reducida respecto del objetivo (0.60\* BD~RMS~).
 
 Las fuertes variaciones en el estatus, son frecuentes en las pesquerías de peces pelágicos pequeños, donde los cambios interanuales en la fuerza de la clase anual reclutada tienen efectos significativos en la condición del recurso. Se debe considerar además que la condición del stock durante el año 2020 es incierta, ya que está basado en un valor supuesto de captura para el último año e información parcial de la estructura de longitudes de la flota (enero-mayo)
-
-
 
 ```{r DiagramaFase_septiembre, warning=F, include=T, message=F,eval=F, echo=FALSE,fig.height=4,fig.width=4,fig.align="center",fig.path="Figuras/",dev=fig}
 name<-"Asesoría septiembre 2020"
@@ -1849,9 +1972,6 @@ arrows(x0=lastB1,y0=F95[1],x1=lastB1,y1=F95[2],length=0.05,angle=90,col=4,lwd=1,
 points(lastB1,lastF,pch=19,col=4)
 text(lastB1,lastF-0.1,years0[nyears0-1],cex=0.8) 
 ```
-
-
-
 
 ```{r DiagramaFase_junio, warning=F, include=T, message=F,eval=F, echo=FALSE,fig.height=4,fig.width=4,fig.align="center",fig.path="Figuras/",dev=fig}
 name<-"Asesoría junio 2020"
@@ -1874,28 +1994,25 @@ points(lastB1,lastF,pch=19,col=4)
 text(lastB1,lastF+0.1,years1[nyears1-1],cex=0.8) 
 ```
 
-\small \textbf{Figura 26}.	Diagrama de fases de explotación de sardina austral en aguas interiores de la Región de Los Lagos, basado en mortalidad por pesca (F) y Biomasa desovante (BD/BDo) durante el año 2018 (evaluación septiembre 2019)
-\normalsize
+\small \\textbf{Figura 26}. Diagrama de fases de explotación de sardina austral en aguas interiores de la Región de Los Lagos, basado en mortalidad por pesca (F) y Biomasa desovante (BD/BDo) durante el año 2018 (evaluación septiembre 2019) \normalsize
 
-\pagebreak 
-
-
+\pagebreak
 
 ## 4.3. Objetivo específico 3:
+
 \vspace{-0.2cm}
-*"Determinar niveles de Captura Biológicamente Aceptable (CBA) que lleven y/o mantenga la pesquería en torno al Rendimiento Máximo Sostenible (RMS), a partir de un análisis de riesgo en condiciones de incertidumbre de no alcanzar los objetivos de conservación y sostenibilidad conforme lo establece la LGPA y contenidos en el Plan de Manejo y/o en el Programa de Recuperación respectivo, según corresponda."*
-\vspace{0.5cm}
+
+*"Determinar niveles de Captura Biológicamente Aceptable (CBA) que lleven y/o mantenga la pesquería en torno al Rendimiento Máximo Sostenible (RMS), a partir de un análisis de riesgo en condiciones de incertidumbre de no alcanzar los objetivos de conservación y sostenibilidad conforme lo establece la LGPA y contenidos en el Plan de Manejo y/o en el Programa de Recuperación respectivo, según corresponda."* \vspace{0.5cm}
 
 ### 4.3.1. Captura Biológicamente Aceptable (CBA) inicial 2021
 
-A partir del modelo conceptual de la dinámica del stock de sardina austral en aguas interiores Chiloé, se desarrolló el enfoque y modelo de evaluación que permite asesorar al Comité Científico Técnico de Pesquerías de Pelágicos Pequeños (CCT–PP) en el análisis de las posibilidades de explotación del stock, considerando los parámetros e indicadores estimados por el modelo de evaluación y su incertidumbre asociada. 
+A partir del modelo conceptual de la dinámica del stock de sardina austral en aguas interiores Chiloé, se desarrolló el enfoque y modelo de evaluación que permite asesorar al Comité Científico Técnico de Pesquerías de Pelágicos Pequeños (CCT--PP) en el análisis de las posibilidades de explotación del stock, considerando los parámetros e indicadores estimados por el modelo de evaluación y su incertidumbre asociada.
 
 Se utiliza la estrategia de explotación referencial de mortalidad por pesca constantes F=FRMS para la cual se presentaron las capturas asociadas y los percentiles de riesgo (10%-50%) de exceder el nivel de explotación evaluado. La mortalidad por pesca de referencia es aquella que permite alcanzar el rendimiento máximo sostenido, consistente con los puntos biológicos de referencia (F~RMS~).
 
-La CBA inicial para el criterio FRMS fue reportada en el informe del mes de septiembre de 2019. Dicha CBA, se estimó bajo tres escenarios de posibles estados de la naturaleza (reclutamiento alto, medio y bajo) y para distintos percentiles de probabilidad (**Tabla 19**). Considerando la condición del stock, el CCTT asumió un escenario de reclutamientos bajos y un percentil de probabilidad del 30% para definir la CBA del año en curso. Dicho percentil corresponde a un 12% de resguardo (**Tabla 20**) respecto del valor de CBA al MRS.
-\vspace{0.5cm}
+La CBA inicial para el criterio FRMS fue reportada en el informe del mes de septiembre de 2019. Dicha CBA, se estimó bajo tres escenarios de posibles estados de la naturaleza (reclutamiento alto, medio y bajo) y para distintos percentiles de probabilidad (**Tabla 19**). Considerando la condición del stock, el CCTT asumió un escenario de reclutamientos bajos y un percentil de probabilidad del 30% para definir la CBA del año en curso. Dicho percentil corresponde a un 12% de resguardo (**Tabla 20**) respecto del valor de CBA al MRS. \vspace{0.5cm}
 
-
+```{=tex}
 \small
 \begin{center} 
 \textbf{Tabla 15.}
@@ -1903,18 +2020,16 @@ La CBA inicial para el criterio FRMS fue reportada en el informe del mes de sept
 \begin{center} 
 \vspace{-0.2cm} CBA inicial para la pesquería de sardina austral durante el año 2020, para distintos estados de la naturaleza y bajo diferentes niveles de riesgo de sobrepasar la estrategia de manejo (F~RMS~= F60%)
 \end{center}
-
--------------------------------------------------
-F60	            10%	  20%	  30%	  40%	  50%
---------------- ----- ----- ----- ----- ---------
-R_alto (2012)	  10716	11952	12842	13604	14315
-
-R_Med	          7415	8432	9166	9793	10379
-
-R_bajo (2018)	  6142	7154	7883	8506	9089
-
--------------------------------------------------
-
+```
++----------------+------+--------+------+-----+-------------+
+| F60            | 10%  | 20%    | 30%  | 40  | \% 50%      |
++:===============+:=====+:=======+=====:+====:+=============+
+| R\_alto (2012) | 1071 | 6 1195 | 2 12 | 842 | 13604 14315 |
++----------------+------+--------+------+-----+-------------+
+| R\_Med         | 7415 | 8432   | 91   | 66  | 9793 10379  |
++----------------+------+--------+------+-----+-------------+
+| R\_bajo (2018) | 6142 | 7154   | 78   | 83  | 8506 9089   |
++----------------+------+--------+------+-----+-------------+
 
 ```{r cba_inicial,warning=F, include=T, message=F, echo=FALSE,eval=F}
 stds1     <- read.table(paste(dir.7,"MTT0920s1.std", sep='/'),header=T,sep="",na="NA",fill=T) 
@@ -1956,15 +2071,13 @@ kable(t(round(tbuffer,2)))
 
 ```
 
-
 \normalsize
 
-### 4.3.2.	Captura Biológicamente Aceptable (CBA) final 2020 
+### 4.3.2. Captura Biológicamente Aceptable (CBA) final 2020
 
-En esta etapa del procedimiento de manejo se realiza la revisión de la CBA sobre la base del reclutamiento 2020, información pesquera completamente actualizada al 2019 y biomasa y estructura de longitudes del último crucero de evaluación directa. Se constató que la incorporación de esta última pieza de información tuvo un efecto significativo sobre la actualización de la CBA para el año en curso. 
+En esta etapa del procedimiento de manejo se realiza la revisión de la CBA sobre la base del reclutamiento 2020, información pesquera completamente actualizada al 2019 y biomasa y estructura de longitudes del último crucero de evaluación directa. Se constató que la incorporación de esta última pieza de información tuvo un efecto significativo sobre la actualización de la CBA para el año en curso.
 
-De acuerdo a lo indicado en la **Tabla 21**, la estimación actual de la CBARMS (jun 2020) con 50% probabilidad (17252 t) representa un incremento de 60% respecto del nivel estimado (10379 t) en la asesoría preliminar (sep 2019) para un reclutamiento promedio. Al considerar un nivel de resguardo del 12%, equivalente al asumido por el CCTT en el primer hito de esta investigación, la CBA~RMS, para el año en curso, podría situarse en torno a las 15 mil t. para la pesquería de sardina austral en aguas interiores de la Región de Los Lagos
-
+De acuerdo a lo indicado en la **Tabla 21**, la estimación actual de la CBARMS (jun 2020) con 50% probabilidad (17252 t) representa un incremento de 60% respecto del nivel estimado (10379 t) en la asesoría preliminar (sep 2019) para un reclutamiento promedio. Al considerar un nivel de resguardo del 12%, equivalente al asumido por el CCTT en el primer hito de esta investigación, la CBA\~RMS, para el año en curso, podría situarse en torno a las 15 mil t. para la pesquería de sardina austral en aguas interiores de la Región de Los Lagos
 
 ```{r cba_final,warning=F, include=T, message=F, echo=FALSE,eval=F }
 stds0     <- read.table(paste(dir.6,"MTT0521s1.std",sep='/'),header=T,sep="",na="NA",fill=T) 
@@ -1982,10 +2095,7 @@ kable((tCBA))
 
 ```
 
-
-
 ### 4.3.3. Proyección del stock
-
 
 La **Figura 28** muestra la proyección de la biomasa desovante, la reducción del stock (BD/BD~MRS~) y capturas en cinco años bajo tres escenarios de reclutamiento proyectado
 
@@ -2022,47 +2132,39 @@ lines(c(rep0$Years,seq(2021,2021,1)),c(rep0$Desemb_pred,cs1),type="o",col=1,pch=
 abline(v=2020,lty=2)
 ```
 
-
-
-
 ## 4.4. Objetivo específico 4:
+
 \vspace{-0.2cm}
-*"Informar el avance del Programa de Mejoramiento Continuo de la Calidad en la Asesoría Científica (PMCCAC) realizado durante el presente estudio, respecto al cumplimiento de recomendaciones formuladas en procesos de RPEI y priorizadas por el CCT, cuando corresponda."*
-\vspace{0.5cm}
+
+*"Informar el avance del Programa de Mejoramiento Continuo de la Calidad en la Asesoría Científica (PMCCAC) realizado durante el presente estudio, respecto al cumplimiento de recomendaciones formuladas en procesos de RPEI y priorizadas por el CCT, cuando corresponda."* \vspace{0.5cm}
 
 ### 4.4.1. Esquema de trabajo y plan de actividades 2019-2020
 
-En coherencia con los requerimientos indicados en los Términos Técnicos de Referencia (TTR) del proyecto “Estatus y posibilidades de explotación biológicamente sustentables de los principales recursos pesqueros nacionales, año 2019”, IFOP ha reconocido un conjunto de actividades que pueden ser desarrolladas y abordadas bajo un acuerdo de intención con SSPA. Además de los correspondientes informes técnicos, se han identificado una serie de aspectos a ser abordados en el marco de la evaluación de stock. Estos aspectos son de carácter transversal a los recursos pelágicos analizados y otros particulares en la evaluación de stock de la sardina austral Región de Los Lagos. Para ello se propone el esquema de trabajo presentado en la **Figura 29**, el cual fue discutido y consensuado con la SSPA.
+En coherencia con los requerimientos indicados en los Términos Técnicos de Referencia (TTR) del proyecto "Estatus y posibilidades de explotación biológicamente sustentables de los principales recursos pesqueros nacionales, año 2019", IFOP ha reconocido un conjunto de actividades que pueden ser desarrolladas y abordadas bajo un acuerdo de intención con SSPA. Además de los correspondientes informes técnicos, se han identificado una serie de aspectos a ser abordados en el marco de la evaluación de stock. Estos aspectos son de carácter transversal a los recursos pelágicos analizados y otros particulares en la evaluación de stock de la sardina austral Región de Los Lagos. Para ello se propone el esquema de trabajo presentado en la **Figura 29**, el cual fue discutido y consensuado con la SSPA.
 
 El esquema de trabajo de datos y modelos consiste en los siguientes pasos:
 
-  i)	Especificación de EV(t+1) (septiembre 2019) sobre la base de las MM(t) presentadas en la asesoría anterior, EV(t) las cuales serán presentadas y discutidas con el CCT-PP para la definición del caso base, EV(t+1), utilizado para establecer el estatus y CBA 2020.
-  ii)	IFOP presenta propuestas de MM(t+1) para trabajar durante el desarrollo de este proyecto que recogerán algunas de las observaciones a la EV(t) de revisores por pares (RPP) nacionales, CCT-PP y SSPA, junto a recomendaciones de la RPP internacional.
-  iii)	Uno de los propósitos de este esquema de trabajo es que en esta instancia también se realice la revisión de datos, sin embargo, en este proyecto en particular se dará prioridad a la propuesta de MM(t+1), con el compromiso que la revisión de datos se lleve a cabo en los futuros proyectos.
-  iv)	En la etapa de revisión y actualización de la EV(t+2) a realizarse en junio de 2020, también se comparará con los resultados de la EV(t+1) correspondiente a la asesoría de septiembre 2019.
-  v)	Finalmente, es importante señalar que la evaluación de stock del recurso es realizada separada por zonas: Los Lagos y Aysén (**sección 4.4.2**), en coherencia con los antecedentes de stock diferenciados. La actualización de la evaluación de stock EV(t+2) ha tenidos en los últimos dos años retrasos en la fecha comprometida debido a dificultades operativas del crucero de evaluación directa (principal input para la actualización). Se plantea entonces, comprometer una fecha para la entrega del informe de actualización, con mayor flexibilidad y dependiente de la entrega de los resultados del crucero.
-  
-  
-**Figura 28**.	Esquema de trabajo de Datos y Modelos propuesto por SSPA e IFOP para la implementación de mejoras y modificaciones (MM) a la evaluación de stock (EV) durante el desarrollo del Proyecto de Estatus y CBA de las pesquerías de Pelágicos.
+i)  Especificación de EV(t+1) (septiembre 2019) sobre la base de las MM(t) presentadas en la asesoría anterior, EV(t) las cuales serán presentadas y discutidas con el CCT-PP para la definición del caso base, EV(t+1), utilizado para establecer el estatus y CBA 2020.
+ii) IFOP presenta propuestas de MM(t+1) para trabajar durante el desarrollo de este proyecto que recogerán algunas de las observaciones a la EV(t) de revisores por pares (RPP) nacionales, CCT-PP y SSPA, junto a recomendaciones de la RPP internacional.
+iii) Uno de los propósitos de este esquema de trabajo es que en esta instancia también se realice la revisión de datos, sin embargo, en este proyecto en particular se dará prioridad a la propuesta de MM(t+1), con el compromiso que la revisión de datos se lleve a cabo en los futuros proyectos.
+iv) En la etapa de revisión y actualización de la EV(t+2) a realizarse en junio de 2020, también se comparará con los resultados de la EV(t+1) correspondiente a la asesoría de septiembre 2019.
+v)  Finalmente, es importante señalar que la evaluación de stock del recurso es realizada separada por zonas: Los Lagos y Aysén (**sección 4.4.2**), en coherencia con los antecedentes de stock diferenciados. La actualización de la evaluación de stock EV(t+2) ha tenidos en los últimos dos años retrasos en la fecha comprometida debido a dificultades operativas del crucero de evaluación directa (principal input para la actualización). Se plantea entonces, comprometer una fecha para la entrega del informe de actualización, con mayor flexibilidad y dependiente de la entrega de los resultados del crucero.
 
-
+**Figura 28**. Esquema de trabajo de Datos y Modelos propuesto por SSPA e IFOP para la implementación de mejoras y modificaciones (MM) a la evaluación de stock (EV) durante el desarrollo del Proyecto de Estatus y CBA de las pesquerías de Pelágicos.
 
 ### 4.4.2. Mejoras realizadas al modelo de evaluación de stock
 
-En coherencia con los requerimientos indicados en los Términos Técnicos de Referencia (TTR) del proyecto “Estatus y posibilidades de explotación biológicamente sustentables de los principales recursos pesqueros nacionales, año 2019”, IFOP ha reconocido un conjunto de actividades que pueden ser desarrolladas y abordadas bajo un acuerdo de intención con SSPA. Además de los correspondientes informes técnicos, se han identificado una serie de aspectos a ser abordados en el marco de la evaluación de stock. Estos aspectos son de carácter transversal a los recursos pelágicos analizados y otros particulares en la evaluación de stock de la sardina austral Región de Los Lagos. Para ello se propone el esquema de trabajo presentado en la **Figura 29**, el cual fue discutido y consensuado con la SSPA.
+En coherencia con los requerimientos indicados en los Términos Técnicos de Referencia (TTR) del proyecto "Estatus y posibilidades de explotación biológicamente sustentables de los principales recursos pesqueros nacionales, año 2019", IFOP ha reconocido un conjunto de actividades que pueden ser desarrolladas y abordadas bajo un acuerdo de intención con SSPA. Además de los correspondientes informes técnicos, se han identificado una serie de aspectos a ser abordados en el marco de la evaluación de stock. Estos aspectos son de carácter transversal a los recursos pelágicos analizados y otros particulares en la evaluación de stock de la sardina austral Región de Los Lagos. Para ello se propone el esquema de trabajo presentado en la **Figura 29**, el cual fue discutido y consensuado con la SSPA.
 
 El esquema de trabajo de datos y modelos consiste en los siguientes pasos:
 
-  i)	Especificación de EV(t+1) (septiembre 2019) sobre la base de las MM(t) presentadas en la asesoría anterior, EV(t) las cuales serán presentadas y discutidas con el CCT-PP para la definición del caso base, EV(t+1), utilizado para establecer el estatus y CBA 2020.
-  ii)	IFOP presenta propuestas de MM(t+1) para trabajar durante el desarrollo de este proyecto que recogerán algunas de las observaciones a la EV(t) de revisores por pares (RPP) nacionales, CCT-PP y SSPA, junto a recomendaciones de la RPP internacional.
-  iii)	Uno de los propósitos de este esquema de trabajo es que en esta instancia también se realice la revisión de datos, sin embargo, en este proyecto en particular se dará prioridad a la propuesta de MM(t+1), con el compromiso que la revisión de datos se lleve a cabo en los futuros proyectos.
-  iv)	En la etapa de revisión y actualización de la EV(t+2) a realizarse en junio de 2020, también se comparará con los resultados de la EV(t+1) correspondiente a la asesoría de septiembre 2019.
-  v)	Finalmente, es importante señalar que la evaluación de stock del recurso es realizada separada por zonas: Los Lagos y Aysén (**sección 4.4.2**), en coherencia con los antecedentes de stock diferenciados. La actualización de la evaluación de stock EV(t+2) ha tenidos en los últimos dos años retrasos en la fecha comprometida debido a dificultades operativas del crucero de evaluación directa (principal input para la actualización). Se plantea entonces, comprometer una fecha para la entrega del informe de actualización, con mayor flexibilidad y dependiente de la entrega de los resultados del crucero.
-  
-  
-**Figura 28**.	Esquema de trabajo de Datos y Modelos propuesto por SSPA e IFOP para la implementación de mejoras y modificaciones (MM) a la evaluación de stock (EV) durante el desarrollo del Proyecto de Estatus y CBA de las pesquerías de Pelágicos.
+i)  Especificación de EV(t+1) (septiembre 2019) sobre la base de las MM(t) presentadas en la asesoría anterior, EV(t) las cuales serán presentadas y discutidas con el CCT-PP para la definición del caso base, EV(t+1), utilizado para establecer el estatus y CBA 2020.
+ii) IFOP presenta propuestas de MM(t+1) para trabajar durante el desarrollo de este proyecto que recogerán algunas de las observaciones a la EV(t) de revisores por pares (RPP) nacionales, CCT-PP y SSPA, junto a recomendaciones de la RPP internacional.
+iii) Uno de los propósitos de este esquema de trabajo es que en esta instancia también se realice la revisión de datos, sin embargo, en este proyecto en particular se dará prioridad a la propuesta de MM(t+1), con el compromiso que la revisión de datos se lleve a cabo en los futuros proyectos.
+iv) En la etapa de revisión y actualización de la EV(t+2) a realizarse en junio de 2020, también se comparará con los resultados de la EV(t+1) correspondiente a la asesoría de septiembre 2019.
+v)  Finalmente, es importante señalar que la evaluación de stock del recurso es realizada separada por zonas: Los Lagos y Aysén (**sección 4.4.2**), en coherencia con los antecedentes de stock diferenciados. La actualización de la evaluación de stock EV(t+2) ha tenidos en los últimos dos años retrasos en la fecha comprometida debido a dificultades operativas del crucero de evaluación directa (principal input para la actualización). Se plantea entonces, comprometer una fecha para la entrega del informe de actualización, con mayor flexibilidad y dependiente de la entrega de los resultados del crucero.
 
-
+**Figura 28**. Esquema de trabajo de Datos y Modelos propuesto por SSPA e IFOP para la implementación de mejoras y modificaciones (MM) a la evaluación de stock (EV) durante el desarrollo del Proyecto de Estatus y CBA de las pesquerías de Pelágicos.
 
 \pagebreak
 
@@ -2076,25 +2178,25 @@ Aranis A., A. Gómez; L. Caballero; K. Walker; M. Ramírez; G. Eisele; F. Cerna;
 
 Aranis A., Mora S., González M., Gómez A., Caballero L., Cerna F., y Muñoz G. 2012. Monitoreo de anchoveta y sardina en las aguas interiores de la X Región 2011. Pesca de Investigación. Informe Final IFOP/SUBPESCA. 202 pp.
 
-Aranis A, R Meléndez, G Pequeño y F Cerna. 2007. Sprattus fuegensis en aguas interiores de Chiloé, Chile (Osteichthyes: Clupeiformes: Clupeidae). Gayana 71 (1): 102 – 113.
+Aranis A, R Meléndez, G Pequeño y F Cerna. 2007. Sprattus fuegensis en aguas interiores de Chiloé, Chile (Osteichthyes: Clupeiformes: Clupeidae). Gayana 71 (1): 102 -- 113.
 
 Bakun, A. y R.H. Parrish. 1982. Turbulence, transport, and pelagic fish in the California and Peru current systems. Rep. Calif. coop. oceanic Fish. Invest., 123: 99-112.
 
 Cadigan NG y PJ Farrell. 2005. Local influence diagnostics for the retrospective problem in sequential population analysis. ICES Journal of Marine Science, 62: 256-265.
 
-Cadrin SX y DS Vaughn. 1997. Retrospective analysis of virtual population estimates for Atlantic menhaden stock assessment. U.S. National Marine Fisheries Service Fishery Bulletin, 95: 445–455.
+Cadrin SX y DS Vaughn. 1997. Retrospective analysis of virtual population estimates for Atlantic menhaden stock assessment. U.S. National Marine Fisheries Service Fishery Bulletin, 95: 445--455.
 
 Caddy J y R Mahon. 1995. References point for fisheries management. FAO, Doc. Téc. Pesca. (347): 65 pp.
 
 Canales TM, J Castillo, F Cerna y A Aranis. 2007. Análisis de la pesquería de sardina austral en las aguas interiores del mar de Chiloe y estimación de ctp 2007. 14 pp.
 
-CAPAM. 2015. Workshop tackles best practices in treatment of multiple data sources in stock assessments. Center for the Advancement of Population Assessment Methodology.  October,2015.(https://www.nwfsc.noaa.gov/news/features/data_source_workshop/index.cfm). 
+CAPAM. 2015. Workshop tackles best practices in treatment of multiple data sources in stock assessments. Center for the Advancement of Population Assessment Methodology. October,2015.(<https://www.nwfsc.noaa.gov/news/features/data_source_workshop/index.cfm>).
 
 Castillo J, Legua J, E Molina, F Sánchez. 2019. Evaluación hidroacústica de pequeños pelágicos en aguas interiores de la X y XI Regiones, año 2019. Informe de avance. 38 pp +anexos
 
 Cerna F, E Leal, A López y G Plaza. 2013. Age, growth and natural mortality of the Patagonian sprat *Sprattus fuegensis* (Jenyns, 1842) in Chiloé inland sea, southern Chile. Latin American Journal of Aquatic Research. 42(3): 580-587.
 
-Cerna F, J Quiroz, A López y A Aranis. 2007. Edad y Crecimiento de sardina fueguina (*Sprattus fueguensis*, Jenyns, 1842) en el Mar Interior de la Isla Chiloé, Pacifico Sur-Este frente a Chile. XXVII Jornadas Ciencias del Mar. Iquique – Chile.
+Cerna F, J Quiroz, A López y A Aranis. 2007. Edad y Crecimiento de sardina fueguina (*Sprattus fueguensis*, Jenyns, 1842) en el Mar Interior de la Isla Chiloé, Pacifico Sur-Este frente a Chile. XXVII Jornadas Ciencias del Mar. Iquique -- Chile.
 
 Cubillos L, C Castillo, J Paramo y A Rodríguez. 2011. Estimación de la abundancia, biomasa y distribución espacial de pequeños pelágicos en aguas interiores de la X y XI Regiónes y su relación con algunas variables ambientales, año 2010. Informe Final. 339 pp.
 
@@ -2110,9 +2212,9 @@ FAO. 1996. Orientaciones técnicas para la pesca responsible. N°2. Enfoque prec
 
 Francis, R. 2011. Data weighting in statistical fisheries stock assessment models. Canadian Journal of Fisheries and Aquatic Sciences. 68:1124 -1138.
 
-Galleguillos R, S Ferrada, C Canales, C Hernández, M Oliva, MT González, L Cubillos, E Niklitschek y P Toledo. 2012. “Determinación de unidades poblacionales de sardina austral entre la X y XII Regiónes de Chile”: Proyecto FIP 2010-17. Informe Final. 171 pp.
+Galleguillos R, S Ferrada, C Canales, C Hernández, M Oliva, MT González, L Cubillos, E Niklitschek y P Toledo. 2012. "Determinación de unidades poblacionales de sardina austral entre la X y XII Regiónes de Chile": Proyecto FIP 2010-17. Informe Final. 171 pp.
 
-Gavaris S y J Ianelli. 2002. Statistical Issues in fisheries’ stock assessments. Scandinavian Journal of Statistics. 29: 245-271.
+Gavaris S y J Ianelli. 2002. Statistical Issues in fisheries' stock assessments. Scandinavian Journal of Statistics. 29: 245-271.
 
 Herrera G, E Tarifeño y M Orellana. 1987. Descripción de huevos y primeras fases larvales de sardina común (*Strangomera bentincki*) y del machuelo (*Ethmidium maculatum*). Biología Pesquera 16: 107-113.
 
@@ -2130,12 +2232,11 @@ Leal E, TM Canales, A Aranis y M González. 2011. Actividad reproductiva y longi
 
 López-Veiga EC. 1979. Fitting von Bertalanffy growth curves in short-lived fish species. A new approach. Investigaciones Pesqueras 43: 179-186.
 
-Maunder MN y AD Langley. 2004. Integrating the standardization of catch-per unit-of-effort into stock assessment models: testing a population dynamics model and using multiple data types. Fisheries Research. 70: 389–395.
+Maunder MN y AD Langley. 2004. Integrating the standardization of catch-per unit-of-effort into stock assessment models: testing a population dynamics model and using multiple data types. Fisheries Research. 70: 389--395.
 
 McCullagh P y J Nelder. 1989. Generalized linear models. Chapman and hall. London. 511 pp.
 
-Methot R. 2009. Stock assessment: operational models in support of fisheries management R.J. Beamish, B.J. 
-Rothschild (Eds.), Future of Fishery Science – Proceedings of the 50th Anniversary Symposium of the American Institute of Fishery Research Biologists, Fish y Fisheries Series, vol. 31, pp. 137-165.
+Methot R. 2009. Stock assessment: operational models in support of fisheries management R.J. Beamish, B.J. Rothschild (Eds.), Future of Fishery Science -- Proceedings of the 50th Anniversary Symposium of the American Institute of Fishery Research Biologists, Fish y Fisheries Series, vol. 31, pp. 137-165.
 
 Mohn, R. 1999. The retrospective problem in sequential population analysis: An investigation using cod fishery and simulated data. ICES Journal of Marine Science, 56: 473-488.
 
@@ -2145,24 +2246,22 @@ Niklitschek E, J Cornejo, E Hernández, P Toledo, R Merino, A Lafon y A Meza. 20
 
 Ortiz M y F Arocha. 2004. Alternative error distribution models for the standardization of catch rates of non-target species from a pelagic longline fishery: billfish species in the Venezuelan tuna longline fishery. Fisheries Research. 70: 275-297.
 
-Payá I, C Canales, D Bucarey, M Canales, F Contreras, F Espíndola, E Leal, C Montenegro, J Quiroz y R. Tascheri. 2014. Revisión de los puntos biológicos de referencia (Rendimiento Máximo Sostenible) en las pesquerías nacionales.” Primer Taller internacional. Informe de Avance 1. Subsecretaría de Economía - IFOP. 32 pp.+ 4 Anexos.
+Payá I, C Canales, D Bucarey, M Canales, F Contreras, F Espíndola, E Leal, C Montenegro, J Quiroz y R. Tascheri. 2014. Revisión de los puntos biológicos de referencia (Rendimiento Máximo Sostenible) en las pesquerías nacionales." Primer Taller internacional. Informe de Avance 1. Subsecretaría de Economía - IFOP. 32 pp.+ 4 Anexos.
 
-Pikitch E., P. Boersma, I. Boyd, O. Conover, P. Cury, T. Essington,  S. Heppell, E. Houde, M. Mangel, D. Pauly, E. Plagányi, K. Sainsbury y R. Steneck. 2012. Little Fish, Big Impact: Managing a Crucial Link in Ocean Food Webs. Lenfest Ocean Program. Washington, DC. 108 pp.
+Pikitch E., P. Boersma, I. Boyd, O. Conover, P. Cury, T. Essington, S. Heppell, E. Houde, M. Mangel, D. Pauly, E. Plagányi, K. Sainsbury y R. Steneck. 2012. Little Fish, Big Impact: Managing a Crucial Link in Ocean Food Webs. Lenfest Ocean Program. Washington, DC. 108 pp.
 
 Punt, A. and R.B. Kennedy. 1997. Population modelling of Tasmanian rock lobster, Jasus edwardsii, resources. Mar. Freshwater Res., 48: 967-980.
 
 Schaefer M. 1954. Some aspects of the dynamics of populations important to the management of the commercial marine fisheries. Bull Inter-Amer. Trop. Tuna Comm. (I-ATTC)/Bol. CIAT, 1(2): 27-56.
 
-Shono H. 2008. Application of the Tweedie distribution to zero-catch data in CPUE analysis. Fish. Res. 93, 154–162.
+Shono H. 2008. Application of the Tweedie distribution to zero-catch data in CPUE analysis. Fish. Res. 93, 154--162.
 
 Sullivan P. J., H.L. Lai y V.F. Gallucci.1990. A catch-at-length analysis that incorporates a stochastic model of growth. Can. J. Fish. Aquat. Sci. 47: 184-198.
 
-Tascheri R., J.C. Saavedra-Nievas, R. Roa-Ureta. 2010. Statistical models to standardize catch rates in the multi-species trawl fishery for Patagonian grenadier (*Macruronus magellanicus*) off Southern Chile. Fish. Res. 105, 200–214.
+Tascheri R., J.C. Saavedra-Nievas, R. Roa-Ureta. 2010. Statistical models to standardize catch rates in the multi-species trawl fishery for Patagonian grenadier (*Macruronus magellanicus*) off Southern Chile. Fish. Res. 105, 200--214.
 
 Thompson, W. y Bell F. 1934. Biological statistics of the Pacific halibut fishery. 2. Effect of changes in intensity upon total yield and yield per unit of gear. Report Internal Fisheries (Pacific Halibut) Commission 8: 49.
 
 Zhou S, S Pascoe, N Dowling, M Haddon, N Klaer, J Larcombe, M Smith, O Thebaud, S Vieira & S Wayte. (2013). Quantitatively defining biological and economic reference points in data poor and data limited fisheries. Final Report on FRDC Project 2010/044. Canberra, Australia.
 
-Zhou S, S Yin, T Thorson, M Smith & M Fuller. 2012. Linking fishing mortality reference points to life history traits: an empirical study. Canadian Journal of Fisheries and Aquatic Science, 69: 1292–1301
-
-
+Zhou S, S Yin, T Thorson, M Smith & M Fuller. 2012. Linking fishing mortality reference points to life history traits: an empirical study. Canadian Journal of Fisheries and Aquatic Science, 69: 1292--1301
