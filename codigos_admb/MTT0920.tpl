@@ -313,6 +313,7 @@ PARAMETER_SECTION
  sdreport_vector Frpr(1,ntime)
  sdreport_vector pred_mph(1,ntime);
  sdreport_number SSBo
+ sdreport_number SPRFo
  
 
 
@@ -510,6 +511,7 @@ FUNCTION Eval_abundancia
   No=(No*exp(-1.*M))*T+pre*exp(log_Rmed); }
   
   SSBo    = sum(elem_prod(No*mfexp(-dt(1)*M),elem_prod(Wmed,msex)));
+  SPRFo    = sum(elem_prod(No*mfexp(-dt(1)*M),msex));//para RAM_legacy
   alfa_sr = 4*h*exp(log_Rmed+0.5*square(sigmaR))/(5*h-1);//
   beta_sr = (1-h)*SSBo/(5*h-1);// Reclutamiento
 
@@ -786,6 +788,10 @@ REPORT_SECTION
  report<<Tallas<<endl;
  report<<"Abundancia_talla"<<endl;
  report<<N<<endl;
+ report<<"pred_Ctot"<<endl;
+ report<<pred_Ctot<<endl;
+ report<<"NVcru"<<endl;
+ report<<NVcru<<endl;
  report<<"Selflo_talla"<<endl;
  report<<Sel<<endl;
  report<<"Selcru_talla"<<endl;
@@ -802,6 +808,8 @@ REPORT_SECTION
  report << BDo << endl;
  report << "BD_virgen_LP" << endl;
  report << SSBo << endl;
+ report << "NBD_virgen_LP" << endl;
+ report <<  SPRFo << endl;
  report << "Reduccion_LP " << endl;
  report << RPRlp << endl;
  report << "Talla_media_por_grupo" << endl;
