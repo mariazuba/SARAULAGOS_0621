@@ -14,7 +14,7 @@ library(patchwork) # para unir gráficos de ggplot
 library(strucchange) # libreria utilizada para análisis de quiebres
 
 dir.Fig     <-"Figuras/" # carpeta de las figuras utilizadas y generadas en este estudio
-fig         <-c("pdf","bmp") # formato de figuras generadas por este código
+fig         <-c("pdf") # formato de figuras generadas por este código
 dir.0       <-getwd() # directorio de trabajo 
 dir.1       <-paste(dir.0,"/codigos_admb",sep="") # carpeta de códigos ADMB 
 dir.2       <-paste(dir.0,"/Retrospectivobase",sep="") # carpeta de códigos ADMB 
@@ -182,7 +182,7 @@ std.3     <- read.table("MAT0619.std",header=T,sep="",na="NA",fill=T)
 ## Antecedentes
 
 
-```{r antecedentes_desembarques,warning=F, include=T, message=F,eval=F, echo=FALSE,fig.height=3.5,fig.width=5,fig.align="center",fig.path="Figuras/",dev=fig}
+```{r Fig2,warning=F, include=T, message=F,eval=T, echo=FALSE,fig.height=3.5,fig.width=5,fig.align="center",fig.path="Figuras/",dev=fig}
 year<-seq(2006,2020,1)
 desemb<-c(39146,50506,45078,49225,20123,16429,19763,21888,22951,23643,18495,14134,8366,12565,14213)
 cuota<-c(40522,50872,41904,58481,30966,17693,14500,21670,18276,23848,18380,20000,18897,11137,15471)
@@ -195,7 +195,7 @@ legend(2011,60000,c("Datos oficiales","CBA"),lwd=c(10,2),col=c("cadetblue4",1),b
 ```
 
 
-```{r estructura_mensual,eval=F,warning=F, include=T, message=F, echo=FALSE,fig.height=7.5,fig.width=6,fig.align="center",fig.path="Figuras/",dev=fig}
+```{r Fig3,eval=T,warning=F, include=T, message=F, echo=FALSE,fig.height=7.5,fig.width=6,fig.align="center",fig.path="Figuras/",dev=fig}
 
 datafrec<-read.table(paste(getwd(),"/Tallasmensuales.txt",sep=""),header = FALSE, sep = "")
 
@@ -254,7 +254,7 @@ fig0+fig2+fig1+fig3
 ## Metodología 
 
 
-```{r RproyMetodologia,warning=F, include=T, message=F, echo=FALSE,fig.height=3,fig.width=6,fig.align="center",fig.path="Figuras/",dev=c('pdf')}
+```{r Fig7,warning=F, include=T, message=F, echo=FALSE,fig.height=3,fig.width=6,fig.align="center",fig.path="Figuras/",dev=c('pdf')}
 
 dirb<-paste(dir.0,"/cba_septiembre2020_base",sep="")
 setwd(dirb)
@@ -278,7 +278,7 @@ text(2010,c(exp(8.6053e+000),reps2b$Reclutamiento[11],reps3b$Reclutamiento[17])+
 ## Salidas de ajustes 
 
 
-```{r Ajustes_indices,warning=F, include=T, message=F, echo=FALSE,fig.height=6.5,fig.width=5.5,fig.align="center",fig.path="Figuras/",dev=fig}
+```{r Fig19,warning=F, include=T, message=F, echo=FALSE,fig.height=6.5,fig.width=5.5,fig.align="center",fig.path="Figuras/",dev=fig}
 
 library(patchwork)
 
@@ -346,7 +346,7 @@ f1/f2/f3 + plot_layout(guides="collect")
 ```
 
 
-```{r arreglos_residuales_indices,warning=F, include=T, message=F, echo=FALSE,eval=TRUE,fig.height=11,fig.width=9,fig.align="center",fig.path="Figuras/",dev=c('pdf')}
+```{r Fig20,warning=F, include=T, message=F, echo=FALSE,eval=TRUE,fig.height=11,fig.width=9,fig.align="center",fig.path="Figuras/",dev=c('pdf')}
 # Análisis de Residuales Indices  
 
 # Arreglos MAET - MATT
@@ -392,7 +392,7 @@ r4 <-  ggplot(Res, aes(sample = value, colour = Asesoría)) +
 
 ```
 
-```{r Comp_Flota,warning=F, include=T, message=F, echo=FALSE,fig.height=6,fig.width=6,fig.asp=1,fig.align="center",fig.path="Figuras/",dev=fig}
+```{r Fig21,warning=F, include=T, message=F, echo=FALSE,fig.height=6,fig.width=6,fig.asp=1,fig.align="center",fig.path="Figuras/",dev=fig}
 age     <-seq(5.5,20,0.5)                                            
 nage    <-length(age)    
 etf_obs_jun <- data.frame(rep1$Propfl_obs)
@@ -424,7 +424,7 @@ nyearf  <-length(yearf)
 ```
 
 
-```{r Comp_Crucero,warning=F, include=T, message=F, echo=FALSE,fig.height=7,fig.width=7,fig.asp=1,fig.align="center",fig.path="Figuras/",dev=fig}
+```{r Fig22,warning=F, include=T, message=F, echo=FALSE,fig.height=7,fig.width=7,fig.asp=1,fig.align="center",fig.path="Figuras/",dev=fig}
 age     <-seq(5.5,20,0.5)                                            
 nage    <-length(age)    
 etc_obs_sept <- data.frame(rbind(rep0$Propcru_obs,rep(NA,nage)))
@@ -456,8 +456,7 @@ nyearc  <-length(yearc)
  
 ```
 
-
-```{r Residuos_comp_alternaitvos, warning=F, include=T, message=F, echo=FALSE,fig.height=5,fig.width=8,fig.align="center",fig.path="Figuras/",dev=fig}
+```{r Fig23, warning=F, include=T, message=F, echo=FALSE,fig.height=7,fig.width=8,fig.align="center",fig.path="Figuras/",dev=fig}
 par(mfcol=c(1,2))
 #Flota
 cx<-0.7
