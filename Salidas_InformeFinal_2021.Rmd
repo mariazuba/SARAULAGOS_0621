@@ -181,7 +181,6 @@ std.3     <- read.table("MAT0619.std",header=T,sep="",na="NA",fill=T)
 
 ## Antecedentes
 
-
 ```{r Fig2,warning=F, include=T, message=F,eval=T, echo=FALSE,fig.height=3.5,fig.width=5,fig.align="center",fig.path="Figuras/",dev=fig}
 year<-seq(2006,2020,1)
 desemb<-c(39146,50506,45078,49225,20123,16429,19763,21888,22951,23643,18495,14134,8366,12565,14213)
@@ -519,6 +518,75 @@ box()
 
 ```
 
+### Comparación con evaluaciones anteriores
+
+```{r Fig24,warning=F, include=T, message=F, echo=FALSE,fig.height=7,fig.width=6,fig.align="center",fig.path="Figuras/",dev=c('pdf')}
+
+   
+years.1   <- data.1$Ind[,1]  ; nyears.1  <- data.1$nanos 
+years.0   <- data.1$Ind[,1]  ; nyears.0  <- data.1$nanos 
+R_jun19  <-c(6215,9079,13095,19689,8096,8467,10623,6528,5133,5375,13802,2383,12211,3249,2441,4388,2445,6665,NA,NA)
+R_sept19 <-c(6174,9049,13026,19810,8084,8452,10630,6544,5134,5369,13770,2410,12176,3261,2505,4861,2735,4690,NA,NA)
+
+BD_jun19  <-c(40355,56370,55954,56952,74917,58016,37351,29081,28055,26737,29062,44469,37477,40608,30858,17861,17043,17109,NA,NA)
+BD_sept19 <-c(39991,56080,55914,57142,75339,58468,37718,29360,28317,26985,29433,44484,37546,40817,31226,18630,19126,18793,NA,NA)
+
+F_jun19  <-c(0.5,0.35,0.4,0.5,0.33,0.6,0.72,0.95,0.38,0.33,0.28,0.29,0.35,0.35,0.43,0.49,0.29,0.33,NA,NA)
+F_sept19 <-c(0.5,0.35,0.4,0.49,0.33,0.59,0.71,0.94,0.38,0.33,0.28,0.3,0.37,0.36,0.43,0.48,0.26,0.34,NA,NA)
+
+#modelo base
+dat3c <- data.frame(years=years.0,Rt=c(R_jun19),SSBt=c(BD_jun19),Ft=c(F_jun19))%>%
+         mutate(Series=rep("jun19",nyears.0))%>%mutate(Modelo=rep("M_base",nyears.0))%>% melt(id.var=c('years', 'Series','Modelo'))
+
+dat2c <- data.frame(years=years.0,Rt=c(R_sept19),SSBt=c(BD_sept19),Ft=c(F_sept19))%>%
+         mutate(Series=rep("sept19",nyears.0))%>%mutate(Modelo=rep("M_base",nyears.0))%>% melt(id.var=c('years', 'Series','Modelo'))
+
+dat1c <- data.frame(years=years.0,Rt=c(rep.0$Reclutamiento,NA),SSBt=c(rep.0$Biomasa_desovante,NA),Ft=c(rep.0$F,NA))%>% 
+         mutate(Series=rep("jun20",nyears.0))%>%mutate(Modelo=rep("M_base",nyears.0))%>% melt(id.var=c('years', 'Series','Modelo'))
+
+dat0c <- data.frame(years=years.0,Rt=c(rep0$Reclutamiento,NA),SSBt=c(rep0$Biomasa_desovante,NA),Ft=c(rep0$F,NA))%>% 
+         mutate(Series=rep("sept20",nyears.0))%>%mutate(Modelo=rep("M_base",nyears.0))%>% melt(id.var=c('years', 'Series','Modelo'))
+
+datc <- data.frame(years=years.1,Rt=c(rep1$Reclutamiento),SSBt=c(rep1$Biomasa_desovante),Ft=c(rep1$F))%>% 
+         mutate(Series=rep("jun21",nyears.0))%>%mutate(Modelo=rep("M_base",nyears.1))%>% melt(id.var=c('years', 'Series','Modelo'))
+
+data <- data.frame(rbind(dat3c,dat2c,dat1c,dat0c,datc))  
+
+# Modelo base
+f1<- ggplot(data %>% filter(variable=='Rt',Modelo=='M_base'),aes(years,value/10^6)) + 
+     geom_line(aes(colour=Series), size=0.3)+
+     labs(x = '', y = 'Reclutamientos',colour='Asesorías')  +
+     scale_x_continuous(breaks = seq(from = 1990, to = 2020, by = 5)) +
+     scale_colour_manual(values=seq(1,5,1))+
+     theme_bw(base_size=11) + 
+     ggtitle('Modelo base')+
+     theme(plot.title = element_text(hjust = 0.5),legend.position="none")
+
+f2<- ggplot(data %>% filter(variable=='SSBt',Modelo=='M_base'),aes(years,value/10^6)) + 
+     geom_line(aes(colour=Series), size=0.3)+
+     labs(x = '', y = 'Biomasa desovante (t)',colour='Asesorías')  +
+     scale_x_continuous(breaks = seq(from = 1990, to = 2020, by = 5)) +
+     scale_colour_manual(values=seq(1,5,1))+
+     theme_bw(base_size=11) + 
+     theme(plot.title = element_text(hjust = 0.5),legend.position="right")
+
+f3<- ggplot(data %>% filter(variable=='Ft',Modelo=='M_base'),aes(years,value)) + 
+     geom_line(aes(colour=Series), size=0.3)+
+     labs(x = '', y = 'Mortalidad por pesca',colour='Asesorías')  +
+     scale_x_continuous(breaks = seq(from = 1990, to = 2020, by = 5)) +
+     scale_colour_manual(values=seq(1,5,1))+
+     theme_bw(base_size=11) + 
+     theme(plot.title = element_text(hjust = 0.5),legend.position="none")
+
+
+
+
+ (f1/f2/f3)  
+
+```
+
+### Análisis retrospectivo
+
 ```{r VariablesJunio_std, echo=F,message=FALSE, warning=FALSE, include=T}
 
 years<-rep1$Years
@@ -541,35 +609,12 @@ VarPob_jun<- data.frame(x=years, Rt1=Rt1,BT1=BT1,BD1=BD1,Ft1=exp(Ft1),
 
 ```
 
-
-```{r VariablesSeptiembre_std, echo=F,message=FALSE, warning=FALSE, include=T}
+```{r Dat_Retrospectivo_junio, eval=T,echo=F, message=FALSE, warning=FALSE, include=T}
+dir<-paste(dir.0,"/RetrospectivobaseJun",sep="")
+setwd(dir)
+admb<-"MTT0621"
 
 years<-rep1$Years
-nyears<-length(years)
-
-Rt0      <- c(subset(std0,name=="Reclutas")$value,NA) 
-Rt0std   <- c(subset(std0,name=="Reclutas")$std,NA)
-BT0      <- c(subset(std0,name=="BT")$value,NA)   
-BT0std   <- c(subset(std0,name=="BT")$std,NA)
-BD0      <- c(subset(std0,name=="BD")$value,NA)   
-BD0std   <- c(subset(std0,name=="BD")$std,NA)
-Ft0      <- c(subset(std0,name=="log_F")$value,NA)   
-Ft0std   <- c(subset(std0,name=="log_F")$std,NA)
-
-VarPob_sept<- data.frame(x=years, Rt0=Rt0,BT0=BT0,BD0=BD0,Ft0=exp(Ft0), 
-         lowerRt0 = (Rt0 -1.96*Rt0std), upperRt0 = (Rt0+1.96*Rt0std),
-         lowerBT0 = (BT0 -1.96*BT0std), upperBT0 = (BT0+1.96*BT0std),
-         lowerBD0 = (BD0 -1.96*BD0std), upperBD0 = (BD0+1.96*BD0std),
-         lowerFt0 = exp(Ft0 -1.96*Ft0std), upperFt0 = exp(Ft0+1.96*Ft0std))
-
-```
-
-```{r Dat_Retrospectivo_junio, eval=F,echo=F, message=FALSE, warning=FALSE, include=T}
-dir<-paste(dir.0,"/Retrospectivobase",sep="")
-setwd(dir)
-admb<-"MTT0920"
-
-years<-rep0$Years
 nyears<-length(years)
 retros<-seq(1,3)
 nretros<-length(retros)
@@ -624,4 +669,134 @@ Ft_retroRel<- data.frame(x=years, y1=rel.diff.f[,1],y2=rel.diff.f[,2],y3=rel.dif
 ```
 
 
+```{r Fig25, eval=T,echo=FALSE, message=FALSE, warning=FALSE, include=T, fig.align="center", fig.height=8, fig.width=8,fig.path=dir.Fig,dev=fig}
 
+#Retrospectivo tradicional
+Rt <- ggplot(Rt_retro) + 
+    geom_ribbon(aes(ymin=lower, ymax=upper, x=x, fill = "IC asintótico"), alpha = 0.2)+
+    geom_line(aes(y=y1, x=x, colour = year_retros[nretros]), size=0.5)+
+    geom_line(aes(y=y2, x=x, colour = year_retros[nretros-1]), size=0.5)+
+    geom_line(aes(y=y3, x=x, colour = year_retros[nretros-2]), size=0.5)+
+    labs(x = '', y = 'Reclutamientos ',colour='Asesorías')  +
+    scale_x_continuous(breaks = seq(from = 1995, to = 2020, by = 2)) +
+    scale_colour_manual("",values=c("orange","green","blue","red","black"))+
+    scale_fill_manual("",values=c("grey30"))+
+    theme_bw(base_size=8) +
+     ggtitle('')+
+     theme(plot.title = element_text(hjust = 0.5),legend.position="top")
+
+BD <- ggplot(BD_retro) + 
+     geom_ribbon(aes(ymin=lower, ymax=upper, x=x, fill = ""), alpha = 0.2)+
+     geom_line(aes(y=y1, x=x, colour = year_retros[nretros]), size=0.5)+
+    geom_line(aes(y=y2, x=x, colour = year_retros[nretros-1]), size=0.5)+
+    geom_line(aes(y=y3, x=x, colour = year_retros[nretros-2]), size=0.5)+
+    labs(x = '', y = 'Biomasa desovante (t)',colour='Asesorías')  +
+    scale_x_continuous(breaks = seq(from = 1995, to = 2020, by = 2)) +
+    scale_colour_manual("",values=c("orange","green","blue","red","black"))+
+    scale_fill_manual("",values=c("grey30"))+
+    theme_bw(base_size=8) +
+     ggtitle('')+
+     theme(plot.title = element_text(hjust = 0.5),legend.position="none")
+
+Ft <- ggplot(Ft_retro) + 
+    geom_ribbon(aes(ymin=lower, ymax=upper, x=x, fill = ""), alpha = 0.2)+
+    geom_line(aes(y=y1, x=x, colour = year_retros[nretros]), size=0.5)+
+    geom_line(aes(y=y2, x=x, colour = year_retros[nretros-1]), size=0.5)+
+    geom_line(aes(y=y3, x=x, colour = year_retros[nretros-2]), size=0.5)+
+    labs(x = '', y = 'Mortalidad por pesca (F)',colour='Asesorías')  +
+    scale_x_continuous(breaks = seq(from = 1995, to = 2020, by = 2)) +
+    scale_colour_manual("",values=c("orange","green","blue","red","black"))+
+    scale_fill_manual("",values=c("grey30"))+
+    theme_bw(base_size=8) +
+    ggtitle('')+
+    theme(plot.title = element_text(hjust = 0.5),legend.position="none")
+
+#Retrospectivo relativo
+Rtrel <- ggplot(Rt_retroRel) + lims(y=c(-1,1)) +
+    geom_line(aes(y=y1, x=x, colour = year_retros[nretros]), size=0.5)+
+    geom_line(aes(y=y2, x=x, colour = year_retros[nretros-1]), size=0.5)+
+    geom_line(aes(y=y3, x=x, colour = year_retros[nretros-2]), size=0.5)+
+   annotate("text", x=2004, y=0.75,label=paste("Rho =",round(ave.mohn.r,2))) +
+    labs(x = '', y = 'Diferencia porcentual del último año',colour='Asesorías')  +
+    scale_x_continuous(breaks = seq(from = 1995, to = 2020, by = 2)) +
+    scale_colour_manual("",values=c("orange","green","blue","red","black"))+
+    scale_fill_manual("",values=c("grey30"))+
+    theme_bw(base_size=8) +
+     ggtitle('')+
+     theme(plot.title = element_text(hjust = 0.5),legend.position="none")
+
+BDrel <- ggplot(BD_retroRel) + lims(y=c(-1,1)) +
+     geom_line(aes(y=y1, x=x, colour = year_retros[nretros]), size=0.5)+
+    geom_line(aes(y=y2, x=x, colour = year_retros[nretros-1]), size=0.5)+
+    geom_line(aes(y=y3, x=x, colour = year_retros[nretros-2]), size=0.5)+
+   annotate("text", x=2004, y=0.75,label=paste("Rho =",round(ave.mohn.ssb,2))) +
+    labs(x = '', y = 'Diferencia porcentual del último año',colour='Asesorías')  +
+    scale_x_continuous(breaks = seq(from = 1995, to = 2020, by = 2)) +
+    scale_colour_manual("",values=c("orange","green","blue","red","black"))+
+    scale_fill_manual("",values=c("grey30"))+
+    theme_bw(base_size=8) +
+     ggtitle('')+
+     theme(plot.title = element_text(hjust = 0.5),legend.position="none")
+
+Ftrel <- ggplot(Ft_retroRel) + lims(y=c(-1,1)) +
+    geom_line(aes(y=y1, x=x, colour = year_retros[nretros]), size=0.5)+
+    geom_line(aes(y=y2, x=x, colour = year_retros[nretros-1]), size=0.5)+
+    geom_line(aes(y=y3, x=x, colour = year_retros[nretros-2]), size=0.5)+
+   annotate("text", x=2004, y=0.75,label=paste("Rho =",round(ave.mohn.f,2))) +
+    labs(x = '', y = 'Diferencia porcentual del último año',colour='Asesorías')  +
+    scale_x_continuous(breaks = seq(from = 1995, to = 2020, by = 2)) +
+    scale_colour_manual("",values=c("orange","green","blue","red","black"))+
+    scale_fill_manual("",values=c("grey30"))+
+    theme_bw(base_size=8) +
+    ggtitle('')+
+    theme(plot.title = element_text(hjust = 0.5),legend.position="none")
+
+Rt/BD/Ft |Rtrel/BDrel/Ftrel
+
+```
+
+### Perfil de verosimilitud
+
+
+```{r Fig26, eval=T, echo=FALSE, message=FALSE, warning=FALSE, include=T, fig.align="center", fig.height=4, fig.width=5,fig.path=dir.Fig,dev=fig}
+
+admb<-"MTT0621"
+dir<-paste(dir.0,"/VerosimilitudbaseJun",sep="")
+setwd(dir)
+
+  casos <-35
+  logRo    <- rep(0,casos)
+  likeval  <- matrix(ncol=9,nrow=casos)
+  slikeval <- matrix(ncol=10,nrow=casos)
+  
+  for(i in 1:casos){
+    rep         <- reptoRlist(paste(admb,"s",i,".rep",sep=""))
+    data        <- readLines(paste(admb,"s",i,".dat", sep=''),encoding="UTF-8")
+    logRo[i]    <- as.numeric(data[161])
+    likeval[i,] <- rep$Likeval}
+  #===========================================================================================================
+  # SEXTO PASO: ESTANDARIZAR VEROSIMILITUD
+  #===========================================================================================================
+  like    <- data.frame(round(likeval,3),Total=apply(likeval,1,sum))
+  minLik  <- apply(like,2,min)                         # busca el minimo
+  for(i in 1:10){slikeval[,i]<-like[,i]-minLik[i]}    # Estandarizaci?n
+  #===========================================================================================================
+  # ULTIMO PASO: GUARDAR TABLAS Y FIGURA
+  #===========================================================================================================
+  #CPUE   BCru   Bmph   Desemb  pfFlota  pfCru  dev_R  devNo LR
+  names<-c("Ro","cpue",	"cru","mph", 	"desemb",	"proflo",	"procru",	
+           "desvRo",	"desNo",	"Lo", "Total")
+  # Tabla verosimilitud
+  TLk1 <- data.frame(exp(logRo),like);
+  colnames(TLk1)<-names
+  # Tabla estandarizada
+  TLk2 <- data.frame(exp(logRo),slikeval);
+  colnames(TLk2)<-names
+  
+  par(mar=c(4,4,1,1)+0.5)
+  plot(TLk2$Ro,TLk2$Total,type="l",lwd=3,ylim=c(0,4),xlim=c(2500,8000), xaxs= "i",yaxs= "i",
+       ylab="L-min(L)",xlab="Ro",   las=1,main="Modelo base",cex.main=0.7,cex.axis=0.7,cex.lab=0.7)
+  abline(h=2,col=1,lty=2)
+   for(i in 2:7){lines(TLk2$Ro,TLk2[,i],col=i,lty=2,lwd=2)}
+   legend(6000,4,names[c(11,2:7)],col=1:8,lty=c(1,rep(2,7)),lwd=2,bty="n",cex=0.8)
+```
