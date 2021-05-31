@@ -31,17 +31,17 @@ Verosimilitudbase<-function(admb,dir.0,dir.1,Carpeta,system){
   #===========================================================================================================
   # SEGUNDO PASO: CREA VECTOR PARA R0 (CASOS O ESCENARIOS A PROBAR)
   #===========================================================================================================
-  log_Ro    <- as.numeric(data.1[159])
+  log_Ro    <- as.numeric(data.1[161])
   prior_Ro  <- seq(log_Ro*0.90,log_Ro*1.10,0.05)
   casos     <- length(prior_Ro);casos
   #===========================================================================================================
   # TERCER PASO: CREA LOS ARCHIVOS .DAT DE CADA CASO
   #===========================================================================================================
   for(i in 1:casos){
-    data.1[159]  <- prior_Ro[i]
-    data.1[156]  <- -1
-    data.1[165]  <- 1
-    data.1[167]  <- 2
+    data.1[161]  <- prior_Ro[i]
+    data.1[158]  <- -1
+    data.1[167]  <- 1
+    data.1[170]  <- 2
     
     cat(data.1,file=(can<-file(paste(admb,"s",i,".dat", sep=''),"wb",encoding="UTF-8")),sep="\n")
     close(can)
