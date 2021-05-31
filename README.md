@@ -18,6 +18,8 @@
 Las carpetas generadas por las funciones son las siguientes:
 
 ### Carpetas para actualización estatus y CBA 2021
+Estas carpetas contienen los archivos .dat y .rep necesarios para generar las figuras de análisis retrospectivo y perfiles de verosimilitud  que van contenidas en "Salidas_InformeFinal_2021.Rmd" y "INFORMEFINAL_SARDAUSTRAL_LOSLAGOS.Rmd".
+
 1. RetrospectivobaseJun
 2. RetrospectivobaseSept
 
@@ -25,6 +27,9 @@ Las carpetas generadas por las funciones son las siguientes:
 4. VerosimilitudbaseSept
 
 ### Carpetas para actualizar objetivo 4, comparación de modelo base y alternativo
+
+Estas carpetas contienen los archivos .dat y .rep necesarios para generar las figuras y tablas que van contenidas en "Salidas_InformeFinal_2021.Rmd" y "INFORMEFINAL_SARDAUSTRAL_LOSLAGOS.Rmd".
+
 1. cba_junio2021_alternativo
 2. cba_junio2021_base
 
