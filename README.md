@@ -42,8 +42,6 @@ Estas carpetas contienen los archivos .dat y .rep necesarios para generar las fi
 7. cba_septiembre2020_alternativo
 8. cba_septiembre2020_base
 
-
-
 ### DATOS HISTÓRICOS
 
 Seguimiento de pesquería
