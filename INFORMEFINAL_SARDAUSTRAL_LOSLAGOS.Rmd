@@ -1644,17 +1644,46 @@ En términos de la bondad de ajuste se entrega el cuadro de residuales por longi
 
 #### Comparación con evaluaciones anteriores
 \quad
+Se comparan los resultados de los principales indicadores de la asesoría actual (jseptiembre 2020) con asesorías anteriores (junio 2020, septiembre 2019, junio 2019, septiembre 2018) para evaluar la consistencia de la evaluación presente. Al respecto, el desempeño retrospectivo empírico ilustra mayor incertidumbre en los tres últimos años de las series (\textbf{Figura \ref{Fig24}}). Con el procedimiento de actualización, se aprecia un re-escalamiento de la biomasa desovante en toda la serie hacia valores menores (asesoría de septiembre 2018) y de la mortalidad por pesca hacia valores más altos (asesoría de septiembre 2018). Esto, como consecuencia de una disminución importante en los cruceros de los años 2018 y 2019, que mostraron los valores más bajos de toda la serie. Asimismo, se observó una reducción significativa durante el año 2017 y 2018 en la CPUE y desembarques. Otro efecto se genera producto del cambio en el caso base del año inicial (2002) a partir de la asesoría de septiembre 2018.
 
-
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig24-1.pdf}
+\caption{Análisis retrospectivo empírico de los reclutamientos, biomasa desovante y mortalidad por pesca (F año-1).}
+\label{Fig24}
+\end{figure}
+```
 \pagebreak
 
 #### Análisis retrospectivo
 \quad
+En la \textbf{Figura \ref{Fig25}} se muestra el patrón retrospectivo estándar y relativo de la biomasa desovante y mortalidad por pesca para el modelo base actual (septiembre 2020). El análisis retrospectivo del modelo de evaluación muestra que en términos de rho (promedio de anomalías retrospectivas) la reducción de información genera un patrón de sobreestimación del reclutamiento (rho = +0,22) y de la biomasa desovante (rho = +0,2), con una subestimación de la mortalidad por pesca (rho = -0,15).  En general, las estimaciones para el último año pueden variar sustancialmente entre las sucesivas actualizaciones, mientras que para los años previos tienden a converger a valores más estables. En el caso particular de la evaluación de stock de sardina austral, la fuerte reducción (por debajo de los niveles promedio) en los índices que conducen el modelo, generó cambios hacia menores valores de R0 (Rmed) a partir del año 2018. Según el actual enfoque de evaluación, el stock debería ser de un tamaño menor, en términos de biomasa y abundancia, que los niveles estimados previo al año 2018.
 
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig25-1.pdf}
+\caption{Patrón retrospectivo (panel izquierdo) estándar y (panel derecho) relativo de los reclutamientos, biomasa desovante y de la mortalidad por pesca de sardina austral para la asesoría septiembre 2020.}
+\label{Fig25}
+\end{figure}
+```
 
 \pagebreak
 
 #### Perfil de verosimilitud
+\quad
+La \textbf{Figura \ref{Fig26}}  muestra el perfil de verosimilitud de cada fuente de dato cuyo mínimo representa la estimación máxima a posteriori del reclutamiento medio (R_0) para cada fuente de error del caso base. Los datos cuyos perfiles estuvieron más próximos entre si y la diferencia del log verosimilitud respecto del mínimo se elevó por sobre el criterio estadístico X^2=1,92 fue la biomasa del crucero (cru) y la proporción de tallas del crucero (procru).
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig26-1.pdf}
+\caption{Perfil de verosimilitud donde la línea horizontal representa el nivel crítico para el test  para la asesoría actual (septiembre 2020).}
+\label{Fig26}
+\end{figure}
+```
+
 
 \pagebreak
 
