@@ -1,48 +1,35 @@
 # History files
 .Rhistory
 .Rapp.history
-
 # Session Data files
 .RData
-
 # User-specific files
 .Ruserdata
-
 # Example code in package build process
 *-Ex.R
-
 # Output files from R CMD build
 /*.tar.gz
-
 # Output files from R CMD check
 /*.Rcheck/
-
 # RStudio files
 .Rproj.user/
-
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
-
 # OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
 .httr-oauth
-
 # knitr and R markdown default cache directories
 *_cache/
 /cache/
-
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
-
 # R Environment Variables
 .Renviron
-
 admodel.cov
 admodel.dep
 admodel.hes
 fmin.log
-
 MAT0420.b01
 MAT0420.b02
 MAT0420.b03
@@ -71,7 +58,6 @@ MAT0420.r04
 MAT0420.r05
 MAT0420.r06
 MAT0420.r07
-
 MAT0619.b01
 MAT0619.b02
 MAT0619.b03
@@ -100,8 +86,6 @@ MAT0619.r04
 MAT0619.r05
 MAT0619.r06
 MAT0619.r07
-
-
 MAT0919.b01
 MAT0919.b02
 MAT0919.b03
@@ -130,9 +114,6 @@ MAT0919.r04
 MAT0919.r05
 MAT0919.r06
 MAT0919.r07
-
-
-
 MAT0920.b01
 MAT0920.b02
 MAT0920.b03
@@ -161,8 +142,6 @@ MAT0920.r04
 MAT0920.r05
 MAT0920.r06
 MAT0920.r07
-
-
 MTT0520.b01
 MTT0520.b02
 MTT0520.b03
@@ -185,9 +164,6 @@ MTT0520.r02
 MTT0520.r03
 MTT0520.r04
 MTT0520.r05
-
-
-
 MTT0819.b01
 MTT0819.b02
 MTT0819.b03
@@ -210,9 +186,6 @@ MTT0819.r02
 MTT0819.r03
 MTT0819.r04
 MTT0819.r05
-
-
-
 MTT0920.b01
 MTT0920.b02
 MTT0920.b03
@@ -235,4 +208,5 @@ MTT0920.r02
 MTT0920.r03
 MTT0920.r04
 MTT0920.r05
-
+INFORME_FINAL.Rproj
+Salidas_InformeFinal_2021.pdf
