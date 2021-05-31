@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.22)  30 MAY 2021 17:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.22)  31 MAY 2021 10:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -455,13 +455,6 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 \Gin@req@height=\dimen175
 \Gin@req@width=\dimen176
 )
-(/Users/mariajosezunigabasualto/Library/TinyTeX/texmf-dist/tex/latex/grffile/gr
-ffile.sty
-Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
-y)
-Package grffile Info: This package is an empty stub for compatibility on input 
-line 40.
-)
 (/Users/mariajosezunigabasualto/Library/TinyTeX/texmf-dist/tex/latex/draftwater
 mark/draftwatermark.sty
 Package: draftwatermark 2020/12/08 3.0 Put a gray textual watermark on document
@@ -721,7 +714,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <logoifop.png, id=247, 125.5089pt x 151.767pt>
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 101.
+Package pdftex.def Info: logoifop.png  used on input line 103.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
@@ -791,11 +784,10 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                \setlength{\footskip}{7.67097pt}.
 
 [5 <./Figuras/Fig1.png>]
-<Figuras/antecedentes_desembarques-1.pdf, id=297, 361.35pt x 252.945pt>
-File: Figuras/antecedentes_desembarques-1.pdf Graphic file (type pdf)
-<use Figuras/antecedentes_desembarques-1.pdf>
-Package pdftex.def Info: Figuras/antecedentes_desembarques-1.pdf  used on input
- line 338.
+<Figuras/Fig2.pdf, id=297, 361.35pt x 252.945pt>
+File: Figuras/Fig2.pdf Graphic file (type pdf)
+<use Figuras/Fig2.pdf>
+Package pdftex.def Info: Figuras/Fig2.pdf  used on input line 338.
 (pdftex.def)             Requested size: 283.2248pt x 198.25735pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
@@ -806,12 +798,11 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[6 <./Figuras/antecedentes_desembarques-1.pdf>]
-<Figuras/estructura_mensual-1.pdf, id=312, 433.62pt x 542.025pt>
-File: Figuras/estructura_mensual-1.pdf Graphic file (type pdf)
-<use Figuras/estructura_mensual-1.pdf>
-Package pdftex.def Info: Figuras/estructura_mensual-1.pdf  used on input line 3
-59.
+[6 <./Figuras/Fig2.pdf>]
+<Figuras/Fig3.pdf, id=312, 433.62pt x 542.025pt>
+File: Figuras/Fig3.pdf Graphic file (type pdf)
+<use Figuras/Fig3.pdf>
+Package pdftex.def Info: Figuras/Fig3.pdf  used on input line 359.
 (pdftex.def)             Requested size: 424.84546pt x 531.05681pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
@@ -822,7 +813,7 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                Make it at least 7.67097pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.67097pt}.
 
-[7 <./Figuras/estructura_mensual-1.pdf>]
+[7 <./Figuras/Fig3.pdf>]
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
 Package pdftex.def Info: logoifop.png  used on input line 437.
@@ -1070,10 +1061,10 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
 [24]
-<Figuras/DFgeneral.pdf, id=519, 340.27126pt x 340.27126pt>
-File: Figuras/DFgeneral.pdf Graphic file (type pdf)
-<use Figuras/DFgeneral.pdf>
-Package pdftex.def Info: Figuras/DFgeneral.pdf  used on input line 2162.
+<Figuras/Fig6.pdf, id=519, 340.27126pt x 340.27126pt>
+File: Figuras/Fig6.pdf Graphic file (type pdf)
+<use Figuras/Fig6.pdf>
+Package pdftex.def Info: Figuras/Fig6.pdf  used on input line 2162.
 (pdftex.def)             Requested size: 340.28598pt x 340.28598pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
@@ -1094,12 +1085,11 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[26 <./Figuras/DFgeneral.pdf>]
-<Figuras/RproyMetodologia-1.pdf, id=539, 433.62pt x 216.81pt>
-File: Figuras/RproyMetodologia-1.pdf Graphic file (type pdf)
-<use Figuras/RproyMetodologia-1.pdf>
-Package pdftex.def Info: Figuras/RproyMetodologia-1.pdf  used on input line 221
-6.
+[26 <./Figuras/Fig6.pdf>]
+<Figuras/Fig7.pdf, id=539, 433.62pt x 216.81pt>
+File: Figuras/Fig7.pdf Graphic file (type pdf)
+<use Figuras/Fig7.pdf>
+Package pdftex.def Info: Figuras/Fig7.pdf  used on input line 2216.
 (pdftex.def)             Requested size: 377.64334pt x 188.82166pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
@@ -1110,7 +1100,7 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[27 <./Figuras/RproyMetodologia-1.pdf>]
+[27 <./Figuras/Fig7.pdf>]
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
 Package pdftex.def Info: logoifop.png  used on input line 2395.
@@ -1151,17 +1141,15 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
 [31]
-<Figuras/Desembarques_cuotas_supuestos.pdf, id=583, 347.2975pt x 230.8625pt>
-File: Figuras/Desembarques_cuotas_supuestos.pdf Graphic file (type pdf)
-<use Figuras/Desembarques_cuotas_supuestos.pdf>
-Package pdftex.def Info: Figuras/Desembarques_cuotas_supuestos.pdf  used on inp
-ut line 2825.
+<Figuras/Fig8.pdf, id=583, 347.2975pt x 230.8625pt>
+File: Figuras/Fig8.pdf Graphic file (type pdf)
+<use Figuras/Fig8.pdf>
+Package pdftex.def Info: Figuras/Fig8.pdf  used on input line 2825.
 (pdftex.def)             Requested size: 330.43419pt x 219.65277pt.
-<Figuras/DesembarquesMensuales.pdf, id=584, 385.44pt x 228.855pt>
-File: Figuras/DesembarquesMensuales.pdf Graphic file (type pdf)
-<use Figuras/DesembarquesMensuales.pdf>
-Package pdftex.def Info: Figuras/DesembarquesMensuales.pdf  used on input line 
-2832.
+<Figuras/Fig9.pdf, id=584, 385.44pt x 228.855pt>
+File: Figuras/Fig9.pdf Graphic file (type pdf)
+<use Figuras/Fig9.pdf>
+Package pdftex.def Info: Figuras/Fig9.pdf  used on input line 2832.
 (pdftex.def)             Requested size: 330.41917pt x 196.18637pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
@@ -1172,13 +1160,11 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[32 <./Figuras/Desembarques_cuotas_supuestos.pdf> <./Figuras/DesembarquesMensua
-les.pdf>]
-<Figuras/seriehistoricaCPUE.pdf, id=608, 358.33875pt x 255.95625pt>
-File: Figuras/seriehistoricaCPUE.pdf Graphic file (type pdf)
-<use Figuras/seriehistoricaCPUE.pdf>
-Package pdftex.def Info: Figuras/seriehistoricaCPUE.pdf  used on input line 285
-4.
+[32 <./Figuras/Fig8.pdf> <./Figuras/Fig9.pdf>]
+<Figuras/Fig10.pdf, id=608, 358.33875pt x 255.95625pt>
+File: Figuras/Fig10.pdf Graphic file (type pdf)
+<use Figuras/Fig10.pdf>
+Package pdftex.def Info: Figuras/Fig10.pdf  used on input line 2854.
 (pdftex.def)             Requested size: 330.44115pt x 236.02937pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
@@ -1189,12 +1175,11 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[33 <./Figuras/seriehistoricaCPUE.pdf>]
-<Figuras/BiomasasCrucerosAcústicos.pdf, id=623, 392.46625pt x 261.97874pt>
-File: Figuras/BiomasasCrucerosAcústicos.pdf Graphic file (type pdf)
-<use Figuras/BiomasasCrucerosAcústicos.pdf>
-Package pdftex.def Info: Figuras/BiomasasCrucerosAcústicos.pdf  used on input 
-line 2951.
+[33 <./Figuras/Fig10.pdf>]
+<Figuras/Fig11.pdf, id=623, 392.46625pt x 261.97874pt>
+File: Figuras/Fig11.pdf Graphic file (type pdf)
+<use Figuras/Fig11.pdf>
+Package pdftex.def Info: Figuras/Fig11.pdf  used on input line 2951.
 (pdftex.def)             Requested size: 330.44191pt x 220.57631pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
@@ -1205,11 +1190,11 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[34 <./Figuras/BiomasasCrucerosAcústicos.pdf>]
-<Figuras/TallasFlotas.pdf, id=635, 416.55624pt x 416.55624pt>
-File: Figuras/TallasFlotas.pdf Graphic file (type pdf)
-<use Figuras/TallasFlotas.pdf>
-Package pdftex.def Info: Figuras/TallasFlotas.pdf  used on input line 2971.
+[34 <./Figuras/Fig11.pdf>]
+<Figuras/Fig12.pdf, id=635, 416.55624pt x 416.55624pt>
+File: Figuras/Fig12.pdf Graphic file (type pdf)
+<use Figuras/Fig12.pdf>
+Package pdftex.def Info: Figuras/Fig12.pdf  used on input line 2971.
 (pdftex.def)             Requested size: 416.57428pt x 416.57428pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
@@ -1220,11 +1205,11 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[35 <./Figuras/TallasFlotas.pdf>]
-<Figuras/TallasCruceros.pdf, id=648, 429.605pt x 429.605pt>
-File: Figuras/TallasCruceros.pdf Graphic file (type pdf)
-<use Figuras/TallasCruceros.pdf>
-Package pdftex.def Info: Figuras/TallasCruceros.pdf  used on input line 2980.
+[35 <./Figuras/Fig12.pdf>]
+<Figuras/Fig13.pdf, id=648, 429.605pt x 429.605pt>
+File: Figuras/Fig13.pdf Graphic file (type pdf)
+<use Figuras/Fig13.pdf>
+Package pdftex.def Info: Figuras/Fig13.pdf  used on input line 2980.
 (pdftex.def)             Requested size: 424.83173pt x 424.83173pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
@@ -1235,12 +1220,11 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[36 <./Figuras/TallasCruceros.pdf>]
-<Figuras/EstructurasTallasMensuales_1.pdf, id=661, 360.34625pt x 450.68375pt>
-File: Figuras/EstructurasTallasMensuales_1.pdf Graphic file (type pdf)
-<use Figuras/EstructurasTallasMensuales_1.pdf>
-Package pdftex.def Info: Figuras/EstructurasTallasMensuales_1.pdf  used on inpu
-t line 3011.
+[36 <./Figuras/Fig13.pdf>]
+<Figuras/Fig14.pdf, id=661, 360.34625pt x 450.68375pt>
+File: Figuras/Fig14.pdf Graphic file (type pdf)
+<use Figuras/Fig14.pdf>
+Package pdftex.def Info: Figuras/Fig14.pdf  used on input line 3011.
 (pdftex.def)             Requested size: 360.36186pt x 450.70326pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
@@ -1251,12 +1235,11 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[37 <./Figuras/EstructurasTallasMensuales_1.pdf>]
-<Figuras/EstructurasTallasMensuales_2.pdf, id=671, 368.37625pt x 460.72125pt>
-File: Figuras/EstructurasTallasMensuales_2.pdf Graphic file (type pdf)
-<use Figuras/EstructurasTallasMensuales_2.pdf>
-Package pdftex.def Info: Figuras/EstructurasTallasMensuales_2.pdf  used on inpu
-t line 3020.
+[37 <./Figuras/Fig14.pdf>]
+<Figuras/Fig15.pdf, id=671, 368.37625pt x 460.72125pt>
+File: Figuras/Fig15.pdf Graphic file (type pdf)
+<use Figuras/Fig15.pdf>
+Package pdftex.def Info: Figuras/Fig15.pdf  used on input line 3020.
 (pdftex.def)             Requested size: 368.37534pt x 460.72012pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
@@ -1267,17 +1250,16 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[38 <./Figuras/EstructurasTallasMensuales_2.pdf>]
-<Figuras/EstructurasTallasCruceros_flota.pdf, id=682, 443.6575pt x 230.8625pt>
-File: Figuras/EstructurasTallasCruceros_flota.pdf Graphic file (type pdf)
-<use Figuras/EstructurasTallasCruceros_flota.pdf>
-Package pdftex.def Info: Figuras/EstructurasTallasCruceros_flota.pdf  used on i
-nput line 3038.
+[38 <./Figuras/Fig15.pdf>]
+<Figuras/Fig16.pdf, id=682, 443.6575pt x 230.8625pt>
+File: Figuras/Fig16.pdf Graphic file (type pdf)
+<use Figuras/Fig16.pdf>
+Package pdftex.def Info: Figuras/Fig16.pdf  used on input line 3038.
 (pdftex.def)             Requested size: 424.8232pt x 221.06184pt.
-<Figuras/ojivaMadurez.pdf, id=684, 316.18124pt x 212.795pt>
-File: Figuras/ojivaMadurez.pdf Graphic file (type pdf)
-<use Figuras/ojivaMadurez.pdf>
-Package pdftex.def Info: Figuras/ojivaMadurez.pdf  used on input line 3064.
+<Figuras/Fig17.pdf, id=684, 316.18124pt x 212.795pt>
+File: Figuras/Fig17.pdf Graphic file (type pdf)
+<use Figuras/Fig17.pdf>
+Package pdftex.def Info: Figuras/Fig17.pdf  used on input line 3064.
 (pdftex.def)             Requested size: 316.19975pt x 212.80745pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
@@ -1288,34 +1270,72 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[39 <./Figuras/EstructurasTallasCruceros_flota.pdf> <./Figuras/ojivaMadurez.pdf
->]
-<Figuras/curvaCrecimiento.pdf, id=725, 290.08376pt x 180.675pt>
-File: Figuras/curvaCrecimiento.pdf Graphic file (type pdf)
-<use Figuras/curvaCrecimiento.pdf>
-Package pdftex.def Info: Figuras/curvaCrecimiento.pdf  used on input line 3089.
-
+[39 <./Figuras/Fig16.pdf> <./Figuras/Fig17.pdf>]
+<Figuras/Fig18.pdf, id=725, 290.08376pt x 180.675pt>
+File: Figuras/Fig18.pdf Graphic file (type pdf)
+<use Figuras/Fig18.pdf>
+Package pdftex.def Info: Figuras/Fig18.pdf  used on input line 3089.
 (pdftex.def)             Requested size: 290.08304pt x 180.67455pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3121.
+Package pdftex.def Info: logoifop.png  used on input line 3095.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[40 <./Figuras/curvaCrecimiento.pdf>]
+[40 <./Figuras/Fig18.pdf>]
+<Figuras/Fig19-1.pdf, id=738, 397.485pt x 469.755pt>
+File: Figuras/Fig19-1.pdf Graphic file (type pdf)
+<use Figuras/Fig19-1.pdf>
+Package pdftex.def Info: Figuras/Fig19-1.pdf  used on input line 3120.
+(pdftex.def)             Requested size: 377.63893pt x 446.30057pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3164.
+Package pdftex.def Info: logoifop.png  used on input line 3126.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[41]
+[41 <./Figuras/Fig19-1.pdf>]
+<Figuras/Fig20-1.pdf, id=753, 650.43pt x 794.97pt>
+File: Figuras/Fig20-1.pdf Graphic file (type pdf)
+<use Figuras/Fig20-1.pdf>
+Package pdftex.def Info: Figuras/Fig20-1.pdf  used on input line 3144.
+(pdftex.def)             Requested size: 377.63672pt x 461.556pt.
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 3150.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[42 <./Figuras/Fig20-1.pdf>]
+<Figuras/Fig21-1.pdf, id=768, 433.62pt x 433.62pt>
+File: Figuras/Fig21-1.pdf Graphic file (type pdf)
+<use Figuras/Fig21-1.pdf>
+Package pdftex.def Info: Figuras/Fig21-1.pdf  used on input line 3171.
+(pdftex.def)             Requested size: 424.84546pt x 424.84546pt.
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 3177.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[43 <./Figuras/Fig21-1.pdf>]
+<Figuras/Fig22-1.pdf, id=783, 505.89pt x 505.89pt>
+File: Figuras/Fig22-1.pdf Graphic file (type pdf)
+<use Figuras/Fig22-1.pdf>
+Package pdftex.def Info: Figuras/Fig22-1.pdf  used on input line 3180.
+(pdftex.def)             Requested size: 424.83662pt x 424.83662pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
 Package pdftex.def Info: logoifop.png  used on input line 3186.
@@ -1325,102 +1345,35 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[42]
-
-LaTeX Warning: Command \textasciiacute invalid in math mode on input line 3233.
-
-
-Package textcomp Info: Symbol \textasciiacute not provided by
-(textcomp)             font family phv in TS1 encoding.
-(textcomp)             Default family used instead on input line 3233.
-
-LaTeX Warning: Command \textasciiacute invalid in math mode on input line 3233.
-
-
-
-LaTeX Warning: Command \textasciiacute invalid in math mode on input line 3233.
-
-
+[44 <./Figuras/Fig22-1.pdf>]
+<Figuras/Fig23-1.pdf, id=794, 578.16pt x 505.89pt>
+File: Figuras/Fig23-1.pdf Graphic file (type pdf)
+<use Figuras/Fig23-1.pdf>
+Package pdftex.def Info: Figuras/Fig23-1.pdf  used on input line 3204.
+(pdftex.def)             Requested size: 424.8234pt x 371.72046pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3272.
+Package pdftex.def Info: logoifop.png  used on input line 3210.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[43]
-<Figuras/clave_tallatalla-1.pdf, id=791, 397.485pt x 252.945pt>
-File: Figuras/clave_tallatalla-1.pdf Graphic file (type pdf)
-<use Figuras/clave_tallatalla-1.pdf>
-Package pdftex.def Info: Figuras/clave_tallatalla-1.pdf  used on input line 327
-3.
-(pdftex.def)             Requested size: 397.49008pt x 252.94823pt.
-<Figuras/patronReclutamiento-1.pdf, id=792, 397.485pt x 252.945pt>
-File: Figuras/patronReclutamiento-1.pdf Graphic file (type pdf)
-<use Figuras/patronReclutamiento-1.pdf>
-Package pdftex.def Info: Figuras/patronReclutamiento-1.pdf  used on input line 
-3280.
-(pdftex.def)             Requested size: 397.49008pt x 252.94823pt.
-<Figuras/AbundanciaTotal_base-1.pdf, id=793, 505.89pt x 289.08pt>
-File: Figuras/AbundanciaTotal_base-1.pdf Graphic file (type pdf)
-<use Figuras/AbundanciaTotal_base-1.pdf>
-Package pdftex.def Info: Figuras/AbundanciaTotal_base-1.pdf  used on input line
- 3287.
-(pdftex.def)             Requested size: 472.03983pt x 269.73705pt.
+[45 <./Figuras/Fig23-1.pdf>]
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3287.
+Package pdftex.def Info: logoifop.png  used on input line 3218.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[44 <./Figuras/clave_tallatalla-1.pdf> <./Figuras/patronReclutamiento-1.pdf>]
-<Figuras/clave_edadtalla-1.pdf, id=811, 433.62pt x 252.945pt>
-File: Figuras/clave_edadtalla-1.pdf Graphic file (type pdf)
-<use Figuras/clave_edadtalla-1.pdf>
-Package pdftex.def Info: Figuras/clave_edadtalla-1.pdf  used on input line 3340
-.
-(pdftex.def)             Requested size: 433.62555pt x 252.94823pt.
+[46]
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3340.
-(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
-
-Package fancyhdr Warning: \footskip is too small (5.0pt): 
-(fancyhdr)                Make it at least 7.875pt, for example:
-(fancyhdr)                \setlength{\footskip}{7.875pt}.
-
-[45 <./Figuras/AbundanciaTotal_base-1.pdf>]
-<Figuras/AbundanciaTotal_alternativo-1.pdf, id=827, 433.62pt x 289.08pt>
-File: Figuras/AbundanciaTotal_alternativo-1.pdf Graphic file (type pdf)
-<use Figuras/AbundanciaTotal_alternativo-1.pdf>
-Package pdftex.def Info: Figuras/AbundanciaTotal_alternativo-1.pdf  used on inp
-ut line 3346.
-(pdftex.def)             Requested size: 433.63878pt x 289.09251pt.
-File: logoifop.png Graphic file (type png)
-<use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3352.
-(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
-
-Package fancyhdr Warning: \footskip is too small (5.0pt): 
-(fancyhdr)                Make it at least 7.875pt, for example:
-(fancyhdr)                \setlength{\footskip}{7.875pt}.
-
-[46 <./Figuras/clave_edadtalla-1.pdf> <./Figuras/AbundanciaTotal_alternativo-1.
-pdf>]
-<Figuras/Ajustes_indices-1.pdf, id=844, 397.485pt x 469.755pt>
-File: Figuras/Ajustes_indices-1.pdf Graphic file (type pdf)
-<use Figuras/Ajustes_indices-1.pdf>
-Package pdftex.def Info: Figuras/Ajustes_indices-1.pdf  used on input line 3427
-.
-(pdftex.def)             Requested size: 397.48402pt x 469.75386pt.
-File: logoifop.png Graphic file (type png)
-<use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3427.
+Package pdftex.def Info: logoifop.png  used on input line 3225.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
@@ -1428,204 +1381,247 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
 [47]
-<Figuras/residuales_indices1-1.pdf, id=852, 650.43pt x 794.97pt>
-File: Figuras/residuales_indices1-1.pdf Graphic file (type pdf)
-<use Figuras/residuales_indices1-1.pdf>
-Package pdftex.def Info: Figuras/residuales_indices1-1.pdf  used on input line 
-3434.
-(pdftex.def)             Requested size: 472.04094pt x 576.93895pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3434.
+Package pdftex.def Info: logoifop.png  used on input line 3236.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[48 <./Figuras/Ajustes_indices-1.pdf>]
-<Figuras/Comp_Flota-1.pdf, id=862, 433.62pt x 433.62pt>
-File: Figuras/Comp_Flota-1.pdf Graphic file (type pdf)
-<use Figuras/Comp_Flota-1.pdf>
-Package pdftex.def Info: Figuras/Comp_Flota-1.pdf  used on input line 3441.
-(pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
+[48]
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3441.
+Package pdftex.def Info: logoifop.png  used on input line 3279.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[49 <./Figuras/residuales_indices1-1.pdf>]
+[49]
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3449.
+Package pdftex.def Info: logoifop.png  used on input line 3301.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[50 <./Figuras/Comp_Flota-1.pdf>]
-<Figuras/Comp_Crucero-1.pdf, id=882, 505.89pt x 505.89pt>
-File: Figuras/Comp_Crucero-1.pdf Graphic file (type pdf)
-<use Figuras/Comp_Crucero-1.pdf>
-Package pdftex.def Info: Figuras/Comp_Crucero-1.pdf  used on input line 3450.
-(pdftex.def)             Requested size: 472.03983pt x 472.03983pt.
-<Figuras/Residuos_comp-1.pdf, id=883, 578.16pt x 361.35pt>
-File: Figuras/Residuos_comp-1.pdf Graphic file (type pdf)
-<use Figuras/Residuos_comp-1.pdf>
-Package pdftex.def Info: Figuras/Residuos_comp-1.pdf  used on input line 3458.
-(pdftex.def)             Requested size: 472.02992pt x 295.0187pt.
+[50]
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 3348.
+
+
+Package textcomp Info: Symbol \textasciiacute not provided by
+(textcomp)             font family phv in TS1 encoding.
+(textcomp)             Default family used instead on input line 3348.
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 3348.
+
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 3348.
+
+
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3458.
+Package pdftex.def Info: logoifop.png  used on input line 3387.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[51 <./Figuras/Comp_Crucero-1.pdf>]
-<Figuras/Residuos_comp_alternaitvos-1.pdf, id=893, 578.16pt x 361.35pt>
-File: Figuras/Residuos_comp_alternaitvos-1.pdf Graphic file (type pdf)
-<use Figuras/Residuos_comp_alternaitvos-1.pdf>
-Package pdftex.def Info: Figuras/Residuos_comp_alternaitvos-1.pdf  used on inpu
-t line 3465.
-(pdftex.def)             Requested size: 472.02992pt x 295.0187pt.
+[51]
+<Figuras/clave_tallatalla-1.pdf, id=869, 397.485pt x 252.945pt>
+File: Figuras/clave_tallatalla-1.pdf Graphic file (type pdf)
+<use Figuras/clave_tallatalla-1.pdf>
+Package pdftex.def Info: Figuras/clave_tallatalla-1.pdf  used on input line 338
+8.
+(pdftex.def)             Requested size: 397.49008pt x 252.94823pt.
+<Figuras/patronReclutamiento-1.pdf, id=870, 397.485pt x 252.945pt>
+File: Figuras/patronReclutamiento-1.pdf Graphic file (type pdf)
+<use Figuras/patronReclutamiento-1.pdf>
+Package pdftex.def Info: Figuras/patronReclutamiento-1.pdf  used on input line 
+3395.
+(pdftex.def)             Requested size: 397.49008pt x 252.94823pt.
+<Figuras/AbundanciaTotal_base-1.pdf, id=871, 505.89pt x 289.08pt>
+File: Figuras/AbundanciaTotal_base-1.pdf Graphic file (type pdf)
+<use Figuras/AbundanciaTotal_base-1.pdf>
+Package pdftex.def Info: Figuras/AbundanciaTotal_base-1.pdf  used on input line
+ 3402.
+(pdftex.def)             Requested size: 472.03983pt x 269.73705pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3473.
+Package pdftex.def Info: logoifop.png  used on input line 3402.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[52 <./Figuras/Residuos_comp-1.pdf> <./Figuras/Residuos_comp_alternaitvos-1.pdf
->]
+[52 <./Figuras/clave_tallatalla-1.pdf> <./Figuras/patronReclutamiento-1.pdf>]
+<Figuras/clave_edadtalla-1.pdf, id=888, 433.62pt x 252.945pt>
+File: Figuras/clave_edadtalla-1.pdf Graphic file (type pdf)
+<use Figuras/clave_edadtalla-1.pdf>
+Package pdftex.def Info: Figuras/clave_edadtalla-1.pdf  used on input line 3455
+.
+(pdftex.def)             Requested size: 433.62555pt x 252.94823pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3485.
+Package pdftex.def Info: logoifop.png  used on input line 3455.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[53]
+[53 <./Figuras/AbundanciaTotal_base-1.pdf>]
+<Figuras/AbundanciaTotal_alternativo-1.pdf, id=904, 433.62pt x 289.08pt>
+File: Figuras/AbundanciaTotal_alternativo-1.pdf Graphic file (type pdf)
+<use Figuras/AbundanciaTotal_alternativo-1.pdf>
+Package pdftex.def Info: Figuras/AbundanciaTotal_alternativo-1.pdf  used on inp
+ut line 3461.
+(pdftex.def)             Requested size: 433.63878pt x 289.09251pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3497.
+Package pdftex.def Info: logoifop.png  used on input line 3467.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[54]
-<Figuras/Variables_poblacionales-1.pdf, id=916, 722.7pt x 578.16pt>
-File: Figuras/Variables_poblacionales-1.pdf Graphic file (type pdf)
-<use Figuras/Variables_poblacionales-1.pdf>
-Package pdftex.def Info: Figuras/Variables_poblacionales-1.pdf  used on input l
-ine 3521.
-(pdftex.def)             Requested size: 472.03212pt x 377.6257pt.
-<Figuras/selectividad-1.pdf, id=917, 722.7pt x 578.16pt>
-File: Figuras/selectividad-1.pdf Graphic file (type pdf)
-<use Figuras/selectividad-1.pdf>
-Package pdftex.def Info: Figuras/selectividad-1.pdf  used on input line 3527.
-(pdftex.def)             Requested size: 472.03212pt x 377.6257pt.
+[54 <./Figuras/clave_edadtalla-1.pdf> <./Figuras/AbundanciaTotal_alternativo-1.
+pdf>]
+<Figuras/Ajustes_indices-1.pdf, id=921, 397.485pt x 469.755pt>
+File: Figuras/Ajustes_indices-1.pdf Graphic file (type pdf)
+<use Figuras/Ajustes_indices-1.pdf>
+Package pdftex.def Info: Figuras/Ajustes_indices-1.pdf  used on input line 3542
+.
+(pdftex.def)             Requested size: 397.48402pt x 469.75386pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3527.
+Package pdftex.def Info: logoifop.png  used on input line 3542.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.67097pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.67097pt}.
 
-[55 <./Figuras/Variables_poblacionales-1.pdf>]
+[55]
+<Figuras/residuales_indices1-1.pdf, id=930, 650.43pt x 794.97pt>
+File: Figuras/residuales_indices1-1.pdf Graphic file (type pdf)
+<use Figuras/residuales_indices1-1.pdf>
+Package pdftex.def Info: Figuras/residuales_indices1-1.pdf  used on input line 
+3549.
+(pdftex.def)             Requested size: 472.04094pt x 576.93895pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3563.
+Package pdftex.def Info: logoifop.png  used on input line 3549.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[56 <./Figuras/selectividad-1.pdf>]
-<Figuras/BD0_BDRMS_BDLIM-1.pdf, id=945, 722.7pt x 578.16pt>
-File: Figuras/BD0_BDRMS_BDLIM-1.pdf Graphic file (type pdf)
-<use Figuras/BD0_BDRMS_BDLIM-1.pdf>
-Package pdftex.def Info: Figuras/BD0_BDRMS_BDLIM-1.pdf  used on input line 3593
-.
-(pdftex.def)             Requested size: 472.03212pt x 377.6257pt.
+[56 <./Figuras/Ajustes_indices-1.pdf>]
+<Figuras/Comp_Flota-1.pdf, id=941, 433.62pt x 433.62pt>
+File: Figuras/Comp_Flota-1.pdf Graphic file (type pdf)
+<use Figuras/Comp_Flota-1.pdf>
+Package pdftex.def Info: Figuras/Comp_Flota-1.pdf  used on input line 3556.
+(pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 3556.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.67097pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.67097pt}.
+
+[57 <./Figuras/residuales_indices1-1.pdf>]
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 3564.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[58 <./Figuras/Comp_Flota-1.pdf>]
+<Figuras/Comp_Crucero-1.pdf, id=960, 505.89pt x 505.89pt>
+File: Figuras/Comp_Crucero-1.pdf Graphic file (type pdf)
+<use Figuras/Comp_Crucero-1.pdf>
+Package pdftex.def Info: Figuras/Comp_Crucero-1.pdf  used on input line 3565.
+(pdftex.def)             Requested size: 472.03983pt x 472.03983pt.
+<Figuras/Residuos_comp-1.pdf, id=961, 578.16pt x 361.35pt>
+File: Figuras/Residuos_comp-1.pdf Graphic file (type pdf)
+<use Figuras/Residuos_comp-1.pdf>
+Package pdftex.def Info: Figuras/Residuos_comp-1.pdf  used on input line 3573.
+(pdftex.def)             Requested size: 472.02992pt x 295.0187pt.
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 3573.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[59 <./Figuras/Comp_Crucero-1.pdf>]
+<Figuras/Residuos_comp_alternaitvos-1.pdf, id=971, 578.16pt x 361.35pt>
+File: Figuras/Residuos_comp_alternaitvos-1.pdf Graphic file (type pdf)
+<use Figuras/Residuos_comp_alternaitvos-1.pdf>
+Package pdftex.def Info: Figuras/Residuos_comp_alternaitvos-1.pdf  used on inpu
+t line 3580.
+(pdftex.def)             Requested size: 472.02992pt x 295.0187pt.
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 3588.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[60 <./Figuras/Residuos_comp-1.pdf> <./Figuras/Residuos_comp_alternaitvos-1.pdf
+>]
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
 Package pdftex.def Info: logoifop.png  used on input line 3600.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
-(fancyhdr)                Make it at least 7.67097pt, for example:
-(fancyhdr)                \setlength{\footskip}{7.67097pt}.
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[57 <./Figuras/BD0_BDRMS_BDLIM-1.pdf>]
-<Figuras/estatus-1.pdf, id=960, 650.43pt x 505.89pt>
-File: Figuras/estatus-1.pdf Graphic file (type pdf)
-<use Figuras/estatus-1.pdf>
-Package pdftex.def Info: Figuras/estatus-1.pdf  used on input line 3601.
-(pdftex.def)             Requested size: 472.04094pt x 367.14294pt.
+[61]
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3608.
+Package pdftex.def Info: logoifop.png  used on input line 3612.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[58 <./Figuras/estatus-1.pdf>]
-<Figuras/asesorias_previas-1.pdf, id=974, 722.7pt x 578.16pt>
-File: Figuras/asesorias_previas-1.pdf Graphic file (type pdf)
-<use Figuras/asesorias_previas-1.pdf>
-Package pdftex.def Info: Figuras/asesorias_previas-1.pdf  used on input line 36
-26.
-(pdftex.def)             Requested size: 472.03212pt x 377.6257pt.
-File: logoifop.png Graphic file (type png)
-<use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3633.
-(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
-
-Package fancyhdr Warning: \footskip is too small (5.0pt): 
-(fancyhdr)                Make it at least 7.875pt, for example:
-(fancyhdr)                \setlength{\footskip}{7.875pt}.
-
-[59 <./Figuras/asesorias_previas-1.pdf>]
-<Figuras/DiagramaFase_modelobaseJUNIO-1.pdf, id=985, 289.08pt x 289.08pt>
-File: Figuras/DiagramaFase_modelobaseJUNIO-1.pdf Graphic file (type pdf)
-<use Figuras/DiagramaFase_modelobaseJUNIO-1.pdf>
-Package pdftex.def Info: Figuras/DiagramaFase_modelobaseJUNIO-1.pdf  used on in
-put line 3634.
-(pdftex.def)             Requested size: 289.09251pt x 289.09251pt.
-<Figuras/DiagramaFase_modelobase-1.pdf, id=986, 289.08pt x 289.08pt>
-File: Figuras/DiagramaFase_modelobase-1.pdf Graphic file (type pdf)
-<use Figuras/DiagramaFase_modelobase-1.pdf>
-Package pdftex.def Info: Figuras/DiagramaFase_modelobase-1.pdf  used on input l
+[62]
+<Figuras/Variables_poblacionales-1.pdf, id=995, 722.7pt x 578.16pt>
+File: Figuras/Variables_poblacionales-1.pdf Graphic file (type pdf)
+<use Figuras/Variables_poblacionales-1.pdf>
+Package pdftex.def Info: Figuras/Variables_poblacionales-1.pdf  used on input l
 ine 3636.
-(pdftex.def)             Requested size: 289.09251pt x 289.09251pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 3639.
-<Figuras/DiagramaFase_modeloalternativoJUNIO-1.pdf, id=987, 289.08pt x 289.08pt
->
-File: Figuras/DiagramaFase_modeloalternativoJUNIO-1.pdf Graphic file (type pdf)
-
-<use Figuras/DiagramaFase_modeloalternativoJUNIO-1.pdf>
-Package pdftex.def Info: Figuras/DiagramaFase_modeloalternativoJUNIO-1.pdf  use
-d on input line 3642.
-(pdftex.def)             Requested size: 289.09251pt x 289.09251pt.
+(pdftex.def)             Requested size: 472.03212pt x 377.6257pt.
+<Figuras/selectividad-1.pdf, id=996, 722.7pt x 578.16pt>
+File: Figuras/selectividad-1.pdf Graphic file (type pdf)
+<use Figuras/selectividad-1.pdf>
+Package pdftex.def Info: Figuras/selectividad-1.pdf  used on input line 3642.
+(pdftex.def)             Requested size: 472.03212pt x 377.6257pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
 Package pdftex.def Info: logoifop.png  used on input line 3642.
@@ -1635,148 +1631,117 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[60 <./Figuras/DiagramaFase_modelobaseJUNIO-1.pdf> <./Figuras/DiagramaFase_mode
-lobase-1.pdf>]
-<Figuras/DiagramaFase_modeloalternativo-1.pdf, id=1005, 289.08pt x 289.08pt>
-File: Figuras/DiagramaFase_modeloalternativo-1.pdf Graphic file (type pdf)
-<use Figuras/DiagramaFase_modeloalternativo-1.pdf>
-Package pdftex.def Info: Figuras/DiagramaFase_modeloalternativo-1.pdf  used on 
-input line 3644.
+[63 <./Figuras/Variables_poblacionales-1.pdf>]
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 3678.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[64 <./Figuras/selectividad-1.pdf>]
+<Figuras/BD0_BDRMS_BDLIM-1.pdf, id=1022, 722.7pt x 578.16pt>
+File: Figuras/BD0_BDRMS_BDLIM-1.pdf Graphic file (type pdf)
+<use Figuras/BD0_BDRMS_BDLIM-1.pdf>
+Package pdftex.def Info: Figuras/BD0_BDRMS_BDLIM-1.pdf  used on input line 3708
+.
+(pdftex.def)             Requested size: 472.03212pt x 377.6257pt.
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 3715.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[65 <./Figuras/BD0_BDRMS_BDLIM-1.pdf>]
+<Figuras/estatus-1.pdf, id=1037, 650.43pt x 505.89pt>
+File: Figuras/estatus-1.pdf Graphic file (type pdf)
+<use Figuras/estatus-1.pdf>
+Package pdftex.def Info: Figuras/estatus-1.pdf  used on input line 3716.
+(pdftex.def)             Requested size: 472.04094pt x 367.14294pt.
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 3723.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[66 <./Figuras/estatus-1.pdf>]
+<Figuras/asesorias_previas-1.pdf, id=1051, 722.7pt x 578.16pt>
+File: Figuras/asesorias_previas-1.pdf Graphic file (type pdf)
+<use Figuras/asesorias_previas-1.pdf>
+Package pdftex.def Info: Figuras/asesorias_previas-1.pdf  used on input line 37
+41.
+(pdftex.def)             Requested size: 472.03212pt x 377.6257pt.
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 3748.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[67 <./Figuras/asesorias_previas-1.pdf>]
+<Figuras/DiagramaFase_modelobaseJUNIO-1.pdf, id=1063, 289.08pt x 289.08pt>
+File: Figuras/DiagramaFase_modelobaseJUNIO-1.pdf Graphic file (type pdf)
+<use Figuras/DiagramaFase_modelobaseJUNIO-1.pdf>
+Package pdftex.def Info: Figuras/DiagramaFase_modelobaseJUNIO-1.pdf  used on in
+put line 3749.
+(pdftex.def)             Requested size: 289.09251pt x 289.09251pt.
+<Figuras/DiagramaFase_modelobase-1.pdf, id=1064, 289.08pt x 289.08pt>
+File: Figuras/DiagramaFase_modelobase-1.pdf Graphic file (type pdf)
+<use Figuras/DiagramaFase_modelobase-1.pdf>
+Package pdftex.def Info: Figuras/DiagramaFase_modelobase-1.pdf  used on input l
+ine 3751.
+(pdftex.def)             Requested size: 289.09251pt x 289.09251pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 3754.
+<Figuras/DiagramaFase_modeloalternativoJUNIO-1.pdf, id=1065, 289.08pt x 289.08p
+t>
+File: Figuras/DiagramaFase_modeloalternativoJUNIO-1.pdf Graphic file (type pdf)
+
+<use Figuras/DiagramaFase_modeloalternativoJUNIO-1.pdf>
+Package pdftex.def Info: Figuras/DiagramaFase_modeloalternativoJUNIO-1.pdf  use
+d on input line 3757.
 (pdftex.def)             Requested size: 289.09251pt x 289.09251pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3651.
+Package pdftex.def Info: logoifop.png  used on input line 3757.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[61 <./Figuras/DiagramaFase_modeloalternativoJUNIO-1.pdf> <./Figuras/DiagramaFa
+[68 <./Figuras/DiagramaFase_modelobaseJUNIO-1.pdf> <./Figuras/DiagramaFase_mode
+lobase-1.pdf>]
+<Figuras/DiagramaFase_modeloalternativo-1.pdf, id=1084, 289.08pt x 289.08pt>
+File: Figuras/DiagramaFase_modeloalternativo-1.pdf Graphic file (type pdf)
+<use Figuras/DiagramaFase_modeloalternativo-1.pdf>
+Package pdftex.def Info: Figuras/DiagramaFase_modeloalternativo-1.pdf  used on 
+input line 3759.
+(pdftex.def)             Requested size: 289.09251pt x 289.09251pt.
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 3766.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[69 <./Figuras/DiagramaFase_modeloalternativoJUNIO-1.pdf> <./Figuras/DiagramaFa
 se_modeloalternativo-1.pdf>]
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 3695.
-(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
-
-Package fancyhdr Warning: \footskip is too small (5.0pt): 
-(fancyhdr)                Make it at least 7.875pt, for example:
-(fancyhdr)                \setlength{\footskip}{7.875pt}.
-
-[62]
-<Figuras/Rproy_sept2019-1.pdf, id=1029, 505.89pt x 289.08pt>
-File: Figuras/Rproy_sept2019-1.pdf Graphic file (type pdf)
-<use Figuras/Rproy_sept2019-1.pdf>
-Package pdftex.def Info: Figuras/Rproy_sept2019-1.pdf  used on input line 3696.
-
-(pdftex.def)             Requested size: 472.03983pt x 269.73705pt.
-File: logoifop.png Graphic file (type png)
-<use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 4047.
-(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
-
-Package fancyhdr Warning: \footskip is too small (5.0pt): 
-(fancyhdr)                Make it at least 7.875pt, for example:
-(fancyhdr)                \setlength{\footskip}{7.875pt}.
-
-[63 <./Figuras/Rproy_sept2019-1.pdf>]
-<Figuras/CBAalatalla_CBA2020_sept2019-1.pdf, id=1041, 505.89pt x 361.35pt>
-File: Figuras/CBAalatalla_CBA2020_sept2019-1.pdf Graphic file (type pdf)
-<use Figuras/CBAalatalla_CBA2020_sept2019-1.pdf>
-Package pdftex.def Info: Figuras/CBAalatalla_CBA2020_sept2019-1.pdf  used on in
-put line 4048.
-(pdftex.def)             Requested size: 472.03983pt x 337.17133pt.
-<Figuras/Densidad_CBA2020_sept2019-1.pdf, id=1042, 505.89pt x 208.78pt>
-File: Figuras/Densidad_CBA2020_sept2019-1.pdf Graphic file (type pdf)
-<use Figuras/Densidad_CBA2020_sept2019-1.pdf>
-Package pdftex.def Info: Figuras/Densidad_CBA2020_sept2019-1.pdf  used on input
- line 4054.
-(pdftex.def)             Requested size: 472.03983pt x 194.81007pt.
-<Figuras/Rproy-1.pdf, id=1043, 505.89pt x 361.35pt>
-File: Figuras/Rproy-1.pdf Graphic file (type pdf)
-<use Figuras/Rproy-1.pdf>
-Package pdftex.def Info: Figuras/Rproy-1.pdf  used on input line 4060.
-(pdftex.def)             Requested size: 472.03983pt x 337.17133pt.
-File: logoifop.png Graphic file (type png)
-<use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 4060.
-(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
-
-Package fancyhdr Warning: \footskip is too small (5.0pt): 
-(fancyhdr)                Make it at least 7.875pt, for example:
-(fancyhdr)                \setlength{\footskip}{7.875pt}.
-
-[64 <./Figuras/CBAalatalla_CBA2020_sept2019-1.pdf> <./Figuras/Densidad_CBA2020_
-sept2019-1.pdf>]
-<Figuras/Densidad_CBA2021-1.pdf, id=1064, 505.89pt x 216.81pt>
-File: Figuras/Densidad_CBA2021-1.pdf Graphic file (type pdf)
-<use Figuras/Densidad_CBA2021-1.pdf>
-Package pdftex.def Info: Figuras/Densidad_CBA2021-1.pdf  used on input line 406
-6.
-(pdftex.def)             Requested size: 472.03983pt x 202.30278pt.
-File: logoifop.png Graphic file (type png)
-<use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 4073.
-(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
-
-Package fancyhdr Warning: \footskip is too small (5.0pt): 
-(fancyhdr)                Make it at least 7.875pt, for example:
-(fancyhdr)                \setlength{\footskip}{7.875pt}.
-
-[65 <./Figuras/Rproy-1.pdf> <./Figuras/Densidad_CBA2021-1.pdf>]
-<Figuras/Densidad_CBA2020-1.pdf, id=1086, 289.08pt x 418.56375pt>
-File: Figuras/Densidad_CBA2020-1.pdf Graphic file (type pdf)
-<use Figuras/Densidad_CBA2020-1.pdf>
-Package pdftex.def Info: Figuras/Densidad_CBA2020-1.pdf  used on input line 422
-8.
-(pdftex.def)             Requested size: 289.07928pt x 418.56271pt.
-File: logoifop.png Graphic file (type png)
-<use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 4237.
-(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
-
-Package fancyhdr Warning: \footskip is too small (5.0pt): 
-(fancyhdr)                Make it at least 7.875pt, for example:
-(fancyhdr)                \setlength{\footskip}{7.875pt}.
-
-[66 <./Figuras/Densidad_CBA2020-1.pdf>]
-File: logoifop.png Graphic file (type png)
-<use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 4340.
-(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
-
-Package fancyhdr Warning: \footskip is too small (5.0pt): 
-(fancyhdr)                Make it at least 7.875pt, for example:
-(fancyhdr)                \setlength{\footskip}{7.875pt}.
-
-[67]
-File: logoifop.png Graphic file (type png)
-<use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 4408.
-(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
-
-Package fancyhdr Warning: \footskip is too small (5.0pt): 
-(fancyhdr)                Make it at least 7.875pt, for example:
-(fancyhdr)                \setlength{\footskip}{7.875pt}.
-
-[68]
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 4411.
-
-File: logoifop.png Graphic file (type png)
-<use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 4490.
-(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
-
-Package fancyhdr Warning: \footskip is too small (5.0pt): 
-(fancyhdr)                Make it at least 7.875pt, for example:
-(fancyhdr)                \setlength{\footskip}{7.875pt}.
-
-[69]
-File: logoifop.png Graphic file (type png)
-<use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 4492.
+Package pdftex.def Info: logoifop.png  used on input line 3810.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
@@ -1784,52 +1749,172 @@ Package fancyhdr Warning: \footskip is too small (5.0pt):
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
 [70]
+<Figuras/Rproy_sept2019-1.pdf, id=1107, 505.89pt x 289.08pt>
+File: Figuras/Rproy_sept2019-1.pdf Graphic file (type pdf)
+<use Figuras/Rproy_sept2019-1.pdf>
+Package pdftex.def Info: Figuras/Rproy_sept2019-1.pdf  used on input line 3811.
+
+(pdftex.def)             Requested size: 472.03983pt x 269.73705pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 4581.
+Package pdftex.def Info: logoifop.png  used on input line 4162.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[71]
+[71 <./Figuras/Rproy_sept2019-1.pdf>]
+<Figuras/CBAalatalla_CBA2020_sept2019-1.pdf, id=1119, 505.89pt x 361.35pt>
+File: Figuras/CBAalatalla_CBA2020_sept2019-1.pdf Graphic file (type pdf)
+<use Figuras/CBAalatalla_CBA2020_sept2019-1.pdf>
+Package pdftex.def Info: Figuras/CBAalatalla_CBA2020_sept2019-1.pdf  used on in
+put line 4163.
+(pdftex.def)             Requested size: 472.03983pt x 337.17133pt.
+<Figuras/Densidad_CBA2020_sept2019-1.pdf, id=1120, 505.89pt x 208.78pt>
+File: Figuras/Densidad_CBA2020_sept2019-1.pdf Graphic file (type pdf)
+<use Figuras/Densidad_CBA2020_sept2019-1.pdf>
+Package pdftex.def Info: Figuras/Densidad_CBA2020_sept2019-1.pdf  used on input
+ line 4169.
+(pdftex.def)             Requested size: 472.03983pt x 194.81007pt.
+<Figuras/Rproy-1.pdf, id=1121, 505.89pt x 361.35pt>
+File: Figuras/Rproy-1.pdf Graphic file (type pdf)
+<use Figuras/Rproy-1.pdf>
+Package pdftex.def Info: Figuras/Rproy-1.pdf  used on input line 4175.
+(pdftex.def)             Requested size: 472.03983pt x 337.17133pt.
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 4662.
+Package pdftex.def Info: logoifop.png  used on input line 4175.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[72]
+[72 <./Figuras/CBAalatalla_CBA2020_sept2019-1.pdf> <./Figuras/Densidad_CBA2020_
+sept2019-1.pdf>]
+<Figuras/Densidad_CBA2021-1.pdf, id=1142, 505.89pt x 216.81pt>
+File: Figuras/Densidad_CBA2021-1.pdf Graphic file (type pdf)
+<use Figuras/Densidad_CBA2021-1.pdf>
+Package pdftex.def Info: Figuras/Densidad_CBA2021-1.pdf  used on input line 418
+1.
+(pdftex.def)             Requested size: 472.03983pt x 202.30278pt.
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 4188.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[73 <./Figuras/Rproy-1.pdf> <./Figuras/Densidad_CBA2021-1.pdf>]
+<Figuras/Densidad_CBA2020-1.pdf, id=1164, 289.08pt x 418.56375pt>
+File: Figuras/Densidad_CBA2020-1.pdf Graphic file (type pdf)
+<use Figuras/Densidad_CBA2020-1.pdf>
+Package pdftex.def Info: Figuras/Densidad_CBA2020-1.pdf  used on input line 434
+3.
+(pdftex.def)             Requested size: 289.07928pt x 418.56271pt.
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 4352.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[74 <./Figuras/Densidad_CBA2020-1.pdf>]
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 4455.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.67097pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.67097pt}.
+
+[75]
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 4523.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[76]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 4526.
+
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 4605.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.67097pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.67097pt}.
+
+[77]
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 4607.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[78]
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 4696.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[79]
+File: logoifop.png Graphic file (type png)
+<use logoifop.png>
+Package pdftex.def Info: logoifop.png  used on input line 4777.
+(pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
+
+Package fancyhdr Warning: \footskip is too small (5.0pt): 
+(fancyhdr)                Make it at least 7.875pt, for example:
+(fancyhdr)                \setlength{\footskip}{7.875pt}.
+
+[80]
 
 Package caption Warning: Unused \captionsetup[table] on input line 77.
 See the caption package documentation for explanation.
 
 File: logoifop.png Graphic file (type png)
 <use logoifop.png>
-Package pdftex.def Info: logoifop.png  used on input line 4713.
+Package pdftex.def Info: logoifop.png  used on input line 4828.
 (pdftex.def)             Requested size: 35.29353pt x 42.6774pt.
 
 Package fancyhdr Warning: \footskip is too small (5.0pt): 
 (fancyhdr)                Make it at least 7.875pt, for example:
 (fancyhdr)                \setlength{\footskip}{7.875pt}.
 
-[73] (./INFORMEFINAL_SARDAUSTRAL_LOSLAGOS.aux
+[81] (./INFORMEFINAL_SARDAUSTRAL_LOSLAGOS.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
 Package rerunfilecheck Info: File `INFORMEFINAL_SARDAUSTRAL_LOSLAGOS.out' has n
 ot changed.
-(rerunfilecheck)             Checksum: C2971DBDE1947B4A42D7457ADF95791F;14167.
+(rerunfilecheck)             Checksum: C1A81C8C31C9F008EDFC758AEC51F544;14171.
  ) 
 Here is how much of TeX's memory you used:
- 13946 strings out of 480990
- 221942 string characters out of 5906108
- 559254 words of memory out of 5000000
- 30490 multiletter control sequences out of 15000+600000
+ 13990 strings out of 480990
+ 221182 string characters out of 5906108
+ 561252 words of memory out of 5000000
+ 30516 multiletter control sequences out of 15000+600000
  472088 words of font info for 91 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,15n,74p,944b,678s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1862,11 +1947,11 @@ pe1/public/lm/lmsy9.pfb></Users/mariajosezunigabasualto/Library/TinyTeX/texmf-d
 ist/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/mariajosezunigabasualto/Library
 /TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></Users/mariajosezuniga
 basualto/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on INFORMEFINAL_SARDAUSTRAL_LOSLAGOS.pdf (73 pages, 2946052 byte
+Output written on INFORMEFINAL_SARDAUSTRAL_LOSLAGOS.pdf (81 pages, 3081648 byte
 s).
 PDF statistics:
- 1282 PDF objects out of 1440 (max. 8388607)
- 1060 compressed objects within 11 object streams
- 341 named destinations out of 1000 (max. 500000)
- 618 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1363 PDF objects out of 1440 (max. 8388607)
+ 1122 compressed objects within 12 object streams
+ 358 named destinations out of 1000 (max. 500000)
+ 643 words of extra memory for PDF output out of 10000 (max. 10000000)
 

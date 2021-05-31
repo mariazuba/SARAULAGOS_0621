@@ -273,7 +273,7 @@ Luego de ser identificada como una especie distinta de sardina común (Aranis *e
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.6\textwidth]{Figuras/antecedentes_desembarques-1.pdf}
+\includegraphics[width=0.6\textwidth]{Figuras/Fig2.pdf}
 \caption{Desembarques oficiales anuales de sardina austral en aguas interiores del Mar de Chiloé entre los años 2006 y 2019 (fuente: Sernapesca).}
 \label{Fig2}
 \end{figure}
@@ -290,7 +290,7 @@ El análisis de la estructura de longitudes mensual obtenida desde la actividad 
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.9\textwidth]{Figuras/estructura_mensual-1.pdf}
+\includegraphics[width=0.9\textwidth]{Figuras/Fig3.pdf}
 \caption{Estructura de tallas mensual de las capturas de sardina austral (enero 2017 -- junio 2020), en aguas interiores de la Región de Los Lagos.}
 \label{Fig3}
 \end{figure}
@@ -1109,7 +1109,7 @@ El estado del recurso se estableció en base a la posición relativa de la morta
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.8\textwidth]{Figuras/DFgeneral.pdf}
+\includegraphics[width=0.8\textwidth]{Figuras/Fig6.pdf}
 \caption{Diagrama de fase definido por el CCT-PP para las pesquerías de pelágicos pequeños. }
 \label{Fig6}
 \end{figure}
@@ -1131,8 +1131,8 @@ En el caso de la pesquería de sardina austral, la recomendación de CBA comienz
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.8\textwidth]{Figuras/RproyMetodologia-1.pdf}
-\caption{Captura en número estimada por el modelo alternativo utilizando clave talla-edad simulada.}
+\includegraphics[width=0.8\textwidth]{Figuras/Fig7.pdf}
+\caption{Escenarios de reclutamiento.}
 \label{Fig7}
 \end{figure}
 ```
@@ -1384,7 +1384,7 @@ Para entregar mayor robustez al modelo de evaluación de stock se realizó una e
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.7\textwidth]{Figuras/Desembarques_cuotas_supuestos.pdf}
+\includegraphics[width=0.7\textwidth]{Figuras/Fig8.pdf}
 \caption{Serie de desembarques utilizada en la evaluación de stock de septiembre 2020. Las barras grises al inicio de la serie corresponden a un supuesto de proporción de especies (sardina común/sardina austral). Las barras azules a los desembarques oficiales en el período 2006-2019 y la barra amarilla, el supuesto de captura 2020. La línea corresponde a la CBA establecida anualmente.}
 \label{Fig8}
 \end{figure}
@@ -1395,7 +1395,7 @@ Para entregar mayor robustez al modelo de evaluación de stock se realizó una e
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.7\textwidth]{Figuras/DesembarquesMensuales.pdf}
+\includegraphics[width=0.7\textwidth]{Figuras/Fig9.pdf}
 \caption{Variación mensual de las capturas de sardina austral en aguas interiores del Mar de Chiloé entre los años 2016 y 2019.}
 \label{Fig9}
 \end{figure}
@@ -1412,7 +1412,7 @@ El análisis de esta pieza de información, sugiere que el modelo con interaccio
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.7\textwidth]{Figuras/seriehistoricaCPUE.pdf}
+\includegraphics[width=0.7\textwidth]{Figuras/Fig10.pdf}
 \caption{CPUE estandarizada por Modelos Lineales Generalizados (tweedie original y con interacciones), en la pesquería de sardina austral en aguas interiores de la isla de Chiloé.}
 \label{Fig10}
 \end{figure}
@@ -1463,7 +1463,7 @@ La variabilidad del índice acústico, se muestra en la \textbf{Figura \ref{Fig1
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.7\textwidth]{Figuras/BiomasasCrucerosAcústicos.pdf}
+\includegraphics[width=0.7\textwidth]{Figuras/Fig11.pdf}
 \caption{Biomasa total de sardina austral en aguas interiores de la Región de Los Lagos estimada en los cruceros de evaluación directa (2006-2020). Se destaca en círculo rojo de mayor tamaño el último valor obtenido en abril del año 2020.}
 \label{Fig11}
 \end{figure}
@@ -1480,7 +1480,7 @@ Las  \textbf{Figura \ref{Fig12}} y  \textbf{\ref{Fig13}} muestran las estructura
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.9\textwidth]{Figuras/TallasFlotas.pdf}
+\includegraphics[width=0.9\textwidth]{Figuras/Fig12.pdf}
 \caption{Estructuras de longitudes (LT, cm) anual de sardina austral obtenida desde la flota que opera en aguas interiores de la Región de Los Lagos.}
 \label{Fig12}
 \end{figure}
@@ -1491,7 +1491,7 @@ Las  \textbf{Figura \ref{Fig12}} y  \textbf{\ref{Fig13}} muestran las estructura
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.9\textwidth]{Figuras/TallasCruceros.pdf}
+\includegraphics[width=0.9\textwidth]{Figuras/Fig13.pdf}
 \caption{Estructuras de longitudes (LT, cm) de sardina austral obtenida por el crucero de evaluación directa en aguas interires de la Región de Los Lagos.}
 \label{Fig13}
 \end{figure}
@@ -1505,7 +1505,7 @@ Para revisar el proceso de reclutamiento de sardina austral de la Región de Los
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.9\textwidth]{Figuras/EstructurasTallasMensuales_1.pdf}
+\includegraphics[width=0.9\textwidth]{Figuras/Fig14.pdf}
 \caption{Estructura de tallas mensual de las capturas de sardina austral (enero 2013 -diciembre 2016), en aguas interiores de la Región de Los Lagos.}
 \label{Fig14}
 \end{figure}
@@ -1516,7 +1516,7 @@ Para revisar el proceso de reclutamiento de sardina austral de la Región de Los
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.9\textwidth]{Figuras/EstructurasTallasMensuales_2.pdf}
+\includegraphics[width=0.9\textwidth]{Figuras/Fig15.pdf}
 \caption{Estructura de tallas mensual de las capturas de sardina austral (enero 2013 -diciembre 2016), en aguas interiores de la Región de Los Lagos.}
 \label{Fig15}
 \end{figure}
@@ -1528,7 +1528,7 @@ La \textbf{Figura \ref{Fig16}}  muestra un análisis comparativo de la estructur
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.9\textwidth]{Figuras/EstructurasTallasCruceros_flota.pdf}
+\includegraphics[width=0.9\textwidth]{Figuras/Fig16.pdf}
 \caption{Estructura de tallas de sardina austral obtenida desde la flota (superficie sombreada) y crucero de evaluación directa (línea) en aguas interiores de la Región de Los Lagos, durante el mes de abril en los años 2017, 2018, 2019 y 2020.}
 \label{Fig16}
 \end{figure}
@@ -1547,7 +1547,7 @@ Para estimar la fracción desovante del stock, se utiliza la función de madurez
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.7\textwidth]{Figuras/ojivaMadurez.pdf}
+\includegraphics[width=0.7\textwidth]{Figuras/Fig17.pdf}
 \caption{Ojiva de madurez de sardina austral en aguas interiores de la Región de Los Lagos obtenida a través de estados microscópicos (Leal \textit{et al}., 2011).}
 \label{Fig17}
 \end{figure}
@@ -1563,25 +1563,100 @@ Los parámetros de crecimiento estimados por Cerna *et al*., (2007) para sardina
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.9\textwidth]{Figuras/curvaCrecimiento.pdf}
+\includegraphics[width=0.9\textwidth]{Figuras/Fig18.pdf}
 \caption{Función de crecimiento descrita por los parámetros de Von Bertalanffy estimados para sardina austral.}
 \label{Fig18}
 \end{figure}
 ```
 
 
-
+\pagebreak
 ### 4.1.2. Diagnóstico del modelo de evaluación de stock
 
-#### Ajuste del modelo a los datos de análisis de residuos
+#### Ajuste del modelo a los datos 
+\quad
+Los resultados muestran que el modelo base actual recoge la variabilidad general de las señales poblacionales. Debido a que los valores de los coeficientes de variación empleados son más pequeños, el modelo ajusta de mejor manera la serie de desembarques por sobre el índice de biomasa directo y CPUE. Al respecto, los datos observados de desembarques se asumen menos sesgados y más precisos con un CV de residuos de 0,1. En el ajuste de la CPUE se aprecian sobre y subestimaciones, aunque el modelo recoge la variabilidad media del índice. En el caso de la biomasa acústica, el modelo tiende a subestimar los valores observados, excepto los años con los niveles más bajos (2015, 2018 y 2019) (\textbf{Figura \ref{Fig19}}).
 
-#### Ajuste de la composición de longitudes
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig19-1.pdf}
+\caption{Ajuste del índice de la biomasa directa , CPUE y desembarques de sardina austral en el mar interior de la Región de Los Lagos. Los círculos representan los datos observados. La línea vertical sobre los puntos corresponde al error de las observaciones.}
+\label{Fig19}
+\end{figure}
+```
+\pagebreak
+
+#### Análisis de residuos
+\quad
+El análisis de los residuos y gráficos qq-plot (\textbf{Figura \ref{Fig20}}), muestra que los residuales del modelo no sugieren tendencia, se aprecia además una linealidad general en la escala log en todos los índices. Sin embargo, en el caso de los desembarques, la convergencia entre las observaciones y el ajuste del modelo es mayor. En este caso, cuando el ajuste no es total, los datos observados tienden a situarse por debajo de los valores predichos. La CPUE y biomasa acústica (crucero) muestran mayor dispersión de los datos en relación a las predicciones. 
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig20-1.pdf}
+\caption{Análisis de residuales y diagrama Q-Q para los ajustes a la información de desembarques, CPUE y cruceros de evaluación directa.}
+\label{Fig20}
+\end{figure}
+```
+
+\pagebreak
+
+
+#### Ajuste de las composiciones de longitudes
+\quad
+Las estructuras de longitudes de la flota (\textbf{Figura \ref{Fig21}}) y cruceros acústicos (\textbf{Figura \ref{Fig22}}), son medianamente reproducidas por el modelo de evaluación, capturando su variabilidad general. En el caso de las capturas comerciales, el modelo reproduce de mejor manera las estructuras unimodales. En los años en que se aprecia bimodalidad (2010,2011,2012), el modelo no es capaz de ajustar adecuadamente la información. En el caso de los cruceros, el modelo es todavía menos eficiente en el ajuste a la información observada. El uso de patrones de explotación variables en el tiempo, aunque mejora las tallas medias predichas, no generó variaciones en los ajustes de las composiciones de longitudes respecto del modelo base previo.
+
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.9\textwidth]{Figuras/Fig21-1.pdf}
+\caption{Ajuste de la estructura de longitud de la flota en la pesquería de sardina austral en el mar interior de la Región de Los Lagos, entre los años 2006 y 2020. Barras (datos observados), líneas (modelo ajustado). }
+\label{Fig21}
+\end{figure}
+```
+\pagebreak
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.9\textwidth]{Figuras/Fig22-1.pdf}
+\caption{Ajuste de la estructura de longitud de sardina austral en los cruceros de evaluación directa en el mar interior de la Región de Los Lagos. Barras (datos observados), líneas (modelo ajustado).}
+\label{Fig22}
+\end{figure}
+```
+\pagebreak
+
+#### Residuales de las composiciones de longitudes
+\quad
+En términos de la bondad de ajuste se entrega el cuadro de residuales por longitud vs los ajustes de las capturas y los cruceros. El comportamiento de los residuales sugiere, en la información de la flota y crucero, ciertos patrones que reflejan tendencia. Por ejemplo, en la flota se aprecia subestimación en el rango de longitudes de 14 y 15 cm y sobreestimación de las longitudes superiores (\textbf{Figura \ref{Fig23}}). El análisis además confirma los inconvenientes en el ajuste de las estructuras de longitudes bimodales.
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.9\textwidth]{Figuras/Fig23-1.pdf}
+\caption{Residuales de las estructuras de tallas de la flota y cruceros. Subestimaciones (círculos negros) y sobreestimaciones (circulo blanco). El tamaño del globo indica la magnitud relativa del error por tallas.}
+\label{Fig23}
+\end{figure}
+```
+
+\pagebreak
 
 #### Comparación con evaluaciones anteriores
+\quad
+
+
+\pagebreak
 
 #### Análisis retrospectivo
+\quad
+
+
+\pagebreak
 
 #### Perfil de verosimilitud
+
+\pagebreak
 
 #### Sensibilidad a la actualización de datos
 
