@@ -1700,13 +1700,17 @@ La \textbf{Figura \ref{Fig26}}  muestra el perfil de verosimilitud de cada fuent
 
 #### Reclutamientos
 
-
+El reclutamiento de sardina austral, presentó entre los años 2006 y 2010 una variación menor en comparación a los fuertes cambios observados posteriormente, entre los años 2011 y 2015 (Figura 21). Entre los años 2016 y 2018, nuevamente se estabilizan, aunque en valores significativamente por debajo de la media histórica. Esto impacta de manera directa en el tamaño de la población, observando a partir del año 2015 una disminución significativa en la biomasa total y desovante. El reclutamiento del año 2020 en tanto, muestra una disminución del 77% respecto a lo estimado para el año 2019 y un 52% menor al reclutamiento promedio de los años 2015 al 2019.
 
 #### Biomasas
+De acuerdo a los resultados del modelo de evaluación, la biomasa total (BT) evidenció una importante reducción a partir del año 2005, cuando alcanzó 267 mil t. En el último periodo y consecuente con los bajos niveles de reclutamientos, la biomasa total registró el año 2018, el valor más bajo de toda la serie con 70,3 mil t. Los años 2019 y 2020 muestra una recuperación hasta niveles en torno a las 110 mil t. La biomasa desovante (BD) en tanto, sigue la misma tendencia de la BT y disminuyó desde 78 mil t, en 2006 hasta 20 mil t los años 2017 y 2018. Para el año 2020 se observa un incremento del 65% respecto al 2019. Al principio de la serie, el intervalo de confianza es más amplio debido a que el modelo solo utiliza los desembarques para estimar las variables poblacionales (Figura 22 y Tabla 16). 
 
 #### Mortalidad por pesca
+La mortalidad por pesca (F) ha mostrado variaciones significativas a lo largo de la serie analizada. Entre los años 2002 y 2006 varió en valores promedio de 0.43 año-1. Luego, incrementa de manera significativa hasta 0.91 año-1 el año 2009. Entre los años 2010 y 2015, debido a las cuotas de capturas en valores relativamente estables, la F se mantuvo en valores cercanos al nivel de F que genera el RMS (FRMS = 0,31 año-1). Al final de la serie, se observó una fuerte reducción en los desembarques, disminuyendo entonces hasta un valor estable en torno 0,25 año-1 a partir del año 2018 .Sin embargo, dado que la F2020 está basada en supuestos, el estatus en términos de F2020/FRMS es aún incierto (Figura 23, Tabla 17).
 
 #### Selectividad
+
+La selectividad de la flota indica que el recurso está próximo a su completo reclutamiento a la pesquería a la talla de 14 cm de LT, mientras que los individuos de 10 cm de LT son vulnerados en un 50%. En el crucero acústico los ejemplares son completamente vulnerados a tallas sobre los 7 cm de LT. El patrón de selectividad de la flota indica que los individuos son capturados antes de reproducirse (Figura 24), lo que supone un riesgo para sustentabilidad de la pesquería.
 
 ### 4.2.2. Estado de explotación
 
