@@ -1014,114 +1014,225 @@ setwd(dir)
 ## 4. RESULTADOS OBJETIVO 2
 ### 4.1. Indicadores del stock
 
+```{r Variables_sept, echo=F,message=FALSE, warning=FALSE, include=T}
 
-```{r DatosVariables_poblacionales,warning=F, include=T, message=F, echo=T}
+years0   <- rep1$Years
+nyears0  <- length(years0)
 
-years1  <- rep1$Years; nyears1 <- length(years1)                                                      
-x0      <-c(years1,rev(years1))
-x0_1    <-c(2000,2022,22) #xaxp
+Ro0      <- subset(std0,name=="log_Rmed")$value
+Rt0      <- c(subset(std0,name=="Reclutas")$value,NA) 
+Rt0std   <- c(subset(std0,name=="Reclutas")$std,NA)
+BT0      <- c(subset(std0,name=="BT")$value,NA)   
+BT0std   <- c(subset(std0,name=="BT")$std,NA)
+BD0      <- c(subset(std0,name=="BD")$value,NA)   
+BD0std   <- c(subset(std0,name=="BD")$std,NA)
+Ft0      <- c(subset(std0,name=="log_F")$value,NA)   
+Ft0std   <- c(subset(std0,name=="log_F")$std,NA)
 
-#######################################################################################
-#modelo base ASESORÍA SEPTIEMBRE
-#######################################################################################
-Ro0           <- c(subset(std0,name=="log_Rmed")$value,0)
-Reclutas0     <- c(subset(std0,name=="Reclutas")$value,0)
-Reclutas0std  <- c(subset(std0,name=="Reclutas")$std,0)
-logdesvRt0    <- c(subset(std0,name=="log_desv_Rt")$value,0)
-logdesvRt0std <- c(subset(std0,name=="log_desv_Rt")$std,0)
-Bt0           <- c(subset(std0,name=="BT")$value,0)
-Bt0std        <- c(subset(std0,name=="BT")$std,0)
-SSBt0         <- c(subset(std0,name=="BD")$value,0)
-SSBt0std      <- c(subset(std0,name=="BD")$std,0)
-Ft0           <- c(subset(std0,name=="log_F")$value,0)
-Ft0std        <- c(subset(std0,name=="log_F")$std,0)
+VarPobSep<- data.frame(x=years0,
+                       Rt0=Rt0,
+                       BT0=BT0,
+                       BD0=BD0,
+                       Ft0=exp(Ft0), 
+         lowerRt0 = (Rt0 -1.96*Rt0std),
+         upperRt0 = (Rt0 +1.96*Rt0std),
+         lowerBT0 = (BT0 -1.96*BT0std),
+         upperBT0 = (BT0 +1.96*BT0std),
+         lowerBD0 = (BD0 -1.96*BD0std),
+         upperBD0 = (BD0 +1.96*BD0std),
+         lowerFt0 = exp(Ft0 -1.96*Ft0std),
+         upperFt0 = exp(Ft0 +1.96*Ft0std))
+```
 
-#arreglos polígono
-rt0      <- c((Reclutas0-1.96*Reclutas0std),
-           rev(Reclutas0+1.96*Reclutas0std))
-logdrt0  <- c((logdesvRt0-1.96*logdesvRt0std),
-           rev(logdesvRt0+1.96*logdesvRt0std))
-bt0      <- c((Bt0-1.96*Bt0std),
-          rev((Bt0+1.96*Bt0std)))
-ssbt0    <- c((SSBt0-1.96*SSBt0std),
-          rev((SSBt0+1.96*SSBt0std)))
-ft0      <- c(exp((Ft0)-1.96*(Ft0std)),
-          rev(exp((Ft0)+1.96*(Ft0std)))) 
+```{r Variables_junio, echo=F,message=FALSE, warning=FALSE, include=T}
 
-#######################################################################################
-#modelo base ASESORÍA JUNIO
-#######################################################################################
-Ro1           <- subset(std1,name=="log_Ro")$value
-Reclutas1     <- subset(std1,name=="Reclutas")$value
-Reclutas1std  <- subset(std1,name=="Reclutas")$std
-logdesvRt1    <- subset(std1,name=="log_desv_Rt")$value
-logdesvRt1std <- subset(std1,name=="log_desv_Rt")$std
-Bt1           <- subset(std1,name=="BT")$value
-Bt1std        <- subset(std1,name=="BT")$std
-SSBt1         <- subset(std1,name=="BD")$value
-SSBt1std      <- subset(std1,name=="BD")$std
-Ft1           <- subset(std1,name=="log_F")$value
-Ft1std        <- subset(std1,name=="log_F")$std
+years1   <- rep1$Years
+nyears1  <- length(years1)
 
-#arreglos polígono
-rt1      <- c((Reclutas1-1.96*Reclutas1std),
-            rev(Reclutas1+1.96*Reclutas1std))
-logdrt1  <- c((logdesvRt1-1.96*logdesvRt1std),
-            rev(logdesvRt1+1.96*logdesvRt1std))
-bt1      <- c((Bt1-1.96*Bt1std),
-           rev((Bt1+1.96*Bt1std)))
-ssbt1    <- c((SSBt1-1.96*SSBt1std),
-           rev((SSBt1+1.96*SSBt1std)))
-ft1      <- c(exp((Ft1)-1.96*(Ft1std)),
-           rev(exp((Ft1)+1.96*(Ft1std)))) 
+Ro1      <- subset(std1,name=="log_Rmed")$value
+Rt1      <- subset(std1,name=="Reclutas")$value 
+Rt1std   <- subset(std1,name=="Reclutas")$std
+BT1      <- subset(std1,name=="BT")$value   
+BT1std   <- subset(std1,name=="BT")$std
+BD1      <- subset(std1,name=="BD")$value   
+BD1std   <- subset(std1,name=="BD")$std
+Ft1      <- subset(std1,name=="log_F")$value   
+Ft1std   <- subset(std1,name=="log_F")$std
+
+VarPobJun<- data.frame(x=years1, 
+                       Rt1=Rt1,
+                       BT1=BT1,
+                       BD1=BD1,
+                       Ft1=exp(Ft1), 
+         lowerRt1 = (Rt1 -1.96*Rt1std), 
+         upperRt1 = (Rt1 +1.96*Rt1std),
+         lowerBT1 = (BT1 -1.96*BT1std), 
+         upperBT1 = (BT1 +1.96*BT1std),
+         lowerBD1 = (BD1 -1.96*BD1std), 
+         upperBD1 = (BD1 +1.96*BD1std),
+         lowerFt1 = exp(Ft1 -1.96*Ft1std), 
+         upperFt1 = exp(Ft1 +1.96*Ft1std))
+```
+
+
+
+```{r Fig27, echo=FALSE, message=FALSE, warning=FALSE, include=T, fig.align="center", fig.height=6, fig.width=8,fig.path=dir.Fig,dev=fig}
+
+
+Rt <- ggplot() + 
+    geom_line(data=VarPobJun,aes(y=Rt1, x=x, colour = "junio 2021"), size=0.5)+
+    geom_line(data=VarPobSep,aes(y=Rt0, x=x, colour = "septiembre 2020"), size=0.5)+
+    geom_ribbon(data=VarPobJun,aes(ymin=lowerRt1, ymax=upperRt1, x=x, fill = "IC"), alpha = 0.2)+
+    geom_ribbon(data=VarPobSep,aes(ymin=lowerRt0, ymax=upperRt0, x=x, fill = ""), alpha = 0.2)+
+    geom_hline(yintercept = mean(VarPobJun$Rt1),colour='black',lty=2) +
+     annotate("text", x=2000, y=mean(VarPobJun$Rt1),label=expression("R"[promedio])) +
+    labs(x = '', y = 'Reclutamientos',colour='Asesorías')  +
+     scale_x_continuous(breaks = seq(from = 1960, to = 2021, by = 2)) +
+    scale_colour_manual("",values=c('red',"black"))+
+    scale_fill_manual("",values=c("grey30",'gray75'))+
+    theme_bw(base_size=8) +
+     ggtitle('')+
+     theme(plot.title = element_text(hjust = 0.5),legend.position="top")
+
+BT <- ggplot() + 
+     geom_line(data=VarPobJun,aes(y=BT1, x=x, colour = "junio 2021"), size=0.5)+
+     geom_line(data=VarPobSep,aes(y=BT0, x=x, colour = "septiembre 2020"), size=0.5)+
+     geom_ribbon(data=VarPobJun,aes(ymin=lowerBT1, ymax=upperBT1, x=x, fill = "IC"), alpha = 0.2)+
+     geom_ribbon(data=VarPobSep,aes(ymin=lowerBT0, ymax=upperBT0, x=x, fill = ""), alpha = 0.2)+
+     geom_hline(data=VarPobJun,yintercept = mean(BT1),colour='black',lty=2) +
+     annotate("text", x=2000, y=mean(BT1),label=expression("BT"[promedio])) +
+    labs(x = '', y = 'Biomasa total (t)',colour='Asesorías')  +
+     scale_x_continuous(breaks = seq(from = 1960, to = 2021, by = 2)) +
+    scale_colour_manual("",values=c('red',"black"))+
+    scale_fill_manual("",values=c("grey30",'gray75'))+
+    theme_bw(base_size=8) +
+     ggtitle('')+
+     theme(plot.title = element_text(hjust = 0.5),legend.position="none")
+
+BD <- ggplot() + 
+     geom_line(data=VarPobJun,aes(y=BD1, x=x, colour = "junio 2021"), size=0.5)+
+     geom_line(data=VarPobSep,aes(y=BD0, x=x, colour = "septiembre 2020"), size=0.5)+
+     geom_ribbon(data=VarPobJun,aes(ymin=lowerBD1, ymax=upperBD1, x=x, fill = "IC"), alpha = 0.2)+
+     geom_ribbon(data=VarPobSep,aes(ymin=lowerBD0, ymax=upperBD0, x=x, fill = ""), alpha = 0.2)+
+     geom_hline(data=VarPobJun,yintercept = mean(BD1),colour='black',lty=2) +
+     annotate("text", x=2000, y=mean(BD1),label=expression("BD"[promedio])) +
+     labs(x = '', y = 'Biomasa desovante (t)',colour='Asesorías')  +
+     scale_x_continuous(breaks = seq(from = 1960, to = 2021, by = 2)) +
+     scale_colour_manual("",values=c('red',"black"))+
+     scale_fill_manual("",values=c("grey30",'gray75'))+
+     theme_bw(base_size=8) +
+     ggtitle('')+
+     theme(plot.title = element_text(hjust = 0.5),legend.position="top")
+
+Ft <- ggplot() + 
+    geom_line(data=VarPobJun,aes(y=Ft1, x=x, colour = "junio 2021"), size=0.5)+
+    geom_line(data=VarPobSep,aes(y=Ft0, x=x, colour = "septiembre 2020"), size=0.5)+
+    geom_ribbon(data=VarPobJun,aes(ymin=lowerFt1, ymax=upperFt1, x=x, fill = "IC"), alpha = 0.2)+
+    geom_ribbon(data=VarPobSep,aes(ymin=lowerFt0, ymax=upperFt0, x=x, fill = ""), alpha = 0.2)+
+     geom_hline(yintercept = median(VarPobJun$Ft1),colour='black',lty=2) +
+     annotate("text", x=2018, y=median(VarPobJun$Ft1),label=expression("F"[mediana])) +
+    labs(x = '', y = 'Mortalidad por pesca (F)',colour='Asesorías')  +
+    scale_x_continuous(breaks = seq(from = 1960, to = 2021, by = 2)) +
+    scale_colour_manual("",values=c('red',"black"))+
+    scale_fill_manual("",values=c("grey30",'gray75'))+
+    theme_bw(base_size=8) +
+     ggtitle('')+
+     theme(plot.title = element_text(hjust = 0.5),legend.position="none")
+
+Rt/BT | (BD/Ft)
 
 ```
 
 
-```{r Fig27,warning=F, include=T, message=F, echo=T,fig.height=8,fig.width=10,fig.align="center",fig.path="Figuras/",dev=c('pdf')}
-par(mfcol=c(2,2),mar=c(2,4,1,1)+0.5)
-	plot(x0,rt0/1000 , type="n", xaxp=x0_1,cex.axis=1.1,xaxs= "i",yaxs= "i",
-	main="Reclutamientos",ylim=c(0,35),xlim=c(2001,2022),
-	ylab=" Número de individuos x 10^3",las=1,xlab="Año",cex.lab=1.1)
-	polygon(x0, rt0/1000 , col=gray(.5,0.5), border="gray80")
-	polygon(x0, rt1/1000 , col=gray(.8,0.5), border="gray80")
-	lines(years1,Reclutas0/1000,lwd=1,col=1,lty=1)
-	lines(years1,Reclutas1/1000,lwd=1,col=2,lty=1)
-	abline(h=exp(Ro0+0.5*0.6^2)/1000,col=1,lty=2)
-  abline(h=exp(Ro1+0.5*0.6^2)/1000,col=2,lty=2)
-  text(2016,c(exp(Ro0+0.5*0.6^2)/1000,
-              exp(Ro1+0.5*0.6^2)/1000)+0.5,
-            c("Rmed_base","Rmed_alternativo"))
-box()
 
-plot(x0,bt0/1000,type="n",cex.axis=1.1,xaxs="i",yaxs="i",las=1,
-     xlim=c(2001,2022),xaxp=x0_1,ylim=c(0,450),cex.lab=1.1,
-     main="Biomasa total",ylab="Toneladas x 10^3",xlab="Año")  
-	polygon(x0,bt0/1000,col=gray(.5,0.5), border="gray80")
-	polygon(x0,bt1/1000,col=gray(.8,0.5), border="gray80")
-	lines(years1,Bt0/1000,lwd=1,col=1,lty=1)
-	lines(years1,Bt1/1000,lwd=1,col=2,lty=1)
-box()
+```{r Fig28,warning=F, include=T, message=F, echo=T,fig.height=5,fig.width=10,fig.align="center",fig.path="Figuras/",dev=c('pdf')}
 
-plot(x0,ssbt0/1000,type="n",cex.axis=1.1,xaxs="i",yaxs="i",las=1,
-     xlim=c(2001,2022),xaxp=x0_1,ylim=c(0,150),cex.lab=1.1,
-     main="Biomasa desovante",ylab="Toneladas x 10^3",xlab="Año")  
-	polygon(x0,ssbt0/1000,col=gray(.5,0.5), border="gray80")
-	polygon(x0,ssbt1/1000,col=gray(.8,0.5), border="gray80")
-	lines(years1,SSBt0/1000,lwd=1,col=1,lty=1)
-	lines(years1,SSBt1/1000,lwd=1,col=2,lty=1)
-box()
+par(mfrow=c(1,2),mar=c(4,4,1,1)+0.5)
 
-plot(x0, ft0, xaxp=x0_1,cex.axis=1.1,xaxs= "i",yaxs= "i",ylim=c(0,2.5),
-	main="Mortalidad por pesca",xlim=c(2001,2022),type="n", ylab="F (año-1)",las=1,xlab="Año",cex.lab=1.1)
-	polygon(x0, ft0,  col=gray(.5,0.5), border="gray80")
-	polygon(x0, ft1,  col=gray(.8,0.5), border="gray80")
-	lines(years1,exp(Ft0),lwd=1,col=1,lty=1)
-	lines(years1,exp(Ft1),lwd=1,col=2,lty=1)
-box()
+# ASESORÍA JUNIO 2021
+plot(rep1$Tallas,rep1$Selflo_talla[1,],type="l",las=1,col=4,ylim=c(0,1.1),
+     ylab="Selectividad",xlab="Tallas (cm)",main="Flota")
+lines(rep1$Tallas,rep1$Selflo_talla[9,],type="l",col=3)
+lines(rep1$Tallas,rep1$Selflo_talla[nyears1,],type="l",col=2)
+legend(13,0.3,c("sel_2002-2009","sel_2010-2012","sel_2013-2020"),
+       col=c(4,3,2),lwd=c(1,1,1),cex=0.8,bty="n")
 
+# ASESORÍA JUNIO 2021
+plot(rep1$Tallas,rep1$Selcru_talla[1,],type="l",las=1,col=4,ylim=c(0,1.1),
+     ylab="Selectividad",xlab="Tallas (cm)",main="Crucero")
+lines(rep1$Tallas,rep1$Selcru_talla[nyears1,],type="l",col=2)
+legend(13,0.3,c("sel_2002-2012","sel_2013-2020"),
+       col=c(4,2),lwd=c(1,1),cex=0.8,bty="n")
 
 ```
+
+
+
+### 4.2. Estados de explotación
+
+```{r Fspr_baseJunio,warning=F, include=T, message=F, echo=FALSE,eval=T}
+
+Tsard<- read.table(paste(getwd(),"/funciones/T0918.txt",sep=""),sep="",na="NA",fill=T) #se debe actualizar esto???
+# Probar 3 bloques de selectividad
+source(paste(getwd(),"/funciones/Fun_Pbrs.R",sep=""))
+
+nyears1<-length(rep1$Years)
+
+Dat<-list()
+Dat$M  	  <- 0.83
+Dat$Tspw	<- 0.58
+Dat$Mad	  <- data.1$Madurez
+Dat$Wmed	<- data.1$Pesos_medios
+Dat$Pre   <- rep1$Fun_rec_talla
+Ta        <- as.matrix(Tsard)
+talla  	  <- data.1$Tallas
+edad      <- seq(0,4,1)
+Fmort 	  <- seq(0,3,0.01)      
+R0 		    <- 1
+
+#Calculo de FRMS para cada bloque de selectividad
+Dat$Sel	  <- rep1$Selflo_talla[1,] #bloque 1=[1,], bloque 2=[9,], bloque 3=[19,]
+PBRsb1    <- SPRFmort(R0,Fmort,talla,edad,Dat) 
+FRMSb1    <- subset(PBRsb1,PBRsb1[,4]==0.60)[1]
+
+Dat$Sel	  <- rep1$Selflo_talla[10,] #bloque 1=[1,], bloque 2=[9,], bloque 3=[19,]
+PBRsb2    <- SPRFmort(R0,Fmort,talla,edad,Dat) 
+FRMSb2    <- subset(PBRsb2,PBRsb2[,4]==0.60)[1]
+
+Dat$Sel	  <- rep1$Selflo_talla[nyears1,] #bloque 1=[1,], bloque 2=[9,], bloque 3=[19,]
+PBRsb3    <- SPRFmort(R0,Fmort,talla,edad,Dat) 
+FRMSb3    <- subset(PBRsb3,PBRsb3[,4]==0.60)[1]
+
+FrmsPorBloque<-rbind(Frms_bloque1=FRMSb1,Frms_bloque2=FRMSb2,Frms_bloque3=FRMSb3)
+#FrmsPorBloque
+
+# PBRs Modelo base
+BDo1    <- rep1$BD_virgen_LP 
+BRMS1   <- BDo1*0.55
+BDlim1  <- BDo1*0.275
+FRMS1   <- data.1$Ind[nyears1,13]
+
+```
+
+```{r Fig29,warning=F, include=T, message=F,eval=T, echo=FALSE,fig.height=4,fig.width=8,fig.align="center",fig.path="Figuras/",dev=c('pdf')}
+
+par(mfcol=c(1,2),mar=c(4,4,1,1)+0.5)
+plot(rep1$Tallas,rep1$Selflo_talla[1,],type="l",las=1,col=4,ylab="Selectividad",xlab="Tallas (cm)")
+lines(rep1$Tallas,rep1$Selflo_talla[9,],type="l",col=3)
+lines(rep1$Tallas,rep1$Selflo_talla[nyears1,],type="l",col=2)
+lines(rep1$Tallas,data.1$Madurez,lwd=2)
+legend(13,0.3,c("bloque_sel1","bloque_sel2","bloque_sel3","Madurez"),col=c(4,3,2,1),lwd=c(1,1,1,2),cex=0.8,bty="n")
+
+plot(PBRsb1[,1],PBRsb1[,4],type="l",ylab="%BDPR",xlab="Mortalidad por pesca (F)",lwd=1,las=1,col=4)
+lines(PBRsb2[,1],PBRsb2[,4],col=3,lwd=1)
+lines(PBRsb3[,1],PBRsb3[,4],col=2,lwd=1)
+abline(h=0.6,col=1,lty=1)
+abline(v=c(FRMSb1,FRMSb2,FRMSb3),col=c(4,3,2),lty=2)
+	text(1.5,c(0.55,0.50,0.45),c("F60_sel1=0,33", "F60_sel2=0,26","F60_sel3=0,31"),cex=0.8,col=c(4,3,2))
+
+```
+
+
 
 
 \pagebreak
