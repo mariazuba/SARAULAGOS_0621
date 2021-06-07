@@ -165,7 +165,7 @@ gamma2 <- formula('CPUE1 ~ Año + mes + cb + zona') #0.12
 gamma3 <- formula('CPUE1 ~ Año + trim  + cb + zona + zona:mes + zona:Año') #0.14
 gamma4 <- formula('CPUE1 ~ Año + mes + cb + zona + Año:zona + cb:zona') #0.12
 
-
+#datos totales positivos y ceros
 mod.tweedie1 <- formula('cpue ~ Año + mes + cb + zona') # 0.16%
 mod.tweedie2 <- formula('cpue ~ Año + mes + cb + zona + zona:mes + zona:Año') # 0.18%
 #mod.tweedie3 <- formula('cpue ~ Año + mes + cb + zona +  cb:zona + trim:zona')
