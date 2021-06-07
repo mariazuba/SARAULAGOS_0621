@@ -9,7 +9,7 @@ library(nlme)
 library(nortest) # Para realizar test de nomalidad
 
 rm(list=ls())           # Limpieza de variables del ambiente, ?til cada vez que empezamos un nuevo an?lisis
-setwd("C:/Users/macristina.perez/Documents/Recursos/Sardina Austral/CPUE_Los_Lagos_MaC/estandarizacion/elson")
+setwd("C:/Users/macristina.perez/Documents/GitHub/SARAULAGOS_0621/CPUE_Los_Lagos_MaC/estandarizacion_segun_informe/con_info_elson")
 #=========================================================================================================
 # CARGAR ARCHIVO DE DATOS (.csv)
 #=========================================================================================================
@@ -114,7 +114,8 @@ box()
 
 
 #PARA ANALISIS DESCARTANDO LOS VIAJES SIN CAPTURA
-CPUEpos   <- subset(matriz,CPUE1>1);names(CPUEpos)
+CPUEpos   <- subset(matriz,CPUE1>1)
+summary(CPUEpos)
 
 x11(width=7,height=5)
 par(mfrow=c(1,2))
@@ -137,11 +138,11 @@ matriz$exipes <- !is.na(matriz$lncpue1)
 matriz$cpue <- matriz$cpt
 
 # Convertimos a factores en el caso de considerar solo viajes positivos (descartar sin captura)
-CPUEpos$CB   <-factor(CPUEpos$rangocb)
-CPUEpos$TRIM <-factor(CPUEpos$trim)
-CPUEpos$ZONA <-factor(CPUEpos$zonapesca)
-CPUEpos$ZONA2 <-factor(CPUEpos$zonapesca2)
-CPUEpos$AÑO <-factor(CPUEpos$ano)
+CPUEpos$cb   <-factor(CPUEpos$rangocb)
+CPUEpos$trim <-factor(CPUEpos$trim)
+CPUEpos$zona <-factor(CPUEpos$zonapesca)
+#CPUEpos$ZONA2 <-factor(CPUEpos$zonapesca2)
+CPUEpos$Año <-factor(CPUEpos$ano)
 CPUEpos$exipes <- !is.na(CPUEpos$lncpue1)
 
 
@@ -151,22 +152,22 @@ CPUEpos$exipes <- !is.na(CPUEpos$lncpue1)
 #normal1 <- formula('lncpue1 ~ A?O + TRIM  + CB + ZONA')
 
 #Modelo todos los viajes
+#solo datos positivos
+#binomial <- formula('cexito ~  Año + mes + cb + zona') # %0.09
 
-binomial <- formula('cexito ~  Año + mes + cb + zona')
-
-normal <- formula('lncpue2 ~ Año + mes  + cb + zona')
-#normal2 <- formula('lncpue2 ~ Año + trim  + cb + zona + cb:zona')               #incluye una interacci?n
-normal3 <- formula('lncpue2 ~ Año + trim  + cb + zona + zona:mes + zona:Año')   #incluye dos interacci?nes
-
-
-#gamma <- formula('CPUE1 ~ mes:Año + Año + cb + zona')
-gamma2 <- formula('CPUE1 ~ Año + mes + cb + zona')
-#gamma3 <- formula('CPUE1 ~ Año + trim  + cb + zona + zona:mes + zona:Año')
-#gamma4 <- formula('CPUE1 ~ Año + mes + cb + zona + Año:zona + cb:zona')
+normal1 <- formula('lncpue1 ~ Año + mes  + cb + zona') #0.19%
+normal2 <- formula('lncpue1 ~ Año + trim  + cb + zona + cb:zona') #0.17%             #incluye una interacci?n
+normal3 <- formula('lncpue1 ~ Año + trim  + cb + zona + zona:mes + zona:Año') #0.25%  #incluye dos interacci?nes
 
 
-mod.tweedie <- formula('cpue ~ Año + mes + cb + zona')
-mod.tweedie2 <- formula('cpue ~ Año + mes + cb + zona + zona:mes + zona:Año')
+gamma1 <- formula('CPUE1 ~ mes:Año + Año + cb + zona') #0.10
+gamma2 <- formula('CPUE1 ~ Año + mes + cb + zona') #0.12
+gamma3 <- formula('CPUE1 ~ Año + trim  + cb + zona + zona:mes + zona:Año') #0.14
+gamma4 <- formula('CPUE1 ~ Año + mes + cb + zona + Año:zona + cb:zona') #0.12
+
+
+mod.tweedie1 <- formula('cpue ~ Año + mes + cb + zona') # 0.16%
+mod.tweedie2 <- formula('cpue ~ Año + mes + cb + zona + zona:mes + zona:Año') # 0.18%
 #mod.tweedie3 <- formula('cpue ~ Año + mes + cb + zona +  cb:zona + trim:zona')
 
 # Codigo para encontrar el valor optimo (var.power) en el modelo tweedie
@@ -182,23 +183,27 @@ do.plot=TRUE, method="interpolation", do.smooth=TRUE, do.ci=TRUE)
 #---modelo DELTA-LOGNORMAL #----
 options(contrasts=c(factor="contr.treatment","contr.sum"))
 
-#Modelo solop viajes positivos
-# modelo1  <- glm(normal1, na.action=na.exclude, data=CPUEpos, family=gaussian(link = "identity"))
+#Modelo solo viajes positivos
+#modelo1  <- glm(normal3, na.action=na.exclude, data=CPUEpos, family=gaussian(link = "identity")) # 0.19%
 
 #Modelo con todos los viajes (incluye sin pesca)
-modelo1  <- glm(normal3, na.action=na.exclude, data=matriz, subset= CPUE1>0, family=gaussian(link = "identity"))
+modelo1  <- glm(normal3, na.action=na.exclude, data=matriz, family=gaussian(link = "identity"))
 
  # ---modelo DELTA-GAMMA #----
-modelo2  <- glm(gamma2, family=Gamma(link=log),na.action=na.exclude, data=matriz,subset=cexito==1 & CPUE1>0)
+#Modelo solo viajes positivos
+modelo2  <- glm(gamma4, family=Gamma(link=log),na.action=na.exclude, data=matriz, subset=cexito==1 & CPUE1>0)
 # modelo2  <- glm(gamma1, family=Gamma(link=log),na.action=na.exclude, data=matriz, subset=cexito==1 & lncpue1>0 & !is.na(cb) & !is.na(zona))
+
 # ---modelo BINOMIAL #----
-modelo3  <- glm(binomial, family=binomial(link="logit"),na.action=na.exclude, data=matriz)
-# ---modelo TWEEDIE #----
+#modelo3  <- glm(binomial, family=binomial(link="logit"),na.action=na.exclude, data=matriz)
 
 library(tweedie)
 library(statmod)
-modelo4  <- glm(mod.tweedie, family=tweedie(var.power=1.635903, link.power=0), na.action=na.omit, data=matriz)
-modelo5  <- glm(mod.tweedie2, family=tweedie(var.power=1.635903, link.power=0), na.action=na.omit, data=matriz)
+
+# ---modelo TWEEDIE #----
+modelo4  <- glm(mod.tweedie1, family=tweedie(var.power=1.635903, link.power=0), na.action=na.omit, data=matriz) #0.16
+modelo5  <- glm(mod.tweedie2, family=tweedie(var.power=1.635903, link.power=0), na.action=na.omit, data=matriz) #0.18
+#modelo6  <- glm(mod.tweedie3, family=tweedie(var.power=1.635903, link.power=0), na.action=na.omit, data=matriz) #0.17
 
 years<-seq(2007,2020,1)
 
@@ -273,6 +278,7 @@ PseudoR <- function (objeto)
 modelo1$resumen  <- summary(modelo1); modelo1$resumen              # entrega los coeficientes del GLM
 modelo1$anova    <- anova(modelo1,test="Chisq"); modelo1$anova     # An?lisis de devianza podemos elegir el mejor modelo
 PseudoR(modelo1)
+AIC(modelo1)
 
 modelo2$resumen  <- summary(modelo2); modelo2$resumen              # entrega los coeficientes del GLM
 modelo2$anova    <- anova(modelo2,test="Chisq"); modelo2$anova     # An?lisis de devianza podemos elegir el mejor modelo
@@ -289,6 +295,11 @@ PseudoR(modelo4)
 modelo5$resumen  <- summary(modelo5); modelo5$resumen              # entrega los coeficientes del GLM
 modelo5$anova    <- anova(modelo5,test="Chisq"); modelo5$anova   
 PseudoR(modelo5)
+
+modelo6$resumen  <- summary(modelo6); modelo6$resumen              # entrega los coeficientes del GLM
+modelo6$anova    <- anova(modelo6,test="Chisq"); modelo6$anova   
+PseudoR(modelo6)
+
 
 #Despliegue de coefficientes
 summary(modelo5)
