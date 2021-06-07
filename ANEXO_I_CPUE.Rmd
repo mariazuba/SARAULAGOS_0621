@@ -1,0 +1,292 @@
+---
+title: "ANEXO I"
+subtitle: "ANÁLISIS DE LA CAPTURA POR UNIDAD DE ESFUERZO (CPUE)"
+lang: es
+output: pdf_document
+toc: TRUE
+header-includes:
+- \usepackage{draftwatermark}
+- \SetWatermarkText{}
+- \usepackage{fancyhdr}
+- \usepackage{graphicx}
+- \usepackage{parskip}
+- \usepackage{caption}
+- \captionsetup[table]{name=\textbf{Tabla},labelsep=period}
+- \captionsetup[figure]{name=\textbf{Figura},labelsep=period}
+- \captionsetup{justification=justified,format=plain,font=small,labelfont=bf,margin=40pt}
+- \pagestyle{fancy}
+- \usepackage{geometry}
+- \geometry{top=1.5cm, bottom=1cm, left=2.5cm, right=2.5cm}
+- \usepackage{helvet}
+- \renewcommand{\familydefault}{\sfdefault}
+
+- \newcommand{\sietepuntos}{\fontsize{7pt}{\baselineskip}\selectfont}
+- \newcommand{\cincopuntos}{\fontsize{6pt}{\baselineskip}\selectfont}
+
+- \addtolength{\headheight}{4.5\baselineskip}
+- \setlength{\headheight}{70pt}
+- \setlength{\footskip}{5pt}
+- \setlength{\textheight}{658pt}
+- \fancyhead[CO,CE]{\includegraphics[height=1.5cm]{logoifop.png}\\ \sietepuntos INSTITUTO DE FOMENTO PESQUERO / DIVISION INVESTIGACION PESQUERA}
+- \fancyhead[LO,LE]{ }
+- \fancyhead[RO,RE]{ }
+- \renewcommand{\headrulewidth}{0.5pt}
+- \fancyfoot[C]{\cincopuntos \thepage \\ \vspace{-0.2cm} ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ \\ \vspace{-0.2cm} \cincopuntos CONVENIO DE DESEMPEÑO 2020 IFOP/SUBSECRETARÍA DE ECONOMíA Y EMT \\ \vspace{-0.1cm} INFORME FINAL. SARDINA AUSTRAL, REGIÓN DE LOS LAGOS, 2021. \textbf{ANEXO I}}
+---
+
+\pagebreak
+
+## Análisis de la captura por unidad de esfuerzo (CPUE)
+
+Se presentan los resultados del análisis de las tasas de capturas siguiendo una metodología idéntica a la utilizada en el proyecto previo. Utilizando modelos lineales generalizados (GLM), se realiza la estandarización de las tasas de captura de sardina austral para la flota artesanal que operó en aguas interiores de la Región de Los Lagos entre los años 2007 y 2019. La información provino de las naves que participaron de la pesca de investigación a cargo de IFOP hasta el primer semestre de 2012. Luego se utilizan las bases de datos del Programa de seguimiento de las pesquerías pelágicas centro-sur (Bitácoras de pesca IFOP). La base de datos estuvo conformada por observaciones de capturas, en donde los rendimientos son expresados como t. de sardina austral por "viaje de pesca"
+
+En los modelos lineales generalizados (GLM; McCullagh y Nelder, 1989), la CPUE es predicha como una combinación lineal de variables explicativas y el principal objetivo es estimar el efecto anual. Existen varias alternativas para modelar las tasas de captura (CPUE) a través de un GLM y su uso depende de las características de la variable a modelar. En este caso, se evaluaron los modelos Delta log-normal y Delta-gamma (Ortiz y Arocha, 2004), que permiten modelar separadamente las tasas de captura exitosas y el número de éxitos de captura. De esta manera, valor anual de la CPUE, es obtenido como el producto entre la proporción de éxitos de pesca, obtenido a partir de un modelo Binomial y el índice estimado para las tasas de captura con pesca (modelo log-normal y gamma).
+
+Se consideró, además, una aproximación que utiliza una distribución Poisson-compuesta para modelar la CPUE (Dunn y Smyth, 2005; Shono, 2008; Tascheri *et al*.,2010). Esta aproximación permite modelar de forma conjunta las tasas de captura y la proporción de éxito de pesca.
+
+La elección del modelo que describe de mejor manera la variabilidad en las tasas de capturas, se basó en los supuestos de distribución de la variable respuesta y sus residuos y en el porcentaje total de varianza explicada en cada caso.
+
+El modelo de regresión general para las tasas de captura tiene la siguiente forma:
+
+```{=tex}
+\begin{equation}
+ln(CPUE)_{i,j,k,l}=\mu + \alpha_i + \beta_j + \gamma_k + t_l + \varepsilon_{i,j,k,l},      (Log-normal)
+\end{equation}
+```
+```{=tex}
+\begin{equation}
+CPUE_{i,j,k,l}= \mu + \alpha_i + \beta_j + \gamma_k + t_l + \varepsilon_{i,j,k,l}, (Gamma, Poisson-compuesta)
+\end{equation}
+```
+Donde,
+
+-   $\mu$ = media general o intercepto
+-   $\alpha_i$ = factor año
+-   $\beta_j$ = factor mes
+-   $\gamma_k$ = factor zona
+-   $t_l$ = factor capacidad de bodega CTG
+-   $\varepsilon_{i,j,k,l}$ = error aleatorio con media cero y varianza ($\sigma^2$) constante.
+
+El análisis consideró como año de partida el 2007 debido a que la información de la procedencia de los lances de pesca comenzó a ser registrada a partir de ese año. De acuerdo a las cuadrículas señaladas por Aranis et al., (2008) (\textbf{Figura \ref{Fig1anexo}}), la zona de estudio fue dividida en zona norte=Z1 (A, B,C), centro=Z2 (D,E,F) y sur=Z3 (G,H,I) de manera de incorporar el factor espacial en la estandarización de las tasas de captura. Para modelar el tamaño de las embarcaciones como fuente de variabilidad, se utilizaron de manera arbitraria, 6 categorías de capacidad de bodega (CTG): \<=30 m3, 31-40, 41-50, 51-60, 61-70 y \> = 70 m3. Se realizó además un análisis alternativo que considera solo tres CTG: \<=25 m3 (naves pequeñas), 26-50 (naves medianas) y 51-100 m3 (naves grandes).
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig1_anexo1.pdf}
+\caption{Áreas de Pesca de la captura sardina austral en las Aguas Interiores del Mar de Chiloé señaladas por Aranís textit{et al}., (2014).}
+\label{Fig1anexo}
+\end{figure}
+```
+El análisis de la información a partir del año 2013 (\textbf{Tabla \ref{Tab1anexo}}), el número de registros disminuyó considerablemente debido a que el monitoreo de la actividad extractiva se realiza a través del programa de seguimiento de la pesquería centro-sur (Aranis textit{et al}.,2014). El programa solo registra la información de las naves que al llegar a puerto (Calbuco) reportan la captura de sardina austral. Por el contrario, entre los años 2006 y 2012, los registros provenían de la pesca de investigación donde gran parte de las naves autorizadas, estaban inscritas en la pesca y ellas estaban obligadas a informar recalada, captura y permitir actividades de toma de información biológico-pesquera por parte de IFOP.
+
+La actividad de la flota en las diferentes zonas de pesca (\textbf{Figura \ref{Fig2anexo}}) muestra que los lances, se concentran principalmente en la zona norte (Z1) del área de operación. Sin embargo, los años 2012 y 2013, los lances se realizaron mayoritariamente en la zona centro (Z2). En la zona sur (Z3) en tanto la actividad es menor, aunque el año 2011 el número de lances superó a los realizados en la zona centro. A partir del año 2013, la información no es totalmente comparable con los años previos, ya que solo corresponde a información parcial. Sin embargo, el año 2014, se aprecia la misma dinámica observada hasta el año 2011, donde la mayor actividad de la flota, se registra en la zona norte del área de estudio, cercana al principal puerto de desembarque (Calbuco). Este patrón no se repitió los años 2015 y 2018, donde, la mayor cantidad de información fue registrada en la zona centro (Z2).
+
++-------------+-------------+-------------+-------------+-------------+
+| Año         | Norte       | Centro      | Sur         | Total       |
++:===========:+:===========:+:===========:+:===========:+:===========:+
+| 2007        | 768         | 672         | 186         | 1626        |
++-------------+-------------+-------------+-------------+-------------+
+| 2008        | 1090        | 477         | 22          | 1589        |
++-------------+-------------+-------------+-------------+-------------+
+| 2009        | 1629        | 295         | \-          | 1924        |
++-------------+-------------+-------------+-------------+-------------+
+| 2010        | 1141        | 109         | 24          | 1274        |
++-------------+-------------+-------------+-------------+-------------+
+| 2011        | 576         | 116         | 133         | 825         |
++-------------+-------------+-------------+-------------+-------------+
+| 2012        | 240         | 442         | 31          | 713         |
++-------------+-------------+-------------+-------------+-------------+
+| 2013        | 15          | 46          | 30          | 91          |
++-------------+-------------+-------------+-------------+-------------+
+| 2014        | 97          | 52          | 15          | 164         |
++-------------+-------------+-------------+-------------+-------------+
+| 2015        | 60          | 95          | 3           | 158         |
++-------------+-------------+-------------+-------------+-------------+
+| 2016        | 40          | 16          | 12          | 68          |
++-------------+-------------+-------------+-------------+-------------+
+| 2017        | 34          | 12          | 17          | 63          |
++-------------+-------------+-------------+-------------+-------------+
+| 2018        | 20          | 60          | 45          | 125         |
++-------------+-------------+-------------+-------------+-------------+
+| 2019        | 19          | 129         | 60          | 208         |
++-------------+-------------+-------------+-------------+-------------+
+| 2020        | 21          | 60          | 101         | 182         |
++-------------+-------------+-------------+-------------+-------------+
+| **Total**   | **5750**    | **2581**    | **679**     | **9010**    |
++-------------+-------------+-------------+-------------+-------------+
+
+: \label{Tab1anexo} Número de registros provenientes de la bitácora por año y zona, zona norte (A, B, C); zona centro (D, E, F); zona sur (G, H, I). \* No se muestran los años 2005 y 2006.
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig2_anexo1.pdf}
+\caption{Número de viajes totales registrados por zona de pesca, de la flota que operó sobre sardina austral entre enero de 2007 y diciembre de 2018.}
+\label{Fig2anexo}
+\end{figure}
+```
+Al interior del año, el análisis de la información agrupada en escala mensual, indica que los viajes tienden a concentrarse entre febrero y junio, disminuyendo considerablemente entre julio y octubre (\textbf{Figura \ref{Fig3anexo}}). Esta dinámica está asociada al agotamiento de la cuota y a la veda reproductiva que se fija entre septiembre y octubre. Además, hacia final de año, generalmente se asigna un remanente de cuota que se captura en los meses de noviembre y diciembre.
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig3_anexo1.pdf}
+\caption{El número de viajes por mes contabilizados desde la flota que operó sobre sardina austral entre los años 2007 y 2019.}
+\label{Fig3anexo}
+\end{figure}
+```
+El análisis de los rendimientos de pesca nominales (RPN), indica que, durante los años 2014 y 2015, la mediana alcanzó valores en torno a las 40 t. por viaje con pesca (t/vcp), por sobre niveles observados al principio de la serie, aunque los cuartiles de dispersión también son más amplios. A partir del año 2015, se aprecia una reducción en los rendimientos de pesca hasta el año 2018 donde se aprecian los menores valores de toda la serie, independientemente si consideran todos los viajes o solo aquellos con valores mayores a 5 t/v (\textbf{Figura \ref{Fig4anexo}}).
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig4_anexo1.pdf}
+\caption{Variabilidad de los rendimientos de pesca nominales obtenidos por la flota que operó sobre sardina austral entre los años 2007 y 2019. Todos los viajes (panel izquierdo), solo lo viajes con capturas mayor a 5 toneladas (panel derecho).}
+\label{Fig4anexo}
+\end{figure}
+```
+El análisis por zona: norte (1), centro (2) y sur (3), muestra que la zona 1, donde se concentran los registros, el año 2016 evidenció un incremento en el valor medio en los RPN. En la zona 2 en tanto, ocurre lo contrario. Mientras los años 2014 y 2015, fueron los mayores observados, los años 2017 y 2018 disminuyen considerablemente (\textbf{Figura \ref{Fig5anexo}}) en las tres zonas, excepto el 2017 en la zona 3. En esta misma zona, los registros pesqueros dan cuenta de rendimientos medios comparativamente más altos, seguidos de la 2 y 1 respectivamente (\textbf{Figura \ref{Fig6anexo}}).
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig5_anexo1.pdf}
+\caption{Variabilidad media en los rendimientos de pesca nominales por zona de pesca y año, obtenidos por la flota que operó sobre sardina austral entre los años 2007 y 2019.}
+\label{Fig5anexo}
+\end{figure}
+```
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig6_anexo1.pdf}
+\caption{Variabilidad media total en los rendimientos de pesca nominales por zona de pesca, obtenidos por la flota que operó sobre sardina austral entre los años 2007 y 2019.}
+\label{Fig6anexo}
+\end{figure}
+```
+## Resultados de la estandarización de las tasas de capturas (CPUE)
+
+El análisis gráfico preliminar, realizado para establecer el tipo de distribución de la variable respuesta, indica que la CPUE de los viajes totales (\textbf{Figura \ref{Fig7anexo}}a) y de los viajes con pesca (\textbf{Figura \ref{Fig7anexo}}b), difieren de una distribución normal en su escala logarítmica. Esta condición, supone que la modelación de la CPUE a través de una aproximación log-normal, no sería apropiada. Tal supuesto, se confirma al analizar la distribución de los residuos. Cuando se modeló la CPUE asumiendo una aproximación log-normal, el histograma de los residuos evidenció una asimetría positiva en relación a la distribución esperada. El gráfico qq-plot también revela una divergencia entre la distribución esperada y la observada (\textbf{Figura \ref{Fig8anexo}}). En el caso de los modelos Gamma y Poisson compuesta (tweedie), su estructura ofrece mayor independencia del tipo de distribución de la variable respuesta. En efecto, el análisis de residuales en ambos casos demuestra, en comparación al modelo log-normal, más similitud entre los valores observados y los predichos (\textbf{Figura \ref{Fig9anexo}}). De esta manera, en el presente análisis, solo son presentados los resultados de los modelos Delta-Gamma y Poisson compuesta.
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig7_anexo1.pdf}
+\caption{Distribución de frecuencia de la CPUE en escala real y logarítmica. a). Total de viajes registrados. b). Solo viajes con pesca.}
+\label{Fig7anexo}
+\end{figure}
+```
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig8_anexo1.pdf}
+\caption{Análisis de los residuos en la estandarización de la CPUE a través del modelo log-normal.}
+\label{Fig8anexo}
+\end{figure}
+```
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig9_anexo1.pdf}
+\caption{Análisis de los residuos en la estandarización de la CPUE a través del modelo Gamma a) y Poisson compuesta b).}
+\label{Fig9anexo}
+\end{figure}
+```
+Los resultados de los modelos Delta Gamma (Binomial+Gamma) y Tweedie, muestran amplia similitud en sus tendencias y en menor grado en su magnitud. La tendencia de ambos modelos, es concordante con la señal del índice nominal, excepto el año 2015, donde la CPUE nominal muestra un incremento respecto del año 2014. El año 2016 ambas señales (nominal y estandarizadas) disminuyen y los años 2017 y 2018 muestra los valores más bajos de la serie, aunque también coinciden en un incremento relativo durante el 2019 (\textbf{Figura \ref{Fig10anexo}}).
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig10_anexo1.pdf}
+\caption{CPUE nominal y estandarizada por dos Modelos Lineales Generalizados en la pesquería de sardina austral en aguas interiores de la Región de Los Lagos.}
+\label{Fig10anexo}
+\end{figure}
+```
+El análisis de devianza del GLM ((\textbf{Tabla \ref{Tab2anexo}})) indica que los modelos Gamma y Tweedie, explican un 10,9% y 14,8% de la variabilidad total respectivamente. De los predictores considerados en la estandarización (rangos de capacidad de bodega, mes, año y zona), en cada caso, el factor año aporta con el mayor grado de explicación de la CPUE, con un 43% de la devianza total.
+
+El análisis de distribución de los residuos, así como el porcentaje de devianza explicada, indican que el modelo más apropiado para describir la CPUE de sardina austral, considerando la información analizada y los factores incluidos en la estandarización corresponde el modelo Poisson compuesta (Tweedie).
+
+| Factor | G.L. | Gamma R^2^ = 10,9% | Tweedie R^2^ = 14,8% |
+|:------:|:----:|:------------------:|:--------------------:|
+|   Año  |  12  |         43%        |          43%         |
+|   Mes  |  11  |         21%        |          20%         |
+|   CB   |   5  |         19%        |          20%         |
+|  Zona  |   2  |         17%        |          17%         |
+
+: \label{Tab2anexo} Tabla de análisis para el GLM de los datos de captura de sardina austral.
+
+Se considera que el modelo Poisson compuesta podría representar actualmente, de mejor manera las variaciones en las tasas de captura y es usado como calibrador en el modelo base de evaluación de stock. Para este modelo, la variabilidad de cada factor y su comportamiento sobre la media de las tasas de captura, se muestra en la \textbf{Figura \ref{Fig11anexo}}. Las tasas de captura a nivel del factor mes muestran valores altos durante el primer semestre y una reducción entre el sexto y el noveno mes, evidenciando la estacionalidad en las capturas. En el caso de los rangos de capacidad de bodega (6 categorías) se aprecia un incremento en las tasas de captura con el aumento en la capacidad de bodega de las naves. El factor año en tanto, muestra una fuerte reducción entre año 2010 y el 2012 y un incremento el año 2013, aunque por debajo del valor promedio e importante incremento durante el último año de análisis. Por último, el factor zona indica que los mayores rendimientos promedios se obtienen hacia el sur del área de operación de la flota.
+
+A pesar que los residuos tienden a la normalidad y linealidad en el plano ortogonal (gráfico qq-plot), cada año se continúa explorando variadas aproximaciones para modelar la CPUE. Se considera que la actual aproximación, permite explicar de manera general la variabilidad en las tasas capturas en la pesquería de sardina austral en aguas interior de la Región de Los Lagos y es consistente con la tendencia de los desembarques e índice acústico. De la misma manera, el modelo seleccionado sigue la tendencia en los rendimientos de pesca nominales (sin estandarizar) y la eficiencia de la flota en capturar la totalidad de la cuota asignada a partir del año 2013, excepto los últimos dos años.
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig11_anexo1.pdf}
+\caption{Resultados de los principales efectos del modelo de las tasas de capturas sardina austral para el modelo Tweedie.}
+\label{Fig11anexo}
+\end{figure}
+```
+## Análisis alternativo: Capacidad de Bodega e interacciones
+
+Con el objetivo de analizar el efecto, del número de categorías de capacidades de bodega (CTG): sobre la estandarización de la cpue, se realiza un análisis alternativo considerando solo 3 tamaños de naves: pequeñas (\< 25 m3), medinas (26-49 m3) y grandes (\> 50 m3). El análisis original considera 6 (CTG): \<=30 m3, 31-40, 41-50, 51-60, 61-70 y \> = 70 m3. Se incorpora además un segundo análisis que considera interacciones entre factores. Las interacciones aquí consideradas fueron: año/zona y mes/zona. Estos análisis provienen de las recomendaciones realizadas en el Taller de Revisión Por Pares Externa e Independiente y priorizadas en los Comités Científicos.
+
+El análisis se realiza solo considerando la aproximación tweedie. De acuerdo al análisis previo, éste representa hasta ahora, el mejor método para modelar los rendimientos en la pesquería de sardina austral en aguas interiores de la Región de Los Lagos.
+
+Los resultados del análisis de devianza del GLM se presentan en la \textbf{Tabla \ref{Tab3anexo}} e indica que al considerar sólo 3 CTG en el análisis, disminuye marginalmente en nivel de explicación del modelo. Por su parte, cuando se incluyen interacciones, el nivel de explicación incrementa desde 14,8% hasta un 17.5%.
+
+El análisis de los residuos (\textbf{Figura \ref{Fig12anexo}}), no muestra diferencias evidentes entre las 3 aproximaciones, sugiriendo que el modelo con interacciones podría representar de mejor forma la variabilidad de la CPUE considerando el mayor nivel de explicación de la desvianza. En la \textbf{Figura \ref{Fig13anexo}}, se muestra la variabilidad del índice estandarizado a través del modelo tweedie con interacciones y el original (presentado en la sección anterior). La evaluación de stock de sardina austral actualizada, utiliza el índice tweedie con interacciones (\textbf{Tabla \ref{Tab4anexo}}) como fuente de información para ajustar el modelo. Dicho modelo no advierte el incremento relativo en el índice nominal durante el 2019 y se mantiene man bien estable en niveles bajos, alrededor de las 10 t/vcp.
+
++----------+------+-------------+--------------+---------------+
+| Factor   | G.L. | CB (6ctg)   | CB (3ctg)    | Interacciones |
+|          |      |             |              |               |
+|          |      | R^2^= 14,8% | R^2^ = 14,7% | R^2^ = 17,5%  |
++:========:+:====:+:===========:+:============:+:=============:+
+| Año      | 12   | 43%         | 37%          | 36%           |
++----------+------+-------------+--------------+---------------+
+| Mes      | 11   | 20%         | 26%          | 17%           |
++----------+------+-------------+--------------+---------------+
+| CB       | 5    | 20%         | 18%          | 17%           |
++----------+------+-------------+--------------+---------------+
+| Zona     | 2    | 17%         | 19%          | 15%           |
++----------+------+-------------+--------------+---------------+
+| mes:zona | 22   |             |              | 10%           |
++----------+------+-------------+--------------+---------------+
+| Año:zona | 23   |             |              | 5%            |
++----------+------+-------------+--------------+---------------+
+
+: \label{Tab3anexo}  Tabla de análisis para el GLM de los datos de captura de sardina austral a través de 3 configuraciones para el modelo tweedie
+
+| Factor   | Df  | Deviance | Resid. Dev | \% explicación | Pr (\>Chi) |
+|----------|-----|----------|------------|----------------|------------|
+| NULL     |     |          | 20527      |                |            |
+| Año      | 12  | 1297.84  | 7629       | 6.3%           | \< 2.2e-16 |
+| mes      | 11  | 606.53   | 7618       | 3.0%           | \< 2.2e-16 |
+| cb       | 5   | 611.92   | 7613       | 3.0%           | \< 2.2e-16 |
+| zona     | 2   | 529.76   | 7611       | 2.6%           | \< 2.2e-16 |
+| mes:zona | 22  | 351.22   | 7589       | 1.7%           | \< 2.2e-16 |
+|          |     |          |            | 17.5%          |            |
+
+: \label{Tab4anexo} Tabla de análisis estadísticos para el modelo tweedie con interacciones usado como índice en la presente evaluación de stock.
+
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig12_anexo1.pdf}
+\caption{Análisis de los residuos en la estandarización de la CPUE a través del modelo Tweedie con 3 CTG, modelo con interacciones y modelo original.}
+\label{Fig12anexo}
+\end{figure}
+```
+
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig13_anexo1.pdf}
+\caption{CPUE estandarizada por Modelos Lineales Generalizados (tweedie original y con interacciones), en la pesquería de sardina austral en aguas interiores de la Región de Los Lagos.}
+\label{Fig13anexo}
+\end{figure}
+```
+
+
+
