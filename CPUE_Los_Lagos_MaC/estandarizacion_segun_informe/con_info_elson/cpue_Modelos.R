@@ -102,29 +102,40 @@ tb2 <- ftable(matriz$ano,matriz$cexito);tb2
   #Grafico para visualizar el tipo de distribuci?n de los datos
   #--------------------------------------------------------------
 
-x11(width=7,height=5)
+#x11(width=7,height=5)
+#par(mfrow=c(1,2))
+
+ppi<-300
+png("figuras/hist_todos.png", width=10*ppi, height=4.5*ppi, res=ppi)
 par(mfrow=c(1,2))
+nbb = 30
 hist(matriz$CPUE1,xlab="CPUE (ton/viaje)",ylab="Frecuencia", main='',ylim=c(0,2500))
 title("Histograma CPUE",cex.main=1)
 box()
 hist(matriz$lncpue2,nclass=25,xlab=" Log CPUE ",ylab="Frecuencia",main='')
 title("Histograma log (CPUE)", cex.main=1 )
 box()
+dev.off()
 
-
+#plot_2 <- ggarrange(p1, p2, p4, ncol = 1, nrow = 3, align = "v", common.legend = F, legend = "right")
+#ggsave(plot_2, filename = "figuras/figura2_b.png", width=7, height=8, dpi=300)
 
 #PARA ANALISIS DESCARTANDO LOS VIAJES SIN CAPTURA
 CPUEpos   <- subset(matriz,CPUE1>1)
 summary(CPUEpos)
 
-x11(width=7,height=5)
+#x11(width=7,height=5)
+ppi<-300
+png("figuras/hist_positivos.png", width=10*ppi, height=4.5*ppi, res=ppi)
 par(mfrow=c(1,2))
+nbb = 30
 hist(CPUEpos$CPUE1,xlab="CPUE (ton/vcp)",ylab="Frecuencia", main='',ylim=c(0,2500))
 title("Histograma CPUE",cex.main=1)
 box()
 hist(CPUEpos$lncpue2,nclass=25,xlab=" Log CPUE ",ylab="Frecuencia",main='')
 title("Histograma log (CPUE)", cex.main=1 )
 box()
+dev.off()
 
 # Re-definamos la naturaleza de las variables seg?n se requiera (factores)
 matriz$cb   <-factor(matriz$rangocb)
@@ -169,6 +180,7 @@ gamma4 <- formula('CPUE1 ~ Año + mes + cb + zona + Año:zona + cb:zona') #0.12
 mod.tweedie1 <- formula('cpue ~ Año + mes + cb + zona') # 0.16%
 mod.tweedie2 <- formula('cpue ~ Año + mes + cb + zona + zona:mes + zona:Año') # 0.18%
 #mod.tweedie3 <- formula('cpue ~ Año + mes + cb + zona +  cb:zona + trim:zona')
+#mod.tweedie4 <- formula('cpue ~ Año + trim + cb + zona') # 0.16%
 
 # Codigo para encontrar el valor optimo (var.power) en el modelo tweedie
 #metodo interpolacion
@@ -204,6 +216,7 @@ library(statmod)
 modelo4  <- glm(mod.tweedie1, family=tweedie(var.power=1.635903, link.power=0), na.action=na.omit, data=matriz) #0.16
 modelo5  <- glm(mod.tweedie2, family=tweedie(var.power=1.635903, link.power=0), na.action=na.omit, data=matriz) #0.18
 #modelo6  <- glm(mod.tweedie3, family=tweedie(var.power=1.635903, link.power=0), na.action=na.omit, data=matriz) #0.17
+#modelo7  <- glm(mod.tweedie2, family=tweedie(var.power=1.635903, link.power=0), na.action=na.omit, data=CPUEpos) #0.20
 
 years<-seq(2007,2020,1)
 
@@ -300,16 +313,27 @@ modelo6$resumen  <- summary(modelo6); modelo6$resumen              # entrega los
 modelo6$anova    <- anova(modelo6,test="Chisq"); modelo6$anova   
 PseudoR(modelo6)
 
+modelo7$resumen  <- summary(modelo7); modelo7$resumen              # entrega los coeficientes del GLM
+modelo7$anova    <- anova(modelo7,test="Chisq"); modelo7$anova   
+PseudoR(modelo7)
+
 
 #Despliegue de coefficientes
-summary(modelo5)
-names(modelo5)
+summary(modelo1)
+names(modelo1)
 win.graph()
+
+ppi<-300
+png("figuras/mod5_con dataposi.png", width=10*ppi, height=6*ppi, res=ppi)
 par(mfrow=c(2,2))
-termplot(modelo5,se=T,ylim="free")
+nbb = 30
+par(mfrow=c(2,2))
+termplot(modelo7,se=T,ylim="free")
+dev.off()
+
 x11()
 par(mfcol=c(2,2))
-plot(modelo5)
+plot(modelo1)
 
 
 ##########################################################################################################################################
@@ -342,18 +366,23 @@ plot(modelo5)
 
 # Gr?ficas residuos
 # ------------------
-modelo1$qres <- rstudent(modelo1)
-res <- residuals(modelo1,type="deviance")
+modelo7$qres <- rstudent(modelo7)
+res <- residuals(modelo7,type="deviance")
 
 
 x11(width=7,height=5)
 par(mfrow=c(1,2))
-hist(modelo1$qres, freq=FALSE, xlab='Residuales Estdar', ylab='Densidad', main=' ', xlim=c(-5,5),ylim=c(0,0.6))
+
+ppi<-300
+png("figuras/mod5_res_condataposi.png", width=10*ppi, height=4.5*ppi, res=ppi)
+par(mfrow=c(1,2))
+nbb = 30
+hist(modelo7$qres, freq=FALSE, xlab='Residuales Estdar', ylab='Densidad', main=' ', xlim=c(-5,5),ylim=c(0,0.6))
 curve(dnorm(x),col="gray25", lty=1, lwd=1.5, add=TRUE)
 box()
 qqnorm(res,ylab="Residuales",xlab="cuantiles Normal Estandar", main=' ')
-qqline(modelo1$qres)
-
+qqline(modelo7$qres)
+dev.off()
 
 
 # Grafico Serie cpue total Log-Normal
