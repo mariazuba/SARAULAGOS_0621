@@ -9,7 +9,7 @@ library(nlme)
 library(nortest) # Para realizar test de nomalidad
 
 rm(list=ls())           # Limpieza de variables del ambiente, ?til cada vez que empezamos un nuevo an?lisis
-setwd("C:/Users/macristina.perez/Documents/Recursos/Sardina Austral/CPUE_Los_Lagos_MaC/estandarizacion/elson")
+setwd("C:/Users/macristina.perez/Documents/GitHub/SARAULAGOS_0621/CPUE_Los_Lagos_MaC/estandarizacion_segun_informe/con_info_elson")
 #=========================================================================================================
 # CARGAR ARCHIVO DE DATOS (.csv)
 #=========================================================================================================
@@ -102,28 +102,40 @@ tb2 <- ftable(matriz$ano,matriz$cexito);tb2
   #Grafico para visualizar el tipo de distribuci?n de los datos
   #--------------------------------------------------------------
 
-x11(width=7,height=5)
+#x11(width=7,height=5)
+#par(mfrow=c(1,2))
+
+ppi<-300
+png("figuras/hist_todos.png", width=10*ppi, height=4.5*ppi, res=ppi)
 par(mfrow=c(1,2))
+nbb = 30
 hist(matriz$CPUE1,xlab="CPUE (ton/viaje)",ylab="Frecuencia", main='',ylim=c(0,2500))
 title("Histograma CPUE",cex.main=1)
 box()
 hist(matriz$lncpue2,nclass=25,xlab=" Log CPUE ",ylab="Frecuencia",main='')
 title("Histograma log (CPUE)", cex.main=1 )
 box()
+dev.off()
 
-
+#plot_2 <- ggarrange(p1, p2, p4, ncol = 1, nrow = 3, align = "v", common.legend = F, legend = "right")
+#ggsave(plot_2, filename = "figuras/figura2_b.png", width=7, height=8, dpi=300)
 
 #PARA ANALISIS DESCARTANDO LOS VIAJES SIN CAPTURA
-CPUEpos   <- subset(matriz,CPUE1>1);names(CPUEpos)
+CPUEpos   <- subset(matriz,CPUE1>1)
+summary(CPUEpos)
 
-x11(width=7,height=5)
+#x11(width=7,height=5)
+ppi<-300
+png("figuras/hist_positivos.png", width=10*ppi, height=4.5*ppi, res=ppi)
 par(mfrow=c(1,2))
+nbb = 30
 hist(CPUEpos$CPUE1,xlab="CPUE (ton/vcp)",ylab="Frecuencia", main='',ylim=c(0,2500))
 title("Histograma CPUE",cex.main=1)
 box()
 hist(CPUEpos$lncpue2,nclass=25,xlab=" Log CPUE ",ylab="Frecuencia",main='')
 title("Histograma log (CPUE)", cex.main=1 )
 box()
+dev.off()
 
 # Re-definamos la naturaleza de las variables seg?n se requiera (factores)
 matriz$cb   <-factor(matriz$rangocb)
@@ -137,11 +149,11 @@ matriz$exipes <- !is.na(matriz$lncpue1)
 matriz$cpue <- matriz$cpt
 
 # Convertimos a factores en el caso de considerar solo viajes positivos (descartar sin captura)
-CPUEpos$CB   <-factor(CPUEpos$rangocb)
-CPUEpos$TRIM <-factor(CPUEpos$trim)
-CPUEpos$ZONA <-factor(CPUEpos$zonapesca)
-CPUEpos$ZONA2 <-factor(CPUEpos$zonapesca2)
-CPUEpos$AÑO <-factor(CPUEpos$ano)
+CPUEpos$cb   <-factor(CPUEpos$rangocb)
+CPUEpos$trim <-factor(CPUEpos$trim)
+CPUEpos$zona <-factor(CPUEpos$zonapesca)
+#CPUEpos$ZONA2 <-factor(CPUEpos$zonapesca2)
+CPUEpos$Año <-factor(CPUEpos$ano)
 CPUEpos$exipes <- !is.na(CPUEpos$lncpue1)
 
 
@@ -151,23 +163,24 @@ CPUEpos$exipes <- !is.na(CPUEpos$lncpue1)
 #normal1 <- formula('lncpue1 ~ A?O + TRIM  + CB + ZONA')
 
 #Modelo todos los viajes
+#solo datos positivos
+#binomial <- formula('cexito ~  Año + mes + cb + zona') # %0.09
 
-binomial <- formula('cexito ~  Año + mes + cb + zona')
-
-normal <- formula('lncpue2 ~ Año + mes  + cb + zona')
-#normal2 <- formula('lncpue2 ~ Año + trim  + cb + zona + cb:zona')               #incluye una interacci?n
-normal3 <- formula('lncpue2 ~ Año + trim  + cb + zona + zona:mes + zona:Año')   #incluye dos interacci?nes
-
-
-#gamma <- formula('CPUE1 ~ mes:Año + Año + cb + zona')
-gamma2 <- formula('CPUE1 ~ Año + mes + cb + zona')
-#gamma3 <- formula('CPUE1 ~ Año + trim  + cb + zona + zona:mes + zona:Año')
-#gamma4 <- formula('CPUE1 ~ Año + mes + cb + zona + Año:zona + cb:zona')
+normal1 <- formula('lncpue1 ~ Año + mes  + cb + zona') #0.19%
+normal2 <- formula('lncpue1 ~ Año + trim  + cb + zona + cb:zona') #0.17%             #incluye una interacci?n
+normal3 <- formula('lncpue1 ~ Año + trim  + cb + zona + zona:mes + zona:Año') #0.25%  #incluye dos interacci?nes
 
 
-mod.tweedie <- formula('cpue ~ Año + mes + cb + zona')
-mod.tweedie2 <- formula('cpue ~ Año + mes + cb + zona + zona:mes + zona:Año')
+gamma1 <- formula('CPUE1 ~ mes:Año + Año + cb + zona') #0.10
+gamma2 <- formula('CPUE1 ~ Año + mes + cb + zona') #0.12
+gamma3 <- formula('CPUE1 ~ Año + trim  + cb + zona + zona:mes + zona:Año') #0.14
+gamma4 <- formula('CPUE1 ~ Año + mes + cb + zona + Año:zona + cb:zona') #0.12
+
+#datos totales positivos y ceros
+mod.tweedie1 <- formula('cpue ~ Año + mes + cb + zona') # 0.16%
+mod.tweedie2 <- formula('cpue ~ Año + mes + cb + zona + zona:mes + zona:Año') # 0.18%
 #mod.tweedie3 <- formula('cpue ~ Año + mes + cb + zona +  cb:zona + trim:zona')
+#mod.tweedie4 <- formula('cpue ~ Año + trim + cb + zona') # 0.16%
 
 # Codigo para encontrar el valor optimo (var.power) en el modelo tweedie
 #metodo interpolacion
@@ -182,23 +195,28 @@ do.plot=TRUE, method="interpolation", do.smooth=TRUE, do.ci=TRUE)
 #---modelo DELTA-LOGNORMAL #----
 options(contrasts=c(factor="contr.treatment","contr.sum"))
 
-#Modelo solop viajes positivos
-# modelo1  <- glm(normal1, na.action=na.exclude, data=CPUEpos, family=gaussian(link = "identity"))
+#Modelo solo viajes positivos
+#modelo1  <- glm(normal3, na.action=na.exclude, data=CPUEpos, family=gaussian(link = "identity")) # 0.19%
 
 #Modelo con todos los viajes (incluye sin pesca)
-modelo1  <- glm(normal3, na.action=na.exclude, data=matriz, subset= CPUE1>0, family=gaussian(link = "identity"))
+modelo1  <- glm(normal3, na.action=na.exclude, data=matriz, family=gaussian(link = "identity"))
 
  # ---modelo DELTA-GAMMA #----
-modelo2  <- glm(gamma2, family=Gamma(link=log),na.action=na.exclude, data=matriz,subset=cexito==1 & CPUE1>0)
+#Modelo solo viajes positivos
+modelo2  <- glm(gamma4, family=Gamma(link=log),na.action=na.exclude, data=matriz, subset=cexito==1 & CPUE1>0)
 # modelo2  <- glm(gamma1, family=Gamma(link=log),na.action=na.exclude, data=matriz, subset=cexito==1 & lncpue1>0 & !is.na(cb) & !is.na(zona))
+
 # ---modelo BINOMIAL #----
-modelo3  <- glm(binomial, family=binomial(link="logit"),na.action=na.exclude, data=matriz)
-# ---modelo TWEEDIE #----
+#modelo3  <- glm(binomial, family=binomial(link="logit"),na.action=na.exclude, data=matriz)
 
 library(tweedie)
 library(statmod)
-modelo4  <- glm(mod.tweedie, family=tweedie(var.power=1.635903, link.power=0), na.action=na.omit, data=matriz)
-modelo5  <- glm(mod.tweedie2, family=tweedie(var.power=1.635903, link.power=0), na.action=na.omit, data=matriz)
+
+# ---modelo TWEEDIE #----
+modelo4  <- glm(mod.tweedie1, family=tweedie(var.power=1.635903, link.power=0), na.action=na.omit, data=matriz) #0.16
+modelo5  <- glm(mod.tweedie2, family=tweedie(var.power=1.635903, link.power=0), na.action=na.omit, data=matriz) #0.18
+#modelo6  <- glm(mod.tweedie3, family=tweedie(var.power=1.635903, link.power=0), na.action=na.omit, data=matriz) #0.17
+#modelo7  <- glm(mod.tweedie2, family=tweedie(var.power=1.635903, link.power=0), na.action=na.omit, data=CPUEpos) #0.20
 
 years<-seq(2007,2020,1)
 
@@ -273,6 +291,7 @@ PseudoR <- function (objeto)
 modelo1$resumen  <- summary(modelo1); modelo1$resumen              # entrega los coeficientes del GLM
 modelo1$anova    <- anova(modelo1,test="Chisq"); modelo1$anova     # An?lisis de devianza podemos elegir el mejor modelo
 PseudoR(modelo1)
+AIC(modelo1)
 
 modelo2$resumen  <- summary(modelo2); modelo2$resumen              # entrega los coeficientes del GLM
 modelo2$anova    <- anova(modelo2,test="Chisq"); modelo2$anova     # An?lisis de devianza podemos elegir el mejor modelo
@@ -290,15 +309,31 @@ modelo5$resumen  <- summary(modelo5); modelo5$resumen              # entrega los
 modelo5$anova    <- anova(modelo5,test="Chisq"); modelo5$anova   
 PseudoR(modelo5)
 
+modelo6$resumen  <- summary(modelo6); modelo6$resumen              # entrega los coeficientes del GLM
+modelo6$anova    <- anova(modelo6,test="Chisq"); modelo6$anova   
+PseudoR(modelo6)
+
+modelo7$resumen  <- summary(modelo7); modelo7$resumen              # entrega los coeficientes del GLM
+modelo7$anova    <- anova(modelo7,test="Chisq"); modelo7$anova   
+PseudoR(modelo7)
+
+
 #Despliegue de coefficientes
-summary(modelo5)
-names(modelo5)
+summary(modelo1)
+names(modelo1)
 win.graph()
+
+ppi<-300
+png("figuras/mod5_con dataposi.png", width=10*ppi, height=6*ppi, res=ppi)
 par(mfrow=c(2,2))
-termplot(modelo5,se=T,ylim="free")
+nbb = 30
+par(mfrow=c(2,2))
+termplot(modelo7,se=T,ylim="free")
+dev.off()
+
 x11()
 par(mfcol=c(2,2))
-plot(modelo5)
+plot(modelo1)
 
 
 ##########################################################################################################################################
@@ -331,18 +366,23 @@ plot(modelo5)
 
 # Gr?ficas residuos
 # ------------------
-modelo1$qres <- rstudent(modelo1)
-res <- residuals(modelo1,type="deviance")
+modelo7$qres <- rstudent(modelo7)
+res <- residuals(modelo7,type="deviance")
 
 
 x11(width=7,height=5)
 par(mfrow=c(1,2))
-hist(modelo1$qres, freq=FALSE, xlab='Residuales Estdar', ylab='Densidad', main=' ', xlim=c(-5,5),ylim=c(0,0.6))
+
+ppi<-300
+png("figuras/mod5_res_condataposi.png", width=10*ppi, height=4.5*ppi, res=ppi)
+par(mfrow=c(1,2))
+nbb = 30
+hist(modelo7$qres, freq=FALSE, xlab='Residuales Estdar', ylab='Densidad', main=' ', xlim=c(-5,5),ylim=c(0,0.6))
 curve(dnorm(x),col="gray25", lty=1, lwd=1.5, add=TRUE)
 box()
 qqnorm(res,ylab="Residuales",xlab="cuantiles Normal Estandar", main=' ')
-qqline(modelo1$qres)
-
+qqline(modelo7$qres)
+dev.off()
 
 
 # Grafico Serie cpue total Log-Normal
