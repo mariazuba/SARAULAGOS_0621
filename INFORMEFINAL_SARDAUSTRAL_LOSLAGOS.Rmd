@@ -33,181 +33,11 @@ header-includes:
 - \fancyfoot[C]{\cincopuntos \thepage \\ \vspace{-0.2cm} ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ \\ \vspace{-0.2cm} \cincopuntos CONVENIO DE DESEMPEÑO 2020 IFOP/SUBSECRETARÍA DE ECONOMíA Y EMT \\ \vspace{-0.1cm} INFORME FINAL. SARDINA AUSTRAL, REGIÓN DE LOS LAGOS, 2021}
 ---
 
-```{r llama codigos, warning=F, include=T, message=F, echo=FALSE}
-library(knitr) # para generar reporte Rmarkdown
-library(stringr)
-library(reshape) 
-library(dplyr) 
-library(ggplot2)
-library(ggthemes) # para ggplot
-library(patchwork) # para unir gráficos de ggplot
-library(strucchange) # libreria utilizada para análisis de quiebres
+**7. ANEXOS**
 
-dir.Fig     <-"Figuras/" # carpeta de las figuras utilizadas y generadas en este estudio
-fig         <-c("pdf","bmp") # formato de figuras generadas por este código
-dir.0       <-getwd() # directorio de trabajo 
-dir.1       <-paste(dir.0,"/codigos_admb",sep="") # carpeta de códigos ADMB 
-dir.2       <-paste(dir.0,"/Retrospectivobase",sep="") # carpeta de códigos ADMB 
-dir.3       <-paste(dir.0,"/Retrospectivoalternativo",sep="") # carpeta de códigos ADMB 
-dir.4       <-paste(dir.0,"/Verosimilitudalternativo",sep="") # carpeta de códigos ADMB 
-dir.5       <-paste(dir.0,"/Verosimilitudbase",sep="") # carpeta de códigos ADMB 
-
-dir.fun     <-paste(dir.0,"/funciones/",sep="") # carpeta de funciones utilizadas en este informe
-source(paste(dir.fun,"functions.R",sep="")) # funciones para leer .dat y .rep
-source(paste(dir.fun,"Fn_PBRs.R",sep="")) # funciones para leer .dat y .rep
-```
-
-```{r CORRE MODELO BASE SEPTIEMBRE, eval=FALSE, echo=FALSE, warning=FALSE,include=F}
-#Primer paso correr códigos 
-setwd(dir.1)
-#Asesoría Septiembre 2021
-system("~/admb-12.2/admb MTT0920")
-system("./MTT0920")
-```
-
-```{r CORRE MODELO ALTERNATIVO SEPTIEMBRE, eval=FALSE, echo=FALSE, warning=FALSE,include=F}
-#Primer paso correr códigos 
-setwd(dir.1)
-system("~/admb-12.2/admb MAT0920")
-system("./MAT0920")
-```
-
-```{r datos_rep_std, warning=F, include=T, message=F, echo=FALSE}
-setwd(dir.1)
-#Asesoría septiembre MODELO BASE 
-data.0   <- lisread(paste(dir.1,"MTT0920.dat", sep='/'));
-names(data.0)<-str_trim(names(data.0), side="right")
-rep0     <- reptoRlist("MTT0920.rep")                                               
-std0     <- read.table("MTT0920.std",header=T,sep="",na="NA",fill=T) 
-
-#Asesoría septiembre MODELO ALTERNATIVO 
-data.1   <- lisread(paste(dir.1,"MAT0920.dat", sep='/'));
-names(data.1)<-str_trim(names(data.1), side="right")
-rep1     <- reptoRlist("MAT0920.rep")                                               
-std1     <- read.table("MAT0920.std",header=T,sep="",na="NA",fill=T) 
-
-```
-
-```{r CARPETA RETROSPECTIVOBase, eval=FALSE, echo=FALSE, warning=FALSE,include=F}
-source(paste(getwd(),"/funciones/Fn_Retrospectivo.R",sep="")) 
-Retrospectivobase("MTT0920",dir.0,dir.1,"/Retrospectivobase",system="mac") 
-```
-
-```{r CARPETA RETROSPECTIVOAlternativo, eval=FALSE, echo=FALSE, warning=FALSE,include=F}
-source(paste(getwd(),"/funciones/Fn_Retrospectivo.R",sep="")) 
-Retrospectivoalternativo("MAT0920",dir.0,dir.1,"/Retrospectivoalternativo",system="mac") 
-```
-
-```{r CARPETA VEROSIMILITUDBase, eval=FALSE, echo=FALSE, warning=FALSE,include=F}
-source(paste(getwd(),"/funciones/Fn_Verosimilitud.R",sep="")) 
-Verosimilitudbase("MTT0920",dir.0,dir.1,"/Verosimilitudbase",system="mac") 
-```
-
-```{r CARPETA VEROSIMILITUDAlternativo, eval=FALSE, echo=FALSE, warning=FALSE,include=F}
-source(paste(getwd(),"/funciones/Fn_Verosimilitud.R",sep="")) 
-Verosimilitudalternativo("MAT0920",dir.0,dir.1,"/Verosimilitudalternativo",system="mac") 
-```
-
-```{r CARPETA ProyeccionAlternativo_Asesoriasept2019, eval=FALSE, echo=FALSE, warning=FALSE,include=F}
-source(paste(getwd(),"/funciones/Fn_CBA.R",sep="")) 
-
-admb<-"MAT0919"
-Carpeta<-"/cba_septiembre2019_alternativo"
-system="mac"
-l_escRec=166
-
-CBA(admb,dir.0,dir.1,Carpeta,system,l_escRec)
-  
-```
-
-```{r CARPETA ProyeccionAlternativo_Asesoriasept2020, eval=FALSE, echo=FALSE, warning=FALSE,include=F}
-source(paste(getwd(),"/funciones/Fn_CBA.R",sep="")) 
-
-admb<-"MAT0920"
-Carpeta<-"/cba_septiembre2020_alternativo"
-system="mac"
-l_escRec=169
-
-CBA(admb,dir.0,dir.1,Carpeta,system,l_escRec)
-  
-```
-
-```{r CARPETA ProyeccionBase_Asesoriasept2019, eval=FALSE, echo=FALSE, warning=FALSE,include=F}
-source(paste(getwd(),"/funciones/Fn_CBA.R",sep="")) 
-
-admb<-"MTT0819"
-Carpeta<-"/cba_septiembre2019_base"
-system="mac"
-l_escRec=188
-
-CBA(admb,dir.0,dir.1,Carpeta,system,l_escRec)
-  
-```
-
-```{r CARPETA ProyeccionBase_Asesoriasept2020, eval=FALSE, echo=FALSE, warning=FALSE,include=F}
-source(paste(getwd(),"/funciones/Fn_CBA.R",sep="")) 
-
-admb<-"MTT0920"
-Carpeta<-"/cba_septiembre2020_base"
-system="mac"
-l_escRec=186
-
-CBA(admb,dir.0,dir.1,Carpeta,system,l_escRec)
-  
-```
-
-```{r correr codigos asesorías previas, eval=FALSE, echo=FALSE, warning=FALSE}
-#Primer paso correr códigos 
-setwd(dir.1)
-#modelo base
-#system("~/admb-12.2/admb MTT0520")
-#system("./MTT0520")
-
-#system("./MTT0819")
-##system("~/admb-12.2/admb MTT0819")
-
-#modelo alternativo
-#system("~/admb-12.2/admb MAT0420")
-#system("./MAT0420")
-
-#alternativo septiembre 2019
-#system("~/admb-12.2/admb MAT0919")
-#system("./MAT0919")
-
-#alternativo julio 2019
-#system("~/admb-12.2/admb MAT0619")
-#system("./MAT0619")
-
-```
-
-```{r datos_rep_, warning=F, include=T, message=F, echo=FALSE}
-setwd(dir.1)
-#modelo base junio 2020
-data0   <- lisread(paste(dir.1,"MTT0520.dat", sep='/'));names(data0)<-str_trim(names(data0), side="right")
-rep.0     <- reptoRlist("MTT0520.rep")                                          
-std.0     <- read.table("MTT0520.std",header=T,sep="",na="NA",fill=T) 
-
-#modelo base septiembre 2019
-data0a   <- lisread(paste(dir.1,"MTT0819.dat", sep='/'));names(data0a)<-str_trim(names(data0a), side="right")
-rep.0a     <- reptoRlist("MTT0819.rep")                                        
-std.0a     <- read.table("MTT0819.std",header=T,sep="",na="NA",fill=T) 
-
-#modelo alternativo junio 2020
-data1   <- lisread(paste(dir.1,"MAT0420.dat", sep='/'));names(data1)<-str_trim(names(data1), side="right")
-rep.1     <- reptoRlist("MAT0420.rep")                                          
-std.1     <- read.table("MAT0420.std",header=T,sep="",na="NA",fill=T) 
-
-#modelo alternativo septiembre 2019
-data2   <- lisread(paste(dir.1,"MAT0919.dat", sep='/'));names(data2)<-str_trim(names(data2), side="right")
-rep.2     <- reptoRlist("MAT0919.rep")                                          
-std.2     <- read.table("MAT0919.std",header=T,sep="",na="NA",fill=T) 
-
-#modelo alternativo junio 2019
-data3   <- lisread(paste(dir.1,"MAT0619.dat", sep='/'));names(data3)<-str_trim(names(data3), side="right")
-rep.3     <- reptoRlist("MAT0619.rep")                                          
-std.3     <- read.table("MAT0619.std",header=T,sep="",na="NA",fill=T) 
-
-```
+-   ANEXO I: Estandarización de la CPUE de sardina austral de la Región de Los Lagos
+-   ANEXO II: Implementación de un Modelo con dinámica en edad e información en talla (modelo alternativo) para sardina austral de la Región de Los Lagos
+-   ANEXO III: Datos y Modelos correspondiente a la asesoría de septiembre 2020 (MTT0920) y junio 2021 (MTT0621)
 
 \pagebreak
 
@@ -275,13 +105,13 @@ De acuerdo a Galleguillos *et al*., (2012), a nivel poblacional en Chile, la sar
 
 La pesquería se encuentra bajo Régimen Artesanal de Extracción (RAE), sujeta al establecimiento de cuotas anuales de captura. La captura de sardina austral es realizada por naves cerqueras, consideradas por la legislación pesquera de Chile, como artesanales, con máximo de 17,99 m de eslora o 50 toneladas de registro grueso. Entre los años 2006 y 2018 la flota ha variado entre las 27 y 39 naves operando anualmente. La pesquería se desarrolla mayoritariamente en la Región de Los Lagos y se caracteriza por presentar una fuerte estacionalidad en el desembarque, el cual ocurre principalmente durante el primer semestre.
 
-Luego de ser identificada como una especie distinta de sardina común (Aranis *et al*., 2007), los registros oficiales comienzan el año 2006 con 39,2 mil t. A partir del año 2010, cuando comienza la evaluación de stock a través del actual enfoque de modelación, los desembarques anuales han oscilado en torno a la cuota asignada de 20 mil t promedio (\textbf{Figura \ref{Fig2}}). El año 2017, los desembarques disminuyeron hasta 14 mil t y durante el año 2018, mostró el menor nivel de la serie con 8,4 mil t. oficiales. El año 2019 en tanto, muestra una recuperación relativa, aunque permanece en valores bajos, cercano a las 11 mil t. Par el año 2020, los desembarques registrados alcanzaron las 14 mil toneladas, un 8% menor a la CBA recomendada.
+Luego de ser identificada como una especie distinta de sardina común (Aranis *et al*., 2007), los registros oficiales comienzan el año 2006 con 39,2 mil t. A partir del año 2010, cuando comienza la evaluación de stock a través del actual enfoque de modelación, los desembarques anuales han oscilado en torno a la cuota asignada de 20 mil t promedio (\textbf{Figura \ref{Fig2}}). El año 2017, los desembarques disminuyeron hasta 14 mil t y durante el año 2018, mostró el menor nivel de la serie con 8,4 mil t. oficiales. El año 2019 en tanto, muestra una recuperación relativa, aunque permanece en valores bajos, cercano a las 11 mil t. Para el año 2020, los desembarques registrados alcanzaron las 14 mil toneladas, un 8% menor a la CBA recomendada.
 
 ```{=tex}
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=0.6\textwidth]{Figuras/Fig2-1.pdf}
-\caption{Desembarques oficiales anuales de sardina austral en aguas interiores del Mar de Chiloé entre los años 2006 y 2019 (fuente: Sernapesca).}
+\caption{Desembarques oficiales anuales de sardina austral en aguas interiores del Mar de Chiloé entre los años 2006 y 2020 (fuente: Sernapesca).}
 \label{Fig2}
 \end{figure}
 ```
@@ -313,7 +143,7 @@ Cerna *et al*., (2007), reportan los parámetros de crecimiento (\textbf{Tabla \
 |    Loo    |          17.71         |
 |     M     |          0.83          |
 
-: \label{Tab1} Parámetros de crecimiento y mortalidad natural reportados para sardina austral en diferentes estudios.
+: \label{Tab1} Parámetros de crecimiento y mortalidad natural reportados para sardina austral de la Región de Los Lagos.
 
 ```{=tex}
 \normalsize
@@ -325,29 +155,29 @@ De acuerdo al ciclo de manejo de esta pesquería, la recomendación de CBA comie
 
 \pagebreak
 
-+------+-----------------+---------------+-------------+---------------------+
-| Año  | CBA inicial (t) | CBA total (t) | Desembarque | Diferencia entre el |
-|      |                 |               |             |                     |
-|      |                 |               |             | desembarque y la    |
-|      |                 |               |             |                     |
-|      |                 |               |             | Cuota               |
-+======+=================+===============+=============+=====================+
-| 2014 | 18.750          | 22.790        | 22.951      | 1,01                |
-+------+-----------------+---------------+-------------+---------------------+
-| 2015 | 24.550          | *statu quo*   | 23.643      | 0,96                |
-+------+-----------------+---------------+-------------+---------------------+
-| 2016 | 20.000          | *statu quo*   | 18.495      | 0,92                |
-+------+-----------------+---------------+-------------+---------------------+
-| 2017 | 20.000          | *statu quo*   | 14.134      | 0,70                |
-+------+-----------------+---------------+-------------+---------------------+
-| 2018 | 17.200          | *statu quo*   | 8.355       | 0,49                |
-+------+-----------------+---------------+-------------+---------------------+
-| 2019 | 11.137          | *statu quo*   | 11.278      | 1,01                |
-+------+-----------------+---------------+-------------+---------------------+
-| 2020 | 7.883           | 15.471        | 14.213      | 0,92                |
-+------+-----------------+---------------+-------------+---------------------+
-| 2021 | 12.347          |               |             |                     |
-+------+-----------------+---------------+-------------+---------------------+
++------+-------------+-----------------+-------------+---------------------+
+| Año  | CBA inicial | CBA actualizada | Desembarque | Diferencia entre el |
+|      |             |                 |             |                     |
+|      | (t)         | (t)             |             | desembarque y la    |
+|      |             |                 |             |                     |
+|      |             |                 |             | Cuota               |
++======+:===========:+:===============:+:===========:+:===================:+
+| 2014 | 18.750      | 22.790          | 22.951      | 1,01                |
++------+-------------+-----------------+-------------+---------------------+
+| 2015 | 24.550      | *statu quo*     | 23.643      | 0,96                |
++------+-------------+-----------------+-------------+---------------------+
+| 2016 | 20.000      | *statu quo*     | 18.495      | 0,92                |
++------+-------------+-----------------+-------------+---------------------+
+| 2017 | 20.000      | *statu quo*     | 14.134      | 0,70                |
++------+-------------+-----------------+-------------+---------------------+
+| 2018 | 17.200      | *statu quo*     | 8.355       | 0,49                |
++------+-------------+-----------------+-------------+---------------------+
+| 2019 | 11.137      | *statu quo*     | 11.278      | 1,01                |
++------+-------------+-----------------+-------------+---------------------+
+| 2020 | 7.883       | 15.471          | 14.213      | 0,92                |
++------+-------------+-----------------+-------------+---------------------+
+| 2021 | 12.347      |                 |             |                     |
++------+-------------+-----------------+-------------+---------------------+
 
 : \label{Tab2} Capturas biológicamente aceptables recomendadas por el CCT-PP en las distintas etapas de establecimiento de CBA, desembarque registrado y sus diferencias de sardina austral de la Región de Los Lagos.
 
@@ -426,7 +256,7 @@ En la \textbf{Tabla \ref{Tab2b}} se entregan observaciones generales sobre estim
 
 ```{=tex}
 \begin{table}[htb!]
-\caption{Estimación de capturas total, retenida y descartada semestrales para la flota artesanal de sardina austral de la Región de Los Lagos estimadas entre los años 2017 al 2020, junto a sus respectivos coeficientes de variación (CV), porcentaje de descarte, viajes muestreados, viajes totales y cobertura de muestreo}
+\caption{Estimación de capturas total, retenida y descartada semestrales, junto a sus respectivos coeficientes de variación (CV), para la flota artesanal de sardina austral de la Región de Los Lagos estimadas entre los años 2017 al 2020. Porcentaje de descarte, viajes muestreados, viajes totales y cobertura de muestreo}
 \label{Tab2b}
 \centering
 \includegraphics[width=1\textwidth]{Figuras/Tabla1_descarte.pdf}
@@ -434,7 +264,7 @@ En la \textbf{Tabla \ref{Tab2b}} se entregan observaciones generales sobre estim
 ```
 ```{=tex}
 \begin{table}[htb!]
-\caption{Número de viajes muestreado con observador científico por mes, para los años de estudio entre 2017 al 2019}
+\caption{Número de viajes muestreado con observador científico por mes y año y número de viajes totales del año, junto al porcentaje de cobertura . Análisis realizado entre los años 2017 al 2019}
 \label{Tab2c}
 \centering
 \includegraphics[width=1\textwidth]{Figuras/Tabla2_descarte.pdf}
@@ -444,7 +274,7 @@ Para la propuesta de valores de descarte utilizados para la corrección de la se
 
 ```{=tex}
 \begin{table}[htb!]
-\caption{Propuesta de valores de descarte a incluir en la evaluación de stock}
+\caption{Valores de descarte estimados para los años 2018 y 2019, y supuesto de descarte propuesto para corregir la serie de desembarques utilizada en la evaluación de stock}
 \label{Tab2d}
 \centering
 \includegraphics[width=1\textwidth]{Figuras/Tabla3_descarte.pdf}
@@ -543,7 +373,9 @@ Una vez concluidas las etapas anteriores, se procede a sintetizar las principale
 
 La evaluación cubrirá el período 2002-2020 y considera información en escala anual que se resume en la \textbf{Tabla \ref{Tab3}}. El enfoque de modelación utilizado en este estudio, correspondió a un análisis estadístico de las estructuras de tallas de las capturas de la flota y del crucero, de los índices de abundancia directa y relativa (CPUE), y de los desembarques a una escala anual. La aproximación corresponde a Sullivan *et al*., (1990). Se modela la abundancia poblacional en función de la probabilidad de los individuos de crecer de una talla a la siguiente, de la mortalidad natural y por pesca, del patrón y la magnitud de los reclutamientos. El modelo de evaluación de stock, se compone de: 1) un modelo de la dinámica poblacional, donde la mortalidad natural y por pesca actúan de manera conjunta sobre la abundancia, 2) un modelo de las observaciones, correspondiente a los modelos de los datos de entrada y 3) un proceso de estimación de parámetros a partir de una función objetivo, donde se contrastan estadísticamente las observaciones y estimaciones del modelo mediante máxima verosimilitud. Se utiliza como plataforma de estimación la herramienta estadística ADMB (Furnier *et al*., 2011).
 
-\pagebreak
+\vspace{0.5cm}
+
+\small
 
 +------------------------+-----------------------------+----------------------------------------------------------+
 | Datos de entrada       | Período                     | Fuente de información                                    |
@@ -618,6 +450,8 @@ El modelamiento de la dinámica de sardina austral es en año calendario (enero 
 -   Proceso de estimación de los parámetros desconocidos del modelo de dinámica a través de un algoritmo que minimiza la función objetivo total, contrastando las observaciones con las estimaciones deducidas del modelo de dinámica (\textbf{Tabla \ref{Tab7}}).
 
 \pagebreak
+
+\small
 
 +---------------------------+-------------+-----------------------------------------------------------------------------------------------------------------------+
 | **Datos observados**      | **Símbolo** | **Supuestos**                                                                                                         |
@@ -720,6 +554,10 @@ s_l=\left(1+exp\left[-ln19\frac{(l-l_{50\%})}{\Delta}\right]\right)^{-1},
 ```
 $l_{50\%}$ corresponde al parámetro de posición, donde el 50% de los peces son retenidos por el arte de pesca y $\Delta$ es la dispersión que determina la pendiente de la curva. Se considera constante entre años para la flota y cruceros.
 
+\vspace{0.5cm}
+
+\small
+
 +----------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 | Variable                                           | Ecuación                                                                                          | Descripción                                                                                   |
 +====================================================+===================================================================================================+===============================================================================================+
@@ -746,31 +584,33 @@ $l_{50\%}$ corresponde al parámetro de posición, donde el 50% de los peces son
 
 \pagebreak
 
-+-----------------------------------------------------------+---------------+------------------------------------------------------------------------------------+------------------------------------------------------------+
-| **Variable**                                              | **Error**     | **Ecuación**                                                                       | **Descripción**                                            |
-+===========================================================+===============+====================================================================================+============================================================+
-| Desembarques                                              | *Lognormal*   | $L=-\frac{0,5}{\sigma_y^2}\sum_t\left(ln\frac{Y_t}{\hat{Y}_t}\right)^2$            | $Y_t$ : Captura estimada en el año *t.*                    |
-|                                                           |               |                                                                                    |                                                            |
-|                                                           |               |                                                                                    | $\hat{Y}_t$ : captura predicha para el año *t.*            |
-|                                                           |               |                                                                                    |                                                            |
-|                                                           |               |                                                                                    | $\sigma_y$ es la desviación estándar                       |
-+-----------------------------------------------------------+---------------+------------------------------------------------------------------------------------+------------------------------------------------------------+
-| Biomasa Crucero                                           | *Lognormal*   | $L=-\frac{0,5}{\sigma_{Bc}^2}\sum_t\left(ln\frac{Bc_t}{\hat{Bc}_t}\right)^2$       | $Bc_t$ : Biomasa crucero                                   |
-|                                                           |               |                                                                                    |                                                            |
-|                                                           |               |                                                                                    | $\hat{Bc}_t$ : Biomasa crucero predicha                    |
-|                                                           |               |                                                                                    |                                                            |
-|                                                           |               |                                                                                    | $\sigma_{Bc}$ es la desviación estándar.                   |
-+-----------------------------------------------------------+---------------+------------------------------------------------------------------------------------+------------------------------------------------------------+
-| CPUE                                                      | *Lognormal*   | $L=-\frac{0,5}{\sigma_{cpue}^2}\sum_t\left(ln\frac{CPUE_t}{\hat{CPUE}_t}\right)^2$ | $CPUE_t$ : Captura por unidad de esfuerzo estandarizada.   |
-|                                                           |               |                                                                                    |                                                            |
-|                                                           |               |                                                                                    | $\hat{CPUE}_t$ : Captura por unidad de esfuerzo predicha . |
-|                                                           |               |                                                                                    |                                                            |
-|                                                           |               |                                                                                    | $\sigma_{cpue}$ es la desviación estándar                  |
-+-----------------------------------------------------------+---------------+------------------------------------------------------------------------------------+------------------------------------------------------------+
-| Proporción de la captura a la talla de la flota y crucero | *Multinomial* | $L=-n\sum_l\sum_tp_{l,t}*ln(\hat{p}_{l,t})$                                        | $p_{l,t}$ corresponde a la captura a la talla de la flota. |
-|                                                           |               |                                                                                    |                                                            |
-|                                                           |               |                                                                                    | $n$ es el tamaño de muestra efectivo.                      |
-+-----------------------------------------------------------+---------------+------------------------------------------------------------------------------------+------------------------------------------------------------+
++-----------------------+---------------+------------------------------------------------------------------------------------+------------------------------------------------------------+
+| **Variable**          | **Error**     | **Ecuación**                                                                       | **Descripción**                                            |
++=======================+===============+====================================================================================+============================================================+
+| Desembarques          | *Lognormal*   | $L=-\frac{0,5}{\sigma_y^2}\sum_t\left(ln\frac{Y_t}{\hat{Y}_t}\right)^2$            | $Y_t$ : Captura estimada en el año *t.*                    |
+|                       |               |                                                                                    |                                                            |
+|                       |               |                                                                                    | $\hat{Y}_t$ : captura predicha para el año *t.*            |
+|                       |               |                                                                                    |                                                            |
+|                       |               |                                                                                    | $\sigma_y$ es la desviación estándar                       |
++-----------------------+---------------+------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Biomasa Crucero       | *Lognormal*   | $L=-\frac{0,5}{\sigma_{Bc}^2}\sum_t\left(ln\frac{Bc_t}{\hat{Bc}_t}\right)^2$       | $Bc_t$ : Biomasa crucero                                   |
+|                       |               |                                                                                    |                                                            |
+|                       |               |                                                                                    | $\hat{Bc}_t$ : Biomasa crucero predicha                    |
+|                       |               |                                                                                    |                                                            |
+|                       |               |                                                                                    | $\sigma_{Bc}$ es la desviación estándar.                   |
++-----------------------+---------------+------------------------------------------------------------------------------------+------------------------------------------------------------+
+| CPUE                  | *Lognormal*   | $L=-\frac{0,5}{\sigma_{cpue}^2}\sum_t\left(ln\frac{CPUE_t}{\hat{CPUE}_t}\right)^2$ | $CPUE_t$ : Captura por unidad de esfuerzo estandarizada.   |
+|                       |               |                                                                                    |                                                            |
+|                       |               |                                                                                    | $\hat{CPUE}_t$ : Captura por unidad de esfuerzo predicha . |
+|                       |               |                                                                                    |                                                            |
+|                       |               |                                                                                    | $\sigma_{cpue}$ es la desviación estándar                  |
++-----------------------+---------------+------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Proporción de la      | *Multinomial* | $L=-n\sum_l\sum_tp_{l,t}*ln(\hat{p}_{l,t})$                                        | $p_{l,t}$ corresponde a la captura a la talla de la flota. |
+|                       |               |                                                                                    |                                                            |
+| captura a la talla de |               |                                                                                    | $n$ es el tamaño de muestra efectivo.                      |
+|                       |               |                                                                                    |                                                            |
+| la flota y crucero    |               |                                                                                    |                                                            |
++-----------------------+---------------+------------------------------------------------------------------------------------+------------------------------------------------------------+
 
 : \label{Tab6} Modelo de los errores del Modelo Anual con información en tallas.
 
@@ -783,51 +623,51 @@ $l_{50\%}$ corresponde al parámetro de posición, donde el 50% de los peces son
 |                                                                 |                      |                                       |                                                    |
 |                                                                 |                      |                                       | constante entre años y edades.                     |
 +-----------------------------------------------------------------+----------------------+---------------------------------------+----------------------------------------------------+
-| Mortalidad por pesca                                            | 12                   | $lnF \sim U[-10;+10]$                 | $F_t$ representa el efecto anual de la             |
+| Mortalidad por pesca                                            | 20                   | $lnF \sim U[-10;+10]$                 | $F_t$ representa el efecto anual de la             |
 |                                                                 |                      |                                       |                                                    |
 |                                                                 |                      |                                       | mortalidad por pesca.                              |
 +-----------------------------------------------------------------+----------------------+---------------------------------------+----------------------------------------------------+
-| Selectividad de la flota y crucero                              | 2                    | $lnL_{50\%}^f \sim U[-\infty;\infty]$ | Se asume el patrón de selectividad                 |
+| Selectividad de la                                              | 2                    | $lnL_{50\%}^f \sim U[-\infty;\infty]$ | Se asume el patrón de selectividad                 |
 |                                                                 |                      |                                       |                                                    |
-|                                                                 |                      | $ln\Delta^f \sim U[-\infty;\infty]$   | ($S_a^{f,c}$) talla-específica variable entre años |
+| flota y crucero                                                 |                      | $ln\Delta^f \sim U[-\infty;\infty]$   | ($S_a^{f,c}$) talla-específica variable entre años |
 +-----------------------------------------------------------------+----------------------+---------------------------------------+----------------------------------------------------+
-| Reclutamiento promedio                                          | 1                    | $lnR_0 \sim N[8,8;0,6]$               | $R_0$ corresponde al reclutamiento medio,          |
+| Reclutamiento                                                   | 1                    | $lnR_0 \sim N[8,8;0,6]$               | $R_0$ corresponde al reclutamiento medio,          |
 |                                                                 |                      |                                       |                                                    |
-|                                                                 |                      |                                       | es multiplicado por una perturbación               |
+| promedio                                                        |                      |                                       | es multiplicado por una perturbación               |
 |                                                                 |                      |                                       |                                                    |
 |                                                                 |                      |                                       | anual $\varepsilon_t$.                             |
 +-----------------------------------------------------------------+----------------------+---------------------------------------+----------------------------------------------------+
-| Desvíos de reclutamientos                                       | 12 + 4               | $ln \varepsilon_t \sim U[-10;+10]$    | Se asume con un valor de                           |
+| Desvíos de reclutamientos                                       | 20 + 4               | $ln \varepsilon_t \sim U[-10;+10]$    | Se asume con un valor de                           |
 |                                                                 |                      |                                       |                                                    |
-| ($\varepsilon_t$ )                                              |                      | $ln \varepsilon_a \sim U[-10;+10]$    | partida de log(8.8)                                |
+| ($\varepsilon_t$ )                                              |                      | $ln \varepsilon_a \sim U[-10;+10]$    | partida de log(8,8)                                |
 |                                                                 |                      |                                       |                                                    |
 | y estructura etaria inicial                                     |                      |                                       |                                                    |
 |                                                                 |                      |                                       |                                                    |
 | ( $\varepsilon_a$)                                              |                      |                                       |                                                    |
 +-----------------------------------------------------------------+----------------------+---------------------------------------+----------------------------------------------------+
-| capturabilidad del crucero                                      | 1                    | $lnq^{cv}\sim N[0,65;0,15]$           | La capturabilidad del crucero                      |
+| capturabilidad del                                              | 1                    | $lnq^{cv}\sim N[0,65;0,15]$           | La capturabilidad del crucero                      |
 |                                                                 |                      |                                       |                                                    |
-|                                                                 |                      |                                       | se asume con valor de                              |
+| crucero                                                         |                      |                                       | se asume con valor de                              |
 |                                                                 |                      |                                       |                                                    |
-|                                                                 |                      |                                       | partida de 0.65 y                                  |
+|                                                                 |                      |                                       | partida de 0,65 y                                  |
 +-----------------------------------------------------------------+----------------------+---------------------------------------+----------------------------------------------------+
-| Longitud modal del reclutamiento ($Lr$)                         | 1                    | $Lr\sim N[7;0,1]$                     | Se asume un valor de                               |
+| Longitud modal del                                              | 1                    | $Lr\sim N[7;0,1]$                     | Se asume un valor de                               |
 |                                                                 |                      |                                       |                                                    |
-|                                                                 |                      |                                       | partida de 7 cm                                    |
+| reclutamiento ($Lr$)                                            |                      |                                       | partida de 7 cm                                    |
 |                                                                 |                      |                                       |                                                    |
 |                                                                 |                      |                                       | para la longitud media del                         |
 |                                                                 |                      |                                       |                                                    |
 |                                                                 |                      |                                       | reclutamiento                                      |
 +-----------------------------------------------------------------+----------------------+---------------------------------------+----------------------------------------------------+
-| Desviación de la Longitud modal del reclutamiento ($Sr$)        | 1                    | $Sr\sim N[1,5;0,1]$                   | Se asume un valor de partida                       |
+| Desviación de la Longitud                                       | 1                    | $Sr\sim N[1,5;0,1]$                   | Se asume un valor de partida                       |
 |                                                                 |                      |                                       |                                                    |
-|                                                                 |                      |                                       | de 1.5 cm para la desviación                       |
+| modal del reclutamiento ($Sr$)                                  |                      |                                       | de 1,5 cm para la desviación                       |
 |                                                                 |                      |                                       |                                                    |
 |                                                                 |                      |                                       | de la longitud media del reclutamiento             |
 +-----------------------------------------------------------------+----------------------+---------------------------------------+----------------------------------------------------+
 | Coeficiente de variación del crecimiento individual ($\beta p$) | 1                    | $\beta p \sim N[0,15;0,1]$            | Se asume un valor de partida                       |
 |                                                                 |                      |                                       |                                                    |
-|                                                                 |                      |                                       | de 0.15 para la variabilidad en el                 |
+|                                                                 |                      |                                       | de 0,15 para la variabilidad en el                 |
 |                                                                 |                      |                                       |                                                    |
 |                                                                 |                      |                                       | crecimiento.                                       |
 +-----------------------------------------------------------------+----------------------+---------------------------------------+----------------------------------------------------+
@@ -900,26 +740,26 @@ El modelo de evaluación de stock actualmente en uso consiste en estimar princip
 
 | Años | Captura (t) |  cv | CPUE (t/v) |  cv  | Bcru (t) |  cv  | $nm_{flota}$ | $nm_{crucero}$ | $\Delta tC$ |
 |:----:|:-----------:|:---:|:----------:|:----:|:--------:|:----:|:------------:|:--------------:|:-----------:|
-| 2002 |    38974    | 0.2 |            |      |          |      |              |                |             |
-| 2003 |    32843    | 0.2 |            |      |          |      |              |                |             |
-| 2004 |    36545    | 0.2 |            |      |          |      |              |                |             |
-| 2005 |    52569    | 0.2 |            |      |          |      |   25/Sel\_1  |                |             |
-| 2006 |    39146    | 0.1 |            |      |  194719  | 0.26 |   25/Sel\_1  |       15       |     0.92    |
-| 2007 |    50506    | 0.1 |    23.9    | 0.22 |          |      |   25/Sel\_1  |                |             |
-| 2008 |    45078    | 0.1 |    21.6    | 0.22 |  114640  | 0.26 |   25/Sel\_1  |       15       |     0.33    |
-| 2009 |    49225    | 0.1 |    28.1    | 0.22 |          |      |   25/Sel\_1  |                |             |
-| 2010 |    20123    | 0.1 |    19.1    | 0.22 |          |      |   25/Sel\_2  |                |             |
-| 2011 |    16429    | 0.1 |    16.3    | 0.22 |   88116  | 0.26 |   25/Sel\_2  |       15       |     0.08    |
-| 2012 |    19763    | 0.1 |    13.7    | 0.22 |          |      |   25/Sel\_2  |                |             |
-| 2013 |    21888    | 0.1 |    35.6    | 0.26 |  124729  | 0.22 |   25/Sel\_3  |       15       |     0.42    |
-| 2014 |    22951    | 0.1 |    27.7    | 0.26 |  113855  | 0.22 |   25/Sel\_3  |       15       |     0.42    |
-| 2015 |    23643    | 0.1 |    23.1    | 0.26 |   60498  | 0.22 |   25/Sel\_3  |       15       |     0.33    |
-| 2016 |    18495    | 0.1 |    24.0    | 0.26 |  106245  | 0.22 |   25/Sel\_3  |       15       |     0.33    |
-| 2017 |    14134    | 0.1 |    10.8    | 0.26 |   66882  | 0.22 |   25/Sel\_3  |       15       |     0.33    |
-| 2018 |     8355    | 0.1 |    10.2    | 0.26 |   20361  | 0.22 |   25/Sel\_3  |       15       |     0.33    |
-| 2019 |    11278    | 0.1 |     8.6    | 0.26 |   43788  | 0.22 |   25/Sel\_3  |       15       |     0.33    |
-| 2020 |    14194    | 0.1 |    41.6    | 0.26 |  160742  | 0.22 |   25/Sel\_3  |       15       |     0.33    |
-| 2021 |    12347    | 0.1 |            | 0.26 |   66626  | 0.22 |   25/Sel\_3  |       15       |     0.33    |
+| 2002 |    38.974   | 0,2 |            |      |          |      |              |                |             |
+| 2003 |    32.843   | 0,2 |            |      |          |      |              |                |             |
+| 2004 |    36.545   | 0,2 |            |      |          |      |              |                |             |
+| 2005 |    52.569   | 0,2 |            |      |          |      |   25/Sel\_1  |                |             |
+| 2006 |    39.146   | 0,1 |            |      |  194.719 | 0,26 |   25/Sel\_1  |       15       |     0,92    |
+| 2007 |    50.506   | 0,1 |    23,9    | 0,22 |          |      |   25/Sel\_1  |                |             |
+| 2008 |    45.078   | 0,1 |    21,6    | 0,22 |  114.640 | 0,26 |   25/Sel\_1  |       15       |     0,33    |
+| 2009 |    49.225   | 0,1 |    28,1    | 0,22 |          |      |   25/Sel\_1  |                |             |
+| 2010 |    20.123   | 0,1 |    19,1    | 0,22 |          |      |   25/Sel\_2  |                |             |
+| 2011 |    16.429   | 0,1 |    16,3    | 0,22 |  88.116  | 0,26 |   25/Sel\_2  |       15       |     0,08    |
+| 2012 |    19.763   | 0,1 |    13,7    | 0,22 |          |      |   25/Sel\_2  |                |             |
+| 2013 |    21.888   | 0,1 |    35,6    | 0,26 |  124.729 | 0,22 |   25/Sel\_3  |       15       |     0,42    |
+| 2014 |    22.951   | 0,1 |    27,7    | 0,26 |  113.855 | 0,22 |   25/Sel\_3  |       15       |     0,42    |
+| 2015 |    23.643   | 0,1 |    23,1    | 0,26 |  60.498  | 0,22 |   25/Sel\_3  |       15       |     0,33    |
+| 2016 |    18.495   | 0,1 |    24,0    | 0,26 |  106.245 | 0,22 |   25/Sel\_3  |       15       |     0,33    |
+| 2017 |    14.134   | 0,1 |    10,8    | 0,26 |  66.882  | 0,22 |   25/Sel\_3  |       15       |     0,33    |
+| 2018 |    8.355    | 0,1 |    10,2    | 0,26 |  20.361  | 0,22 |   25/Sel\_3  |       15       |     0,33    |
+| 2019 |    11.278   | 0,1 |     8,6    | 0,26 |  43.788  | 0,22 |   25/Sel\_3  |       15       |     0,33    |
+| 2020 |    14.194   | 0,1 |    41,6    | 0,26 |  160.742 | 0,22 |   25/Sel\_3  |       15       |     0,33    |
+| 2021 |    12.347   | 0,1 |            | 0,26 |  66.626  | 0,22 |   25/Sel\_3  |       15       |     0,33    |
 
 : \label{Tab8} Captura, CPUE y biomasa del crucero junto a sus respectivos coeficientes de variación (cv). Tamaños de muestra para la multinomial de la flota (nm\_flota) y cruceros (nm\_cru) y los respectivos bloques de selectividad (Sel). $\Delta tC$ representa el valor del periodo del año en que se realizó el crucero de evaluación directa.
 
@@ -995,7 +835,7 @@ El estado del recurso se establece en base a la posición relativa de la biomasa
 
 Este estudio se basa en el Marco Biológico de Referencia establecido por el Comité Científico Técnico- Pesquerías de Pequeños Pelágicos (CCT-PP) en base a los avances realizados durante el 2013 y 2014 en la determinación de Puntos Biológicos de Referencia (PBR) y del Rendimiento Máximo Sostenido (RMS) del proyecto "Revisión y estimación de los PBR (Rendimiento Máximo Sostenido) para las principales pesquerías nacionales" (Payá *et al*., 2014). Al respecto, el reporte propone usar como objetivo, el nivel de mortalidad por pesca que reduce hasta un 55% ($F55$) la biomasa desovante virginal ($55\%BD_0$). Tal nivel de reducción corresponde a un 60% en la Biomasa desovante por recluta ($60\%BDPR_0$). Este PBR coincide con el valor propuesto como objetivo en este recurso hasta el reporte previo.
 
-Se enfatiza en el hecho que la $B_{RMS}$ es el punto de referencia de biomasa desovante, que en general, será una aproximación más que provenir de un cálculo formal. Las elecciones específicas para los stocks pueden depender del nivel de incertidumbre, del valor asignado en los servicios de los ecosistemas y del nivel de riesgo que los administradores y la sociedad deseen asumir (Payá *et al*.,2014).
+Se enfatiza en el hecho que la $B_{RMS}$ es el punto de referencia de biomasa desovante, que en general, será una aproximación más que provenir de un cálculo formal. Las elecciones específicas para los stocks pueden depender del nivel de incertidumbre, del valor asignado en los servicios de los ecosistemas y del nivel de riesgo que los administradores y la sociedad deseen asumir (Payá *et al*., 2014).
 
 #### Puntos Biológicos de Referencia
 
@@ -1073,7 +913,9 @@ El estado del recurso se estableció en base a la posición relativa de la morta
 
 • *Límite bajo el objetivo de manejo = 10% Bajo* $BD_{RMS}$: Este criterio tiene como propósito el establecimiento de una banda estrecha en torno al RMS, que genere un área no deseada pequeña que en lo posible sea menor o igual al área de incertidumbre total del sistema, donde la biomasa está bajo la biomasa objetivo y a su vez, la mortalidad por pesca es mayor a la mortalidad por pesca objetivo. En consecuencia, el CCT-PP considera las numerosas recomendaciones en ciencia pesquera, respecto al riesgo de llevar a los stocks a una condición de sobreexplotación cuando se utiliza el RMS como objetivo de manejo, utiliza el concepto conforme al marco legal vigente y simultáneamente lo deja operando en la práctica, como un punto biológico de referencia límite.
 
-• *Límite sobre el objetivo de manejo =75%* $BD_0$ (o 25% sobre $BD_{RMS}$): Para estos efectos el Comité rescató elementos del enfoque ecosistémico en especies de forraje, planteado recientemente por Pickitch *et al*., (2012).
+• *Límite sobre el objetivo de manejo = 75%* $BD_0$ (o 25% sobre $BD_{RMS}$): Para estos efectos el Comité rescató elementos del enfoque ecosistémico en especies de forraje, planteado recientemente por Pickitch *et al*., (2012).
+
+\pagebreak
 
 ```{=tex}
 \begin{figure}[htb!]
@@ -1091,15 +933,15 @@ El estado del recurso se estableció en base a la posición relativa de la morta
 
 ### 3.3.1. Captura Biológicamente Aceptable (CBA) y proyección del stock
 
-La estimación de la CBA, se realiza a través de un análisis de estrategias de explotación, que considera un régimen de mortalidad por pesca constante, es decir, la remoción por pesca es proporcional a los cambios de abundancia del stock. El criterio de explotación se basa en el punto biológico de referencia (PBR) F60, propuesto, hasta el presente análisis como un proxy del nivel de mortalidad por pesca que genera el RMS. Otros valores de F también son analizados para realizar proyecciones del stock. La proyección del stock se realiza para 5 años futuros y considera la incertidumbre de la evaluación de stock y como año de inicio, el 2021. Diferentes escenarios de reclutamientos (estados de la naturaleza) son analizados para las proyecciones y estimaciones de capturas.
+La sardina austral de la unidad de pesquería de la Región de Los Lagos ha sido manejada históricamente a través de cuotas globales de captura estimadas a partir de una evaluación de stock monoespecífica, considerando la incertidumbre asociada. El objetivo de manejo establece mantener un nivel de biomasa desovante equivalente al 55 $\%BD_0$ (biomasa desovante sin explotación), el cual es considerado un proxy del RMS. Para alcanzar este objetivo de manejo, se define como estrategia de explotación aquel nivel de mortalidad pesca que permite alcanzar dicho objetivo ($F_{RMS}$), el cual ha sido definido por el CCT--PP como $F_{60\%BDPR}$, para resguardar la incertidumbre en el éxito de la clase anual que reclutaría a la pesquería (Informe Técnico CCT-PP N°01/2015). Este nivel de remoción por pesca (F) es constante para todo el período de proyección, por lo tanto, proporcional a los cambios de abundancia del stock.
 
-En el caso de la pesquería de sardina austral, la recomendación de CBA comienza con un reporte entregado en el mes de septiembre en que se estima una CBA inicial. Este reporte permite al CCT\_PP (reunión de octubre) establecer el estatus y recomendar el rango de CBA para el año siguiente en base a percentiles de riesgo (10% - 50%) de no alcanzar el objetivo de manejo. Para esta estimación inicial, se considera las consecuencias de los probables estados de la naturaleza (i.e. pesimista, neutro y/o optimista). Los probables estados de la naturaleza se generan a partir proyecciones del reclutamiento considerando un valor bajo, promedio y alto (\textbf{Figura \ref{Fig7}}). A partir de estos escenarios, se proyecta la población para la estimación de la Captura en número y peso del año siguiente, con una estrategia de explotación que consiste en aplicar una tasa de explotación constante, equivalente a la mortalidad por pesca $F_{RMS}$.
+El ciclo de manejo de la pesquería de sardina austral comienza con un reporte entregado en el mes de septiembre de cada año, en que se estima una CBA inicial. Este reporte permite al CCT\_PP (reunión de octubre) establecer el estatus y recomendar el rango de CBA para el año siguiente en base a percentiles de de captura (10% - 50%). Para esta estimación inicial, se considera las consecuencias de los probables estados de la naturaleza (i.e. pesimista, neutro y/o optimista). Los probables estados de la naturaleza se generan a partir proyecciones del reclutamiento considerando un valor bajo, promedio y alto (\textbf{Figura \ref{Fig7}}). A partir de estos escenarios, se proyecta la población para la estimación de la Captura en número y peso del año siguiente, con una estrategia de explotación que consiste en aplicar una tasa de explotación constante, equivalente a la mortalidad por pesca $F_{RMS}$.
 
 ```{=tex}
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=0.8\textwidth]{Figuras/Fig7.pdf}
-\caption{Escenarios de reclutamiento.}
+\caption{Serie histórica de los reclutamiento junto a los escenarios de reclutamiento promedio. línea roja = reclutamiento alto, línea verde = reclutamiento bajos, línea negra = reclutamiento medios }
 \label{Fig7}
 \end{figure}
 ```
@@ -1124,38 +966,66 @@ En una segunda etapa, se actualiza la evaluación de stock y se revisa la CBA. E
 
 \vspace{0.5cm}
 
-La información disponible en cada etapa de estimación de cuota se resume en la \textbf{Tabla \ref{Tab11}} se indica que la estimación de CBA inicial contará con información parcial del año 2020, mientras que en la estimación de CBA final, la información es completa para el año 2020 y además se incorpora la información del año 2021.
+La información disponible en cada etapa de estimación de cuota se resume en la \textbf{Tabla \ref{Tab11}} se indica que la estimación de CBA inicial contará con información parcial del año 2020, mientras que en la estimación de CBA actualizada o final, la información es completa para el año 2020 y además se incorpora la información del año 2021.
 
 \vspace{0.5cm}
 
-+--------------------------------+----------------------------------------+----------------------------------------+
-| Datos de entrada al modelo     | CBA inicial                            | CBA final                              |
-+================================+:======================================:+:======================================:+
-| Estructura temporal            | 2002 - 2020                            | 2002-2021                              |
-+--------------------------------+----------------------------------------+----------------------------------------+
-| Desembarques                   | 2002 - 2019 + supuesto de captura 2020 | 2002 - 2020 + supuesto de captura 2021 |
-+--------------------------------+----------------------------------------+----------------------------------------+
-| CPUE                           | 2006 - 2019                            | 2006 - 2020                            |
-+--------------------------------+----------------------------------------+----------------------------------------+
-| Biomasa Crucero hidroacústicos | 2006 - 2020                            | 2006 - 2021                            |
-+--------------------------------+----------------------------------------+----------------------------------------+
-| Composición de tallas flota    | 2006 - 2020 (parcial)                  | 2006 - 2020                            |
-+--------------------------------+----------------------------------------+----------------------------------------+
-| Composición de tallas cruceros | 2006 - 2020                            | 2006 - 2021                            |
-+--------------------------------+----------------------------------------+----------------------------------------+
-| Pesos medios a la talla        | constante                              | constante                              |
-+--------------------------------+----------------------------------------+----------------------------------------+
-| Madurez sexual a la talla      | constante                              | constante                              |
-+--------------------------------+----------------------------------------+----------------------------------------+
-| Mortalidad natural             | constante                              | constante                              |
-+--------------------------------+----------------------------------------+----------------------------------------+
-| Proyección del reclutamiento   | 1 año calendario                       | No se proyecta                         |
-+--------------------------------+----------------------------------------+----------------------------------------+
++--------------------------------+--------------------------+--------------------------+
+| Datos de entrada al modelo     | CBA inicial              | CBA final                |
++================================+:========================:+:========================:+
+| Estructura temporal            | 2002 - 2020              | 2002-2021                |
++--------------------------------+--------------------------+--------------------------+
+| Desembarques                   | 2002 - 2019 +            | 2002 - 2020 +            |
+|                                |                          |                          |
+|                                | supuesto de captura 2020 | supuesto de captura 2021 |
++--------------------------------+--------------------------+--------------------------+
+| CPUE                           | 2006 - 2019              | 2006 - 2020              |
++--------------------------------+--------------------------+--------------------------+
+| Biomasa Crucero hidroacústicos | 2006 - 2020              | 2006 - 2021              |
++--------------------------------+--------------------------+--------------------------+
+| Composición de tallas flota    | 2006 - 2020 (parcial)    | 2006 - 2020              |
++--------------------------------+--------------------------+--------------------------+
+| Composición de tallas cruceros | 2006 - 2020              | 2006 - 2021              |
++--------------------------------+--------------------------+--------------------------+
+| Pesos medios a la talla        | constante                | constante                |
++--------------------------------+--------------------------+--------------------------+
+| Madurez sexual a la talla      | constante                | constante                |
++--------------------------------+--------------------------+--------------------------+
+| Mortalidad natural             | constante                | constante                |
++--------------------------------+--------------------------+--------------------------+
+| Proyección del reclutamiento   | 1 año calendario         | No se proyecta           |
++--------------------------------+--------------------------+--------------------------+
 
 : \label{Tab11} Información relevante para el cálculo de CBA 2021 en las dos etapas de estimación.
 
 \normalsize
 
+##### Percentiles de probabilidad de sobrepasar el objetivo de manejo F~RMS~
+
+\quad
+
+Se considera el establecimiento de un percentil entre un 10% - 50% de probabilidad de sobrepasar el objetivo de manejo igual a F~RMS~. El percentil corresponde a una distribución de probabilidad acumulada y representa la probabilidad de estar en sobrepesca (\textbf{Figura \ref{Fig8metod}}). El CCT-PP determina el rango de CBA seleccionado el percentil de probabilidad y escenario de reclutamiento proyectado. Dado la alta incertidumbre existente en el momento de definir la CBA inicial, el CCT-PP selecciona el escenario de reclutamiento más precautorio y un percentil de probabilidad inferior al 50%. Este percentil de probabilidad es equivalente a un nivel de resguardo que se calcula a partir de la captura estimada para cada percentil de probabilidad y la captura al RMS, de este modo, se tiene un nivel de referencia de cuanto se está resguardando considerando el hito de revisión de CBA o condición del recurso.
+
+```{=tex}
+\vspace{0.5cm}
+\large
+\begin{center} 
+$Resguardo = 1-\frac{Captura(i)}{Captura_{RMS}}, i = percentil.de.captura (10\% ...50\%)$
+\end{center}
+\vspace{0.5cm}
+```
+\normalsize
+
+Donde la Captura(i) es la captura estimada para cada percentil de probabilidad (10% - 50%) y Captura~RMS~ corresponde a la media (50% probabilidad).
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig8_metod-1.pdf}
+\caption{Distribución de probabilidad de la Captura al RMS proyectada  bajo tres escenarios de reclutamiento promedios en el hito 1 (panel superior). La zona sombreada corresponde a la zona de percentiles de probabilidad de captura (*P) entre el 10\% - 50\%. En el panel inferior izquiedo se representa la CBA estimada para cada *P y en el panel inferior derecho los niveles de resguardo correspondiente a cada *P.}
+\label{Fig8metod}
+\end{figure}
+```
 ### 3.3.2. Incorporación del descarte en la CBA
 
 La actual Ley General de Pesca y Acuicultura (LGPA, N° 18.892) persigue la conservación y el uso sustentable de los recursos pesqueros mediante la aplicación del enfoque precautorio y ecosistémico, garantizando el resguardo de los ecosistemas marinos. En este contexto, el Artículo 7°B de la LGPA indica que no podrá realizarse el descarte de individuos de una especie objetivo, cualquiera sea su régimen de acceso, y su fauna acompañante, salvo que se i) haya fijado una cuota global anual de captura para la especie objetivo y, ii) que en el proceso de establecimiento de la cuota global anual de captura se haya considerado el descarte, entre otras restricciones indicadas por el citado artículo.
@@ -1175,8 +1045,6 @@ $CBA_{max}=CBA_{total}-pd*CBA_{total}$
 ### 3.3.3. Proyección del stock
 
 Finalmente, se realiza un conjunto de análisis estocásticos de las probables trayectorias de la biomasa como consecuencia de la aplicación de las diferentes estrategias, tácticas y reglas de decisión consideradas en los respectivos Planes de Manejo y/o Programas de Recuperación de las pesquerías, según corresponda, considerando la incertidumbre del estatus (e.g. matriz de correlación de variables de estado) y los posibles estados de la naturaleza a futuro (e.g. niveles probables de reclutamiento futuro). Lo anterior debe permitir analizar los niveles de riesgo de no alcanzar los objetivos de conservación en el mediano o largo plazo, considerando la incertidumbre del estatus y los probables estados de la naturaleza a futuro.
-
-\pagebreak
 
 ## 3.4. Objetivo específico 4:
 
@@ -1206,7 +1074,7 @@ iii. Implementación de un Modelo con dinámica en edad e información en talla 
 
 ### 4.1.1. Datos de entrada al modelo de evaluación de stock
 
-El período de análisis de la evaluación de stock abarca los años 2002 a 2021, con información completa de las piezas de información hasta el año 2020. Los índices que ajustan el modelo corresponden a la información de desembarques, captura por unidad de esfuerzo estandarizada (CPUE) y biomasa del crucero (Bcru) de evaluación directa (\textbf{Tabla \ref{Tab13}}) desarrollado por IFOP en aguas interiores de la isla de Chiloé. En la presente actualización, se usa el desembarque 2020, estructura de tallas de la flota 2020, CPUE 2020, biomasa del crucero 2021, estructura de tallas del crucero 2021 y un supuesto de captura 2021 igual a la CBA recomendad por el CCT-PP.
+El período de análisis de la evaluación de stock abarca los años 2002 a 2021, con información completa de las piezas de información hasta el año 2020. Los índices que ajustan el modelo corresponden a la información de desembarques más descarte, captura por unidad de esfuerzo estandarizada (CPUE) y biomasa del crucero (Bcru) de evaluación directa (\textbf{Tabla \ref{Tab13}}) desarrollado por IFOP en aguas interiores de la isla de Chiloé. En la presente actualización, se usa el desembarque 2020, estructura de tallas de la flota 2020, CPUE 2020, biomasa del crucero 2021, estructura de tallas del crucero 2021 y un supuesto de captura 2021 igual a la CBA recomendad por el CCT-PP.
 
 \vspace{0.2cm}
 
@@ -1260,39 +1128,34 @@ El período de análisis de la evaluación de stock abarca los años 2002 a 2021
 
 : \label{Tab13} Índices usados en la evaluación de stock de sardina austral de la Región de Los Lagos.
 
-\*Se supone como caso base un nivel desembarque esperado para el año 2021 en torno a la recomendación de CBA inicial 2021, esto es 12,3 mil t.
-
-\*Los rendimientos de pesca (CPUE) son actualizados hasta diciembre de 2020.
 
 \normalsize
 
 #### a) Datos actualizados
 
--   Desembarques: La serie de desembarques utilizados para la evaluación considera información completa hasta el año 2019.
--   Descarte:
--   CPUE: Se actualiza la serie histórica de captura por unidad de esfuerzo estandarizada al año 2019. El proceso de estandarización se presenta en **Anexo I**.
--   Composición de tallas flota: Se utiliza la composición de talla de la flota hasta diciembre 2019 y a mayo 2020.
--   Biomasa crucero acústico: Se incorpora la información del crucero hidroacústico realizado en abril/mayo del año 2020.
--   Composición de tallas crucero acústico:
+-   Desembarques: La serie de desembarques utilizados para la evaluación considera información completa hasta el año 2020.
+-   Descarte: Se utiliza la serie de descarte acordada en la 3er sesión del CCT-PP para la corrección de la serie de desembarques.
+-   CPUE: Se actualiza la serie histórica de captura por unidad de esfuerzo estandarizada al año 2020. El proceso de estandarización se presenta en **Anexo I**.
+-   Composición de tallas flota: Se utiliza la composición de talla de la flota hasta diciembre 2020.
+-   Crucero acústico: Se incorpora la biomasa total y composición de tallas del crucero hidroacústico realizado en abril/mayo del año 2021.
+
 
 #### b) Datos supuestos
 
--   Desembarques: Se supone al principio de la serie (2002-2005) que un 70% de los registros indicados como sardina común correspondían a sardina austral. Para el año 2020 se supone un desembarque en torno al valor definido por el CCT-PP, es decir la CBA de 7,88 mil t.
--   Descarte:
+-   Desembarques: Se supone al principio de la serie (2002-2005) que un 70% de los registros indicados como sardina común correspondían a sardina austral. Para el año 2021 se supone un desembarque en torno al valor definido por el CCT-PP, es decir la CBA de 12,3 mil t.
+
 
 ### 4.1.2. Descripción de los datos de entrada al modelo de evaluación de stock
 
 ##### Desembarques
-
 \quad
-
 De acuerdo a las estadísticas oficiales, la captura de sardina austral aumentó desde 36 mil toneladas (t) el año 2006 hasta cerca de 50 mil t el año 2009. Durante el año 2010, los desembarques evidenciaron una importante disminución, alcanzando solo 2/3 de la cuota de 30 mil t asignadas para ese año. A partir de este mismo año, los registros se estabilizan en niveles promedio de 20 mil t. El año 2017, los desembarques disminuyen a 14 mil t. y alcanzan su valor mínimo el año 2018, con 8 mil t oficiales. Durante el año 2018 la actividad de la flota disminuyó significativamente en relación con años previos. Los desembarques oficiales (8355 t) alcanzaron sólo la mitad de la cuota asignada (17200 t) para el último año. Durante el año 2019, se apreció una recuperación relativa de la actividad, desembarcado oficialmente la totalidad de la CBA asignada de 11,3 mil t. Para el año 2020, se capturaron oficialmente 14 mil t, correspondiente a un 92% de la CBA actualizada (15,5 mil t) para el 2020 (\textbf{Figura \ref{Fig8}}). A mayo 2021 se han desembarcado 6,2 mil t, correspondiente a un 50% de la CBA recomendada para el año 2021 (12,3 mil t). En cuanto a la estacionalidad, se observa un patrón con capturas concentradas en el primer semestre (\textbf{Figura \ref{Fig9}}), aunque a partir del año 2013, los desembarques de diciembre alcanzan niveles importantes.
 
 ```{=tex}
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=0.7\textwidth]{Figuras/Fig8-1.pdf}
-\caption{Serie de desembarques utilizada en la evaluación de stock de septiembre 2020. Las barras grises al inicio de la serie corresponden a un supuesto de proporción de especies (sardina común/sardina austral). Las barras azules a los desembarques oficiales en el período 2006-2019 y la barra amarilla, el supuesto de captura 2020. La línea corresponde a la CBA establecida anualmente.}
+\caption{Serie de desembarques utilizada en la evaluación de stock de junio 2021. Las barras grises al inicio de la serie corresponden a un supuesto de proporción de especies (sardina común/sardina austral). Las barras azules a los desembarques oficiales en el período 2006-2020 y la barra amarilla, el supuesto de captura 2021. La línea corresponde a la CBA establecida anualmente.}
 \label{Fig8}
 \end{figure}
 ```
@@ -1307,9 +1170,7 @@ De acuerdo a las estadísticas oficiales, la captura de sardina austral aumentó
 \end{figure}
 ```
 ##### Captura por Unidad de Esfuerzo (CPUE)
-
 \quad
-
 El análisis de esta pieza de información, sugiere que el modelo con interacciones podría representar, actualmente, de mejor forma la variabilidad de la CPUE considerando el mayor nivel de explicación de la desvianza. En la \textbf{Figura \ref{Fig10}}, se muestra la variabilidad del índice estandarizado a través del modelo tweedie con y sin interacciones. La fuerte reducción en el índice los últimos dos años es también coherente con la disminución observada en los desembarques y en el crucero de evaluación directa.
 
 ```{=tex}
@@ -1323,26 +1184,22 @@ El análisis de esta pieza de información, sugiere que el modelo con interaccio
 \vspace{0.9cm}
 
 #### Cruceros de evaluación acústica
-
 \quad
-
-La variabilidad del índice acústico, se muestra en la \textbf{Figura \ref{Fig11}}. Sin considerar el año 2006, donde se estiman 196 mil toneladas, la biomasa de sardina austral varía en torno a un nivel promedio de 95 mil toneladas entre los años 2008 y 2017. Sin embargo, los estudios realizados los años 2018 y 2019 mostraron los valores más bajos de toda la serie, estimado 20361 y 44738 toneladas de biomasa total respectivamente, en la zona del mar interior de Chiloé. No obstante, el ultimo crucero de evaluación directa (abril/mayo 2020), evidenció un incremento significativo en la biomasa acústica, alcanzando el segundo valor más alto con 160 mil toneladas.
+La variabilidad del índice acústico, se muestra en la \textbf{Figura \ref{Fig11}}. Sin considerar el año 2006, donde se estiman 196 mil toneladas, la biomasa de sardina austral varía en torno a un nivel promedio de 95 mil toneladas entre los años 2008 y 2017. Sin embargo, los estudios realizados los años 2018 y 2019 mostraron los valores más bajos de toda la serie, estimado 20361 y 44738 toneladas de biomasa total respectivamente, en la zona del mar interior de Chiloé. El año 2020, el crucero de evaluación directa (abril/mayo 2020), evidenció un incremento significativo en la biomasa acústica, alcanzando el segundo valor más alto con 160 mil toneladas, sostenida principalmente por la fracción adulta (>13,5 cm LT). No obstante, el último crucero disminuye en torno a un 59% respecto al año previo.
 
 ```{=tex}
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=0.7\textwidth]{Figuras/Fig11-1.pdf}
-\caption{Biomasa total de sardina austral en aguas interiores de la Región de Los Lagos estimada en los cruceros de evaluación directa (2006-2020). Se destaca en círculo rojo de mayor tamaño el último valor obtenido en abril del año 2020.}
+\caption{Biomasa total de sardina austral en aguas interiores de la Región de Los Lagos estimada en los cruceros de evaluación directa (2006-2021). Se destaca en círculo rojo de mayor tamaño el último valor obtenido en abril del año 2021.}
 \label{Fig11}
 \end{figure}
 ```
 \pagebreak
 
 ##### Estructura de longitudes
-
 \quad
-
-Las \textbf{Figura \ref{Fig12}} y \textbf{\ref{Fig13}} muestran las estructuras de longitudes utilizadas en la evaluación de stock, la cual es obtenida desde la flota que opera en aguas interiores de la Región de Los Lagos y del crucero de evaluación directa realizado en la misma zona.
+Las \textbf{Figura \ref{Fig12}} y \textbf{\ref{Fig13}} muestran las estructuras de longitudes utilizadas en la evaluación de stock, la cual es obtenida desde la flota que opera en aguas interiores de la Región de Los Lagos y del crucero de evaluación directa realizado en la misma zona. Respecto a la estructura de tallas de la flota, se observa la ausencia de la fracción juvenil durante el año 2020, lo cual se ratifica con la estructura de tallas observada por el crucero el mismo año. No obstante, para el año 2021 la biomasa acústica está sostenida por individuos juveniles y adultos.
 
 ```{=tex}
 \begin{figure}[htb!]
@@ -1365,9 +1222,7 @@ Las \textbf{Figura \ref{Fig12}} y \textbf{\ref{Fig13}} muestran las estructuras 
 \pagebreak
 
 ##### Parámetros biológicos
-
 \quad
-
 ###### a) Ojiva de madurez
 
 Para estimar la fracción desovante del stock, se utiliza la función de madurez descrita por Leal *et al*., (2011) (\textbf{Figura \ref{Fig17}} ). Los parámetros $\beta_0$ y $\beta_1$ que describen la ojiva de madurez en longitud para la especie alcanzaron valores de 25,87 y -1,91 respectivamente, con error estándar de 2,61 para $\beta_0$ y de 0,20 para $\beta_1$.
@@ -1388,7 +1243,7 @@ Los parámetros de crecimiento estimados por Cerna *et al*., (2007) para sardina
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=0.9\textwidth]{Figuras/Fig18.pdf}
-\caption{Función de crecimiento descrita por los parámetros de Von Bertalanffy estimados para sardina austral.}
+\caption{Función de crecimiento descrita por los parámetros de Von Bertalanffy estimados para sardina austral de la Región de Los Lagos.}
 \label{Fig18}
 \end{figure}
 ```
@@ -1397,9 +1252,7 @@ Los parámetros de crecimiento estimados por Cerna *et al*., (2007) para sardina
 ### 4.1.2. Diagnóstico del modelo de evaluación de stock
 
 #### Ajuste del modelo a los datos
-
 \quad
-
 Los resultados muestran que el modelo base actual recoge la variabilidad general de las señales poblacionales. Debido a que los valores de los coeficientes de variación empleados son más pequeños, el modelo ajusta de mejor manera la serie de desembarques por sobre el índice de biomasa directo y CPUE. Al respecto, los datos observados de desembarques se asumen menos sesgados y más precisos con un CV de residuos de 0,1. En el ajuste de la CPUE se aprecian sobre y subestimaciones, aunque el modelo recoge la variabilidad media del índice. En el caso de la biomasa acústica, el modelo tiende a subestimar los valores observados, excepto los años con los niveles más bajos (2015, 2018 y 2019) (\textbf{Figura \ref{Fig19}}).
 
 ```{=tex}
@@ -1413,9 +1266,7 @@ Los resultados muestran que el modelo base actual recoge la variabilidad general
 \pagebreak
 
 #### Análisis de residuos
-
 \quad
-
 El análisis de los residuos y gráficos qq-plot (\textbf{Figura \ref{Fig20}}), muestra que los residuales del modelo no sugieren tendencia, se aprecia además una linealidad general en la escala log en todos los índices. Sin embargo, en el caso de los desembarques, la convergencia entre las observaciones y el ajuste del modelo es mayor. En este caso, cuando el ajuste no es total, los datos observados tienden a situarse por debajo de los valores predichos. La CPUE y biomasa acústica (crucero) muestran mayor dispersión de los datos en relación a las predicciones.
 
 ```{=tex}
@@ -1429,9 +1280,7 @@ El análisis de los residuos y gráficos qq-plot (\textbf{Figura \ref{Fig20}}), 
 \pagebreak
 
 #### Ajuste de las composiciones de longitudes
-
 \quad
-
 Las estructuras de longitudes de la flota (\textbf{Figura \ref{Fig21}}) y cruceros acústicos (\textbf{Figura \ref{Fig22}}), son medianamente reproducidas por el modelo de evaluación, capturando su variabilidad general. En el caso de las capturas comerciales, el modelo reproduce de mejor manera las estructuras unimodales. En los años en que se aprecia bimodalidad (2010,2011,2012), el modelo no es capaz de ajustar adecuadamente la información. En el caso de los cruceros, el modelo es todavía menos eficiente en el ajuste a la información observada. El uso de patrones de explotación variables en el tiempo, aunque mejora las tallas medias predichas, no generó variaciones en los ajustes de las composiciones de longitudes respecto del modelo base previo.
 
 ```{=tex}
@@ -1455,9 +1304,7 @@ Las estructuras de longitudes de la flota (\textbf{Figura \ref{Fig21}}) y crucer
 \pagebreak
 
 #### Residuales de las composiciones de longitudes
-
 \quad
-
 En términos de la bondad de ajuste se entrega el cuadro de residuales por longitud vs los ajustes de las capturas y los cruceros. El comportamiento de los residuales sugiere, en la información de la flota y crucero, ciertos patrones que reflejan tendencia. Por ejemplo, en la flota se aprecia subestimación en el rango de longitudes de 14 y 15 cm y sobreestimación de las longitudes superiores (\textbf{Figura \ref{Fig23}}). El análisis además confirma los inconvenientes en el ajuste de las estructuras de longitudes bimodales.
 
 ```{=tex}
@@ -1471,10 +1318,9 @@ En términos de la bondad de ajuste se entrega el cuadro de residuales por longi
 \pagebreak
 
 #### Comparación con evaluaciones anteriores
-
 \quad
+Se comparan los resultados de los principales indicadores de la asesoría actual (junio 2021) con asesorías anteriores (septiembre 2020, junio 2020, septiembre 2019, junio 2019) para evaluar la consistencia de la evaluación presente. Al respecto, el desempeño retrospectivo empírico ilustra mayor incertidumbre en los tres últimos años de las series (\textbf{Figura \ref{Fig24}}), con una tendencia a subestimar los niveles de reclutamiento y biomasa desovante y sobre-estimar los niveles de mortalidad por pesca, con excepción del año 2020, donde el nivel de mortalidad por pesca fue subestimado producto del supuesto de captura utilizado en la asesoría de junio 2020. 
 
-Se comparan los resultados de los principales indicadores de la asesoría actual (jseptiembre 2020) con asesorías anteriores (junio 2020, septiembre 2019, junio 2019, septiembre 2018) para evaluar la consistencia de la evaluación presente. Al respecto, el desempeño retrospectivo empírico ilustra mayor incertidumbre en los tres últimos años de las series (\textbf{Figura \ref{Fig24}}). Con el procedimiento de actualización, se aprecia un re-escalamiento de la biomasa desovante en toda la serie hacia valores menores (asesoría de septiembre 2018) y de la mortalidad por pesca hacia valores más altos (asesoría de septiembre 2018). Esto, como consecuencia de una disminución importante en los cruceros de los años 2018 y 2019, que mostraron los valores más bajos de toda la serie. Asimismo, se observó una reducción significativa durante el año 2017 y 2018 en la CPUE y desembarques. Otro efecto se genera producto del cambio en el caso base del año inicial (2002) a partir de la asesoría de septiembre 2018.
 
 ```{=tex}
 \begin{figure}[htb!]
@@ -1487,58 +1333,31 @@ Se comparan los resultados de los principales indicadores de la asesoría actual
 \pagebreak
 
 #### Análisis retrospectivo
-
 \quad
-
-En la \textbf{Figura \ref{Fig25}} se muestra el patrón retrospectivo estándar y relativo de la biomasa desovante y mortalidad por pesca para el modelo base actual (septiembre 2020). El análisis retrospectivo del modelo de evaluación muestra que en términos de rho (promedio de anomalías retrospectivas) la reducción de información genera un patrón de sobreestimación del reclutamiento (rho = +0,22) y de la biomasa desovante (rho = +0,2), con una subestimación de la mortalidad por pesca (rho = -0,15). En general, las estimaciones para el último año pueden variar sustancialmente entre las sucesivas actualizaciones, mientras que para los años previos tienden a converger a valores más estables. En el caso particular de la evaluación de stock de sardina austral, la fuerte reducción (por debajo de los niveles promedio) en los índices que conducen el modelo, generó cambios hacia menores valores de R0 (Rmed) a partir del año 2018. Según el actual enfoque de evaluación, el stock debería ser de un tamaño menor, en términos de biomasa y abundancia, que los niveles estimados previo al año 2018.
+En la \textbf{Figura \ref{Fig25}} se muestra el patrón retrospectivo estándar y relativo de la biomasa desovante y mortalidad por pesca para el modelo base actual (junio 2021). El análisis retrospectivo del modelo de evaluación muestra que en términos de rho (promedio de anomalías retrospectivas) la reducción de información genera un patrón de subestimación del reclutamiento (rho = -0.13) y de la biomasa desovante (rho = -0,1), con una sobreestimación de la mortalidad por pesca (rho = +0.1). En general, las estimaciones para el último año pueden variar sustancialmente entre las sucesivas actualizaciones, mientras que para los años previos tienden a converger a valores más estables, excepto para el año 2019 debido al cambio en las tendencia de los últimos dos años de la serie.
 
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=0.8\textwidth]{Figuras/Fig25-1.pdf}
-\caption{Patrón retrospectivo (panel izquierdo) estándar y (panel derecho) relativo de los reclutamientos, biomasa desovante y de la mortalidad por pesca de sardina austral para la asesoría septiembre 2020.}
+\includegraphics[width=0.9\textwidth]{Figuras/Fig25-1.pdf}
+\caption{Patrón retrospectivo (panel izquierdo) estándar y (panel derecho) relativo de los reclutamientos, biomasa desovante y de la mortalidad por pesca de sardina austral para la asesoría junio 2021.}
 \label{Fig25}
 \end{figure}
 ```
 \pagebreak
 
 #### Perfil de verosimilitud
-
 \quad
-
-La \textbf{Figura \ref{Fig26}} muestra el perfil de verosimilitud de cada fuente de dato cuyo mínimo representa la estimación máxima a posteriori del reclutamiento medio (R\_0) para cada fuente de error del caso base. Los datos cuyos perfiles estuvieron más próximos entre si y la diferencia del log verosimilitud respecto del mínimo se elevó por sobre el criterio estadístico X\^2=1,92 fue la biomasa del crucero (cru) y la proporción de tallas del crucero (procru).
+La \textbf{Figura \ref{Fig26}} muestra el perfil de verosimilitud de cada fuente de dato cuyo mínimo representa la estimación máxima a posteriori del reclutamiento medio ($R_0$) para cada fuente de error del caso base. Los datos cuyos perfiles estuvieron más próximos entre si y la diferencia del log verosimilitud respecto del mínimo se elevó por sobre el criterio estadístico X\^2=1,92 fue la biomasa del crucero (cru) y la proporción de tallas del crucero (procru).
 
 ```{=tex}
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=1\textwidth]{Figuras/Fig26-1.pdf}
-\caption{Perfil de verosimilitud donde la línea horizontal representa el nivel crítico para el test  para la asesoría actual (septiembre 2020).}
+\caption{Perfil de verosimilitud donde la línea horizontal representa el nivel crítico para el test  para la asesoría actual (junio 2021).}
 \label{Fig26}
 \end{figure}
 ```
-\pagebreak
-
-#### Sensibilidad a la actualización de datos
-
-\quad
-
-Cada proceso de revisión de CBA involucra la actualización y/o supuestos de datos para evaluar el impacto en las variables de estado asociado a la incorporación incremental de piezas de información. Al respecto, la actualización de datos de la asesoría actual corresponde principalmente a la información de la flota del año calendario 2019 (desembarques, composición de tallas y CPUE). Para el año 2020 se asume una captura igual a la CBA inicial (caso 4) recomendada por el CCT-PP, estructura de tallas a mayo 2020 (caso 5) y crucero de evaluación directa 2020 (caso 6) (**Tabla 12**).
-
-Los casos más relevantes de comparar son el base septiembre 2019 (caso 0), el completo a diciembre 2019 (caso 3) y el más actualizado de junio 2020 (caso 5). Respecto a la estimación de los índices de abundancia (**Tabla 13**), se aprecia que le mayor efecto es sobre el valor del índice acústico estimado. Al actualizar la información a diciembre, el nivel de biomasa del crucero estimada para el 2019 disminuye desde 48,3 mil t. hasta 44,9 mil t. Otro aspecto para analizar es la reducción en la estimación del índice acústico del año 2020 (caso 4 vs caso 5). Al incorporar información de la estructura de longitudes la flota de los primeros meses del 2020, el índice estimado se reduce manera importante desde 63 mil t hasta 49,4 mil t. No obstante, el efecto más relevante es el fuerte incremento en la biomasa estimada (Bcru2020) debido a la incorporación del ultimo crucero de abril/mayo 2020 (caso 6).
-
-En relación a las variables poblacionales, la **Tabla 14** muestra que el reclutamiento del 2020, estimado por el modelo de evaluación, se reduce drásticamente cuando se incorpora la estructura de longitudes de los primeros meses del año en curso (caso 5). Sin embargo, el efecto más importante se aprecia con la incorporación del ultimo crucero (caso 6), que reduce la F a menos de la mitad y aumenta la BD a más del doble respecto del reporte de septiembre (caso 0). Finalmente, el efecto que genera la actualización de datos en la determinación del estatus (**Tabla 15**), se advierte, que la incorporación de información a diciembre de 2019, empeora condición del recurso. El índice de reducción del stock (BD/BD~RMS~) disminuye desde 0.65 (caso 0) hasta 0.60 (caso 3) y la mortalidad por pesca respecto de la referencia (F/F~RMS~) incrementa desde 1,32 hasta 1,49. Lo contrario ocurre cuando se actualiza la información hasta junio de 2020, incorporando la información del último crucero (caso 6). Bajo este escenario de modelación, el stock se acerca hacia la zona de sub explotación alcanzando un nivel de 1,35\*BD~RMS~ y un valor de F por debajo de la referencia (F/F~RMS~ = 0,42).
-
-+---------------+------------------------------------------------------+
-| Casos         | Descripción                                          |
-+:==============+:=====================================================+
-| Actualización | 2020                                                 |
-+---------------+------------------------------------------------------+
-| Caso 0        | Igual al caso base de junio 2020                     |
-+---------------+------------------------------------------------------+
-| Caso 1        | Caso 0 + supesto Desembarque actualizado             |
-+---------------+------------------------------------------------------+
-| Caso 2        | Caso 1 + Estructura de tallas a junio                |
-+---------------+------------------------------------------------------+
 
 \pagebreak
 
