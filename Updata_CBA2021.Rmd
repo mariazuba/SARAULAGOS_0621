@@ -1361,14 +1361,14 @@ plot(rep1$Tallas,rep1$Selflo_talla[1,],type="l",las=1,col=4,ylim=c(0,1.1),
      ylab="Selectividad",xlab="Tallas (cm)",main="Flota")
 lines(rep1$Tallas,rep1$Selflo_talla[9,],type="l",col=3)
 lines(rep1$Tallas,rep1$Selflo_talla[nyears1,],type="l",col=2)
-legend(13,0.3,c("sel_2002-2009","sel_2010-2012","sel_2013-2020"),
+legend(13,0.3,c("sel_2002-2009","sel_2010-2012","sel_2013-2021"),
        col=c(4,3,2),lwd=c(1,1,1),cex=0.8,bty="n")
 
 # ASESORÍA JUNIO 2021
 plot(rep1$Tallas,rep1$Selcru_talla[1,],type="l",las=1,col=4,ylim=c(0,1.1),
      ylab="Selectividad",xlab="Tallas (cm)",main="Crucero")
 lines(rep1$Tallas,rep1$Selcru_talla[nyears1,],type="l",col=2)
-legend(13,0.3,c("sel_2002-2012","sel_2013-2020"),
+legend(13,0.3,c("sel_2002-2012","sel_2013-2021"),
        col=c(4,2),lwd=c(1,1),cex=0.8,bty="n")
 
 ```
@@ -1897,8 +1897,9 @@ buffer0   <- rep(0,nq)
 for(j in 1:nq){CBAs0[j]<-qnorm(q[j],cbas0,cbas0std)}
 for(j in 1:nq){buffer0[j] <-round(1-CBAs0[j]/CBAs0[5],2)}
 
-tCBA<-cbind(percentil=c(seq(10,50,10)),CBA_final=round(CBAs0,0),Resguardo=buffer0)
+tCBA<-cbind(percentil=c(seq(10,50,10)),CBA_final=round(CBAs0,0),CBA_finaldesc=round(CBAs0*0.977,0),Resguardo=buffer0)
 kable((tCBA))
+
 
 ```
 
