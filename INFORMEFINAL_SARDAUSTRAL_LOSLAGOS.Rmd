@@ -36,8 +36,9 @@ header-includes:
 **7. ANEXOS**
 
 -   ANEXO I: Estandarización de la CPUE de sardina austral de la Región de Los Lagos
--   ANEXO II: Implementación de un Modelo con dinámica en edad e información en talla (modelo alternativo) para sardina austral de la Región de Los Lagos
--   ANEXO III: Datos y Modelos correspondiente a la asesoría de septiembre 2020 (MTT0920) y junio 2021 (MTT0621)
+-   ANEXO II: Sensibilidad de la actualización de datos 
+-   ANEXO III: Implementación de un Modelo con dinámica en edad e información en talla (modelo alternativo) para sardina austral de la Región de Los Lagos
+-   ANEXO IV: Datos y Modelos correspondiente a la asesoría de septiembre 2020 (MTT0920) y junio 2021 (MTT0621)
 
 \pagebreak
 
