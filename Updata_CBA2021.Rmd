@@ -1357,7 +1357,9 @@ BD1_mean<-mean(VarPobJun$BD1)
 
 R15_18 <-mean(VarPobJun$Rt1[14:17])
 BT16_18 <-mean(VarPobJun$BT1[15:17])
-rbind(Rt1_mean,BT1_mean,BD1_mean,R15_18,BT16_18)
+BT19_20 <-mean(VarPobJun$BT1[18:19])
+
+rbind(Rt1_mean,BT1_mean,BD1_mean,R15_18,BT16_18,BT19_20)
 
 ```
 
