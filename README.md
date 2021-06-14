@@ -5,7 +5,7 @@
 
 ### Archivos
 - **INFORMEFINAL_SARDAUSTRAL_LOSLAGOS.Rmd y .pdf**  = corresponde al informe final que debe ser enviado a SUBDECON
-- **Salidas_InformeFinal_2021.Rmd y .pdf** = genera las figuras que serán incorporados en INFORMEFINAL_SARDAUSTRAL_LOSLAGOS.Rmd
+- **Updata_CBA2021.Rmd y .pdf** = genera las figuras que serán incorporados en INFORMEFINAL_SARDAUSTRAL_LOSLAGOS.Rmd
 - **Tallasmensuales.txt** = contiene las estructuras de tallas mensuales
 
 ### Carpetas básicas
@@ -26,9 +26,12 @@ Estas carpetas contienen los archivos .dat y .rep necesarios para generar las fi
 3. VerosimilitudbaseJun
 4. VerosimilitudbaseSept
 
+5. cba_junio2021_base (hito 2)
+6. cba_septiembre2020_base (hito 1)
+
 ### Carpetas para actualizar objetivo 4, comparación de modelo base y alternativo
 
-Estas carpetas contienen los archivos .dat y .rep necesarios para generar las figuras y tablas que van contenidas en "Salidas_InformeFinal_2021.Rmd" y "INFORMEFINAL_SARDAUSTRAL_LOSLAGOS.Rmd".
+Estas carpetas contienen los archivos .dat y .rep necesarios para generar las figuras y tablas que van contenidas en "ANEXO_II_PMCCAC.Rmd" y "FigyTab_ANEXO_II_PMCCAC.Rmd".
 
 1. cba_junio2021_alternativo
 2. cba_junio2021_base

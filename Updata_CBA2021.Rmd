@@ -1350,6 +1350,19 @@ Rt/BT | (BD/Ft)
 
 ```
 
+```{r}
+Rt1_mean<-mean(VarPobJun$Rt1)
+BT1_mean<-mean(VarPobJun$BT1)
+BD1_mean<-mean(VarPobJun$BD1)
+
+R15_18 <-mean(VarPobJun$Rt1[14:17])
+BT16_18 <-mean(VarPobJun$BT1[15:17])
+BT19_20 <-mean(VarPobJun$BT1[18:19])
+
+rbind(Rt1_mean,BT1_mean,BD1_mean,R15_18,BT16_18,BT19_20)
+
+```
+
 \pagebreak
 
 ```{r Fig28,warning=F, include=T, message=F, echo=T,fig.height=5,fig.width=10,fig.align="center",fig.path="Figuras/",dev=c('pdf')}
