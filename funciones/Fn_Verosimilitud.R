@@ -101,7 +101,7 @@ Verosimilitudbase<-function(admb,dir.0,dir.1,Carpeta,l_log_Ro,l_opt_Ro,l_Fase_de
 
 
 
-Verosimilitudalternativo<-function(admb,dir.0,dir.1,Carpeta,system){
+Verosimilitudalternativo<-function(admb,dir.0,dir.1,Carpeta,l_log_Ro,l_opt_Ro,l_Fase_desRt_devNo,system){
   
   dir<-paste(dir.0,Carpeta,sep="")
   
@@ -127,16 +127,16 @@ Verosimilitudalternativo<-function(admb,dir.0,dir.1,Carpeta,system){
   #===========================================================================================================
   # SEGUNDO PASO: CREA VECTOR PARA R0 (CASOS O ESCENARIOS A PROBAR)
   #===========================================================================================================
-  log_Ro    <- as.numeric(data.1[151])
+  log_Ro    <- as.numeric(data.1[l_log_Ro])
   prior_Ro  <- seq(log_Ro*0.90,log_Ro*1.10,0.05)
   casos     <- length(prior_Ro);casos
   #===========================================================================================================
   # TERCER PASO: CREA LOS ARCHIVOS .DAT DE CADA CASO
   #===========================================================================================================
   for(i in 1:casos){
-    data.1[151]  <- prior_Ro[i]
-    data.1[148]  <- -1
-    data.1[142]  <- paste(1,2,sep="\t") #Fase_dev_Rt_devNo
+    data.1[l_log_Ro]  <- prior_Ro[i]
+    data.1[l_opt_Ro]  <- -1
+    data.1[l_Fase_desRt_devNo]  <- paste(1,2,sep="\t") #Fase_dev_Rt_devNo
 
     
     cat(data.1,file=(can<-file(paste(admb,"s",i,".dat", sep=''),"wb",encoding="UTF-8")),sep="\n")
