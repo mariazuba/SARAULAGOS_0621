@@ -103,10 +103,10 @@
  0.5 0.5 
 
 # nbloq_selflota 
- 2 
+ 1 
 
 # ano_inicio_nbloq_selflota 
- 2002 2013 
+ 2002 
 
 # nbloq_selCru 
  2 
@@ -136,7 +136,7 @@
  1 
 
 # Fase_dev_Rt_devNo 
- 2 1 
+ 1 2 
 
 # opt_ByHolt_1_Ricker_2_sinrelacion_3 
  3 
