@@ -77,7 +77,7 @@ Retrospectivobase<-function(admb,dir.0,dir.1,Carpeta,system){
 
 
 
-Retrospectivoalternativo<-function(admb,dir.0,dir.1,Carpeta,system){
+Retrospectivoalternativo<-function(admb,dir.0,dir.1,Carpeta,system,Fase_dev_Rt){
   
   dir<-paste(dir.0,Carpeta,sep="")
   
@@ -103,6 +103,7 @@ Retrospectivoalternativo<-function(admb,dir.0,dir.1,Carpeta,system){
     data.1$Ind                 <- data$Ind[1:(data$nanos-retros[i]),]
     data.1$Frecuencia_flota    <- data$Frecuencia_flota[1:(data$nanos-retros[i]),]
     data.1$Frecuencia_cruceros <- data$Frecuencia_cruceros[1:(data$nanos-retros[i]),]
+    data.1$Fase_dev_Rt_devNo[1] <- Fase_dev_Rt[i]
     
     writeData(paste(admb,"s",i,".dat",sep=""), data.1, append=F)
   
