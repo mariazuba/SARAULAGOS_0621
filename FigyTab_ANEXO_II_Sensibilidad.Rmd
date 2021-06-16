@@ -194,7 +194,7 @@ f1
 ```
 
 
-```{r Actualizacion, warning=F, include=T, message=F, echo=T,eval=F}
+```{r Actualizacion, warning=F, include=F, message=F, echo=T,eval=F}
   
   Carpeta<-"/Sensibilidad_al_update_junio21"
   dir<-paste(dir.0,Carpeta,sep="")
@@ -252,16 +252,28 @@ f1
   # escenario 4: S3 +	estructura de tallas de la flota 2020
   #--------------
   dat<- data
+  dat$Ind[,2] <- c(39878,33605,37393,53789,40054,51678,46124,50367,20590,
+                   16810,20222,22396,23483,24192,18924,14462,8761,11383,14523)
   dat$Frecuencia_flota[19,] <-c(0,	0,	0,	0,	0,	0,	0.00,	0,	0,	0,	0.00,
                                 0.00,	0.00,	0.01,	0.02,	0.04,	0.08,	0.13,	0.14,
                                 0.13,	0.14,	0.12,	0.09,	0.06,	0.03,	0.01,	0.00,
                                 0.00,	0,	0)
   writeData(paste(admb,"s",4,".dat",sep=""), dat, append=FALSE)
   #--------------
-  # escenario 5: S4 +	CPUE 2020
+  # escenario 5: S4 +	CPUE actualizada al 2020
   #--------------
   dat<- data
-  dat$Ind[19,4]<- 41.4
+  dat$Ind[,2] <- c(39878,33605,37393,53789,40054,51678,46124,50367,20590,
+                   16810,20222,22396,23483,24192,18924,14462,8761,11383,14523)
+  dat$Frecuencia_flota[19,] <-c(0,	0,	0,	0,	0,	0,	0.00,	0,	0,	0,	0.00,
+                                0.00,	0.00,	0.01,	0.02,	0.04,	0.08,	0.13,	0.14,
+                                0.13,	0.14,	0.12,	0.09,	0.06,	0.03,	0.01,	0.00,
+                                0.00,	0,	0)
+  dat$Ind[,4]<- c(0,0,0,0,0,23.9,21.6,28.1,19.1,16.3,13.7,35.6,27.7,23.1,24.0,10.8,10.2,8.6,41.4)
+  dat$Fase_F     <- 2
+  dat$Fase_desRt <- 2
+  dat$Fase_devNo <- 1
+  dat$fase_qCPUE_qCru_qMPH  <- c(3,5, -5)
   writeData(paste(admb,"s",5,".dat",sep=""), dat, append=FALSE)
   ###########################################################################
   # **Actualización 2021**
@@ -276,37 +288,23 @@ f1
   dat_jun$Fase_F     <- 2
   dat_jun$Fase_desRt <- 1
   dat_jun$Fase_devNo <- 1
+  dat_jun$fase_qCPUE_qCru_qMPH  <- c(3,5, -5)
   dat_jun$Frecuencia_cruceros[20,]<-c(0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
                              0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
                              0,	0)
   writeData(paste(admb,"s",6,".dat",sep=""), dat_jun, append=FALSE)
   
   #--------------
-  # escenario 7: S6 +	Biomasa acústica 2021
+  # escenario 7: S6 +	Biomasa acústica + estructura de tallas crucero 2021
   #--------------
   dat_jun<- data_jun
-  dat_jun$Ind[20,2]  <- 12633
-  dat_jun$Ind[20,6]  <- 66626
-  dat_jun$Fase_F     <- 1
-  dat_jun$Fase_desRt <- 2
-  dat_jun$Fase_devNo <- 2
-  dat_jun$Frecuencia_cruceros[20,]<-c(0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
-                             0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
-                             0,	0)
   writeData(paste(admb,"s",7,".dat",sep=""), dat_jun, append=FALSE)
   
-  #--------------
-  # escenario 8: S7 +	Estructura de tallas del crucero 2021
-  #--------------
-  dat_jun<- data_jun
-  dat_jun$Ind[20,2] <- 12633
-  dat_jun$Ind[20,6] <- 66626
-  dat_jun$Frecuencia_cruceros[20,]<-c(0,	0,	0.000,	0.001,	0.005,	0.059,	0.097,	0.070,	0.046,	0.033,	0.049,	0.070,	0.024,	0.012,	0.008,	0.016,	0.022,	0.016,	0.028,	0.067,	0.083,	0.102,	0.102,	0.063,	0.021,	0.005,	0.001,	0,	0,	0)
-  writeData(paste(admb,"s",8,".dat",sep=""), dat_jun, append=FALSE)
+ 
   
   
   
-  for(i in 1:8){
+  for(i in 1:7){
   setwd(dir.1);  file.copy(c(paste(admb,".tpl",sep="")),dir)
   setwd(dir);  file.rename(paste(admb,".tpl",sep=""),paste(admb,"s",i,".tpl",sep=""))
   
@@ -368,7 +366,7 @@ admb<-"MTT0920"
 
 years       <- rep1$Years
 nyears      <- length(years)
-retros      <- seq(1,8)
+retros      <- seq(1,7)
 nretros     <- length(retros)
 
                       
@@ -376,21 +374,26 @@ retroR      <- matrix(0,nrow=nyears,ncol=nretros)
 retroBD     <- matrix(0,nrow=nyears,ncol=nretros)
 retroBT     <- matrix(0,nrow=nyears,ncol=nretros)
 retroF      <- matrix(0,nrow=nyears,ncol=nretros)
+retroBD_BDrms     <- matrix(0,nrow=nyears,ncol=nretros)
 
-for(i in 1:(nretros-3)){
+for(i in 1:(nretros-2)){
   rep <- reptoRlist(paste(admb,"s",i,".rep",sep=""))
+  std <- read.table(paste(admb,"s",i,".std",sep=""),header=T,sep="",na="NA",fill=T) 
   retroR[,i]  <- c(rep$Reclutamiento,NA)
   retroBD[,i] <- c(rep$Biomasa_desovante,NA)
   retroBT[,i] <- c(rep$Biomasa_total,NA)
   retroF[,i]  <- c(rep$F,NA) 
+  retroBD_BDrms[,i]     <-c(subset(std,name=="RPR")$value,NA)
 }
 
  for(i in 6:(nretros)){
   rep <- reptoRlist(paste(admb,"s",i,".rep",sep=""))
+  std <- read.table(paste(admb,"s",i,".std",sep=""),header=T,sep="",na="NA",fill=T) 
   retroR[,i]  <- c(rep$Reclutamiento)
   retroBD[,i] <- c(rep$Biomasa_desovante)
   retroBT[,i] <- c(rep$Biomasa_total)
   retroF[,i]  <- c(rep$F) 
+  retroBD_BDrms[,i]     <-subset(std,name=="RPR")$value
  }
 
 # Diferencia relativa con caso base actual 
@@ -398,12 +401,14 @@ for(i in 1:(nretros-3)){
     rel.diff.ssb <- matrix(NA, nrow=nyears, ncol=(nretros))
     rel.diff.bt  <- matrix(NA, nrow=nyears, ncol=(nretros))
     rel.diff.f   <- matrix(NA, nrow=nyears, ncol=(nretros))
-
+    rel.diff.bd_bdrms   <- matrix(NA, nrow=nyears, ncol=(nretros))
+    
     for(j in 1:nretros){
       rel.diff.r[,j]   <- (retroR[,(j)]-retroR[,1])/retroR[,1]
       rel.diff.ssb[,j] <- (retroBD[,(j)]-retroBD[,1])/retroBD[,1]
       rel.diff.bt[,j] <- (retroBT[,(j)]-retroBT[,1])/retroBT[,1]
       rel.diff.f[,j]   <- (retroF[,(j)]-retroF[,1])/retroF[,1]
+      rel.diff.bd_bdrms[,j]   <- (retroBD_BDrms[,(j)]-retroBD_BDrms[,1])/retroBD_BDrms[,1]
     }
     
     
@@ -420,8 +425,7 @@ datR <- data.frame(years=years,
                    S4=rel.diff.r[,4],
                    S5=rel.diff.r[,5],
                    S6=rel.diff.r[,6],
-                   S7=rel.diff.r[,7],
-                   S8=rel.diff.r[,8])%>% 
+                   S7=rel.diff.r[,7])%>% 
          mutate(Series=rep("Reclutamientos",nyears))%>%
          melt(id.var=c('years', 'Series'))
 
@@ -432,8 +436,7 @@ datBT <- data.frame(years=years,
                    S4=rel.diff.bt[,4],
                    S5=rel.diff.bt[,5],
                    S6=rel.diff.bt[,6],
-                   S7=rel.diff.bt[,7],
-                   S8=rel.diff.bt[,8])%>% 
+                   S7=rel.diff.bt[,7])%>% 
          mutate(Series=rep("Biomasa_total",nyears))%>%
          melt(id.var=c('years', 'Series'))
 
@@ -444,8 +447,7 @@ datBD <- data.frame(years=years,
                    S4=rel.diff.ssb[,4],
                    S5=rel.diff.ssb[,5],
                    S6=rel.diff.ssb[,6],
-                   S7=rel.diff.ssb[,7],
-                   S8=rel.diff.ssb[,8])%>% 
+                   S7=rel.diff.ssb[,7])%>% 
          mutate(Series=rep("Biomasa_desovante",nyears))%>%
          melt(id.var=c('years', 'Series'))
 
@@ -456,8 +458,7 @@ datF <- data.frame(years=years,
                    S4=rel.diff.f[,4],
                    S5=rel.diff.f[,5],
                    S6=rel.diff.f[,6],
-                   S7=rel.diff.f[,7],
-                   S8=rel.diff.f[,8])%>% 
+                   S7=rel.diff.f[,7])%>% 
          mutate(Series=rep("Mortalidad_por_pesca",nyears))%>%
          melt(id.var=c('years', 'Series'))
 
@@ -468,46 +469,47 @@ data <- data.frame(rbind(datR,datBT,datBD,datF))
 ```
 
 
-```{r Fig27_sensibilidad,echo=T, message=FALSE, warning=FALSE, include=T, fig.align="center", fig.height=6, fig.width=8,fig.path=dir.Fig,dev=fig}
+```{r Fig4_anexoII,echo=T, message=FALSE, warning=FALSE, include=T, fig.align="center", fig.height=6, fig.width=8,fig.path=dir.Fig,dev=fig}
 #######################################################################################
 # GRAFICAS
 #######################################################################################
 f1<- ggplot(data %>% filter(Series=="Reclutamientos"),
-            aes(years,value)) + 
+            aes(years,value)) +   ylim(-0.30, 0.30) + 
      geom_line(aes(colour=variable), size=0.3)+
      labs(x = '', y = 'Diferencia relativa',colour='Asesorías')  +
      scale_x_continuous(breaks = seq(from = 1990, to = 2021, by = 5)) +
-     scale_colour_manual(values=seq(1,8,1))+
+     scale_colour_manual(values=seq(1,7,1))+
      theme_bw(base_size=9) + 
      ggtitle('Reclutamientos')+
      theme(plot.title = element_text(hjust = 0.5),legend.position="none")
 
 f2<- ggplot(data %>% filter(Series=="Biomasa_total"),
-            aes(years,value)) + 
+            aes(years,value)) +   ylim(-0.30, 0.30) + 
      geom_line(aes(colour=variable), size=0.3)+
      labs(x = '', y = 'Diferencia relativa',colour='Asesorías')  +
      scale_x_continuous(breaks = seq(from = 1990, to = 2021, by = 5)) +
-     scale_colour_manual(values=seq(1,8,1))+
+     scale_colour_manual(values=seq(1,7,1))+
      theme_bw(base_size=9) + 
      ggtitle('Biomasa total')+
      theme(plot.title = element_text(hjust = 0.5),legend.position="none")
 
 f3<- ggplot(data %>% filter(Series=="Biomasa_desovante"),
-            aes(years,value)) + 
+            aes(years,value)) +   ylim(-0.30, 0.30) + 
      geom_line(aes(colour=variable), size=0.3)+
      labs(x = '', y = 'Diferencia relativa',colour='Asesorías')  +
      scale_x_continuous(breaks = seq(from = 1990, to = 2021, by = 5)) +
-     scale_colour_manual(values=seq(1,8,1))+
+     scale_colour_manual(values=seq(1,7,1))+
      theme_bw(base_size=9) + 
      ggtitle('Biomasa desovante')+
      theme(plot.title = element_text(hjust = 0.5),legend.position="left")
 
 f4<- ggplot(data %>% filter(Series=="Mortalidad_por_pesca"),
-            aes(years,value)) + 
+            aes(years,value)) +
+      ylim(-0.30, 0.30) + 
      geom_line(aes(colour=variable), size=0.3)+
      labs(x = '', y = 'Diferencia relativa',colour='Asesorías')  +
      scale_x_continuous(breaks = seq(from = 1990, to = 2021, by = 5)) +
-     scale_colour_manual(values=seq(1,8,1))+
+     scale_colour_manual(values=seq(1,7,1))+
      theme_bw(base_size=9) + 
      ggtitle('Mortalidad por pesca')+
      theme(plot.title = element_text(hjust = 0.5),legend.position="none")
@@ -518,6 +520,12 @@ f4<- ggplot(data %>% filter(Series=="Mortalidad_por_pesca"),
 ```{r tabla1,echo=T}
 
 kable(data.frame(indicador=rep("Rt",nyears),years=years,retroR))
+
+```
+
+```{r tabla1.1,echo=T}
+
+kable(data.frame(indicador=rep("Rt.diff",nyears),years=years,round(rel.diff.r,2)))
 
 ```
 
@@ -535,9 +543,34 @@ kable(data.frame(indicador=rep("BD",nyears),years=years,retroBD))
 
 ```
 
+```{r tabla3.1,echo=T}
+
+kable(data.frame(indicador=rep("BD.diff",nyears),years=years,round(rel.diff.ssb,2)))
+
+```
+
 
 ```{r tabla4,echo=T}
 
 kable(data.frame(indicador=rep("F",nyears),years=years,retroF))
+
+```
+
+```{r tabla4.1,echo=T}
+
+kable(data.frame(indicador=rep("F.diff",nyears),years=years,round(rel.diff.f,2)))
+
+```
+
+
+```{r tabla5,echo=T}
+
+kable(data.frame(indicador=rep("BD_BDrms",nyears),years=years,retroBD_BDrms))
+
+```
+
+
+```{r tabla5.1,echo=T}
+kable(data.frame(indicador=rep("BD_BDrms.diff",nyears),years=years,round(rel.diff.bd_bdrms,2)))
 
 ```
