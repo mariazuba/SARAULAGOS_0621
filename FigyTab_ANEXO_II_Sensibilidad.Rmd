@@ -1,0 +1,543 @@
+---
+title: "FigyTab_ANEXO_II_Sensibilidad"
+output: pdf_document
+---
+
+
+```{r llama codigos, warning=F, include=T, message=F, echo=T}
+library(knitr) # para generar reporte Rmarkdown
+library(stringr)
+library(reshape) 
+library(dplyr) 
+library(ggplot2)
+library(ggthemes) # para ggplot
+library(patchwork) # para unir gráficos de ggplot
+library(strucchange) # libreria utilizada para análisis de quiebres
+
+dir.Fig     <-"Figuras/" # carpeta de las figuras utilizadas y generadas en este estudio
+fig         <-c("pdf") # formato de figuras generadas por este código
+dir.0       <-getwd() # directorio de trabajo 
+dir.1       <-paste(dir.0,"/codigos_admb",sep="") # carpeta de códigos ADMB 
+dir.2       <-paste(dir.0,"/Retrospectivobase",sep="") # carpeta de códigos ADMB 
+dir.3       <-paste(dir.0,"/Retrospectivoalternativo",sep="") # carpeta de códigos ADMB 
+dir.4       <-paste(dir.0,"/Verosimilitudalternativo",sep="") # carpeta de códigos ADMB 
+dir.5       <-paste(dir.0,"/Verosimilitudbase",sep="") # carpeta de códigos ADMB 
+
+dir.fun     <-paste(dir.0,"/funciones/",sep="") # carpeta de funciones utilizadas en este informe
+source(paste(dir.fun,"functions.R",sep="")) # funciones para leer .dat y .rep
+source(paste(dir.fun,"Fn_PBRs.R",sep="")) # funciones para leer .dat y .rep
+```
+
+
+
+```{r CORRE MODELO BASE SEPTIEMBRE, eval=FALSE, echo=T, warning=FALSE,include=F}
+#Primer paso correr códigos 
+setwd(dir.1)
+system("~/admb-12.2/admb MTT0920")
+system("./MTT0920")
+```
+
+```{r CORRE MODELO BASE JUNIO, eval=FALSE, echo=T, warning=FALSE,include=F}
+#Primer paso correr códigos 
+setwd(dir.1)
+system("~/admb-12.2/admb MTT0621")
+system("./MTT0621")
+```
+
+
+```{r datosMBASE_rep_std, warning=F, include=T, message=F, echo=T}
+setwd(dir.1)
+#Asesoría septiembre 2020 MODELO BASE 
+data.0   <- lisread(paste(dir.1,"MTT0920.dat", sep='/'));
+names(data.0)<-str_trim(names(data.0), side="right")
+rep0     <- reptoRlist("MTT0920.rep")                                               
+std0     <- read.table("MTT0920.std",header=T,sep="",na="NA",fill=T) 
+
+#Asesoría junio 2021 MODELO BASE  
+data.1   <- lisread(paste(dir.1,"MTT0621.dat", sep='/'));
+names(data.1)<-str_trim(names(data.1), side="right")
+rep1     <- reptoRlist("MTT0621.rep")                                               
+std1     <- read.table("MTT0621.std",header=T,sep="",na="NA",fill=T) 
+
+```
+
+
+```{r Fig1_anexoII,warning=F, include=T, message=F, echo=T,fig.height=6.5,fig.width=5.5,fig.align="center",fig.path="Figuras/",dev=fig}
+
+#######################################################################################
+# AREGLOS DE DATOS
+#######################################################################################
+
+library(patchwork)
+
+yrs   <- rep1$Years
+nyrs  <- length(yrs)
+lasty <- yrs[nyrs]
+cvCB   <-data.1$Ind[,7]
+cvcpue <-data.1$Ind[,5]
+cvdes  <-data.1$Ind[,3]
+
+Bcru_obs_jun<-rep1$Bcru_obs     ;Bcru_obs_jun[Bcru_obs_jun==0] <- NA
+CPUE_obs_jun<-rep1$CPUE_obs     ;CPUE_obs_jun[CPUE_obs_jun==0] <- NA
+Desemb_obs_jun<-rep1$Desemb_obs ;Desemb_obs_jun[Desemb_obs_jun==0] <- NA
+
+
+Bcru_obs_sept<-rep0$Bcru_obs    ;Bcru_obs_sept[Bcru_obs_sept==0] <- NA
+CPUE_obs_sept<-rep0$CPUE_obs    ;CPUE_obs_sept[CPUE_obs_sept==0] <- NA
+Desemb_obs_sept<-rep0$Desemb_obs ;Desemb_obs_sept[Desemb_obs_sept==0] <- NA
+
+
+
+ind_jun   <- cbind(c(Bcru_obs_jun), c(CPUE_obs_jun), c(Desemb_obs_jun)) 
+colnames(ind_jun) <- c('Biomasa_Crucero', 'CPUE', 'Desembarques') 
+
+ind_sept <- cbind(c(Bcru_obs_sept,NA), c(CPUE_obs_sept,NA), c(Desemb_obs_sept,NA))
+colnames(ind_sept) <- c('Biomasa_Crucero', 'CPUE', 'Desembarques') 
+
+
+junio   <- data.frame(ind_jun) %>% mutate (Asesoría='junio_2021') %>% 
+           mutate (yrs= yrs)  %>% melt(id.var=c('yrs', 'Asesoría'))
+sept    <- data.frame(ind_sept) %>% mutate (Asesoría='septiembre_2020') %>%
+           mutate (yrs= yrs)  %>% melt(id.var=c('yrs', 'Asesoría'))
+
+base1 <- data.frame(rbind(junio, sept))  
+
+#######################################################################################
+# GRAFICAS
+#######################################################################################
+
+f1 <- ggplot(base1 %>% filter(Asesoría!='observado', variable=='Biomasa_Crucero'), 
+        aes(yrs,value/1000000)) + 
+        geom_line(aes(colour=Asesoría,linetype = Asesoría), size=1) +
+        scale_colour_manual(values=c('red','black')) +
+        geom_point(data = base1 %>% filter(Asesoría=='observado', 
+                                           variable=='Biomasa_Crucero'),
+        aes(yrs,value/1000000), shape = 19, colour = 'gray30') +
+        scale_x_continuous(breaks = seq(from = 1985, to = 2020, by = 2)) +
+        labs(title='Biomasa de Crucero', x = 'Año', y = 'Toneladas (millones)') +
+        theme_bw(base_size=9)
+
+f2 <- ggplot(base1 %>% filter(Asesoría!='observado', variable=='CPUE'), 
+            aes(yrs,value/1000000)) + 
+        geom_line(aes(colour=Asesoría,linetype = Asesoría), size=1) +
+        scale_colour_manual(values=c('red','black')) +
+        geom_point(data = base1 %>% filter(Asesoría=='observado', 
+                                           variable=='CPUE'),
+        aes(yrs,value/1000000), shape = 19, colour = 'gray30') +
+        scale_x_continuous(breaks = seq(from = 1985, to = 2020, by = 2)) +
+        labs(title='CPUE', x = 'Año', y = 'toneladas/viaje') +
+        theme_bw(base_size=9)
+
+f3 <- ggplot(base1 %>% filter(Asesoría!='observado', variable=='Desembarques'), 
+        aes(yrs,value/1000)) + 
+        geom_line(aes(colour=Asesoría,linetype = Asesoría), size=1) +
+        scale_colour_manual(values=c('red','black')) +
+        geom_point(data = base1 %>% filter(Asesoría=='observado', 
+                                           variable=='Desembarques'),
+        aes(yrs,value/1000), shape = 19, colour = 'gray30') +
+        scale_x_continuous(breaks = seq(from = 1985, to = 2020, by = 2)) +
+        labs(title='Desembarques', x = 'Año', y = 'Toneladas (miles)') +
+        theme_bw(base_size=9)
+
+f1/f2/f3 + plot_layout(guides="collect")
+
+
+```
+
+```{r Fig2_anexoII,warning=F, include=T, message=F, echo=T,fig.height=4,fig.width=7,fig.align="center",fig.path="Figuras/",dev=fig}
+Tallas<-rep1$Tallas
+Tallasflota_jun<-rep1$Propfl_obs[nyrs-1,]
+Tallasflota_sept<-rep0$Propfl_obs[nyrs-1,]
+
+Tjunio   <- data.frame(Tallasflota_jun) %>% mutate (Asesoría='junio_2021') %>% 
+           mutate (Tallas= Tallas)  %>% melt(id.var=c('Tallas', 'Asesoría'))
+Tsept    <- data.frame(Tallasflota_sept) %>% mutate (Asesoría='septiembre_2020') %>%
+           mutate (Tallas= Tallas)  %>% melt(id.var=c('Tallas', 'Asesoría'))
+
+Tbase1 <- data.frame(rbind(Tjunio, Tsept)) 
+
+f1<-ggplot(Tbase1 %>% filter(Asesoría!='observado'), 
+        aes(Tallas,value/1000)) + 
+        geom_line(aes(colour=Asesoría,linetype = Asesoría), size=1) +
+        scale_colour_manual(values=c('red','black')) +
+        scale_x_continuous(breaks = seq(from = 5, to = 20, by = 2)) +
+        labs(title='Composición de Tallas 2020 de la Flota', x = 'LT (cm)', y = 'Proporción') +
+        theme_bw(base_size=9)
+
+f1
+
+```
+
+
+```{r Fig3_anexoII,warning=F, include=T, message=F, echo=T,fig.height=4,fig.width=7,fig.align="center",fig.path="Figuras/",dev=fig}
+Tallas<-rep1$Tallas
+Tallascru_jun<-rep1$Propcru_obs[nyrs,]
+Tallascru_sept<-rep(NA,length(Tallas))
+
+Tjunio   <- data.frame(Tallascru_jun) %>% mutate (Asesoría='junio_2021') %>% 
+           mutate (Tallas= Tallas)  %>% melt(id.var=c('Tallas', 'Asesoría'))
+Tsept    <- data.frame(Tallascru_sept) %>% mutate (Asesoría='septiembre_2020') %>%
+           mutate (Tallas= Tallas)  %>% melt(id.var=c('Tallas', 'Asesoría'))
+
+Tbase1 <- data.frame(rbind(Tjunio, Tsept)) 
+
+f1<-ggplot(Tbase1 %>% filter(Asesoría!='observado'), 
+        aes(Tallas,value/1000)) + 
+        geom_line(aes(colour=Asesoría,linetype = Asesoría), size=1) +
+        scale_colour_manual(values=c('red','black')) +
+        scale_x_continuous(breaks = seq(from = 5, to = 20, by = 2)) +
+        labs(title='Composición de Tallas 2021 del Crucero', x = 'LT (cm)', y = 'Proporción') +
+        theme_bw(base_size=9)
+
+f1
+
+```
+
+
+```{r Actualizacion, warning=F, include=T, message=F, echo=T,eval=F}
+  
+  Carpeta<-"/Sensibilidad_al_update_junio21"
+  dir<-paste(dir.0,Carpeta,sep="")
+  
+  admb<-"MTT0920"
+  dat_admb<-paste(admb,".dat",sep="")
+  tpl_admb<-paste(admb,".tpl",sep="")
+
+  admb_jun<-"MTT0621"
+  dat_admb_jun<-paste(admb_jun,".dat",sep="")
+  tpl_admb_jun<-paste(admb_jun,".tpl",sep="")
+  
+  setwd(dir.1)
+  unlink(dir,recursive=T) #borra la carpeta creada
+  dir.create(file.path(dir.0,Carpeta))#crea la carpeta nuevamente
+  setwd(dir.1);file.copy(c(dat_admb,tpl_admb),dir) #copia los archivos de la carpeta creada
+  setwd(dir.1);file.copy(c(dat_admb_jun,tpl_admb_jun),dir)
+  
+  setwd(dir) 
+  data        <- lisread(paste(admb,".dat",sep="")) 
+  names(data) <- str_trim(names(data), side="right")
+  dat         <- data
+
+  data_jun        <- lisread(paste(admb_jun,".dat",sep="")) 
+  names(data_jun) <- str_trim(names(data_jun), side="right")
+  dat_jun         <- data_jun
+#==========================================================================
+  #######################     CREA Y CORRE ESCENARIOS #####################
+  #==========================================================================
+  setwd(dir)
+  #--------------
+  # escenario 1: Caso 1 Igual al caso base de septiembre 2020 (MTT2020)
+  #--------------
+  # caso base
+  dat<- data
+  writeData(paste(admb,"s",1,".dat",sep=""), dat, append=FALSE)
+  ###########################################################################
+  # **Actualización 2020**
+  ###########################################################################
+  #--------------
+  # escenario 2: S1 +	Desembarque 2020
+  #--------------
+  dat<- data
+  dat$Ind[19,2] <- 14194
+  writeData(paste(admb,"s",2,".dat",sep=""), dat, append=FALSE)
+  dat<- data
+  #--------------
+  # escenario 3: S2 +	incorporación del descarte a la serie de desembarques
+  #--------------
+  dat<- data
+  dat$Ind[,2] <- c(39878,33605,37393,53789,40054,51678,46124,50367,20590,
+                   16810,20222,22396,23483,24192,18924,14462,8761,11383,14523)
+  writeData(paste(admb,"s",3,".dat",sep=""), dat, append=FALSE)
+  #--------------
+  # escenario 4: S3 +	estructura de tallas de la flota 2020
+  #--------------
+  dat<- data
+  dat$Frecuencia_flota[19,] <-c(0,	0,	0,	0,	0,	0,	0.00,	0,	0,	0,	0.00,
+                                0.00,	0.00,	0.01,	0.02,	0.04,	0.08,	0.13,	0.14,
+                                0.13,	0.14,	0.12,	0.09,	0.06,	0.03,	0.01,	0.00,
+                                0.00,	0,	0)
+  writeData(paste(admb,"s",4,".dat",sep=""), dat, append=FALSE)
+  #--------------
+  # escenario 5: S4 +	CPUE 2020
+  #--------------
+  dat<- data
+  dat$Ind[19,4]<- 41.4
+  writeData(paste(admb,"s",5,".dat",sep=""), dat, append=FALSE)
+  ###########################################################################
+  # **Actualización 2021**
+  ###########################################################################
+  
+  #--------------
+  # escenario 6: S5 +	Desembarque + descarte 2021
+  #--------------
+  dat_jun<- data_jun
+  dat_jun$Ind[20,2]  <- 12633
+  dat_jun$Ind[20,6]  <- 0
+  dat_jun$Fase_F     <- 2
+  dat_jun$Fase_desRt <- 1
+  dat_jun$Fase_devNo <- 1
+  dat_jun$Frecuencia_cruceros[20,]<-c(0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+                             0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+                             0,	0)
+  writeData(paste(admb,"s",6,".dat",sep=""), dat_jun, append=FALSE)
+  
+  #--------------
+  # escenario 7: S6 +	Biomasa acústica 2021
+  #--------------
+  dat_jun<- data_jun
+  dat_jun$Ind[20,2]  <- 12633
+  dat_jun$Ind[20,6]  <- 66626
+  dat_jun$Fase_F     <- 1
+  dat_jun$Fase_desRt <- 2
+  dat_jun$Fase_devNo <- 2
+  dat_jun$Frecuencia_cruceros[20,]<-c(0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+                             0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,
+                             0,	0)
+  writeData(paste(admb,"s",7,".dat",sep=""), dat_jun, append=FALSE)
+  
+  #--------------
+  # escenario 8: S7 +	Estructura de tallas del crucero 2021
+  #--------------
+  dat_jun<- data_jun
+  dat_jun$Ind[20,2] <- 12633
+  dat_jun$Ind[20,6] <- 66626
+  dat_jun$Frecuencia_cruceros[20,]<-c(0,	0,	0.000,	0.001,	0.005,	0.059,	0.097,	0.070,	0.046,	0.033,	0.049,	0.070,	0.024,	0.012,	0.008,	0.016,	0.022,	0.016,	0.028,	0.067,	0.083,	0.102,	0.102,	0.063,	0.021,	0.005,	0.001,	0,	0,	0)
+  writeData(paste(admb,"s",8,".dat",sep=""), dat_jun, append=FALSE)
+  
+  
+  
+  for(i in 1:8){
+  setwd(dir.1);  file.copy(c(paste(admb,".tpl",sep="")),dir)
+  setwd(dir);  file.rename(paste(admb,".tpl",sep=""),paste(admb,"s",i,".tpl",sep=""))
+  
+  if(system=="mac"){
+    system(paste("~/admb-12.2/admb ",admb,"s",i,sep=""))
+    system(paste("./",admb,"s",i,sep="")) }
+  
+  if(system=="windows"){
+    system(paste("admb ",admb,"s",i,sep=""))
+    system(paste(admb,"s",i,sep="")) }
+  
+  file.remove(paste(admb,"s",i,".htp", sep=""),
+              paste(admb,"s",i,".cpp", sep=""),
+              paste(admb,"s",i,".obj", sep=""),
+              paste(admb,"s",i,".p01", sep=""),
+              paste(admb,"s",i,".b01", sep=""),
+              paste(admb,"s",i,".r01", sep=""),
+              paste(admb,"s",i,".p02", sep=""),
+              paste(admb,"s",i,".b02", sep=""),
+              paste(admb,"s",i,".r02", sep=""),
+              paste(admb,"s",i,".p03", sep=""),
+              paste(admb,"s",i,".b03", sep=""),
+              paste(admb,"s",i,".r03", sep=""),
+              paste(admb,"s",i,".p04", sep=""),
+              paste(admb,"s",i,".b04", sep=""),
+              paste(admb,"s",i,".r04", sep=""),
+              paste(admb,"s",i,".p05", sep=""),
+              paste(admb,"s",i,".b05", sep=""),
+              paste(admb,"s",i,".r05", sep=""),
+              paste(admb,"s",i,".p06", sep=""),
+              paste(admb,"s",i,".b06", sep=""),
+              paste(admb,"s",i,".r06", sep=""),
+              paste(admb,"s",i,".par", sep=""),
+              paste(admb,"s",i,".bar", sep=""),
+              paste(admb,"s",i,".eva", sep=""),
+              paste(admb,"s",i,".cor", sep=""),
+              paste(admb,"s",i,".log", sep=""),
+              paste(admb,"s",i,".tpl", sep=""),
+              paste(admb,"s",i,".exe", sep=""))
+  
+  }
+  
+```
+
+
+
+
+
+
+
+```{r variables,echo=T}
+
+Carpeta<-"/Sensibilidad_al_update_junio21"
+  dir<-paste(dir.0,Carpeta,sep="")
+
+setwd(dir)
+admb<-"MTT0920"
+#######################################################################################
+
+years       <- rep1$Years
+nyears      <- length(years)
+retros      <- seq(1,8)
+nretros     <- length(retros)
+
+                      
+retroR      <- matrix(0,nrow=nyears,ncol=nretros)
+retroBD     <- matrix(0,nrow=nyears,ncol=nretros)
+retroBT     <- matrix(0,nrow=nyears,ncol=nretros)
+retroF      <- matrix(0,nrow=nyears,ncol=nretros)
+
+for(i in 1:(nretros-3)){
+  rep <- reptoRlist(paste(admb,"s",i,".rep",sep=""))
+  retroR[,i]  <- c(rep$Reclutamiento,NA)
+  retroBD[,i] <- c(rep$Biomasa_desovante,NA)
+  retroBT[,i] <- c(rep$Biomasa_total,NA)
+  retroF[,i]  <- c(rep$F,NA) 
+}
+
+ for(i in 6:(nretros)){
+  rep <- reptoRlist(paste(admb,"s",i,".rep",sep=""))
+  retroR[,i]  <- c(rep$Reclutamiento)
+  retroBD[,i] <- c(rep$Biomasa_desovante)
+  retroBT[,i] <- c(rep$Biomasa_total)
+  retroF[,i]  <- c(rep$F) 
+ }
+
+# Diferencia relativa con caso base actual 
+    rel.diff.r   <- matrix(NA, nrow=nyears, ncol=(nretros))
+    rel.diff.ssb <- matrix(NA, nrow=nyears, ncol=(nretros))
+    rel.diff.bt  <- matrix(NA, nrow=nyears, ncol=(nretros))
+    rel.diff.f   <- matrix(NA, nrow=nyears, ncol=(nretros))
+
+    for(j in 1:nretros){
+      rel.diff.r[,j]   <- (retroR[,(j)]-retroR[,1])/retroR[,1]
+      rel.diff.ssb[,j] <- (retroBD[,(j)]-retroBD[,1])/retroBD[,1]
+      rel.diff.bt[,j] <- (retroBT[,(j)]-retroBT[,1])/retroBT[,1]
+      rel.diff.f[,j]   <- (retroF[,(j)]-retroF[,1])/retroF[,1]
+    }
+    
+    
+```
+
+
+
+```{r}
+
+datR <- data.frame(years=years,
+                   S1=rel.diff.r[,1],
+                   S2=rel.diff.r[,2],
+                   S3=rel.diff.r[,3],
+                   S4=rel.diff.r[,4],
+                   S5=rel.diff.r[,5],
+                   S6=rel.diff.r[,6],
+                   S7=rel.diff.r[,7],
+                   S8=rel.diff.r[,8])%>% 
+         mutate(Series=rep("Reclutamientos",nyears))%>%
+         melt(id.var=c('years', 'Series'))
+
+datBT <- data.frame(years=years,
+                   S1=rel.diff.bt[,1],
+                   S2=rel.diff.bt[,2],
+                   S3=rel.diff.bt[,3],
+                   S4=rel.diff.bt[,4],
+                   S5=rel.diff.bt[,5],
+                   S6=rel.diff.bt[,6],
+                   S7=rel.diff.bt[,7],
+                   S8=rel.diff.bt[,8])%>% 
+         mutate(Series=rep("Biomasa_total",nyears))%>%
+         melt(id.var=c('years', 'Series'))
+
+datBD <- data.frame(years=years,
+                   S1=rel.diff.ssb[,1],
+                   S2=rel.diff.ssb[,2],
+                   S3=rel.diff.ssb[,3],
+                   S4=rel.diff.ssb[,4],
+                   S5=rel.diff.ssb[,5],
+                   S6=rel.diff.ssb[,6],
+                   S7=rel.diff.ssb[,7],
+                   S8=rel.diff.ssb[,8])%>% 
+         mutate(Series=rep("Biomasa_desovante",nyears))%>%
+         melt(id.var=c('years', 'Series'))
+
+datF <- data.frame(years=years,
+                   S1=rel.diff.f[,1],
+                   S2=rel.diff.f[,2],
+                   S3=rel.diff.f[,3],
+                   S4=rel.diff.f[,4],
+                   S5=rel.diff.f[,5],
+                   S6=rel.diff.f[,6],
+                   S7=rel.diff.f[,7],
+                   S8=rel.diff.f[,8])%>% 
+         mutate(Series=rep("Mortalidad_por_pesca",nyears))%>%
+         melt(id.var=c('years', 'Series'))
+
+data <- data.frame(rbind(datR,datBT,datBD,datF)) 
+
+
+
+```
+
+
+```{r Fig27_sensibilidad,echo=T, message=FALSE, warning=FALSE, include=T, fig.align="center", fig.height=6, fig.width=8,fig.path=dir.Fig,dev=fig}
+#######################################################################################
+# GRAFICAS
+#######################################################################################
+f1<- ggplot(data %>% filter(Series=="Reclutamientos"),
+            aes(years,value)) + 
+     geom_line(aes(colour=variable), size=0.3)+
+     labs(x = '', y = 'Diferencia relativa',colour='Asesorías')  +
+     scale_x_continuous(breaks = seq(from = 1990, to = 2021, by = 5)) +
+     scale_colour_manual(values=seq(1,8,1))+
+     theme_bw(base_size=9) + 
+     ggtitle('Reclutamientos')+
+     theme(plot.title = element_text(hjust = 0.5),legend.position="none")
+
+f2<- ggplot(data %>% filter(Series=="Biomasa_total"),
+            aes(years,value)) + 
+     geom_line(aes(colour=variable), size=0.3)+
+     labs(x = '', y = 'Diferencia relativa',colour='Asesorías')  +
+     scale_x_continuous(breaks = seq(from = 1990, to = 2021, by = 5)) +
+     scale_colour_manual(values=seq(1,8,1))+
+     theme_bw(base_size=9) + 
+     ggtitle('Biomasa total')+
+     theme(plot.title = element_text(hjust = 0.5),legend.position="none")
+
+f3<- ggplot(data %>% filter(Series=="Biomasa_desovante"),
+            aes(years,value)) + 
+     geom_line(aes(colour=variable), size=0.3)+
+     labs(x = '', y = 'Diferencia relativa',colour='Asesorías')  +
+     scale_x_continuous(breaks = seq(from = 1990, to = 2021, by = 5)) +
+     scale_colour_manual(values=seq(1,8,1))+
+     theme_bw(base_size=9) + 
+     ggtitle('Biomasa desovante')+
+     theme(plot.title = element_text(hjust = 0.5),legend.position="left")
+
+f4<- ggplot(data %>% filter(Series=="Mortalidad_por_pesca"),
+            aes(years,value)) + 
+     geom_line(aes(colour=variable), size=0.3)+
+     labs(x = '', y = 'Diferencia relativa',colour='Asesorías')  +
+     scale_x_continuous(breaks = seq(from = 1990, to = 2021, by = 5)) +
+     scale_colour_manual(values=seq(1,8,1))+
+     theme_bw(base_size=9) + 
+     ggtitle('Mortalidad por pesca')+
+     theme(plot.title = element_text(hjust = 0.5),legend.position="none")
+
+(f1/f2) | (f3/f4)
+```
+
+```{r tabla1,echo=T}
+
+kable(data.frame(indicador=rep("Rt",nyears),years=years,retroR))
+
+```
+
+
+```{r tabla2,echo=T}
+
+kable(data.frame(indicador=rep("BT",nyears),years=years,retroBT))
+
+```
+
+
+```{r tabla3,echo=T}
+
+kable(data.frame(indicador=rep("BD",nyears),years=years,retroBD))
+
+```
+
+
+```{r tabla4,echo=T}
+
+kable(data.frame(indicador=rep("F",nyears),years=years,retroF))
+
+```
