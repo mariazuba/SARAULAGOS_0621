@@ -1,0 +1,145 @@
+---
+title: "ANEXO II"
+subtitle: "Proceso de actualización de datos de entrada al modelo de evaluación de stock"
+lang: es
+output: pdf_document
+toc: TRUE
+header-includes:
+- \usepackage{draftwatermark}
+- \SetWatermarkText{}
+- \usepackage{fancyhdr}
+- \usepackage{graphicx}
+- \usepackage{parskip}
+- \usepackage{caption}
+- \captionsetup[table]{name=\textbf{Tabla},labelsep=period}
+- \captionsetup[figure]{name=\textbf{Figura},labelsep=period}
+- \captionsetup{justification=justified,format=plain,font=small,labelfont=bf,margin=30pt}
+- \pagestyle{fancy}
+- \usepackage{geometry}
+- \geometry{top=1.5cm, bottom=1cm, left=2.5cm, right=2.5cm}
+- \usepackage{helvet}
+- \renewcommand{\familydefault}{\sfdefault}
+
+- \newcommand{\sietepuntos}{\fontsize{7pt}{\baselineskip}\selectfont}
+- \newcommand{\cincopuntos}{\fontsize{6pt}{\baselineskip}\selectfont}
+
+- \addtolength{\headheight}{4.5\baselineskip}
+- \setlength{\headheight}{70pt}
+- \setlength{\footskip}{5pt}
+- \setlength{\textheight}{658pt}
+- \fancyhead[CO,CE]{\includegraphics[height=1.5cm]{logoifop.png}\\ \sietepuntos INSTITUTO DE FOMENTO PESQUERO / DIVISION INVESTIGACION PESQUERA}
+- \fancyhead[LO,LE]{ }
+- \fancyhead[RO,RE]{ }
+- \renewcommand{\headrulewidth}{0.5pt}
+- \fancyfoot[C]{\cincopuntos \thepage \\ \vspace{-0.2cm} ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ \\ \vspace{-0.2cm} \cincopuntos CONVENIO DE DESEMPEÑO 2020 IFOP/SUBSECRETARÍA DE ECONOMíA Y EMT \\ \vspace{-0.1cm} INFORME FINAL. SARDINA AUSTRAL, REGIÓN DE LOS LAGOS, 2021. \textbf{ANEXO II}}
+---
+
+\pagebreak
+
+## 1. Contexto
+
+\quad
+
+Cada proceso de revisión de CBA involucra la actualización y/o supuestos de datos para evaluar el impacto en las variables de estado asociado a la incorporación incremental de piezas de información. Al respecto, la actualización de datos de la asesoría actual corresponde principalmente a la información de la flota del año calendario 2019 (desembarques, composición de tallas y CPUE). Para el año 2020 se asume una captura igual a la CBA inicial (caso 4) recomendada por el CCT-PP, estructura de tallas a mayo 2020 (caso 5) y crucero de evaluación directa 2020 (caso 6) (**Tabla 12**).
+
+## 2. Actualización de datos
+
+\quad
+
+En la \textbf{Tabla \ref{Tab1}} se comparan las fuentes de información utilizadas en asesoría científica realizada en septiembre del 2020 y la actual. Ambas asesorías tienen como objetivo la recomendación de captura biológicamente aceptable (CBA) para el año 2021. En términos de datos, las diferencias entre la última evaluación (septiembre 2020) y esta nueva revisión (junio 2021) corresponde a la actualización de los desembarques y estructuras de tallas provenientes de las capturas para el año 2020 y la estandarización de las tasas de capturas de la flota artesanal para el mismo año. Además, se incorporan los resultados del crucero de evaluación hidroacústico de la sardina austral de la Región de Los Lagos realizado en abril-mayo de 2021.
+
++--------------------------------+--------------------------+--------------------------+
+| Datos de entrada al modelo     | CBA inicial              | CBA final                |
++================================+:========================:+:========================:+
+| Estructura temporal            | 2002 - 2020              | 2002-2021                |
++--------------------------------+--------------------------+--------------------------+
+| Desembarques                   | 2002 - 2019 +            | 2002 - 2020 +            |
+|                                |                          |                          |
+|                                | supuesto de captura 2020 | supuesto de captura 2021 |
++--------------------------------+--------------------------+--------------------------+
+| CPUE                           | 2006 - 2019              | 2006 - 2020              |
++--------------------------------+--------------------------+--------------------------+
+| Biomasa Crucero hidroacústicos | 2006 - 2020              | 2006 - 2021              |
++--------------------------------+--------------------------+--------------------------+
+| Composición de tallas flota    | 2006 - 2020 (parcial)    | 2006 - 2020              |
++--------------------------------+--------------------------+--------------------------+
+| Composición de tallas cruceros | 2006 - 2020              | 2006 - 2021              |
++--------------------------------+--------------------------+--------------------------+
+| Pesos medios a la talla        | constante                | constante                |
++--------------------------------+--------------------------+--------------------------+
+| Madurez sexual a la talla      | constante                | constante                |
++--------------------------------+--------------------------+--------------------------+
+| Mortalidad natural             | constante                | constante                |
++--------------------------------+--------------------------+--------------------------+
+| Proyección del reclutamiento   | 1 año calendario         | No se proyecta           |
++--------------------------------+--------------------------+--------------------------+
+
+: \label{Tab1} Información relevante para el cálculo de CBA 2021 en las dos etapas de estimación.
+
+La información actualizada en la presente evaluación es presentada en la **Figura 1**. El desembarque total del año 2020 fue un 8 % menor que el supuesto en septiembre del 2020. La CPUE estandarizada muestra que el rendimiento de la flota artesanal durante el año 2020 fue levemente inferior (\<5 %) que el año anterior. Se incorpora el último estimado de biomasa desovante proveniente del estudio de evaluación del stock desovante por el Método de Producción Diaria de Huevos. Este índice cuenta con 6 años de observaciones (2015-2020), serie que evidencia una tendencia creciente de la biomasa desovante para la anchoveta centro-norte. El último año, el estudio estimó un aumento de 6 % respecto del año anterior (\~135 mil t). La incorporación de la información biológica no genera cambios notables en el vector de peso medio a la talla de la población de anchoveta, el cual es construido a partir de la serie histórica.
+
+La composición de tallas observadas por la flota comercial durante el 2020, es actualizada con la incorporación de los ejemplares capturados durante el segundo semestre. En este caso se mantiene la estructura observada durante la primera mitad del año, con una moda principal en 13 cm de LT **Figura 2**.
+
+Para el año 2021, se cuenta con los resultados del crucero de evaluación acústica desde el cual se obtiene un estimado de la abundancia y biomasa a la talla presentes durante el mes de febrero. La composición de tallas muestra un rango de distribución de ejemplares entre 5,5 y 17,5 cm de LT, con estructura multimodal y moda principal en 8,5 cm de LT. Modas secundarias se observan en los 11 y 14,5 cm de LT. En términos de biomasa, el crucero estimó 216 mil t de anchoveta en la zona centro norte, cifra 33 % inferior respecto al año anterior y 64 % menor respecto al 2019, año con la cifra más alta observada por los cruceros en la historia de la pesquería. No obstante, el nivel de biomasa se mantiene por sobre la media histórica en un 11 % (**Figura 3**).
+
+```{=tex}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figuras/Fig1_anexoII-1.pdf}
+\caption{Comparación entre los datos utilizados en la evaluación anterior y la actual para el stock de la sardina austral de la Región de Los Lagos. Se actualiza información para el año 2020.}
+\label{Fig1}
+\end{figure}
+```
+\pagebreak
+
+```{=tex}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig2_anexoII-1.pdf}
+\caption{Composición de tallas provenientes de las capturas de sardina austral de la Región de Los Lagos, año 2020. Se compara la información utilizada en la evaluación anterior y actual.}
+\label{Fig2}
+\end{figure}
+```
+\vspace{0.5cm}
+
+```{=tex}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig3_anexoII-1.pdf}
+\caption{Proporción de las tallas observadas por el crucero acústico 2021, incorporada en la actual evaluación del stock de la sardina austra de la Región de Los Lagos.}
+\label{Fig3}
+\end{figure}
+```
+\pagebreak
+
+## 3. Descripción del modelo base y procesos involucrados en la revisión de junio 2021.
+
+\quad
+
+Los casos más relevantes de comparar son el base septiembre 2019 (caso 0), el completo a diciembre 2019 (caso 3) y el más actualizado de junio 2020 (caso 5). Respecto a la estimación de los índices de abundancia (**Tabla 13**), se aprecia que le mayor efecto es sobre el valor del índice acústico estimado. Al actualizar la información a diciembre, el nivel de biomasa del crucero estimada para el 2019 disminuye desde 48,3 mil t. hasta 44,9 mil t. Otro aspecto para analizar es la reducción en la estimación del índice acústico del año 2020 (caso 4 vs caso 5). Al incorporar información de la estructura de longitudes la flota de los primeros meses del 2020, el índice estimado se reduce manera importante desde 63 mil t hasta 49,4 mil t. No obstante, el efecto más relevante es el fuerte incremento en la biomasa estimada (Bcru2020) debido a la incorporación del ultimo crucero de abril/mayo 2020 (caso 6).
+
+En relación a las variables poblacionales, la **Tabla 14** muestra que el reclutamiento del 2020, estimado por el modelo de evaluación, se reduce drásticamente cuando se incorpora la estructura de longitudes de los primeros meses del año en curso (caso 5). Sin embargo, el efecto más importante se aprecia con la incorporación del ultimo crucero (caso 6), que reduce la F a menos de la mitad y aumenta la BD a más del doble respecto del reporte de septiembre (caso 0). Finalmente, el efecto que genera la actualización de datos en la determinación del estatus (**Tabla 15**), se advierte, que la incorporación de información a diciembre de 2019, empeora condición del recurso. El índice de reducción del stock (BD/BD~RMS~) disminuye desde 0.65 (caso 0) hasta 0.60 (caso 3) y la mortalidad por pesca respecto de la referencia (F/F~RMS~) incrementa desde 1,32 hasta 1,49. Lo contrario ocurre cuando se actualiza la información hasta junio de 2020, incorporando la información del último crucero (caso 6). Bajo este escenario de modelación, el stock se acerca hacia la zona de sub explotación alcanzando un nivel de 1,35\*BD~RMS~ y un valor de F por debajo de la referencia (F/F~RMS~ = 0,42).
+
++-------------------+-------------------------------------------------------------------+
+| Casos             | Descripción                                                       |
++:==================+:==================================================================+
+| **Actualización** | **2020**                                                          |
++-------------------+-------------------------------------------------------------------+
+| Caso 1            | Igual al caso base de septiembre 2020                             |
++-------------------+-------------------------------------------------------------------+
+| Caso 2            | Caso 1 + supuesto Desembarque 2020                                |
++-------------------+-------------------------------------------------------------------+
+| Caso 3            | Caso 2 + incorporación del descarte a la serie de desembarques    |
++-------------------+-------------------------------------------------------------------+
+| Caso 4            | Caso 3 + estructura de tallas de la flota 2020                    |
++-------------------+-------------------------------------------------------------------+
+| Caso 5            | Caso 4 + CPUE 2020                                                |
++-------------------+-------------------------------------------------------------------+
+| **Actualización** | **2021**                                                          |
++-------------------+-------------------------------------------------------------------+
+| Caso 6            | Caso 5 + Desembarque + descarte 2021                              |
++-------------------+-------------------------------------------------------------------+
+| Caso 7            | Caso 6 + Biomasa acústica y estructura de tallas del crucero 2021 |
++-------------------+-------------------------------------------------------------------+
+
+## 4. Actualización de las principales variables de estado
