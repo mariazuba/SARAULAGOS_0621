@@ -298,7 +298,7 @@ cuota<-c(40522,50872,41904,58481,30966,17693,14500,21670,18276,23848,18380,20000
 par(mfcol=c(1,1),mar=c(4,4,1,1))
 plot(year,desemb,type="h",lwd=15,ylab="Desembarques (t.)",xlab="Año",ylim=c(0,60000),xaxp=c(2000,2022,22),col="cadetblue4",cex.lab=0.8,cex.axis=0.8)
 lines(year,cuota,type="l",lwd=2,col=1)
-legend(2011,60000,c("Datos oficiales","CBA"),lwd=c(10,2),col=c("cadetblue4",1),bty="n",cex=0.8)
+legend(2011,60000,c("Datos oficiales","Cuota"),lwd=c(10,2),col=c("cadetblue4",1),bty="n",cex=0.8)
 ```
 
 
@@ -406,7 +406,7 @@ plot(year,desemb,type="h",lwd=15,ylab="Desembarques (t.)",xlab="Año",ylim=c(0,6
 lines(year,comun_austral,type="h",lwd=15,col="dimgray")
 lines(year,supuesto,type="h",lwd=15,col="goldenrod3")
 lines(year,cuota,type="l",lwd=2,col=1)
-legend(2011,60000,c("datos oficiales","supuesto s.comun/s.austral","supuesto de captura 2021","CBA"),lwd=c(10,10,10, 2),col=c("cadetblue4","dimgray","goldenrod3",1),bty="n",cex=0.8)
+legend(2011,60000,c("datos oficiales","supuesto s.comun/s.austral","supuesto de captura 2021","Cuota"),lwd=c(10,10,10, 2),col=c("cadetblue4","dimgray","goldenrod3",1),bty="n",cex=0.8)
 ```
 
 
@@ -556,10 +556,10 @@ cvCB   <-data.1$Ind[,7]
 cvcpue <-data.1$Ind[,5]
 cvdes  <-data.1$Ind[,3]
 
-ind_obs  <- cbind(c(rep0$Bcru_obs,NA),c(rep0$CPUE_obs,NA),c(rep0$Desemb_obs,NA)); ind_obs[ind_obs==0] <- NA
+ind_obs  <- cbind(rep1$Bcru_obs,rep1$CPUE_obs,rep1$Desemb_obs); ind_obs[ind_obs==0] <- NA
 colnames(ind_obs) <- c('Biomasa_Crucero', 'CPUE', 'Desembarques') 
 
-ind_jun   <- cbind(c(rep1$Bcru_pred), c(rep1$CPUE_pred), c(rep1$Desemb_pred)) 
+ind_jun   <- cbind(rep1$Bcru_pred, rep1$CPUE_pred, rep1$Desemb_pred) 
 colnames(ind_jun) <- c('Biomasa_Crucero', 'CPUE', 'Desembarques') 
 
 ind_sept <- cbind(c(rep0$Bcru_pred,NA), c(rep0$CPUE_pred,NA), c(rep0$Desemb_pred,NA))
