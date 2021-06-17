@@ -38,7 +38,7 @@ header-includes:
 -   ANEXO I: Estandarización de la CPUE de sardina austral de la Región de Los Lagos
 -   ANEXO II: Sensibilidad de la actualización de datos
 -   ANEXO III: Implementación de un Modelo con dinámica en edad e información en talla (modelo alternativo) para sardina austral de la Región de Los Lagos
--   ANEXO IV: Datos y Modelos correspondiente a la asesoría de septiembre 2020 (MTT0920) y junio 2021 (MTT0621)
+
 
 \pagebreak
 
@@ -1815,7 +1815,7 @@ El modelo base utilizado en la evaluación de stock de sardina austral, en aguas
 
  -	El estudio del año 2018, consideró una serie más larga de desembarques (desde el año 2002) y estructura de longitudes de la flota a partir del año 2005. Este escenario fue discutido y acordado en Reunión N°4 CCTPP (julio 2018) adoptando esta nueva configuración respecto del modelo base anterior.
 
- -	En el **Anexo III** del presente informe se entregan los principales resultados del modelo de evaluación alternativo (talla/edad) presentado al CCTPP en el mes agosto de 2020. 
+ -	En el **Anexo III** del presente informe se entregan los principales resultados del modelo de evaluación alternativo (talla/edad) actualizado con información a junio 2021. 
 
 
 
@@ -1823,11 +1823,15 @@ El modelo base utilizado en la evaluación de stock de sardina austral, en aguas
 
 En el contexto del Programa de Mejoramiento Continuo de la Calidad de la Asesoría Científica (PMCCAC), se establece como tarea prioritaria el desarrollo de un modelo alternativo que describa la dinámica de la sardina austral de la Región de Los Lagos en edades. La implementación de un modelo en edad cumple con el objetivo de estandarizar las metodologías utilizadas en las especies pelágicas que hoy presentan diferentes estructuras, dificultando la interpretación de los procesos que describen la dinámica de estas especies y la comparación de sus resultados. También, permite soslayar algunas de las desventajas que podría presentar un modelo con dinámica en tallas, como por ejemplo, la confusión en las estimación de parámetros debido a la dificultad para discernir entre cohortes. En **ANEXO III** de este documento se presentan las similitudes tanto en el desempeño del modelo como en las tendencias, magnitudes de las principales variables de estado, determinación de estatus, efecto de los escenarios de reclutamiento en la proyección de CBA (Hito 1 de manejo) y en la revisión de CBA (Hito 2 de manejo). Ambos modelos utilizaron la misma información de entrada y configuración.
 
-Al respecto, ambos modelos reproducen la tendencia general de los índices y no parecen mostrar diferencias importantes, excepto en la CPUE, donde el modelo alternativo, parece ajustar de mejor manera algunos años respecto del modelo base actual. El modelo alternativo parece ser más eficiente en capturar la bimodalidad en la estructura de longitudes observada durante algunos años en la flota y las fuertes modas de los cruceros acústicos. Ambos modelos de evaluación realizan un balance de todas las piezas de información para modelar la dinámica del stock. La reducción de los índices los años 2017 y 2019 producen un cambio de escala en los estimados poblacionales. El año 2020, tanto la información de la flota como del crucero sugieren escasos reclutamientos de individuos a la población. Así, en términos de ajuste, los modelos reconocen medianamente el incremento en la biomasa del stock estimado en la última evaluación directa. El análisis retrospectivo indica que la fuerte reducción (por debajo de los niveles promedio) en los índices generó cambios hacia menores valores de R~0~ (Rmed) a partir del año 2018 (posible cambio de productividad).
+Al respecto, ambos modelos reproducen la tendencia general de los índices y no parecen mostrar diferencias importantes, excepto en la CPUE, donde el modelo alternativo, tiene un  mejor ajuste en algunos años respecto del modelo base actual. El modelo alternativo es más eficiente en capturar la bimodalidad en la estructura de longitudes observada durante algunos años en la flota y las fuertes modas de los cruceros acústicos, principalmente asociado a los pulsos de reclutamiento. Ambos modelos de evaluación realizan un balance de todas las piezas de información para modelar la dinámica del stock. La reducción de los índices los años 2017 y 2019 producen un cambio de escala en los estimados poblacionales. El año 2020, tanto la información de la flota como del crucero sugieren escasos reclutamientos de individuos a la población. Así, en términos de ajuste, los modelos reconocen medianamente el incremento en la biomasa del stock estimado en la última evaluación directa. El análisis retrospectivo indica que la fuerte reducción (por debajo de los niveles promedio) en los índices generó cambios hacia menores valores de R~0~ (Rmed) a partir del año 2018 (posible cambio de productividad).
 
 Para ambos enfoques de evaluación, el stock debería ser de un tamaño menor, en términos de biomasa y abundancia, que los niveles estimados previo al año 2018. No se descarta que un posible incremento en los índices (biomasa en acústica y CPUE) en estudios futuros, junto con un incremento en los desembarques, reescalen nuevamente la biomasa que estima el modelo hacia valores más altos. Por lo tanto, es necesario realizar un estudio que permita comprobar la hipótesis de un cambio de productividad generado por posibles cambios demográficos de la población en la zona o si estos cambios en abundancia y biomasa se deben a cambios espaciales y/o temporales de la capturabilidad de la flota que se podría estar confundiendo con cambios de productividad de la población.
 
-Para corregir posibles errores de proceso del modelo es necesario evaluar estas hipótesis y de esta forma mejorar el patrón retrospectivo observado en ambos modelos de evaluación de stock de sardina austral de la Región de Los Lagos. Las variables poblacionales de biomasa, reclutamientos y mortalidad por pesca obtenidas por el modelo base y alternativo no mostraron diferencias significativas, generando las mismas tendencias y magnitudes poblacionales. Respecto a la estimación de los puntos biológicos de referencia, el valor de BD~0~ estimado por el modelo alternativo es un 13 % mayor al estimado por el modelo base, esto genera que los valores de referencia BD~RMS~ y BD~LIM~ también sean mayores en el modelo alternativo. Estas diferencias impactan levemente en los indicadores del estatus utilizados para definir la condición del recurso, principalmente en términos de BD/BD~RMS~. El nivel de F~RMS~ estimado para los últimos años de la serie es similar entre ambos modelos (0.31 modelo base y 0.30 modelo alternativo). No obstante, la utilización del supuesto de captura utilizado en cada hito de manejo genera alta incertidumbre en la condición respecto a F/F~RMS~. Como es de esperar, para la proyección de CBA, en ambos modelos el escenario de reclutamientos altos es el que genera los mayores niveles de captura. En general, los escenarios de reclutamiento impactan a un mayor rango de tallas en el modelo base, generando mayores niveles de captura. Este efecto tiene relación con el patrón de selectividad de la flota y por la amplitud del patrón de reclutamiento estimada por el modelo base. De este modo, la CBA proyectada por el modelo base es un 12 % mayor al estimado por el modelo alternativo, considerando el escenario de reclutamiento medio como referencia. Mientras que el valor de la CBA calculada para el mismo año (Hito 2) no muestra diferencias significativas entre ambos enfoques de modelación.
+Para corregir posibles errores de proceso del modelo es necesario evaluar estas hipótesis y de esta forma mejorar el patrón retrospectivo observado en ambos modelos de evaluación de stock de sardina austral de la Región de Los Lagos. Las variables poblacionales de biomasa, reclutamientos y mortalidad por pesca obtenidas por el modelo base y alternativo no mostraron diferencias significativas, generando las mismas tendencias y magnitudes poblacionales.
+
+Respecto a la estimación de los puntos biológicos de referencia, el valor de BD~0~ estimado por el modelo alternativo es un 10 % mayor al estimado por el modelo base, esto genera que los valores de referencia BD~RMS~ y BD~LIM~ también sean mayores en el modelo alternativo. Estas diferencias impactan levemente en los indicadores del estatus utilizados para definir la condición del recurso, principalmente en términos de BD/BD~RMS~. El nivel de F~RMS~ estimado para los últimos años de la serie es similar entre ambos modelos (0,31 modelo base y 0,30 modelo alternativo). No obstante, la utilización del supuesto de captura utilizado en cada hito de manejo genera alta incertidumbre en la condición respecto a F/F~RMS~. Como es de esperar, para la proyección de CBA, en ambos modelos el escenario de reclutamientos altos es el que genera los mayores niveles de captura. En general, los escenarios de reclutamiento impactan a un mayor rango de tallas en el modelo base, generando mayores niveles de captura. Este efecto tiene relación con el patrón de selectividad de la flota y por la amplitud del patrón de reclutamiento estimada por el modelo base. De este modo, la CBA proyectada por el modelo base es un 12 % mayor al estimado por el modelo alternativo, considerando el escenario de reclutamiento medio como referencia. 
+
+Mientras que el valor de la CBA actualizada del año 2020 (Hito 2) no muestra diferencias significativas entre ambos enfoques de modelación, la CBA actualizada para el año 2021 (Hito 2), el modelo alternativo estima una CBA 21 % menor al modelo base actual, considerando el percentil del 50 % como referencia. Esta diferencia se debería principalmente a la menor abundancia de peces estimada por el modelo alternativo en el rango de tallas 14,5 cm a los 17,5 cm LT (ver **ANEXO III**).
 
 \pagebreak
 
@@ -1891,74 +1895,150 @@ El PBR F~60%~, propuesto en el presente informe como un objetivo de manejo, fue 
 
 Aranis A., A. Gómez; L. Caballero; K. Walker; M. Ramírez; G. Eisele; F. Cerna; C. Valero; A. López; C. Machuca; L. Muñoz; J. Letelier; C. Toledo; V. Valdebenito y M. Albornoz. 2018. Informe Final, Programa de Seguimiento de las principales Pesquerías Pelágicas de la Zona Centro-Sur de Chile, 2017. Subsecretaría de Economía y EMT, Inst. Fom. Pesq. Valparaíso, Chile.
 
+\vspace{0.3cm}
+
 Aranis A., A. Gómez; S. Mora; L. Ossa; K. Walker; L. Caballero; G. Eisele; F. Cerna; A. López; C. Machuca; L. Muñoz; C. Valero; M. Ramírez; V. Valdebenito; C. Vera. 2014. Informe Final, Programa de Seguimiento de las Pesquerías Pelágicas Zona Centro-Sur, 2013. Subsecretaría de Economía y EMT, Inst. Fom. Pesq. Valparaíso, Chile.
+
+\vspace{0.3cm}
 
 Aranis A., Mora S., González M., Gómez A., Caballero L., Cerna F., y Muñoz G. 2012. Monitoreo de anchoveta y sardina en las aguas interiores de la X Región 2011. Pesca de Investigación. Informe Final IFOP/SUBPESCA. 202 pp.
 
+\vspace{0.3cm}
+
 Aranis A, R Meléndez, G Pequeño y F Cerna. 2007. Sprattus fuegensis en aguas interiores de Chiloé, Chile (Osteichthyes: Clupeiformes: Clupeidae). Gayana 71 (1): 102-113.
+
+\vspace{0.3cm}
 
 Bakun, A. y R.H. Parrish. 1982. Turbulence, transport, and pelagic fish in the California and Peru current systems. Rep. Calif. coop. oceanic Fish. Invest., 123: 99-112.
 
+\vspace{0.3cm}
+
 Cadigan NG y PJ Farrell. 2005. Local influence diagnostics for the retrospective problem in sequential population analysis. ICES Journal of Marine Science, 62: 256-265.
+
+\vspace{0.3cm}
 
 Cadrin SX y DS Vaughn. 1997. Retrospective analysis of virtual population estimates for Atlantic menhaden stock assessment. U.S. National Marine Fisheries Service Fishery Bulletin, 95: 445--455.
 
+\vspace{0.3cm}
+
 Caddy J y R Mahon. 1995. References point for fisheries management. FAO, Doc. Téc. Pesca. (347): 65 pp.
+
+\vspace{0.3cm}
 
 Canales TM, J Castillo, F Cerna y A Aranis. 2007. Análisis de la pesquería de sardina austral en las aguas interiores del mar de Chiloe y estimación de ctp 2007. 14 pp.
 
+\vspace{0.3cm}
+
 CAPAM. 2015. Workshop tackles best practices in treatment of multiple data sources in stock assessments. Center for the Advancement of Population Assessment Methodology. October,2015.(<https://www.nwfsc.noaa.gov/news/features/data_source_workshop/index.cfm>).
+
+\vspace{0.3cm}
 
 Castillo J, Legua J, E Molina, F Sánchez. 2019. Evaluación hidroacústica de pequeños pelágicos en aguas interiores de la X y XI Regiones, año 2019. Informe de avance. 38 pp +anexos
 
+\vspace{0.3cm}
+
 Cerna, F., Leal, E., López, A., & Plaza, G. 2014. Age, growth and natural mortality of the Patagonian sprat *Sprattus fuegensis* (Jenyns, 1842) in Chiloé inland sea, southern Chile. Lat. Am. J. Aquat. Res., 42(3), 580-587. doi:http://dx.doi.org/10.3856/vol42-issue3-fulltext-15
+
+\vspace{0.3cm}
 
 Cerna F, J Quiroz, A López y A Aranis. 2007. Edad y Crecimiento de sardina fueguina (*Sprattus fueguensis*, Jenyns, 1842) en el Mar Interior de la Isla Chiloé, Pacifico Sur-Este frente a Chile. XXVII Jornadas Ciencias del Mar. Iquique - Chile.
 
+\vspace{0.3cm}
+
 Cubillos L, C Castillo, J Paramo y A Rodríguez. 2011. Estimación de la abundancia, biomasa y distribución espacial de pequeños pelágicos en aguas interiores de la X y XI Regiónes y su relación con algunas variables ambientales, año 2010. Informe Final. 339 pp.
+
+\vspace{0.3cm}
 
 Cubillos L, A Hernández, A Sepúlveda y D Arcos. 2007. Spawning, daily egg production, and spawning stock biomass estimation for common sardine (*Strangomera bentincki*) and anchovy (*Engraulis ringens*) off central southern Chile in 2002. Fisheries Research 86 (2007):228-240.
 
+\vspace{0.3cm}
+
 Cushing, D.H. 1990. Plankton production and yearclass strength in fish populations: an update of the match/mismatch hypothesis. Adv. Mar. Biol., 26: 249-293.
+
+\vspace{0.3cm}
 
 Doubleday, G. 1976. A least squares approach to malyshg catch at age data. Res. Bull. Hnt. Com. Pdorthw. Ad. Fish. 12: 69-81. Ernst B, J Valero y O Hamel. 2015. Programa anual de revisión experta a la asesoría científica de las principales pesquerías nacionales, año 2013: sardina austral (Sprattus fuegensis). Informe Final. Proyecto N° 2013-125-FAP-20. 176 pp.
 
+\vspace{0.3cm}
+
+Ernst B, J Valero & O Hamel. 2015. Programa anual de revisión experta a la asesoría científica de las principales pesquerías nacionales, año 2013: sardina austral (\textit{Sprattus fuegensis}). Informe Final. Proyecto N° 2013-125-FAP-20. 176 pp.
+
+\vspace{0.3cm}
+
 FAO. 1996. Orientaciones técnicas para la pesca responsible. N°2. Enfoque precautorio para la pesca de captura y la introducción de especies. Organización de las naciones unidas para la agricultura y la alimentación. Roma. 64 pp.
+
+\vspace{0.3cm}
 
 Fournier, D.A., H.J. Skaug, J. Ancheta, J. Ianelli, A. Magnusson, M.N. Maunder, A. Nielsen, and J. Sibert. 2012. AD Model Builder: using automatic differentiation for statistical inference of highly parameterized complex non linear models. Optim. Methods Softw. 27:233-249.
 
+\vspace{0.3cm}
+
 Francis, R. 2011. Data weighting in statistical fisheries stock assessment models. Canadian Journal of Fisheries and Aquatic Sciences. 68:1124 -1138.
+
+\vspace{0.3cm}
 
 Galleguillos R, S Ferrada, C Canales, C Hernández, M Oliva, MT González, L Cubillos, E Niklitschek y P Toledo. 2012. "Determinación de unidades poblacionales de sardina austral entre la X y XII Regiónes de Chile": Proyecto FIP 2010-17. Informe Final. 171 pp.
 
+\vspace{0.3cm}
+
 Herrera G, E Tarifeño y M Orellana. 1987. Descripción de huevos y primeras fases larvales de sardina común (*Strangomera bentincki*) y del machuelo (*Ethmidium maculatum*). Biología Pesquera 16: 107-113.
+
+\vspace{0.3cm}
 
 Landaeta M, C Bustos, P Palacios, P Rojas y F Balbontín. 2011. Distribución del ictioplancton en la Patagonia austral de Chile: potenciales efectos del deshielo de Campos de Hielo Sur. Latin American Journal of Aquatic Research. 39(2): 236-249.
 
+\vspace{0.3cm}
+
 Leal E, MJ Zúñiga. 2020. PRIMER INFORME. Estatus y posibilidades de explotación biológicamente sustentables de sardina austral, Región de Los Lagos, año 2021. Subsecretaría de Economía y EMT. Instituto de Fomento Pesquero (IFOP), Valparaíso, Chile. 80 p + Anexos.
+
+\vspace{0.3cm}
 
 Leal E. 2019. Estatus y posibilidades de explotación biológicamente sustentables de los principales recursos pesqueros nacionales, 2019: Sardina austral. Informe 2 Consolidado: Estatus y CBA (Junio 2019). Convenio de Desempeño 2018 Subsecretaría de Economía y EMT / IFOP, Chile: 60 pág. + Anexos.
 
+\vspace{0.3cm}
+
 Leal E, TM Canales, A Aranis y M González. 2011. Actividad reproductiva y longitud de madurez de sardina austral Sprattus fuegensis, en el mar interior de Chiloé, Chile. Revista de Biología Marina y Oceanografía. 46 (1): 43-51.
+
+\vspace{0.3cm}
 
 Maunder MN y AD Langley. 2004. Integrating the standardization of catch-per unit-of-effort into stock assessment models: testing a population dynamics model and using multiple data types. Fisheries Research. 70: 389--395.
 
-McAllister, M. K. and J. N. Ianelli, (1997). Bayesian stock assessment using catch-age data and the sampling-importance resampling algorithm. Canad. J. Fish. Aquat. Sci. 54, 284-300. \vspace{0.1 cm}
+\vspace{0.3cm}
+
+McAllister, M. K. and J. N. Ianelli, (1997). Bayesian stock assessment using catch-age data and the sampling-importance resampling algorithm. Canad. J. Fish. Aquat. Sci. 54, 284-300.
+
+\vspace{0.3cm}
 
 McCullagh P y J Nelder. 1989. Generalized linear models. Chapman and hall. London. 511 pp.
 
+\vspace{0.3cm}
+
 Mohn, R. 1999. The retrospective problem in sequential population analysis: An investigation using cod fishery and simulated data. ICES Journal of Marine Science, 56: 473-488.
+
+\vspace{0.3cm}
 
 Neira S, Arancibia H, Barros M, Castro L, Cubillos L, Niklitschek E, Alarcón R. 2014. Rol ecosistémico de sardina austral e impacto de su explotación en la sustentabilidad de otras especies de interés comercial. Informe Final Proyecto FIP 2012-15 (agosto). Universidad de Concepción, 242 pp + Anexos.
 
+\vspace{0.3cm}
+
 Niklitschek E, J Cornejo, E Hernández, P Toledo, R Merino, A Lafon y A Meza. 2009. Evaluación Hidroacústica de Sprattus fueguensis en los canales interiores de la Región de Los Lagos. Informe Final. 31 pp.
+
+\vspace{0.3cm}
 
 Payá I, C Canales, D Bucarey, M Canales, F Contreras, F Espíndola, E Leal, C Montenegro, J Quiroz y R. Tascheri. 2014. Revisión de los puntos biológicos de referencia (Rendimiento Máximo Sostenible) en las pesquerías nacionales." Primer Taller internacional. Informe de Avance 1. Subsecretaría de Economía - IFOP. 32 pp.+ 4 Anexos.
 
+\vspace{0.3cm}
+
 Pikitch E., P. Boersma, I. Boyd, O. Conover, P. Cury, T. Essington, S. Heppell, E. Houde, M. Mangel, D. Pauly, E. Plagányi, K. Sainsbury y R. Steneck. 2012. Little Fish, Big Impact: Managing a Crucial Link in Ocean Food Webs. Lenfest Ocean Program. Washington, DC. 108 pp.
+
+\vspace{0.3cm}
 
 Punt, A. and R.B. Kennedy. 1997. Population modelling of Tasmanian rock lobster, *Jasus edwardsii*, resources. Mar. Freshwater Res., 48: 967-980.
 
+\vspace{0.3cm}
+
 Sullivan P. J., H.L. Lai y V.F. Gallucci. 1990. A catch-at-length analysis that incorporates a stochastic model of growth. Can. J. Fish. Aquat. Sci. 47: 184-198.
+
+\vspace{0.3cm}
 
 Thompson, W. y Bell F. 1984. Biological statistics of the Pacific halibut fishery. 2. Effect of changes in intensity upon total yield and yield per unit of gear. Report Internal Fisheries (*Pacific Halibut*) Commission 8: 49.
