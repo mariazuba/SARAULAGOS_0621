@@ -574,3 +574,10 @@ kable(data.frame(indicador=rep("BD_BDrms",nyears),years=years,retroBD_BDrms))
 kable(data.frame(indicador=rep("BD_BDrms.diff",nyears),years=years,round(rel.diff.bd_bdrms,2)))
 
 ```
+
+
+```{r tabla6,echo=T}
+kable(base1)
+
+```
+
