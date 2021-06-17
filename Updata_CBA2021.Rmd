@@ -589,7 +589,7 @@ f1 <- ggplot(base1 %>% filter(Asesoría!='observado', variable=='Biomasa_Crucero
                                               variable=='Biomasa_Crucero'),
         aes(ymin = value*exp(-1.96*cvCB)*10^-6, 
             ymax = value*exp(1.96*cvCB)*10^-6), color = 'gray30') +
-        scale_x_continuous(breaks = seq(from = 1985, to = 2020, by = 5)) +
+        scale_x_continuous(breaks = seq(from = 1985, to = 2021, by = 5)) +
         labs(title='Biomasa de Crucero', x = 'Año', y = 'Toneladas (millones)') +
         theme_bw(base_size=9)
 
@@ -604,7 +604,7 @@ f2 <- ggplot(base1 %>% filter(Asesoría!='observado', variable=='CPUE'),
                                               variable=='CPUE'),
         aes(ymin = value*exp(-1.96*cvcpue)*10^-6, 
             ymax = value*exp(1.96*cvcpue)*10^-6), color = 'gray30') +
-        scale_x_continuous(breaks = seq(from = 1985, to = 2020, by = 5)) +
+        scale_x_continuous(breaks = seq(from = 1985, to = 2021, by = 5)) +
         labs(title='CPUE', x = 'Año', y = 'toneladas/viaje') +
         theme_bw(base_size=9)
 
@@ -618,7 +618,7 @@ f3 <- ggplot(base1 %>% filter(Asesoría!='observado', variable=='Desembarques'),
                                               variable=='Desembarques'),
         aes(ymin = value*exp(-1.96*cvdes)*10^-3, 
             ymax = value*exp(1.96*cvdes)*10^-3), color = 'gray30') +
-        scale_x_continuous(breaks = seq(from = 1985, to = 2020, by = 5)) +
+        scale_x_continuous(breaks = seq(from = 1985, to = 2021, by = 5)) +
         labs(title='Desembarques', x = 'Año', y = 'Toneladas (miles)') +
         theme_bw(base_size=9)
 
