@@ -117,6 +117,7 @@ A partir del año 2013, el número de registros disminuyó considerablemente deb
 +-------------+-------------+-------------+-------------+-------------+
 | 2020        | 21          | 60          | 101         | 182         |
 +-------------+-------------+-------------+-------------+-------------+
+
 : \label{Tab1anexo} Número de registros provenientes de la bitácora por año y zona, zona norte (A, B, C); zona centro (D, E, F); zona sur (G, H, I). \* No se muestran los años 2005 y 2006.
 
 \pagebreak
@@ -277,6 +278,7 @@ Para el modelo con interacciones, la variabilidad de cada factor y su comportami
 +----------+------+-------------+---------------+
 | Año:zona | 25   |             | 1.1%          |
 +----------+------+-------------+---------------+
+
 : \label{Tab3anexo}  Tabla de análisis para el GLM de los datos de captura de sardina austral a través de 2 configuraciones para el modelo tweedie
 
 
