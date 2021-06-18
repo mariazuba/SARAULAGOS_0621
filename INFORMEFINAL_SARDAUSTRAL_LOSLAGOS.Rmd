@@ -856,7 +856,7 @@ Se enfatiza en el hecho que la $B_{RMS}$ es el punto de referencia de biomasa de
 
 \quad
 
-Considerando los parámetros de crecimiento y mortalidad natural reportados para la especie, los Puntos Biológicos de Referencia (PBR) son estimados a partir de un modelo de Biomasa Desovante por Recluta (BDPR). El modelo proyecta en el tiempo la distribución de tallas del reclutamiento sujeto a valores constantes de mortalidad total (Z) y considerando el crecimiento contenido en la matriz de transición (Sullivan *et al*.,1990). Este análisis se realiza usando los modelos basados en Thompson y Bell (1984) y supone que el desove es a mitad de año:
+Considerando los parámetros de crecimiento y mortalidad natural reportados para la especie, los Puntos Biológicos de Referencia (PBR) son estimados a partir de un modelo de Biomasa Desovante por Recluta (BDPR). El modelo proyecta en el tiempo la distribución de tallas del reclutamiento sujeto a valores constantes de mortalidad total (Z) y considerando el crecimiento contenido en la matriz de transición (Sullivan *et al*.,1990). Este análisis se realiza usando los modelos basados en Thompson y Bell (1934) y supone que el desove es a mitad de año:
 
 \pagebreak
 
@@ -1893,7 +1893,7 @@ El PBR F~60%~, propuesto en el presente informe como un objetivo de manejo, fue 
 
 # 6. REFERENCIAS BIBLIOGRÁFICAS
 
-Aranis A., A. Gómez; L. Caballero; K. Walker; M. Ramírez; G. Eisele; F. Cerna; C. Valero; A. López; C. Machuca; L. Muñoz; J. Letelier; C. Toledo; V. Valdebenito y M. Albornoz. 2018. Informe Final, Programa de Seguimiento de las principales Pesquerías Pelágicas de la Zona Centro-Sur de Chile, 2017. Subsecretaría de Economía y EMT, Inst. Fom. Pesq. Valparaíso, Chile.
+Aranis A., A. Gómez, L. Caballero, K. Walker; M. Ramírez, G. Eisele, F. Cerna, C. Valero, A. López, C. Machuca, L. Muñoz, J. Letelier, C. Toledo, V. Valdebenito y M. Albornoz. 2018. Informe Final, Programa de Seguimiento de las principales Pesquerías Pelágicas de la Zona Centro-Sur de Chile, 2017. Subsecretaría de Economía y EMT, Inst. Fom. Pesq. Valparaíso, Chile.
 
 \vspace{0.3cm}
 
@@ -1957,7 +1957,7 @@ Cushing, D.H. 1990. Plankton production and yearclass strength in fish populatio
 
 \vspace{0.3cm}
 
-Doubleday, G. 1976. A least squares approach to malyshg catch at age data. Res. Bull. Hnt. Com. Pdorthw. Ad. Fish. 12: 69-81. Ernst B, J Valero y O Hamel. 2015. Programa anual de revisión experta a la asesoría científica de las principales pesquerías nacionales, año 2013: sardina austral (Sprattus fuegensis). Informe Final. Proyecto N° 2013-125-FAP-20. 176 pp.
+Doubleday, G. 1976. A least squares approach to malyshg catch at age data. Res. Bull. Hnt. Com. Pdorthw. Ad. Fish. 12: 69-81. 
 
 \vspace{0.3cm}
 
@@ -2041,4 +2041,4 @@ Sullivan P. J., H.L. Lai y V.F. Gallucci. 1990. A catch-at-length analysis that 
 
 \vspace{0.3cm}
 
-Thompson, W. y Bell F. 1984. Biological statistics of the Pacific halibut fishery. 2. Effect of changes in intensity upon total yield and yield per unit of gear. Report Internal Fisheries (*Pacific Halibut*) Commission 8: 49.
+Thompson, W. y Bell F. 1934. Biological statistics of the Pacific halibut fishery. 2. Effect of changes in intensity upon total yield and yield per unit of gear. Report Internal Fisheries (*Pacific Halibut*) Commission 8: 49.
