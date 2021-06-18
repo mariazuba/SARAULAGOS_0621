@@ -185,8 +185,8 @@ El análisis gráfico preliminar, realizado para establecer el tipo de distribuc
 ```{=tex}
 \begin{figure}[htb!]
 \centering
-\includegraphics[width=12.5cm,height=8.5cm]{Figuras/Figura7_anexo1.png}
-\caption{Distribución de frecuencia de la CPUE en escala real y logarítmica. a). Total de viajes registrados. b). Solo viajes con pesca.}
+\includegraphics[width=16cm,height=12cm]{Figuras/Figura7_anexo1.png}
+\caption{Distribución de frecuencia de la CPUE en escala real y logarítmica. Panel superior: total de viajes registrados, Panel Inferior: Solo viajes con pesca.}
 \label{Fig7anexo}
 \end{figure}
 ```
@@ -203,13 +203,13 @@ El análisis gráfico preliminar, realizado para establecer el tipo de distribuc
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=16cm,height=12cm]{Figuras/Figura9_anexo1.png}
-\caption{Análisis de los residuos en la estandarización de la CPUE a través de: a) modelo Gamma y b) Poisson compuesta.}
+\caption{Análisis de los residuos en la estandarización de la CPUE a través de, Panel superior: modelo Gamma y Panel Inferior: Poisson compuesta.}
 \label{Fig9anexo}
 \end{figure}
 ```
 
 \vspace{0.5cm}
-Los resultados de los modelos Delta Gamma (Binomial+Gamma) y Tweedie, muestran amplia similitud en sus tendencias y en menor grado en su magnitud. La tendencia de ambos modelos, es concordante con la señal del índice nominal, excepto el año 2015, donde la CPUE nominal muestra un incremento respecto del año 2014. El año 2016 ambas señales (nominal y estandarizadas) disminuyen y los años 2017 y 2018 muestra los valores más bajos de la serie, aunque también coinciden en un incremento relativo durante el 2019 (\textbf{Figura \ref{Fig10anexo}}).
+Los resultados de los modelos Delta Gamma (Binomial+Gamma) y Tweedie, muestran amplia similitud en sus tendencias y en menor grado en su magnitud. La tendencia de ambos modelos, es concordante con la señal del índice nominal, excepto el año 2015, donde la CPUE nominal muestra un incremento respecto del año 2014. El año 2016 ambas señales (nominal y estandarizadas) disminuyen y los años 2017 y 2018 muestra los valores más bajos de la serie, aunque también coinciden en un incremento relativo durante el 2019 y un importante aumento en el rendimiento del último año (\textbf{Figura \ref{Fig10anexo}}).
 \pagebreak
 
 ```{=tex}
