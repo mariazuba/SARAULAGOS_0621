@@ -1,0 +1,270 @@
+---
+title: Revisión del Estatus y  Captura Biológicamente Aceptable 2021 de sardina austral de la Región de Los Lagos
+author: "María José Zúñiga, Doris Bucarey, María Cristina Pérez"
+date: 'Sesión N°4: 01-07-2021'
+output:
+   beamer_presentation:
+    colortheme: rose
+    theme: Antibes
+subtitle: Comité Científico de Pesquerías de Pequeños Pelágicos
+institute: INSTITUTO DE FOMENTO PESQUERO
+---
+
+# Procedimiento de Actualización del Estatus y CBA
+\tiny
+
++--------------------------------+--------------------------+--------------------------+
+| Datos de entrada al modelo     | CBA inicial              | CBA final                |
++================================+:========================:+:========================:+
+| Estructura temporal            | 2002 - 2020              | 2002-2021                |
++--------------------------------+--------------------------+--------------------------+
+| Desembarques                   | 2002 - 2019 +            | 2002 - 2020 +            |
+|                                |                          |                          |
+|                                | supuesto de captura 2020 | supuesto de captura 2021 |
++--------------------------------+--------------------------+--------------------------+
+| CPUE                           | 2006 - 2019              | 2006 - 2020              |
++--------------------------------+--------------------------+--------------------------+
+| Biomasa Crucero hidroacústicos | 2006 - 2020              | 2006 - 2021              |
++--------------------------------+--------------------------+--------------------------+
+| Composición de tallas flota    | 2006 - 2020 (parcial)    | 2006 - 2020              |
++--------------------------------+--------------------------+--------------------------+
+| Composición de tallas cruceros | 2006 - 2020              | 2006 - 2021              |
++--------------------------------+--------------------------+--------------------------+
+| Pesos medios a la talla        | constante                | constante                |
++--------------------------------+--------------------------+--------------------------+
+| Madurez sexual a la talla      | constante                | constante                |
++--------------------------------+--------------------------+--------------------------+
+| Mortalidad natural             | constante                | constante                |
++--------------------------------+--------------------------+--------------------------+
+| Proyección del reclutamiento   | 1 año calendario         | No se proyecta           |
++--------------------------------+--------------------------+--------------------------+
+
+: \label{Tab1} Información relevante para el cálculo de CBA 2021 en las dos etapas de estimación.
+
+
+# Datos de entrada de sardina austral Los Lagos
+
+Datos actualizados 
+
+-   Desembarque 2020
+-   Descarte 2018 y 2019
+-   CPUE 2020
+-   Composición de tallas de la flota 2020
+-   Biomasa del crucero acústico 2021
+-   Composición de edad del crucero acústico 2021
+
+
+Datos supuestos
+
+-   Captura 2021 = igual a CBA inicial 2021
+-   Porcentaje de descarte 2020 y 2021 = supuesto 2,3%
+-   Composición de edad de la Flota 2021 = NA
+-   CPUE 2021 = NA
+
+# 
+
+```{=tex}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{Figuras/Fig1_anexoII-1.pdf}
+\caption{Comparación entre los datos utilizados en la evaluación anterior y la actual para el stock de la sardina austral de la Región de Los Lagos. Se actualiza información para el año 2020.}
+\label{Fig1}
+\end{figure}
+```
+
+#
+```{=tex}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{Figuras/Fig2_anexoII-1.pdf}
+\caption{Composición de tallas provenientes de las capturas de sardina austral de la Región de Los Lagos, año 2020. Se compara la información utilizada en la evaluación anterior y actual.}
+\label{Fig2}
+\end{figure}
+```
+#
+```{=tex}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{Figuras/Fig3_anexoII-1.pdf}
+\caption{Proporción de las tallas observadas por el crucero acústico 2021, incorporada en la actual evaluación del stock de la sardina austra de la Región de Los Lagos.}
+\label{Fig3}
+\end{figure}
+```
+
+# Proceso de actualización de datos de entrada al modelo de evaluación de stock
+
+
++-------------------+-------------------------------------------------------------------+
+| Casos             | Descripción                                                       |
++:==================+:==================================================================+
+| **Actualización** | **2020**                                                          |
++-------------------+-------------------------------------------------------------------+
+| Caso 1            | Igual al caso base de septiembre 2020                             |
++-------------------+-------------------------------------------------------------------+
+| Caso 2            | Caso 1 + supuesto Desembarque 2020                                |
++-------------------+-------------------------------------------------------------------+
+| Caso 3            | Caso 2 + incorporación del descarte a la serie de desembarques    |
++-------------------+-------------------------------------------------------------------+
+| Caso 4            | Caso 3 + estructura de tallas de la flota 2020                    |
++-------------------+-------------------------------------------------------------------+
+| Caso 5            | Caso 4 + CPUE 2020                                                |
++-------------------+-------------------------------------------------------------------+
+| **Actualización** | **2021**                                                          |
++-------------------+-------------------------------------------------------------------+
+| Caso 6            | Caso 5 + desembarque + descarte 2021                              |
++-------------------+-------------------------------------------------------------------+
+| Caso 7            | Caso 6 + biomasa acústica y estructura de tallas del crucero 2021 |
++-------------------+-------------------------------------------------------------------+
+
+# Proceso de actualización de datos 
+
+\tiny
++-------+-------+--------+---------------+------+--------+---------+--------------------+--------+
+| Casos | R     | BD     | $BD/BD_{RMS}$ | F    | R.diff | BD.diff | $BD/BD_{RMS}$.diff | F.diff |
++:=====:+:=====:+:======:+:=============:+:====:+:======:+:=======:+:==================:+:======:+
+| 1     | 2.378 | 38.349 | 1,30          | 0,26 |        |         |                    |        |
++-------+-------+--------+---------------+------+--------+---------+--------------------+--------+
+| 2     | 2.367 | 38.484 | 1,31          | 0,24 | 0,00   | 0,00    | 0,01               | -0,08  |
++-------+-------+--------+---------------+------+--------+---------+--------------------+--------+
+| 3     | 2.393 | 38.536 | 1,29          | 0,24 | 0,01   | 0,00    | 0,00               | -0,06  |
++-------+-------+--------+---------------+------+--------+---------+--------------------+--------+
+| 4     | 2.337 | 38.377 | 1,26          | 0,25 | -0.02  | 0,00    | -0,03              | -0,04  |
++-------+-------+--------+---------------+------+--------+---------+--------------------+--------+
+| 5     | 2.686 | 44.640 | 1,47          | 0,21 | 0,13   | 0,16    | 0,13               | -0,18  |
++-------+-------+--------+---------------+------+--------+---------+--------------------+--------+
+| 6     | 2.685 | 44.629 | 1,46          | 0,21 | 0,13   | 0,16    | 0,12               | -0,18  |
++-------+-------+--------+---------------+------+--------+---------+--------------------+--------+
+| 7     | 2.356 | 45.275 | 1,51          | 0,21 | -0,01  | 0,18    | 0,16               | -0,18  |
++-------+-------+--------+---------------+------+--------+---------+--------------------+--------+
+
+\vspace{-0.4cm}
+
+```{=tex}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth]{Figuras/Fig4_anexoII-1.pdf}
+\end{figure}
+```
+
+# Comparación con asesorías previas - sardina austral
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.6\textwidth]{Figuras/Fig24-1.pdf}
+\label{Fig33}
+\end{figure}
+```
+
+
+
+# Ajustes del modelo a los datos - sardina austral  Los Lagos
+
+```{=tex}
+\begin{center}
+\includegraphics[width=0.55\textwidth]{Figuras/Fig19-1.pdf}
+\end{center}
+```
+# Ajuste Flota de sardina austral  Los Lagos
+
+```{=tex}
+\begin{center}
+
+\includegraphics[width=0.6\textwidth]{Figuras/Fig21-1.pdf}
+
+\end{center}
+```
+# Ajuste Crucero acústico de sardina austral Los Lagos
+
+```{=tex}
+\begin{center}
+
+\includegraphics[width=0.65\textwidth]{Figuras/Fig22-1.pdf}
+
+\end{center}
+```
+
+# Indicadores poblacionales de sardina austral  Los Lagos
+
+```{=tex}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{Figuras/Fig27-1.pdf}
+\end{center}
+```
+
+# Indicadores del estado de sardina austral  Los Lagos
+
+```{=tex}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{Figuras/Fig30-1.pdf}
+\end{center}
+```
+
+# Estatus 2020 de sardina austral  Los Lagos
+
+```{=tex}
+\begin{center}
+\includegraphics[width=0.65\textwidth]{Figuras/Fig31-1.pdf}
+\end{center}
+```
+
+# Estatus 2021 de sardina austral  Los Lagos
+
+```{=tex}
+\begin{center}
+\includegraphics[width=0.65\textwidth]{Figuras/Fig32-1.pdf}
+\end{center}
+```
+
+# CBA inicial 2021 (asesoría septiembre 2020)
+
+\small
++-----------------+----------+----------+-----------+
+| Percentiles de  | R\_bajo  | R\_med   | R\_alto   |
+|                 |          |          |           |
+| $C_{RMS}$       | (2018)   |          | (2012)    |
++:===============:+:========:+:========:+:=========:+
+| 10%             | 10.005   | 10.899   | 14.253    |
++-----------------+----------+----------+-----------+
+| 20%             | 11.300   | 12.213   | 15.766    |
++-----------------+----------+----------+-----------+
+| 30%             | 12.234   | 13.161   | 16.857    |
++-----------------+----------+----------+-----------+
+| 40%             | 13.032   | 13.971   | 17.789    |
++-----------------+----------+----------+-----------+
+| 50%             | 13.778   | 14.728   | 18.660    |
++-----------------+----------+----------+-----------+
+
+: \label{Tab18} CBA inicial 2021 (asesoría septiembre 2020) para la pesquería de sardina austral, considerando distintos estados de la naturaleza y bajo diferentes percentiles de captura al RMS.
+
+# CBA actualizada 2021 (asesoría junio 2021)
+
+\small
++----------------+----------------+------------------+-----------------+
+| Percentiles de | CBA            | CBA + descarte   | Resguardo de la |
+|                |                |                  |                 |
+| $C_{RMS}$      | toneladas      | toneladas        | $C_{RMS}$       |
++:==============:+:==============:+:================:+:===============:+
+| 10%            | 12.987         | 12.688           | 0,23            |
++----------------+----------------+------------------+-----------------+
+| 20%            | 14.334         | 14.005           | 0,15            |
++----------------+----------------+------------------+-----------------+
+| 30%            | 15.306         | 14.954           | 0,09            |
++----------------+----------------+------------------+-----------------+
+| 40%            | 16.136         | 15.765           | 0,05            |
++----------------+----------------+------------------+-----------------+
+| 50%            | 16.912         | 16.523           | 0               |
++----------------+----------------+------------------+-----------------+
+
+: \label{Tab19b} CBA actualizada 2021 (asesoría junio 2021), bajo diferentes percentiles de captura al RMS, considerando el descuento del 2,3\% de descarte y sus respectivos niveles de resguardo.
+
+# CBA 2021 de sardina austral, Región de Los Lagos
+
+```{=tex}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.6\textwidth]{Figuras/Fig33-1.pdf}
+\label{Fig33}
+\end{figure}
+```
+

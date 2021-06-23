@@ -1,0 +1,230 @@
+---
+title: "Comparación modelo base y alternativo actualizados"
+author: "María José Zúñiga"
+date: 'Sesión N°4: 01-07-2021'
+output:
+   beamer_presentation:
+    colortheme: rose
+    theme: Antibes
+subtitle: Comité Científico de Pesquerías de Pequeños Pelágicos
+institute: INSTITUTO DE FOMENTO PESQUERO
+---
+
+# Programa de mejoramiento continuo
+
+- Sardina austral Región de Los Lagos actualizado con información del año 2020 y 2021
+
+* Comparación de modelo con dinámica a la talla y dinámica a la edad
+
+
+# Comparación de ajuste de los índices
+
+```{=tex}
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{Figuras/Fig6_anexoIII-1.pdf}
+\end{figure}
+```
+
+
+# Comporación de ajuste Composición de tallas Flota
+
+```{=tex}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{Figuras/Fig8_anexoIII-1.pdf}
+\end{figure}
+```
+
+# Comparación de ajuste Composición de tallas Crucero
+
+```{=tex}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{Figuras/Fig9_anexoIII-1.pdf}
+\end{figure}
+```
+
+# Comparación de análisis retrospectivo
+
+```{=tex}
+
+\begin{columns}
+\column{0.5\textwidth}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figuras/Fig12_anexoIII-1.pdf}
+\end{figure}
+
+\column{0.5\textwidth}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figuras/Fig13_anexoIII-1.pdf}
+\end{figure}
+
+\end{columns}
+
+```
+
+# Comparación de perfiles de verosimilitud
+
+```{=tex}
+
+\begin{columns}
+\column{0.5\textwidth}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figuras/Fig14_anexoIII-1.pdf}
+\end{figure}
+
+\column{0.5\textwidth}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figuras/Fig15_anexoIII-1.pdf}
+\end{figure}
+
+\end{columns}
+
+```
+
+# Comparación de tendencias poblacionales
+
+```{=tex}
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig16_anexoIII-1.pdf}
+\end{figure}
+```
+
+# Serie de biomasa desovante y mortalidad por pesca junto a los PBRs correspondientes
+
+```{=tex}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{Figuras/Fig18b_anexoIII-1.pdf}
+\end{figure}
+```
+
+# Comparación de la razón $BD/BD_{RMS}$ y $F/F_{RMS}$
+
+```{=tex}
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig19_anexoIII-1.pdf}
+\end{figure}
+```
+
+# Comparación de estatus 2020 - Asesoría de septiembre 2020
+```{=tex}
+
+\begin{columns}
+\column{0.5\textwidth}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{Figuras/Fig21b_anexoIII-1.pdf}
+\end{figure}
+
+\column{0.5\textwidth}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{Figuras/Fig22b_anexoIII-1.pdf}
+\end{figure}
+
+\end{columns}
+
+```
+
+
+# Comparación de estatus 2021 - Asesoría de junio 2021
+```{=tex}
+
+\begin{columns}
+\column{0.5\textwidth}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{Figuras/Fig21a_anexoIII-1.pdf}
+\end{figure}
+
+\column{0.5\textwidth}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{Figuras/Fig22a_anexoIII-1.pdf}
+\end{figure}
+
+\end{columns}
+
+```
+
+
+# Comparación con asesorías previas
+
+```{=tex}
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{Figuras/Fig20_anexoIII-1.pdf}
+\end{figure}
+```
+
+# Comparación Hito 1 - Asesoría de septiembre 2020 y 2021
+
+```{=tex}
+
+\begin{columns}
+\column{0.5\textwidth}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{Figuras/Fig24_anexoIII-1.pdf}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{Figuras/Fig25_anexoIII-1.pdf}
+\end{figure}
+
+\column{0.5\textwidth}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{Figuras/Fig26_anexoIII-1.pdf}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{Figuras/Fig27_anexoIII-1.pdf}
+\end{figure}
+
+\end{columns}
+
+```
+
+# Comparación Hito 2 - Asesoría de junio 2020 y 2021
+
+```{=tex}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+\centering
+\includegraphics[width=0.75\textwidth]{Figuras/Fig28_anexoIII-1.pdf}
+\end{figure}
+
+\column{0.5\textwidth}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.75\textwidth]{Figuras/Fig29_anexoIII-1.pdf}
+\end{figure}
+\end{columns}
+
+```
+
+
+
