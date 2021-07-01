@@ -11,10 +11,13 @@ institute: INSTITUTO DE FOMENTO PESQUERO
 ---
 
 # Procedimiento de Actualización del Estatus y CBA
+
 \tiny
 
 +--------------------------------+--------------------------+--------------------------+
 | Datos de entrada al modelo     | CBA inicial              | CBA final                |
+|                                |                          |                          |
+|                                | septiembre 2020          | junio 2021               |
 +================================+:========================:+:========================:+
 | Estructura temporal            | 2002 - 2020              | 2002-2021                |
 +--------------------------------+--------------------------+--------------------------+
@@ -41,10 +44,9 @@ institute: INSTITUTO DE FOMENTO PESQUERO
 
 : \label{Tab1} Información relevante para el cálculo de CBA 2021 en las dos etapas de estimación.
 
-
 # Datos de entrada de sardina austral Los Lagos
 
-Datos actualizados 
+Datos actualizados
 
 -   Desembarque 2020
 -   Descarte 2018 y 2019
@@ -52,7 +54,6 @@ Datos actualizados
 -   Composición de tallas de la flota 2020
 -   Biomasa del crucero acústico 2021
 -   Composición de edad del crucero acústico 2021
-
 
 Datos supuestos
 
@@ -71,8 +72,8 @@ Datos supuestos
 \label{Fig1}
 \end{figure}
 ```
+# 
 
-#
 ```{=tex}
 \begin{figure}[h!]
 \centering
@@ -81,7 +82,8 @@ Datos supuestos
 \label{Fig2}
 \end{figure}
 ```
-#
+# 
+
 ```{=tex}
 \begin{figure}[h!]
 \centering
@@ -90,9 +92,7 @@ Datos supuestos
 \label{Fig3}
 \end{figure}
 ```
-
 # Proceso de actualización de datos de entrada al modelo de evaluación de stock
-
 
 +-------------------+-------------------------------------------------------------------+
 | Casos             | Descripción                                                       |
@@ -116,9 +116,10 @@ Datos supuestos
 | Caso 7            | Caso 6 + biomasa acústica y estructura de tallas del crucero 2021 |
 +-------------------+-------------------------------------------------------------------+
 
-# Proceso de actualización de datos 
+# Proceso de actualización de datos
 
 \tiny
+
 +-------+-------+--------+---------------+------+--------+---------+--------------------+--------+
 | Casos | R     | BD     | $BD/BD_{RMS}$ | F    | R.diff | BD.diff | $BD/BD_{RMS}$.diff | F.diff |
 +:=====:+:=====:+:======:+:=============:+:====:+:======:+:=======:+:==================:+:======:+
@@ -145,7 +146,6 @@ Datos supuestos
 \includegraphics[width=0.6\textwidth]{Figuras/Fig4_anexoII-1.pdf}
 \end{figure}
 ```
-
 # Comparación con asesorías previas - sardina austral
 
 ```{=tex}
@@ -155,17 +155,14 @@ Datos supuestos
 \label{Fig33}
 \end{figure}
 ```
-
-
-
-# Ajustes del modelo a los datos - sardina austral  Los Lagos
+# Ajustes del modelo a los datos - sardina austral Los Lagos
 
 ```{=tex}
 \begin{center}
 \includegraphics[width=0.55\textwidth]{Figuras/Fig19-1.pdf}
 \end{center}
 ```
-# Ajuste Flota de sardina austral  Los Lagos
+# Ajuste Flota de sardina austral Los Lagos
 
 ```{=tex}
 \begin{center}
@@ -183,42 +180,38 @@ Datos supuestos
 
 \end{center}
 ```
-
-# Indicadores poblacionales de sardina austral  Los Lagos
+# Indicadores poblacionales de sardina austral Los Lagos
 
 ```{=tex}
 \begin{center}
 \includegraphics[width=0.9\textwidth]{Figuras/Fig27-1.pdf}
 \end{center}
 ```
-
-# Indicadores del estado de sardina austral  Los Lagos
+# Indicadores del estado de sardina austral Los Lagos
 
 ```{=tex}
 \begin{center}
 \includegraphics[width=0.9\textwidth]{Figuras/Fig30-1.pdf}
 \end{center}
 ```
-
-# Estatus 2020 de sardina austral  Los Lagos
+# Estatus 2020 de sardina austral Los Lagos
 
 ```{=tex}
 \begin{center}
 \includegraphics[width=0.65\textwidth]{Figuras/Fig31-1.pdf}
 \end{center}
 ```
-
-# Estatus 2021 de sardina austral  Los Lagos
+# Estatus 2021 de sardina austral Los Lagos
 
 ```{=tex}
 \begin{center}
 \includegraphics[width=0.65\textwidth]{Figuras/Fig32-1.pdf}
 \end{center}
 ```
-
 # CBA inicial 2021 (asesoría septiembre 2020)
 
 \small
+
 +-----------------+----------+----------+-----------+
 | Percentiles de  | R\_bajo  | R\_med   | R\_alto   |
 |                 |          |          |           |
@@ -235,28 +228,32 @@ Datos supuestos
 | 50%             | 13.778   | 14.728   | 18.660    |
 +-----------------+----------+----------+-----------+
 
-: \label{Tab18} CBA inicial 2021 (asesoría septiembre 2020) para la pesquería de sardina austral, considerando distintos estados de la naturaleza y bajo diferentes percentiles de captura al RMS.
+Considerando un escenario con supuesto de captura 2020 equivalente al 80% de la cuota recomendada para el año, el CCT-PP recomendó una CBA máxima de 12,46 mil toneladas, considerando un escenario de reclutamientos bajos, una probabilidad de sobrepasar el objetivo de manejo (F=F~RMS~) del 30%, equivalente a un 11% de resguardo. Descontando un 0,93% de descarte la CBA máxima inicial recomendada para el año 2021, fue de 12.347 toneladas (Acta de sesión Nº6 del CCT-PP).
+
 
 # CBA actualizada 2021 (asesoría junio 2021)
 
 \small
-+----------------+----------------+------------------+-----------------+
-| Percentiles de | CBA            | CBA + descarte   | Resguardo de la |
-|                |                |                  |                 |
-| $C_{RMS}$      | toneladas      | toneladas        | $C_{RMS}$       |
-+:==============:+:==============:+:================:+:===============:+
-| 10%            | 12.987         | 12.688           | 0,23            |
-+----------------+----------------+------------------+-----------------+
-| 20%            | 14.334         | 14.005           | 0,15            |
-+----------------+----------------+------------------+-----------------+
-| 30%            | 15.306         | 14.954           | 0,09            |
-+----------------+----------------+------------------+-----------------+
-| 40%            | 16.136         | 15.765           | 0,05            |
-+----------------+----------------+------------------+-----------------+
-| 50%            | 16.912         | 16.523           | 0               |
-+----------------+----------------+------------------+-----------------+
 
-: \label{Tab19b} CBA actualizada 2021 (asesoría junio 2021), bajo diferentes percentiles de captura al RMS, considerando el descuento del 2,3\% de descarte y sus respectivos niveles de resguardo.
++----------------+----------------+------------------+------------------+
+| Percentiles de | CBA            | CBA + descarte   | Resguardo de la  |
+|                |                |                  |                  |
+| $C_{RMS}$      | toneladas      | toneladas        | $C_{RMS}$        |
++:==============:+:==============:+:================:+:================:+
+| 10%            | 12.987         | 12.688           | 0,23             |
++----------------+----------------+------------------+------------------+
+| 20%            | 14.334         | 14.005           | 0,15             |
++----------------+----------------+------------------+------------------+
+| 30%            | 15.306         | 14.954           | 0,09             |
++----------------+----------------+------------------+------------------+
+| 40%            | 16.136         | 15.765           | 0,05             |
++----------------+----------------+------------------+------------------+
+| 50%            | 16.912         | 16.523           | 0                |
++----------------+----------------+------------------+------------------+
+
+: \label{Tab19b} CBA actualizada 2021 (asesoría junio 2021), bajo diferentes percentiles de captura al RMS, considerando el descuento del 2,3% de descarte y sus respectivos niveles de resguardo.
+
+
 
 # CBA 2021 de sardina austral, Región de Los Lagos
 
@@ -268,3 +265,30 @@ Datos supuestos
 \end{figure}
 ```
 
+
+# 
++------+-------------+-----------------+-------------+---------------------+
+| Año  | CBA inicial | CBA actualizada | Desembarque | Diferencia entre el |
+|      |             |                 |             |                     |
+|      | (t)         | (t)             |             | desembarque y la    |
+|      |             |                 |             |                     |
+|      |             |                 |             | Cuota               |
++======+:===========:+:===============:+:===========:+:===================:+
+| 2014 | 18.750      | 22.790          | 22.951      | 1,01                |
++------+-------------+-----------------+-------------+---------------------+
+| 2015 | 24.550      | *statu quo*     | 23.643      | 0,96                |
++------+-------------+-----------------+-------------+---------------------+
+| 2016 | 20.000      | *statu quo*     | 18.495      | 0,92                |
++------+-------------+-----------------+-------------+---------------------+
+| 2017 | 20.000      | *statu quo*     | 14.134      | 0,70                |
++------+-------------+-----------------+-------------+---------------------+
+| 2018 | 17.200      | *statu quo*     | 8.355       | 0,49                |
++------+-------------+-----------------+-------------+---------------------+
+| 2019 | 11.137      | *statu quo*     | 11.278      | 1,01                |
++------+-------------+-----------------+-------------+---------------------+
+| 2020 | 7.883       | 15.471          | 14.213      | 0,92                |
++------+-------------+-----------------+-------------+---------------------+
+| 2021 | 12.347      |                 |             |                     |
++------+-------------+-----------------+-------------+---------------------+
+
+: \label{Tab2} Capturas biológicamente aceptables recomendadas por el CCT-PP en las distintas etapas de establecimiento de CBA, desembarque registrado y sus diferencias de sardina austral de la Región de Los Lagos.
